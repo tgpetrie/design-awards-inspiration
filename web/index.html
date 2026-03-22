@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design Refs</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Raleway+Dots&display=swap" />
+    <link rel="stylesheet" href="/styles.css?v=4" />
+  </head>
+  <body>
+
+    <!-- ── Landing: swipeable feed + search overlay ───────────────────────── -->
+    <div id="feed-view" class="feed-shell">
+
+      <!-- Swipeable card track (behind everything) -->
+      <div class="feed-track" id="feed-track"></div>
+
+      <!-- Search overlay (fixed on top) -->
+      <div class="feed-overlay" id="feed-overlay">
+
+        <!-- Top bar -->
+        <div class="feed-topbar">
+          <div class="feed-topbar-right">
+            <div class="dataset-pill feed-dataset-pill" id="dataset-name">Loading…</div>
+          </div>
+        </div>
+
+        <!-- Search bar — anchored bottom-center always -->
+        <div class="feed-search-dock">
+          <form id="feed-search-form" class="feed-search-form">
+            <div class="feed-search-bar">
+              <label class="sr-only" for="feed-query">Search</label>
+              <input
+                id="feed-query"
+                name="query"
+                type="text"
+                placeholder="Describe the vibe, if you intend to flatter, make it matter."
+                autocomplete="off"
+              />
+              <button class="feed-search-btn" type="submit">Search</button>
+            </div>
+
+            <div class="feed-search-footer">
+              <a class="feed-advanced-link" id="feed-advanced-link" href="#/results">Advanced Search ↗</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Swipe hint -->
+      <div class="feed-swipe-hint" id="feed-swipe-hint">
+        <span>↓ swipe</span>
+      </div>
+
+      <!-- Down arrow — navigate to search/results view -->
+      <a class="feed-down-arrow" href="#/results" aria-label="Go to search">&#x2193;</a>
+
+    </div>
+
+    <!-- ── Results view ────────────────────────────────────────────────────── -->
+    <div id="results-view" class="results-shell" hidden>
+
+      <div class="results-topbar">
+        <button class="results-back" id="results-back">← Back</button>
+      </div>
+
+      <div class="app-shell">
+        <!-- Editorial heading -->
+        <div class="results-editorial">
+          <h1 class="results-headline">Describe what<br>you are trying to find.</h1>
+          <p class="results-tagline">Start with plain language. Add one broad lens if you want. Everything more detailed lives in Advanced Search.</p>
+        </div>
+
+        <!-- Main search bar for results view -->
+        <form id="search-form" class="results-search-form">
+          <div class="results-search-bar">
+            <label class="sr-only" for="query">Search</label>
+            <input
+              id="query"
+              name="query"
+              type="text"
+              placeholder="e.g. premium fintech onboarding for a startup"
+              autocomplete="off"
+            />
+            <button class="image-search-btn" type="button" id="image-search-btn" title="Search by image — paste or upload a screenshot">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            </button>
+            <input type="file" id="image-file-input" accept="image/*" class="sr-only" />
+            <button class="results-search-btn" type="submit">Search</button>
+          </div>
+          <!-- Image search drop zone (shown when an image is staged) -->
+          <div class="image-drop-zone" id="image-drop-zone" hidden>
+            <div class="image-preview-wrap">
+              <img id="image-preview" src="" alt="Staged image" />
+              <button class="image-clear-btn" id="image-clear-btn" type="button" aria-label="Remove image">✕</button>
+            </div>
+            <p class="image-drop-label">Image staged — hit <strong>Search</strong> to find similar designs, or drop a different one here.</p>
+          </div>
+
+          <!-- Prompt suggestion chips -->
+          <div class="results-chips">
+            <button type="button" class="results-chip" data-prompt="Dark app homepage">Dark app homepage</button>
+            <button type="button" class="results-chip" data-prompt="Scroll effects">Scroll effects</button>
+            <button type="button" class="results-chip" data-prompt="Mobile app intro">Mobile app intro</button>
+            <button type="button" class="results-chip" data-prompt="Editorial typography">Editorial typography</button>
+            <button type="button" class="results-chip" data-prompt="Luxury brand site">Luxury brand site</button>
+            <button type="button" class="results-chip" data-prompt="Bold creative studio">Bold creative studio</button>
+          </div>
+        </form>
+
+        <!-- Status + advanced -->
+        <div class="action-row" style="margin-top:16px">
+          <button class="button secondary" type="button" id="toggle-advanced" aria-expanded="false" aria-controls="advanced-panel">Advanced Search</button>
+          <button class="button ghost" type="button" id="copy-markdown">Copy Markdown</button>
+          <p class="status-text" id="status-text" aria-live="polite"></p>
+        </div>
+
+        <!-- Focus -->
+        <div class="focus-stack" style="margin-top:20px">
+          <div class="focus-copy">
+            <span class="subtle-label">Optional Focus</span>
+            <p>Pick one broad lane, or leave it on All.</p>
+          </div>
+          <div id="focus-filters" class="chip-cloud focus-cloud"></div>
+        </div>
+
+
+        <!-- Readout -->
+        <section id="assistant-readout" class="assistant-readout panel" hidden>
+          <div class="readout-copy-block">
+            <p class="eyebrow">Search Readout</p>
+            <h2 id="summary-title">Top references</h2>
+            <p class="readout-copy" id="readout-copy"></p>
+          </div>
+          <div class="readout-stats">
+            <div class="metric-card">
+              <span class="metric-value" id="result-count">0</span>
+              <span class="metric-label">Results</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value" id="active-lenses">Natural language</span>
+              <span class="metric-label">Lens</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Results heading — hidden when a real search is active (readout section replaces it) -->
+        <section class="results-head">
+          <div class="results-heading-row">
+            <h2 id="results-title">Browse all</h2>
+            <p class="results-note">Open the live site or the Awwwards page directly from each card.</p>
+          </div>
+        </section>
+
+        <section id="results" class="results-grid"></section>
+      </div>
+    </div>
+
+    <!-- ── Detail view ────────────────────────────────────────────────────── -->
+    <div id="detail-view" class="app-shell" hidden></div>
+
+    <!-- ── Templates ─────────────────────────────────────────────────────── -->
+    <template id="feed-slide-template">
+      <article class="feed-slide">
+        <a class="feed-slide-link" href="#" target="_blank" rel="noreferrer">
+          <div class="feed-slide-bg"></div>
+          <img class="feed-slide-thumb" src="" alt="" loading="lazy" />
+        </a>
+        <!-- floating copy lives inside each slide so z-index works: above image, below meta -->
+        <div class="floating-copy" aria-hidden="true">
+          <span class="floating-title">flatter your favorite designs</span>
+          <span class="floating-dots">· · ·</span>
+        </div>
+        <div class="feed-slide-meta">
+          <p class="feed-slide-eyebrow"></p>
+          <h2 class="feed-slide-title"></h2>
+          <div class="feed-slide-tags"></div>
+          <div class="feed-slide-actions">
+            <a class="discover-action-btn primary" href="#" target="_blank" rel="noreferrer">Open site</a>
+            <a class="discover-action-btn ghost" href="#">View details</a>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <template id="result-card-template">
+      <article class="result-card">
+        <a class="card-image-wrap" href="#">
+          <div class="card-image">
+            <span class="card-initial"></span>
+            <img class="card-thumb" src="" alt="" loading="lazy" />
+          </div>
+        </a>
+        <div class="card-topline">
+          <span class="rank-badge"></span>
+          <span class="score-pill"></span>
+        </div>
+        <div class="card-title-row">
+          <h3 class="card-title"><a class="card-title-link" href="#"></a></h3>
+          <p class="card-date"></p>
+        </div>
+        <p class="card-reason"></p>
+        <div class="reason-chips"></div>
+        <div class="meta-group">
+          <p class="meta-label">Categories</p>
+          <div class="tag-row categories"></div>
+        </div>
+        <div class="meta-group">
+          <p class="meta-label">Style</p>
+          <div class="tag-row styles"></div>
+        </div>
+        <div class="meta-group">
+          <p class="meta-label">Tech</p>
+          <div class="tag-row tech"></div>
+        </div>
+        <div class="card-actions">
+          <a class="button primary" data-live-link target="_blank" rel="noreferrer">Open Live Site</a>
+          <a class="button secondary" data-source-link target="_blank" rel="noreferrer">Open Source Page</a>
+        </div>
+      </article>
+    </template>
+
+    <!-- ── Advanced Search Modal ──────────────────────────────────────────── -->
+    <div id="advanced-modal" class="advanced-modal" role="dialog" aria-modal="true" aria-label="Advanced Search" hidden>
+      <div class="advanced-modal-backdrop" id="advanced-modal-backdrop"></div>
+      <div class="advanced-modal-card" id="advanced-panel">
+        <div class="advanced-modal-topbar">
+          <div>
+            <p class="eyebrow">Advanced Search</p>
+            <h2>Dial the search in.</h2>
+          </div>
+          <div class="advanced-modal-actions">
+            <button class="button secondary" type="button" id="reset-filters">Reset</button>
+            <button class="advanced-modal-close" type="button" id="advanced-modal-close" aria-label="Close">✕</button>
+          </div>
+        </div>
+        <p class="advanced-copy">Use this when the natural-language pass is too broad.</p>
+        <div class="advanced-form-grid">
+          <label class="field">
+            <span>Similar to</span>
+            <input id="similar-to" name="similar-to" type="text" placeholder="Obys' Design Books" autocomplete="off" />
+          </label>
+          <label class="field field-small">
+            <span>Limit</span>
+            <input id="limit" name="limit" type="number" min="1" max="24" value="8" inputmode="numeric" />
+          </label>
+        </div>
+        <div class="advanced-groups">
+          <details class="filter-group" open>
+            <summary>Categories</summary>
+            <div id="category-filters" class="chip-cloud"></div>
+          </details>
+          <details class="filter-group" open>
+            <summary>Style</summary>
+            <div id="style-filters" class="chip-cloud"></div>
+          </details>
+          <details class="filter-group" open>
+            <summary>Tech</summary>
+            <div id="tech-filters" class="chip-cloud"></div>
+          </details>
+        </div>
+        <div class="advanced-modal-footer">
+          <button class="button primary advanced-apply-btn" type="button" id="advanced-apply">Apply &amp; Search</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/app.js?v=7" defer></script>
+  </body>
+</html>

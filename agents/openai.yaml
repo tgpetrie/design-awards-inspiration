@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Awards Inspiration"
+  short_description: "Award-winning web design style lookup"
+  default_prompt: "Use $design-awards-inspiration to find award-winning references for a bold editorial landing page."
