@@ -28,7 +28,7 @@ Fill this out before ending any work session. Both Claude and Codex read this to
 ### What changed
 - Added `references/awwwards-sotd-2023.json` from the Awwwards scraper and verified the raw file shape matches 2024.
 - Confirmed the 2023 scraper produced 200 entries after increasing archive depth; the old default page depth returned 0, so the scraper defaults were updated for older years.
-- Verified combined search and UI API loading against the merged 2023+2025 catalog with an exact total of 567 entries.
+- Verified combined search and UI API loading against the merged 2023+2024+2025 catalog with an exact total of 567 entries.
 - Updated the handoff docs so the repo state now reflects 2023, 2024, and 2025 together.
 
 ### Currently in progress
@@ -48,4 +48,4 @@ Fill this out before ending any work session. Both Claude and Codex read this to
 - `web/` — full static UI, no changes needed right now.
 
 ### Anchor commit
-- `07ba814`
+- `aff8c4b`
