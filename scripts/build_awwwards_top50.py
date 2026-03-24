@@ -224,9 +224,16 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--year", type=int, default=2025)
     parser.add_argument("--limit", type=int, default=50)
-    parser.add_argument("--max-pages", type=int, default=20)
+    parser.add_argument(
+        "--max-pages",
+        type=int,
+        help="Archive pages to scan. Defaults to 20 for 2024+ and 60 for older years.",
+    )
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
+
+    if args.max_pages is None:
+        args.max_pages = 60 if args.year <= 2023 else 20
 
     if args.output is None:
         args.output = (
