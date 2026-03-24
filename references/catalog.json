@@ -1,0 +1,55 @@
+{
+  "source": "Awwwards Site of the Day",
+  "dataset_glob": "awwwards-sotd-*.json",
+  "catalog_label": "Awwwards Site of the Day 2023-2025 (567 entries across 3 years)",
+  "datasets": [
+    {
+      "filename": "awwwards-sotd-2025.json",
+      "file": "awwwards-sotd-2025.json",
+      "source": "Awwwards Site of the Day",
+      "year": 2025,
+      "dataset": "Awwwards Site of the Day 2025 \u2014 Top 200",
+      "label": "Awwwards Site of the Day 2025 \u2014 Top 200",
+      "entry_count": 200,
+      "count": 200,
+      "generated_on": "2026-03-22",
+      "thumbnail_coverage_count": 200,
+      "thumbnail_coverage_percentage": 100.0,
+      "validation_status": "pass"
+    },
+    {
+      "filename": "awwwards-sotd-2024.json",
+      "file": "awwwards-sotd-2024.json",
+      "source": "Awwwards Site of the Day",
+      "year": 2024,
+      "dataset": "Awwwards Site of the Day 2024 Top 167",
+      "label": "Awwwards Site of the Day 2024 Top 167",
+      "entry_count": 167,
+      "count": 167,
+      "generated_on": "2026-03-24",
+      "thumbnail_coverage_count": 167,
+      "thumbnail_coverage_percentage": 100.0,
+      "validation_status": "pass"
+    },
+    {
+      "filename": "awwwards-sotd-2023.json",
+      "file": "awwwards-sotd-2023.json",
+      "source": "Awwwards Site of the Day",
+      "year": 2023,
+      "dataset": "Awwwards Site of the Day 2023 Top 200",
+      "label": "Awwwards Site of the Day 2023 Top 200",
+      "entry_count": 200,
+      "count": 200,
+      "generated_on": "2026-03-24",
+      "thumbnail_coverage_count": 200,
+      "thumbnail_coverage_percentage": 100.0,
+      "validation_status": "pass"
+    }
+  ],
+  "totals": {
+    "dataset_count": 3,
+    "entry_count": 567,
+    "thumbnail_coverage_count": 567,
+    "thumbnail_coverage_percentage": 100.0
+  }
+}

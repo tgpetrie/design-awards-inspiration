@@ -50,7 +50,7 @@ python3 scripts/design_refs_ui.py
 Use this section as the mental map for where references should come from.
 
 - `Awwwards seed set`
-  The bundled local catalog currently combines `references/awwwards-sotd-2025.json` (200 entries) and `references/awwwards-sotd-2024.json` (167 entries). Use this first because it is fast, searchable, and already normalized for category, style, and tech.
+  The bundled local catalog currently combines `references/awwwards-sotd-2025.json` (200 entries), `references/awwwards-sotd-2024.json` (167 entries), and `references/awwwards-sotd-2023.json` (200 entries). Use this first because it is fast, searchable, validated, and already normalized for category, style, and tech. `references/catalog.json` is the machine-readable summary of the available year files.
 - `CSSDA expansion`
   Use CSS Design Awards when the user wants more award-winning references beyond the local set, especially when you want short written descriptions, studio names, and category labels.
 - `SiteInspire browse source`
@@ -60,7 +60,7 @@ Use this section as the mental map for where references should come from.
 
 ## Catalog Shape
 
-The bundled datasets live in year-based files such as [references/awwwards-sotd-2025.json](references/awwwards-sotd-2025.json) and [references/awwwards-sotd-2024.json](references/awwwards-sotd-2024.json). The CLI and local UI combine all matching `references/awwwards-sotd-*.json` files at runtime.
+The bundled datasets live in year-based files such as [references/awwwards-sotd-2025.json](references/awwwards-sotd-2025.json), [references/awwwards-sotd-2024.json](references/awwwards-sotd-2024.json), and [references/awwwards-sotd-2023.json](references/awwwards-sotd-2023.json). The CLI and local UI combine all matching `references/awwwards-sotd-*.json` files at runtime, and [references/catalog.json](references/catalog.json) summarizes the available datasets.
 
 Each entry contains:
 
@@ -97,7 +97,7 @@ python3 scripts/build_awwwards_top50.py --year 2025 --limit 200 --output referen
 python3 scripts/build_awwwards_top50.py --year 2024 --limit 200 --output references/awwwards-sotd-2024.json
 ```
 
-The scraper uses the official Awwwards archive and stops once it has collected the requested number of entries for the target year.
+The scraper uses the official Awwwards archive and stops once it has collected the requested number of entries for the target year. After dataset changes, run `python3 scripts/validate_dataset.py`, `python3 scripts/build_dataset_catalog.py`, and `python3 scripts/build_web_catalog_bundle.py` so the catalog and static bundle stay aligned.
 
 ## Output Standard
 
