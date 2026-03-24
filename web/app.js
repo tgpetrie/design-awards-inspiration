@@ -7,6 +7,151 @@ const state = {
   tech: new Set(),
 };
 
+const STATIC_CATALOG = window.__DESIGN_REFS_CATALOG__ || null;
+const STATIC_IMAGE_SEARCH_MESSAGE = "Image search requires the local Python server.";
+let apiReachable = null;
+
+const QUERY_ALIASES = {
+  "app-ui": ["mobile", "apps", "ui", "design"],
+  "agency": ["design", "agencies"],
+  "brutalist": ["graphic", "experimental", "typography", "unusual", "layout"],
+  "checkout": ["e-commerce", "consumer", "ui", "design", "clean"],
+  "dashboard": ["technology", "startups", "ui", "design", "data", "visualization"],
+  "editorial": ["typography", "graphic", "magazine", "blog", "newspaper"],
+  "fintech": ["technology", "startups", "business", "corporate", "clean"],
+  "immersive": ["animation", "storytelling", "3d", "interaction", "scrolling", "webgl"],
+  "landing-page": ["promotional", "storytelling", "scrolling", "typography"],
+  "luxury": ["luxury"],
+  "minimalist": ["minimal", "clean"],
+  "motion": ["animation", "transitions", "microinteractions", "scrolling", "storytelling"],
+  "onboarding": ["mobile", "apps", "clean", "ui", "design", "interaction"],
+  "portfolio": ["portfolio"],
+  "playful": ["colorful", "illustration", "animation", "graphic"],
+  "saas": ["technology", "startups", "clean", "ui", "design"],
+};
+
+const FOCUS_PRESETS = {
+  "all": {
+    label: "All",
+    description: "Let the natural-language query steer the results.",
+    categories: [],
+    query_terms: [],
+  },
+  "web-interactive": {
+    label: "Web & Interactive",
+    description: "Broader digital-experience references.",
+    categories: ["Web & Interactive"],
+    query_terms: ["web"],
+  },
+  "mobile-ui": {
+    label: "Mobile & UI",
+    description: "UI-heavy and product-oriented references.",
+    categories: [],
+    query_terms: ["app-ui", "onboarding"],
+  },
+  "technology": {
+    label: "Technology",
+    description: "Startup, SaaS, and product storytelling references.",
+    categories: ["Technology"],
+    query_terms: ["saas"],
+  },
+  "architecture": {
+    label: "Architecture",
+    description: "Spatial, gallery-like, and architectural presentation work.",
+    categories: ["Architecture"],
+    query_terms: ["architecture", "minimalist"],
+  },
+  "luxury": {
+    label: "Luxury",
+    description: "Premium, polished, image-led references.",
+    categories: ["Luxury"],
+    query_terms: ["luxury", "premium"],
+  },
+  "e-commerce": {
+    label: "E-Commerce",
+    description: "Commerce, product, and checkout-oriented references.",
+    categories: ["E-Commerce"],
+    query_terms: ["checkout"],
+  },
+  "typography": {
+    label: "Typography",
+    description: "Type-led, editorial, and lettering-forward references.",
+    categories: [],
+    query_terms: ["typography", "editorial", "type-led"],
+  },
+  "color": {
+    label: "Color & Palette",
+    description: "Bold, expressive, or distinctive use of color.",
+    categories: [],
+    query_terms: ["colorful", "bold-color", "gradient"],
+  },
+  "motion": {
+    label: "Motion & Animation",
+    description: "Animation-rich, scroll-driven, and motion-forward work.",
+    categories: [],
+    query_terms: ["motion", "animation", "scroll-driven", "parallax"],
+  },
+  "dark": {
+    label: "Dark Mode",
+    description: "Dark-background, cinematic, and night-mode aesthetics.",
+    categories: [],
+    query_terms: ["dark", "dark-mode", "cinematic"],
+  },
+  "minimal": {
+    label: "Minimal",
+    description: "Clean, restrained, whitespace-first design.",
+    categories: [],
+    query_terms: ["minimalist", "minimal", "clean"],
+  },
+  "3d": {
+    label: "3D & Immersive",
+    description: "Three-dimensional, WebGL, and spatially immersive work.",
+    categories: [],
+    query_terms: ["3d", "webgl", "immersive", "spatial"],
+  },
+  "portfolio": {
+    label: "Portfolio & Studio",
+    description: "Agency, creative studio, and personal portfolio work.",
+    categories: [],
+    query_terms: ["portfolio", "agency", "studio"],
+  },
+};
+
+const QUERY_HINTS = {
+  "app": ["app-ui"],
+  "apps": ["app-ui"],
+  "architecture": ["architecture"],
+  "brutalist": ["brutalist"],
+  "checkout": ["checkout"],
+  "dashboard": ["dashboard"],
+  "editorial": ["editorial"],
+  "fintech": ["fintech"],
+  "immersive": ["immersive"],
+  "landing page": ["landing-page"],
+  "luxury": ["luxury"],
+  "mobile": ["app-ui"],
+  "motion": ["motion"],
+  "onboarding": ["onboarding"],
+  "portfolio": ["portfolio"],
+  "premium": ["premium"],
+  "saas": ["saas"],
+};
+
+const DESIGN_CATEGORIES = new Set([
+  "Web & Interactive",
+  "Design Agencies",
+  "Experimental",
+  "Art & Illustration",
+  "Architecture",
+  "Technology",
+  "Startups",
+  "Culture & Education",
+  "Photography",
+  "E-Commerce",
+  "Mobile & Apps",
+  "Magazine / Newspaper / Blog",
+]);
+
 // ─── Element refs ─────────────────────────────────────────────────────────────
 
 const els = {
@@ -116,12 +261,9 @@ async function showDetail(slug) {
   els.detailView.replaceChildren(makeStatusNode("detail-loading", "Loading…"));
 
   try {
-    const response = await fetch(`/api/ref/${encodeURIComponent(slug)}`);
-    if (!response.ok) {
-      const payload = await response.json().catch(() => ({}));
-      throw new Error(payload.error || "Reference not found.");
-    }
-    const ref = await response.json();
+    const ref = await requestJson(`/api/ref/${encodeURIComponent(slug)}`, {
+      fallback: () => getStaticRef(slug),
+    });
     renderDetail(ref);
     document.title = `${ref.title} · Design Refs`;
   } catch (err) {
@@ -438,9 +580,9 @@ async function loadFeed() {
   els.feedTrack.replaceChildren(loading);
 
   try {
-    const res = await fetch("/api/discover?limit=200");
-    if (!res.ok) throw new Error("Failed to load.");
-    const data = await res.json();
+    const data = await requestJson("/api/discover?limit=200", {
+      fallback: () => getStaticDiscover(200),
+    });
     feedEntries = data.entries || [];
     els.feedTrack.replaceChildren();
     feedEntries.forEach((entry) => {
@@ -716,6 +858,397 @@ function formatDate(rawValue) {
   return new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", year: "numeric" }).format(date);
 }
 
+function listValues(entries, key) {
+  return [...new Set(entries.flatMap((entry) => entry[key] || []))].sort((a, b) => a.localeCompare(b));
+}
+
+function firstValue(params, key, defaultValue = "") {
+  const value = (params[key] || [defaultValue])[0];
+  return value.trim();
+}
+
+function splitValues(values = []) {
+  return values
+    .flatMap((value) => value.split(","))
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
+function uniqueValues(values) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function normalizePhrase(text) {
+  return text.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function tokens(text) {
+  return new Set((text.toLowerCase().match(/[a-z0-9][a-z0-9.+/&'-]*/g) || []));
+}
+
+function tokenizedValues(values = []) {
+  const combined = new Set();
+  values.forEach((value) => {
+    tokens(value).forEach((token) => combined.add(token));
+    combined.add(normalizePhrase(value));
+  });
+  return combined;
+}
+
+function paramsObjectFromSearchParams(searchParams) {
+  const params = {};
+  searchParams.forEach((value, key) => {
+    if (!params[key]) params[key] = [];
+    params[key].push(value);
+  });
+  return params;
+}
+
+function clampLimit(rawValue) {
+  const limit = Number.parseInt(rawValue, 10);
+  if (Number.isNaN(limit)) throw new Error("limit must be an integer");
+  return Math.max(1, Math.min(limit, 24));
+}
+
+function extractHintTerms(query) {
+  const normalizedQuery = normalizePhrase(query);
+  const hintTerms = [];
+  Object.entries(QUERY_HINTS).forEach(([phrase, aliases]) => {
+    if (normalizedQuery.includes(phrase)) hintTerms.push(...aliases);
+  });
+  return uniqueValues(hintTerms);
+}
+
+function expandQueryTerms(queryTerms) {
+  const expanded = new Set(queryTerms);
+  [...queryTerms].forEach((term) => {
+    (QUERY_ALIASES[term] || []).forEach((value) => expanded.add(value));
+  });
+  return expanded;
+}
+
+function buildAssistantSummary(filters, hintTerms) {
+  const parts = [];
+  if (filters.query) parts.push(`You described "${filters.query}".`);
+  else parts.push("You are browsing the catalog.");
+
+  if (filters.focus_label !== "All") parts.push(`I used the ${filters.focus_label} lens.`);
+
+  if (hintTerms.length) {
+    const readableTerms = hintTerms.map((term) => term.replaceAll("-", " ")).join(", ");
+    parts.push(`I also nudged the search toward ${readableTerms}.`);
+  }
+
+  if (filters.category.length || filters.style.length || filters.tech.length) {
+    const active = [];
+    if (filters.category.length) active.push(`categories: ${filters.category.join(", ")}`);
+    if (filters.style.length) active.push(`styles: ${filters.style.join(", ")}`);
+    if (filters.tech.length) active.push(`tech: ${filters.tech.join(", ")}`);
+    parts.push(`Advanced filters applied: ${active.join(" | ")}.`);
+  }
+
+  return parts.join(" ");
+}
+
+function buildSearchRequest(params) {
+  const query = firstValue(params, "q");
+  const similarTo = firstValue(params, "similar_to");
+  const focusKey = firstValue(params, "focus", "all") || "all";
+  const focus = FOCUS_PRESETS[focusKey] || FOCUS_PRESETS.all;
+
+  const manualCategories = splitValues(params.category || []);
+  const styles = splitValues(params.style || []);
+  const techs = splitValues(params.tech || []);
+  const limit = clampLimit(firstValue(params, "limit", "8"));
+  const hintTerms = extractHintTerms(query);
+
+  const categories = uniqueValues([...focus.categories, ...manualCategories]);
+  const expandedQueryParts = uniqueValues([query, ...focus.query_terms, ...hintTerms]);
+  const effectiveQuery = expandedQueryParts.join(" ").trim();
+
+  const filters = {
+    query,
+    similar_to: similarTo,
+    focus: focusKey,
+    focus_label: focus.label,
+    category: categories,
+    style: styles,
+    tech: techs,
+    limit,
+  };
+  const assistant = {
+    focus_label: focus.label,
+    hint_terms: hintTerms,
+    effective_query: effectiveQuery,
+    summary: buildAssistantSummary(filters, hintTerms),
+  };
+  return { filters, assistant };
+}
+
+function entryMatchesFilters(entry, categories, styles, techs) {
+  const entryCategories = new Set((entry.categories || []).map((value) => normalizePhrase(value)));
+  const entryStyles = new Set((entry.style_tags || []).map((value) => normalizePhrase(value)));
+  const entryTech = new Set((entry.tech_tags || []).map((value) => normalizePhrase(value)));
+
+  if (categories.some((value) => !entryCategories.has(normalizePhrase(value)))) return false;
+  if (styles.some((value) => !entryStyles.has(normalizePhrase(value)))) return false;
+  if (techs.some((value) => !entryTech.has(normalizePhrase(value)))) return false;
+  return true;
+}
+
+function queryScore(entry, queryTerms) {
+  const haystacks = {
+    title: tokens(entry.title || ""),
+    slug: tokens(entry.slug || ""),
+    categories: tokenizedValues(entry.categories || []),
+    style_tags: tokenizedValues(entry.style_tags || []),
+    tech_tags: tokenizedValues(entry.tech_tags || []),
+    tags: tokenizedValues(entry.tags || []),
+  };
+
+  let score = 0;
+  const matched = [];
+
+  queryTerms.forEach((term) => {
+    if (haystacks.title.has(term)) {
+      score += 3.0;
+      matched.push(`title:${term}`);
+    } else if (haystacks.slug.has(term)) {
+      score += 2.5;
+      matched.push(`slug:${term}`);
+    } else if (haystacks.categories.has(term)) {
+      score += 2.2;
+      matched.push(`category:${term}`);
+    } else if (haystacks.style_tags.has(term)) {
+      score += 2.0;
+      matched.push(`style:${term}`);
+    } else if (haystacks.tech_tags.has(term)) {
+      score += 1.8;
+      matched.push(`tech:${term}`);
+    } else if (haystacks.tags.has(term)) {
+      score += 1.5;
+      matched.push(`tag:${term}`);
+    }
+  });
+
+  return { score, matched };
+}
+
+function findReference(entries, needle) {
+  const target = normalizePhrase(needle);
+  const exactMatch = entries.find(
+    (entry) => normalizePhrase(entry.title || "") === target || normalizePhrase(entry.slug || "") === target,
+  );
+  if (exactMatch) return exactMatch;
+  return entries.find(
+    (entry) => normalizePhrase(entry.title || "").includes(target) || normalizePhrase(entry.slug || "").includes(target),
+  ) || null;
+}
+
+function searchSimilarityScore(base, candidate) {
+  const baseTerms = new Set([...(base.categories || []), ...(base.style_tags || []), ...(base.tech_tags || [])]);
+  const candidateTerms = new Set([...(candidate.categories || []), ...(candidate.style_tags || []), ...(candidate.tech_tags || [])]);
+  const shared = [...baseTerms].filter((term) => candidateTerms.has(term));
+  const union = new Set([...baseTerms, ...candidateTerms]);
+  let score = union.size ? shared.length / union.size : 0;
+  score += shared.length * 0.05;
+  return score;
+}
+
+function relatedSimilarityScore(base, candidate) {
+  const baseTerms = new Set([...(base.categories || []), ...(base.style_tags || []), ...(base.tech_tags || [])]);
+  const candidateTerms = new Set([...(candidate.categories || []), ...(candidate.style_tags || []), ...(candidate.tech_tags || [])]);
+  const shared = [...baseTerms].filter((term) => candidateTerms.has(term)).length;
+  const union = new Set([...baseTerms, ...candidateTerms]).size;
+  return union ? shared / union : 0;
+}
+
+function getStaticCatalog() {
+  if (!STATIC_CATALOG) throw new Error("Static catalog unavailable.");
+  return STATIC_CATALOG;
+}
+
+function buildStaticOptions() {
+  const catalog = getStaticCatalog();
+  const entries = catalog.entries || [];
+  return {
+    dataset: catalog.dataset,
+    datasets: catalog.datasets || [],
+    focus: Object.entries(FOCUS_PRESETS).map(([key, value]) => ({
+      key,
+      label: value.label,
+      description: value.description,
+    })),
+    categories: listValues(entries, "categories"),
+    styles: listValues(entries, "style_tags"),
+    tech: listValues(entries, "tech_tags"),
+  };
+}
+
+function getStaticDiscover(limit = 100) {
+  const entries = (getStaticCatalog().entries || []).filter(
+    (entry) => entry.thumbnail_url && (entry.categories || []).some((value) => DESIGN_CATEGORIES.has(value)),
+  );
+  const shuffled = [...entries];
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    const swapIndex = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[i]];
+  }
+  const limited = shuffled.slice(0, limit);
+  return {
+    dataset: getStaticCatalog().dataset,
+    entries: limited,
+    count: limited.length,
+  };
+}
+
+function getStaticRef(slug) {
+  const catalog = getStaticCatalog();
+  const entries = catalog.entries || [];
+  const entry = entries.find((candidate) => candidate.slug === slug);
+  if (!entry) throw new Error(`Reference "${slug}" not found`);
+
+  const related = entries
+    .filter((candidate) => candidate.slug !== slug)
+    .map((candidate) => ({ score: relatedSimilarityScore(entry, candidate), entry: candidate }))
+    .sort((a, b) => (b.score - a.score) || ((a.entry.rank || 9999) - (b.entry.rank || 9999)))
+    .filter((item) => item.score > 0)
+    .slice(0, 4)
+    .map((item) => item.entry);
+
+  return { ...entry, related };
+}
+
+function runStaticSearch(params) {
+  const catalog = getStaticCatalog();
+  const request = buildSearchRequest(params);
+  const entries = catalog.entries || [];
+  const filtered = entries.filter((entry) => entryMatchesFilters(
+    entry,
+    request.filters.category,
+    request.filters.style,
+    request.filters.tech,
+  ));
+
+  let scored = [];
+  if (request.filters.similar_to) {
+    const base = findReference(filtered.length ? filtered : entries, request.filters.similar_to);
+    if (!base) throw new Error(`no reference found for "${request.filters.similar_to}"`);
+    scored = (filtered.length ? filtered : entries)
+      .filter((entry) => entry.slug !== base.slug)
+      .map((entry) => ({
+        score: searchSimilarityScore(base, entry),
+        match_reason: `similar to ${base.title}`,
+        ...entry,
+      }))
+      .sort((a, b) => (b.score - a.score) || ((a.rank || 9999) - (b.rank || 9999)));
+  } else {
+    const queryTerms = expandQueryTerms(tokens(request.assistant.effective_query));
+    scored = filtered
+      .map((entry) => {
+        const { score, matched } = queryScore(entry, queryTerms);
+        return {
+          score,
+          match_reason: matched.length ? matched.join(", ") : "top-ranked seed reference",
+          ...entry,
+        };
+      })
+      .filter((entry) => !queryTerms.size || entry.score > 0)
+      .sort((a, b) => (b.score - a.score) || ((a.rank || 9999) - (b.rank || 9999)));
+  }
+
+  const results = scored.slice(0, request.filters.limit);
+  if (!results.length) throw new Error("no matches");
+
+  return {
+    dataset: catalog.dataset,
+    results,
+    filters: request.filters,
+    assistant: request.assistant,
+  };
+}
+
+function buildMarkdownFromPayload(payload) {
+  const filters = payload.filters;
+  const summary = [];
+  if (filters.query) summary.push(`query "${filters.query}"`);
+  if (filters.focus_label !== "All") summary.push(`focus "${filters.focus_label}"`);
+  if (filters.similar_to) summary.push(`similar to "${filters.similar_to}"`);
+  if (filters.category.length) summary.push(`categories: ${filters.category.join(", ")}`);
+  if (filters.style.length) summary.push(`styles: ${filters.style.join(", ")}`);
+  if (filters.tech.length) summary.push(`tech: ${filters.tech.join(", ")}`);
+
+  const lines = [
+    `# Design Reference Pack: ${summary.length ? summary.join(" | ") : "top references"}`,
+    "",
+    `Dataset: ${payload.dataset}`,
+    "",
+    "References:",
+  ];
+
+  payload.results.forEach((result) => {
+    lines.push(
+      `- ${result.title} (${result.award_date})`,
+      `  Live: ${result.live_url}`,
+      `  Source: ${result.source_url}`,
+      `  Why it fits: matched ${humanizeReason(result.match_reason).join(", ")}`,
+      `  Categories: ${(result.categories || []).join(", ") || "-"}`,
+      `  Style: ${(result.style_tags || []).join(", ") || "-"}`,
+      `  Tech: ${(result.tech_tags || []).join(", ") || "-"}`,
+      "",
+    );
+  });
+
+  return `${lines.join("\n").trimEnd()}\n`;
+}
+
+async function requestJson(path, { fallback } = {}) {
+  if (fallback && STATIC_CATALOG && apiReachable === false) return fallback();
+  try {
+    const response = await fetch(path);
+    if (response.ok) {
+      apiReachable = true;
+      return await response.json();
+    }
+    if (fallback && response.status === 404) {
+      apiReachable = false;
+      return fallback();
+    }
+    apiReachable = true;
+    const payload = await response.json().catch(() => ({}));
+    throw new Error(payload.error || `Request failed (${response.status})`);
+  } catch (error) {
+    if (fallback && STATIC_CATALOG && error instanceof TypeError) {
+      apiReachable = false;
+      return fallback();
+    }
+    throw error;
+  }
+}
+
+async function requestText(path, { fallback } = {}) {
+  if (fallback && STATIC_CATALOG && apiReachable === false) return fallback();
+  try {
+    const response = await fetch(path);
+    if (response.ok) {
+      apiReachable = true;
+      return await response.text();
+    }
+    if (fallback && response.status === 404) {
+      apiReachable = false;
+      return fallback();
+    }
+    apiReachable = true;
+    throw new Error(`Request failed (${response.status})`);
+  } catch (error) {
+    if (fallback && STATIC_CATALOG && error instanceof TypeError) {
+      apiReachable = false;
+      return fallback();
+    }
+    throw error;
+  }
+}
+
 // ─── Filter UI ────────────────────────────────────────────────────────────────
 
 let focusOptions = [];
@@ -892,14 +1425,14 @@ function renderResults(payload) {
 async function loadDefaultBrowse() {
   autoSearchPending = true;
   try {
-    const res = await fetch("/api/discover?limit=12");
-    if (!res.ok) throw new Error("discover failed");
-    const data = await res.json();
+    const data = await requestJson("/api/discover?limit=12", {
+      fallback: () => getStaticDiscover(12),
+    });
     // Render as seed cards (score=0 → no match score or reason shown)
     const fakePayload = {
       results: (data.entries || []).map((e) => ({ ...e, score: 0, match_reason: "" })),
       filters: { query: "" },
-      dataset: data.dataset || "",
+      dataset: data.dataset || (STATIC_CATALOG ? getStaticCatalog().dataset : ""),
       assistant: { summary: "", focus_label: "All", hint_terms: [], effective_query: "" },
     };
     els.readoutPanel.hidden = true;
@@ -975,6 +1508,10 @@ function bindImageSearch() {
 
 async function runImageSearch() {
   if (!stagedImageFile) return runSearch();
+  if (STATIC_CATALOG && apiReachable === false) {
+    setStatus(STATIC_IMAGE_SEARCH_MESSAGE, true);
+    return;
+  }
 
   setStatus("Analysing image…");
   if (window.location.hash !== "#/results") {
@@ -988,8 +1525,16 @@ async function runImageSearch() {
 
   try {
     const res = await fetch(`/api/search-by-image?limit=${limit}`, { method: "POST", body: formData });
-    const payload = await res.json();
-    if (!res.ok) throw new Error(payload.error || "Image search failed.");
+    const payload = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      if (res.status === 404 && STATIC_CATALOG) {
+        apiReachable = false;
+        throw new Error(STATIC_IMAGE_SEARCH_MESSAGE);
+      }
+      apiReachable = true;
+      throw new Error(payload.error || "Image search failed.");
+    }
+    apiReachable = true;
 
     // Populate the text query box with what Claude extracted so user can refine
     if (payload.vision?.query) els.query.value = payload.vision.query;
@@ -999,7 +1544,9 @@ async function runImageSearch() {
     const mood = payload.vision?.mood ? ` · ${payload.vision.mood} mood` : "";
     setStatus(`${payload.results.length} result(s) found from image${mood}.`);
   } catch (err) {
-    setStatus(err.message, true);
+    if (STATIC_CATALOG && err instanceof TypeError) apiReachable = false;
+    const message = STATIC_CATALOG && err instanceof TypeError ? STATIC_IMAGE_SEARCH_MESSAGE : err.message;
+    setStatus(message, true);
   }
 }
 
@@ -1014,9 +1561,9 @@ async function runSearch() {
     showResults(); // already on results — router won't re-fire
   }
 
-  const response = await fetch(`/api/search?${params.toString()}`);
-  const payload = await response.json();
-  if (!response.ok) throw new Error(payload.error || "Search failed.");
+  const payload = await requestJson(`/api/search?${params.toString()}`, {
+    fallback: () => runStaticSearch(paramsObjectFromSearchParams(params)),
+  });
 
   renderReadout(payload);
   renderResults(payload);
@@ -1024,9 +1571,9 @@ async function runSearch() {
 }
 
 async function loadOptions() {
-  const response = await fetch("/api/options");
-  if (!response.ok) throw new Error("Unable to load filters.");
-  const payload = await response.json();
+  const payload = await requestJson("/api/options", {
+    fallback: () => buildStaticOptions(),
+  });
   els.datasetName.textContent = payload.dataset;
   if (els.resultsDatasetPill) els.resultsDatasetPill.textContent = payload.dataset;
   renderFocusFilters(payload.focus);
@@ -1036,9 +1583,10 @@ async function loadOptions() {
 }
 
 async function copyMarkdown() {
-  const response = await fetch(`/api/export.md?${serializeState().toString()}`);
-  if (!response.ok) throw new Error("Export failed.");
-  const markdown = await response.text();
+  const params = serializeState();
+  const markdown = await requestText(`/api/export.md?${params.toString()}`, {
+    fallback: () => buildMarkdownFromPayload(runStaticSearch(paramsObjectFromSearchParams(params))),
+  });
   await navigator.clipboard.writeText(markdown);
   setStatus("Markdown copied to clipboard.");
 }
