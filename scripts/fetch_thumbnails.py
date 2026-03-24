@@ -19,9 +19,12 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 import time
 import urllib.request
 from pathlib import Path
+
+from post_write_maintenance import MaintenanceError, run_post_write_maintenance
 
 ROOT = Path(__file__).resolve().parent.parent
 DATASET_PATH = ROOT / "references" / "awwwards-sotd-2025.json"
@@ -155,6 +158,13 @@ def main() -> int:
         print(
             f"\nOverall. Fetched: {total_fetched}  Failed: {total_failed}  Skipped: {total_skipped}"
         )
+
+    try:
+        run_post_write_maintenance(dataset_paths)
+    except MaintenanceError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+
     return 0
 
 

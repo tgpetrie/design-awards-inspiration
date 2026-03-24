@@ -16,6 +16,8 @@ from pathlib import Path
 from typing import Iterable
 from urllib.request import Request, urlopen
 
+from post_write_maintenance import MaintenanceError, run_post_write_maintenance
+
 ARCHIVE_URL = "https://www.awwwards.com/websites/sites_of_the_day/"
 USER_AGENT = "Mozilla/5.0 (Codex skill builder)"
 
@@ -269,6 +271,13 @@ def main() -> int:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2, ensure_ascii=True) + "\n")
     print(f"wrote {len(entries)} entries to {args.output}")
+
+    try:
+        run_post_write_maintenance([args.output])
+    except MaintenanceError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+
     return 0
 
 

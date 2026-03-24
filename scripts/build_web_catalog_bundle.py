@@ -5,20 +5,17 @@ Generate a static catalog bundle so the web app can run without the Python API.
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
+import sys
 
-from dataset_catalog import load_awwwards_catalog
-
-ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = ROOT / "web" / "catalog-data.js"
+from post_write_maintenance import MaintenanceError, rebuild_web_catalog_bundle
 
 
 def main() -> int:
-    catalog = load_awwwards_catalog()
-    payload = json.dumps(catalog, separators=(",", ":"), ensure_ascii=True)
-    OUTPUT.write_text(f"window.__DESIGN_REFS_CATALOG__ = {payload};\n", encoding="utf-8")
-    print(f"Wrote {OUTPUT.relative_to(ROOT)} with {len(catalog.get('entries', []))} entries")
+    try:
+        rebuild_web_catalog_bundle()
+    except MaintenanceError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
     return 0
 
 

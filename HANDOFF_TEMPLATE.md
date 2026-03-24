@@ -23,30 +23,29 @@ Fill this out before ending any work session. Both Claude and Codex read this to
 
 ## Last completed handoff (example — update each session)
 
-**Session: 2026-03-24 — Pipeline hardening for Awwwards datasets**
+**Session: 2026-03-24 — Post-write automation for dataset maintenance**
 
 ### What changed
-- Expanded `scripts/dataset_catalog.py` into the shared Awwwards schema and metadata layer used by runtime loading.
-- Added `scripts/validate_dataset.py` to validate required top-level keys, entry shape, array fields, URL/string fields, and slug uniqueness.
-- Added `scripts/build_dataset_catalog.py` to generate `references/catalog.json` with per-year entry counts, thumbnail coverage, and validation status.
-- Rebuilt `web/catalog-data.js` from the validated merged catalog and verified CLI search plus the local UI API still work.
+- Added shared post-write maintenance so dataset-writing scripts validate changed files, rebuild `references/catalog.json`, and regenerate `web/catalog-data.js` automatically.
+- Updated `scripts/build_awwwards_top50.py` and `scripts/fetch_thumbnails.py` to call the shared maintenance flow after successful writes.
+- Kept `scripts/build_dataset_catalog.py` and `scripts/build_web_catalog_bundle.py` aligned with the same shared maintenance helpers.
+- Verified the pipeline still validates cleanly and the merged runtime still works.
 
 ### Currently in progress
-- Nothing. Validation, catalog generation, and runtime verification are complete.
+- Nothing. Post-write automation is wired and verified.
 
 ### What should happen next
-1. Decide whether scraper and thumbnail-enrichment scripts should regenerate `references/catalog.json` and `web/catalog-data.js` automatically.
-2. Decide whether Awwwards 2022 is the next expansion step now that validation and coverage reporting exist.
+1. Decide whether to add lightweight smoke checks for the automated maintenance path.
+2. Decide whether Awwwards 2022 is the next expansion step now that dataset writes auto-maintain the derived artifacts.
 3. Push to `origin/master` only after the local history is reviewed.
 4. Resume product work once the data workflow decision is made.
 
 ### What files matter
-- `scripts/dataset_catalog.py` — source of truth for Awwwards discovery, validation, normalization, and merged loading.
-- `scripts/validate_dataset.py` and `scripts/build_dataset_catalog.py` — new validation and reporting entrypoints.
-- `references/catalog.json` — machine-readable summary of available Awwwards datasets.
-- `references/awwwards-sotd-2025.json`, `references/awwwards-sotd-2024.json`, `references/awwwards-sotd-2023.json` — validated year datasets.
-- `web/catalog-data.js` — regenerated static catalog bundle.
-- `CLAUDE.md`, `NEXT_STEPS.md`, `WORKFLOW.md` — coordination docs aligned to the hardened pipeline.
+- `scripts/post_write_maintenance.py` — shared validation/catalog/static-bundle automation for dataset writers.
+- `scripts/build_awwwards_top50.py` and `scripts/fetch_thumbnails.py` — now trigger post-write maintenance automatically.
+- `scripts/build_dataset_catalog.py` and `scripts/build_web_catalog_bundle.py` — aligned to the shared maintenance helpers.
+- `references/catalog.json` and `web/catalog-data.js` — derived artifacts kept in sync automatically after dataset writes.
+- `CLAUDE.md`, `NEXT_STEPS.md`, `WORKFLOW.md` — coordination docs aligned to the automated maintenance flow.
 
 ### Anchor commit
-- Incoming anchor was `85b4cf5`; confirm the current tip with `git log --oneline -1`.
+- Incoming anchor was `bd364f9`; confirm the current tip with `git log --oneline -1`.

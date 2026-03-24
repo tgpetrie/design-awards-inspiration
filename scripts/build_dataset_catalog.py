@@ -6,16 +6,11 @@ Generate a machine-readable catalog for all local Awwwards datasets.
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from pathlib import Path
 
-from dataset_catalog import (
-    DatasetValidationError,
-    ROOT,
-    build_dataset_catalog,
-    render_dataset_catalog_report,
-)
+from dataset_catalog import ROOT
+from post_write_maintenance import MaintenanceError, rebuild_dataset_catalog
 
 DEFAULT_OUTPUT = ROOT / "references" / "catalog.json"
 
@@ -31,19 +26,11 @@ def main() -> int:
     args = parser.parse_args()
 
     try:
-        catalog = build_dataset_catalog()
-    except DatasetValidationError as exc:
+        rebuild_dataset_catalog(args.output)
+    except MaintenanceError as exc:
         print(str(exc), file=sys.stderr)
         return 1
 
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(catalog, indent=2, ensure_ascii=True) + "\n",
-        encoding="utf-8",
-    )
-
-    print(render_dataset_catalog_report(catalog))
-    print(f"\nWrote {args.output.relative_to(ROOT)}")
     return 0
 
 

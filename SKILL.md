@@ -97,7 +97,7 @@ python3 scripts/build_awwwards_top50.py --year 2025 --limit 200 --output referen
 python3 scripts/build_awwwards_top50.py --year 2024 --limit 200 --output references/awwwards-sotd-2024.json
 ```
 
-The scraper uses the official Awwwards archive and stops once it has collected the requested number of entries for the target year. After dataset changes, run `python3 scripts/validate_dataset.py`, `python3 scripts/build_dataset_catalog.py`, and `python3 scripts/build_web_catalog_bundle.py` so the catalog and static bundle stay aligned.
+The scraper uses the official Awwwards archive and stops once it has collected the requested number of entries for the target year. `python3 scripts/build_awwwards_top50.py` and `python3 scripts/fetch_thumbnails.py` now run validation, catalog generation, and static bundle regeneration automatically after successful writes. Re-run `python3 scripts/validate_dataset.py`, `python3 scripts/build_dataset_catalog.py`, or `python3 scripts/build_web_catalog_bundle.py` manually when debugging or checking derived artifacts directly.
 
 ## Output Standard
 
