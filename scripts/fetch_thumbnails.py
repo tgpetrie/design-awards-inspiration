@@ -93,22 +93,15 @@ def get_thumbnail(live_url: str, source_url: str) -> tuple[str, str]:
     return "", "none"
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--force",
-        action="store_true",
-        help="Re-fetch even entries that already have a thumbnail_url.",
-    )
-    args = parser.parse_args()
-
-    data = json.loads(DATASET_PATH.read_text(encoding="utf-8"))
+def enrich_dataset(dataset_path: Path, force: bool) -> tuple[int, int, int]:
+    data = json.loads(dataset_path.read_text(encoding="utf-8"))
     entries = data["entries"]
     total = len(entries)
     fetched = failed = skipped = 0
 
+    print(f"\nDataset: {dataset_path}")
     for i, entry in enumerate(entries):
-        if entry.get("thumbnail_url") and not args.force:
+        if entry.get("thumbnail_url") and not force:
             skipped += 1
             print(f"  skip [{i + 1}/{total}] {entry['title']}")
             continue
@@ -127,12 +120,41 @@ def main() -> int:
         if i < total - 1:
             time.sleep(REQUEST_DELAY)
 
-    DATASET_PATH.write_text(
+    dataset_path.write_text(
         json.dumps(data, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
+    print(f"Done. Fetched: {fetched}  Failed: {failed}  Skipped: {skipped}")
+    return fetched, failed, skipped
 
-    print(f"\nDone. Fetched: {fetched}  Failed: {failed}  Skipped: {skipped}")
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--dataset",
+        type=Path,
+        action="append",
+        help="Dataset path to enrich. Repeat to process multiple files.",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Re-fetch even entries that already have a thumbnail_url.",
+    )
+    args = parser.parse_args()
+
+    dataset_paths = args.dataset or [DATASET_PATH]
+    total_fetched = total_failed = total_skipped = 0
+    for dataset_path in dataset_paths:
+        fetched, failed, skipped = enrich_dataset(dataset_path, args.force)
+        total_fetched += fetched
+        total_failed += failed
+        total_skipped += skipped
+
+    if len(dataset_paths) > 1:
+        print(
+            f"\nOverall. Fetched: {total_fetched}  Failed: {total_failed}  Skipped: {total_skipped}"
+        )
     return 0
 
 

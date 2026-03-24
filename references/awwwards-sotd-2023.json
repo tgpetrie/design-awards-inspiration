@@ -39,7 +39,8 @@
       ],
       "live_url": "https://www.14islands.com/",
       "source_url": "https://www.awwwards.com/sites/14islands-v4",
-      "rank": 1
+      "rank": 1,
+      "thumbnail_url": "https://cdn.sanity.io/images/f3tpxs09/production/fceb3fc54a25a6cc86fa77648390d1573e46499c-2400x1260.jpg"
     },
     {
       "title": "Darina CG Artist",
@@ -75,7 +76,8 @@
       ],
       "live_url": "https://www.darina-cg.com/",
       "source_url": "https://www.awwwards.com/sites/darina-cg-artist",
-      "rank": 2
+      "rank": 2,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/65578cc1d7e41909354022.png"
     },
     {
       "title": "ATIO Studio",
@@ -109,7 +111,8 @@
       ],
       "live_url": "https://atio.studio",
       "source_url": "https://www.awwwards.com/sites/atio-studio",
-      "rank": 3
+      "rank": 3,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/65611d00e5f78879062209.png"
     },
     {
       "title": "VANA",
@@ -145,7 +148,8 @@
       ],
       "live_url": "https://findyourvana.com/",
       "source_url": "https://www.awwwards.com/sites/vana-1",
-      "rank": 4
+      "rank": 4,
+      "thumbnail_url": "https://images.prismic.io/vana/3922366a-a5cc-430c-8516-6cf047ff4eb9_VANA+Main+Website+OG.png?auto=compress,format&amp;rect=0,0,2400,1260&amp;w=2400&amp;h=1260"
     },
     {
       "title": "Changers Studio",
@@ -179,7 +183,8 @@
       ],
       "live_url": "https://changers.studio/",
       "source_url": "https://www.awwwards.com/sites/changers-studio",
-      "rank": 5
+      "rank": 5,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/6543cdd468b04000931603.jpg"
     },
     {
       "title": "Rich Brown",
@@ -213,7 +218,8 @@
       ],
       "live_url": "https://www.richbrown.info",
       "source_url": "https://www.awwwards.com/sites/rich-brown-4",
-      "rank": 6
+      "rank": 6,
+      "thumbnail_url": "https://richbrown.b-cdn.net/2023/11/site-share-1200x675.jpg"
     },
     {
       "title": "Mythic Codex",
@@ -250,7 +256,8 @@
       ],
       "live_url": "https://mythic-codex.webflow.io",
       "source_url": "https://www.awwwards.com/sites/mythic-codex",
-      "rank": 7
+      "rank": 7,
+      "thumbnail_url": "https://cdn.prod.website-files.com/64db0d55c154912f54bd57b4/64db18b303a7bd71a79ca509_open-graph.webp"
     },
     {
       "title": "NOVA Speaker",
@@ -284,7 +291,8 @@
       ],
       "live_url": "https://nova-speaker.webflow.io/",
       "source_url": "https://www.awwwards.com/sites/nova-speaker",
-      "rank": 8
+      "rank": 8,
+      "thumbnail_url": "https://cdn.prod.website-files.com/654a0ac89fa4aa44fe8a3f95/65634c02960bdb74b6ad6d7a_nova-speaker-home-og-img.jpg"
     },
     {
       "title": "Wow Tapes",
@@ -320,7 +328,8 @@
       ],
       "live_url": "https://www.wowtapes.com/",
       "source_url": "https://www.awwwards.com/sites/wow-tapes-1",
-      "rank": 9
+      "rank": 9,
+      "thumbnail_url": "https://d3tp3928oujmo1.cloudfront.net/immagine-share.jpg"
     },
     {
       "title": "SELEMEN",
@@ -354,7 +363,8 @@
       ],
       "live_url": "http://selemen.liqium.com/index.html",
       "source_url": "https://www.awwwards.com/sites/selemen",
-      "rank": 10
+      "rank": 10,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/12/656b2d2833731938544820.jpg"
     },
     {
       "title": "Half of Eight",
@@ -384,7 +394,8 @@
       ],
       "live_url": "https://halfof8.com/",
       "source_url": "https://www.awwwards.com/sites/half-of-eight",
-      "rank": 11
+      "rank": 11,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/10/653fb24ef3618783693260.jpg"
     },
     {
       "title": "The Genius Club",
@@ -418,7 +429,8 @@
       ],
       "live_url": "https://wearegeniusclub.com/",
       "source_url": "https://www.awwwards.com/sites/the-genius-club",
-      "rank": 12
+      "rank": 12,
+      "thumbnail_url": "https://cdn.sanity.io/images/3fq51aaa/production/52734382596af90713812ddea2845e9f65af308f-1200x630.jpg"
     },
     {
       "title": "Francesco Michelini / Folio23",
@@ -450,7 +462,8 @@
       ],
       "live_url": "https://www.francescomichelini.com/",
       "source_url": "https://www.awwwards.com/sites/francesco-michelini-folio23",
-      "rank": 13
+      "rank": 13,
+      "thumbnail_url": "https://folio23.vercel.app/images/social-share.jpg"
     },
     {
       "title": "Google - The Web Can Do What!?",
@@ -486,7 +499,8 @@
       ],
       "live_url": "https://thewebshowcase.withgoogle.com/",
       "source_url": "https://www.awwwards.com/sites/google-the-web-can-do-what",
-      "rank": 14
+      "rank": 14,
+      "thumbnail_url": "https://thewebshowcase.withgoogle.com/assets/images/share_graphics/be-more-than-just-a-landing-page.png"
     },
     {
       "title": "CURATR Paris",
@@ -522,7 +536,8 @@
       ],
       "live_url": "https://curatr.paris/",
       "source_url": "https://www.awwwards.com/sites/curatr-paris",
-      "rank": 15
+      "rank": 15,
+      "thumbnail_url": "https://curatr.paris/wp-content/uploads/2022/12/Curatr.png"
     },
     {
       "title": "GenCell",
@@ -554,7 +569,8 @@
       ],
       "live_url": "https://gencell-preprod.rejouice.io",
       "source_url": "https://www.awwwards.com/sites/gencell",
-      "rank": 16
+      "rank": 16,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/655e9bf370b39286645360.jpg"
     },
     {
       "title": "Studio Claus Due",
@@ -587,7 +603,8 @@
       ],
       "live_url": "https://www.studioclausdue.dk/",
       "source_url": "https://www.awwwards.com/sites/studio-claus-due",
-      "rank": 17
+      "rank": 17,
+      "thumbnail_url": "https://www.datocms-assets.com/104927/1694703209-scd-fav.png?auto=format&amp;fit=max&amp;w=1200"
     },
     {
       "title": "Disguised",
@@ -624,7 +641,8 @@
       ],
       "live_url": "https://www.disguised.gg",
       "source_url": "https://www.awwwards.com/sites/disguised",
-      "rank": 18
+      "rank": 18,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/655dbf4747cf5064278291.jpg"
     },
     {
       "title": "NEWFOLK",
@@ -658,10 +676,11 @@
       ],
       "live_url": "https://newfolk.jp/",
       "source_url": "https://www.awwwards.com/sites/newfolk",
-      "rank": 19
+      "rank": 19,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/65602404bfb15818182173.jpg"
     },
     {
-      "title": "MITA\u00ae",
+      "title": "MITA®",
       "slug": "mita-r",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -694,7 +713,8 @@
       ],
       "live_url": "https://www.joinmita.com/",
       "source_url": "https://www.awwwards.com/sites/mita-r",
-      "rank": 20
+      "rank": 20,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/65657ea47d8ac278640646.jpg"
     },
     {
       "title": "Gucci Beauty Wishes",
@@ -727,7 +747,8 @@
       ],
       "live_url": "https://guccibeautywishes.gucci.com/#/en/",
       "source_url": "https://www.awwwards.com/sites/gucci-beauty-wishes",
-      "rank": 21
+      "rank": 21,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/6564cbc4ead7a916241385.jpg"
     },
     {
       "title": "SIMARRO LOZANO",
@@ -751,7 +772,8 @@
       ],
       "live_url": "https://simarrolozano.com",
       "source_url": "https://www.awwwards.com/sites/simarro-lozano",
-      "rank": 22
+      "rank": 22,
+      "thumbnail_url": "https://simarrolozano.com/wp-content/uploads/2023/09/EVA-SOLA-PUNAL-STILL-32-scaled.jpg"
     },
     {
       "title": "Bromley&Co.",
@@ -785,7 +807,8 @@
       ],
       "live_url": "https://www.bromleyandco.com/",
       "source_url": "https://www.awwwards.com/sites/bromley-co",
-      "rank": 23
+      "rank": 23,
+      "thumbnail_url": "https://cdn.prod.website-files.com/64a3d5b18529a87c8cf9472a/6543ace84b0e7c456828a33a_bromley_home.jpg"
     },
     {
       "title": "Interstellar Lab",
@@ -817,7 +840,8 @@
       ],
       "live_url": "https://interstellarlab.com/",
       "source_url": "https://www.awwwards.com/sites/interstellar-lab",
-      "rank": 24
+      "rank": 24,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/655a2a20be572397086094.jpg"
     },
     {
       "title": "Energy Park",
@@ -849,7 +873,8 @@
       ],
       "live_url": "https://energy-park.co.uk/",
       "source_url": "https://www.awwwards.com/sites/energy-park",
-      "rank": 25
+      "rank": 25,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/65607a89dc181089325411.png"
     },
     {
       "title": "CargoKite",
@@ -885,7 +910,8 @@
       ],
       "live_url": "https://cargokite.com/",
       "source_url": "https://www.awwwards.com/sites/cargokite",
-      "rank": 26
+      "rank": 26,
+      "thumbnail_url": "https://media.bear.plus/cargokite/og_new.jpg"
     },
     {
       "title": "monopo nyc",
@@ -917,7 +943,8 @@
       ],
       "live_url": "https://monopo.nyc/",
       "source_url": "https://www.awwwards.com/sites/monopo-nyc-2",
-      "rank": 27
+      "rank": 27,
+      "thumbnail_url": "https://monopo.nyc/images/ogp.jpg"
     },
     {
       "title": "The Field From The Ground Up",
@@ -939,10 +966,11 @@
       ],
       "live_url": "https://thefieldhyundai.com/",
       "source_url": "https://www.awwwards.com/sites/the-field-from-the-ground-up",
-      "rank": 28
+      "rank": 28,
+      "thumbnail_url": "https://storage.googleapis.com/wsjhyundai.appspot.com/uploads/1686059415520_Xch.png"
     },
     {
-      "title": "F\u00e9lix P\u00e9ault \u2013 Portfolio",
+      "title": "Félix Péault – Portfolio",
       "slug": "felix-peault-portfolio",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -975,7 +1003,8 @@
       ],
       "live_url": "https://flayks.com",
       "source_url": "https://www.awwwards.com/sites/felix-peault-portfolio",
-      "rank": 29
+      "rank": 29,
+      "thumbnail_url": "https://cdn.sanity.io/images/physnt2g/production/d6793125206ceaa9cbb6eb89932d68b202b13531-1200x630.jpg?w=1200&h=630&fit=crop&q=80&auto=format"
     },
     {
       "title": "Normal Phenomena of Life",
@@ -1011,7 +1040,8 @@
       ],
       "live_url": "https://normalphenomena.life/",
       "source_url": "https://www.awwwards.com/sites/normal-phenomena-of-life",
-      "rank": 30
+      "rank": 30,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/654cfe80691de237772194.png"
     },
     {
       "title": "treebytree",
@@ -1041,7 +1071,8 @@
       ],
       "live_url": "https://www.treebytree.earth/",
       "source_url": "https://www.awwwards.com/sites/treebytree",
-      "rank": 31
+      "rank": 31,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/655b41982d7f9423232292.jpg"
     },
     {
       "title": "Primo by Silverskin",
@@ -1077,7 +1108,8 @@
       ],
       "live_url": "https://primo-thermodry-pro.silverskin.it/en",
       "source_url": "https://www.awwwards.com/sites/primo-by-silverskin",
-      "rank": 32
+      "rank": 32,
+      "thumbnail_url": "https://primo-thermodry-pro.silverskin.it/primo-og-image.jpg"
     },
     {
       "title": "The State of the Transition 2023",
@@ -1111,7 +1143,8 @@
       ],
       "live_url": "https://2023.breakthroughenergy.org",
       "source_url": "https://www.awwwards.com/sites/the-state-of-the-transition-2023",
-      "rank": 33
+      "rank": 33,
+      "thumbnail_url": "https://cdn.sanity.io/images/db2qphvm/production/c7d26b38b335745bc722a664d9b83ff962d06a07-1200x630.webp?w=1200&amp;fm=webp&amp;q=95&amp;fit=max"
     },
     {
       "title": "Luni",
@@ -1147,7 +1180,8 @@
       ],
       "live_url": "https://www.luni.app/",
       "source_url": "https://www.awwwards.com/sites/luni",
-      "rank": 34
+      "rank": 34,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/6554dfef64800099038507.png"
     },
     {
       "title": "Viens-la",
@@ -1181,7 +1215,8 @@
       ],
       "live_url": "https://viens-la.com",
       "source_url": "https://www.awwwards.com/sites/viens-la-3",
-      "rank": 35
+      "rank": 35,
+      "thumbnail_url": "https://viens-la.com/wp-content/uploads/2023/11/linkedin.png"
     },
     {
       "title": "BrewDistrict24",
@@ -1209,7 +1244,8 @@
       ],
       "live_url": "https://brewdistrict24.com/",
       "source_url": "https://www.awwwards.com/sites/brewdistrict24",
-      "rank": 36
+      "rank": 36,
+      "thumbnail_url": "https://brewdistrict24.com/gfx/Brewdistrict_24_SocialShare.png"
     },
     {
       "title": "Patreon Website Redesign",
@@ -1233,7 +1269,8 @@
       ],
       "live_url": "https://www.patreon.com/",
       "source_url": "https://www.awwwards.com/sites/patreon-website-redesign",
-      "rank": 37
+      "rank": 37,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/654eb239bebd7811975187.png"
     },
     {
       "title": "Adidas Arena",
@@ -1261,7 +1298,8 @@
       ],
       "live_url": "https://www.adidasarena.com/",
       "source_url": "https://www.awwwards.com/sites/adidas-arena",
-      "rank": 38
+      "rank": 38,
+      "thumbnail_url": "https://www.adidasarena.com/seo.jpg"
     },
     {
       "title": "BITKRAFT",
@@ -1295,7 +1333,8 @@
       ],
       "live_url": "https://www.bitkraft.vc/",
       "source_url": "https://www.awwwards.com/sites/bitkraft-com",
-      "rank": 39
+      "rank": 39,
+      "thumbnail_url": "https://www.datocms-assets.com/98662/1684315981-share-1200x675.png?auto=format&amp;fit=max&amp;w=1200"
     },
     {
       "title": "Press Play On Tape",
@@ -1323,7 +1362,8 @@
       ],
       "live_url": "https://www.pressplayontape.studio/",
       "source_url": "https://www.awwwards.com/sites/press-play-on-tape",
-      "rank": 40
+      "rank": 40,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/654e4310a52a8313014760.jpg"
     },
     {
       "title": "Longines Spirit Flyback",
@@ -1351,7 +1391,8 @@
       ],
       "live_url": "https://www.longines.com/spirit-flyback/",
       "source_url": "https://www.awwwards.com/sites/longines-spirit-flyback",
-      "rank": 41
+      "rank": 41,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/11/6548f1e45a896056948699.jpg"
     },
     {
       "title": "Toy Joy",
@@ -1379,7 +1420,8 @@
       ],
       "live_url": "https://www.toysforjoy.shop/",
       "source_url": "https://www.awwwards.com/sites/toy-joy",
-      "rank": 42
+      "rank": 42,
+      "thumbnail_url": "https://uploads-ssl.webflow.com/64e5e69dac7a80274d92e394/653f8337fd87b5f64131f957_thumbnail%20image-min.png"
     },
     {
       "title": "Pebble",
@@ -1415,7 +1457,8 @@
       ],
       "live_url": "http://pebblelife.com",
       "source_url": "https://www.awwwards.com/sites/pebble",
-      "rank": 43
+      "rank": 43,
+      "thumbnail_url": "https://assets.pebblelife.com/Pebble_8_e0cc5a7db1.jpg"
     },
     {
       "title": "OFF+BRAND. 2023",
@@ -1441,7 +1484,8 @@
       ],
       "live_url": "https://itsoffbrand.com",
       "source_url": "https://www.awwwards.com/sites/off-brand-2023",
-      "rank": 44
+      "rank": 44,
+      "thumbnail_url": "https://cdn.prod.website-files.com/64cf4cc8c9b14fe4cb3c54b4/65202d359c62b75fd6cf9867_open-graph2.webp"
     },
     {
       "title": "A Light in the Woods",
@@ -1477,7 +1521,8 @@
       ],
       "live_url": "https://alightinthewoods.net",
       "source_url": "https://www.awwwards.com/sites/a-light-in-the-woods",
-      "rank": 45
+      "rank": 45,
+      "thumbnail_url": "https://into-woods.transforms.svdcdn.com/staging/images/Seo-Main-Image.png?w=1200&amp;h=627&amp;q=85&amp;fm=jpg&amp;fit=crop&amp;dm=1697417875&amp;s=23413ce471f82368280db5458d38c84f"
     },
     {
       "title": "Ethnocare",
@@ -1512,7 +1557,8 @@
       ],
       "live_url": "https://ethnocare.ca",
       "source_url": "https://www.awwwards.com/sites/ethnocare",
-      "rank": 46
+      "rank": 46,
+      "thumbnail_url": "http://ethnocare.ca/cdn/shop/files/Logo_original_Ethnocare.jpg?v=1726606788"
     },
     {
       "title": "Make HR Work",
@@ -1546,7 +1592,8 @@
       ],
       "live_url": "https://www.makehrwork.nl/",
       "source_url": "https://www.awwwards.com/sites/make-hr-work",
-      "rank": 47
+      "rank": 47,
+      "thumbnail_url": "https://cdn.prod.website-files.com/64a6bba2e0302dee48f779ae/64f0a61f4b80487c942150a3_thumbnail%208.webp"
     },
     {
       "title": "Amy Currell",
@@ -1580,7 +1627,8 @@
       ],
       "live_url": "https://amycurrell.com/",
       "source_url": "https://www.awwwards.com/sites/amy-currell",
-      "rank": 48
+      "rank": 48,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/10/653ce2d2540a1278658492.jpg"
     },
     {
       "title": "Tanya Timal Photographer",
@@ -1616,7 +1664,8 @@
       ],
       "live_url": "https://tanyatimal.studio/",
       "source_url": "https://www.awwwards.com/sites/tanya-timal-photographer-1",
-      "rank": 49
+      "rank": 49,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/10/65392a24846cf311259137.jpg"
     },
     {
       "title": "Bertch Capital",
@@ -1652,7 +1701,8 @@
       ],
       "live_url": "https://bertchcapital.com/",
       "source_url": "https://www.awwwards.com/sites/bertch-capital",
-      "rank": 50
+      "rank": 50,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/10/6538452843bcc049476173.jpg"
     },
     {
       "title": "ARK/8",
@@ -1682,7 +1732,8 @@
       ],
       "live_url": "https://ark8.net/",
       "source_url": "https://www.awwwards.com/sites/ark-8",
-      "rank": 51
+      "rank": 51,
+      "thumbnail_url": "https://a.storyblok.com/f/161230/3000x2007/8a8bef2921/tlb-pois-thinker.jpg"
     },
     {
       "title": "basement chronicles",
@@ -1712,7 +1763,8 @@
       ],
       "live_url": "https://chronicles.basement.studio/",
       "source_url": "https://www.awwwards.com/sites/basement-chronicles",
-      "rank": 52
+      "rank": 52,
+      "thumbnail_url": "https://chronicles.basement.studio/opengraph-image.png?a28826ef9b286d56"
     },
     {
       "title": "Enpower Trading",
@@ -1748,7 +1800,8 @@
       ],
       "live_url": "https://enpowertrading.co.za/",
       "source_url": "https://www.awwwards.com/sites/enpower-trading",
-      "rank": 53
+      "rank": 53,
+      "thumbnail_url": "https://images.prismic.io/enpower/beffd94b-2bfd-4051-ad0f-7ba1d3bb1211_enpower-home-opengraph.jpg?auto=compress,format&amp;rect=0,0,1200,630&amp;w=2400&amp;h=1260"
     },
     {
       "title": "Studio 28K",
@@ -1780,7 +1833,8 @@
       ],
       "live_url": "http://28k.studio",
       "source_url": "https://www.awwwards.com/sites/studio-28k",
-      "rank": 54
+      "rank": 54,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/10/6538c55c430d6694045468.png"
     },
     {
       "title": "KKPK",
@@ -1816,7 +1870,8 @@
       ],
       "live_url": "https://kokopako.fr/",
       "source_url": "https://www.awwwards.com/sites/kkpk",
-      "rank": 55
+      "rank": 55,
+      "thumbnail_url": "http://kokopako.fr/assets/images/share.jpg"
     },
     {
       "title": "Elysium",
@@ -1850,7 +1905,8 @@
       ],
       "live_url": "https://elysium.thebenezer.com/",
       "source_url": "https://www.awwwards.com/sites/elysium",
-      "rank": 56
+      "rank": 56,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/09/64fc850f8ac63620366981.png"
     },
     {
       "title": "Analogue Foundation",
@@ -1886,7 +1942,8 @@
       ],
       "live_url": "https://analoguefoundation.com/",
       "source_url": "https://www.awwwards.com/sites/analogue-foundation",
-      "rank": 57
+      "rank": 57,
+      "thumbnail_url": "https://analoguefoundation.com/assets/outputs/ogp_Square_KvjEr.jpg"
     },
     {
       "title": "Alpha Tango",
@@ -1918,10 +1975,11 @@
       ],
       "live_url": "https://alphatango.com/",
       "source_url": "https://www.awwwards.com/sites/alpha-tango",
-      "rank": 58
+      "rank": 58,
+      "thumbnail_url": "https://a.storyblok.com/f/202667/1200x600/d0bd98d308/social-banner.jpg"
     },
     {
-      "title": "Herv\u00e9 Baillargeon",
+      "title": "Hervé Baillargeon",
       "slug": "herve-baillargeon",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -1950,7 +2008,8 @@
       ],
       "live_url": "https://hervebaillargeon.com",
       "source_url": "https://www.awwwards.com/sites/herve-baillargeon",
-      "rank": 59
+      "rank": 59,
+      "thumbnail_url": "https://hervebaillargeon.com/uploads/config/Opengraph.jpg"
     },
     {
       "title": "Daniel Roth",
@@ -1980,7 +2039,8 @@
       ],
       "live_url": "https://www.danielroth.com/",
       "source_url": "https://www.awwwards.com/sites/daniel-roth",
-      "rank": 60
+      "rank": 60,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/10/6527f7003a595992785368.png"
     },
     {
       "title": "Nerdo",
@@ -2015,7 +2075,8 @@
       ],
       "live_url": "https://www.nerdo.tv/",
       "source_url": "https://www.awwwards.com/sites/nerdo",
-      "rank": 61
+      "rank": 61,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/10/653291b2dd6b1281999961.png"
     },
     {
       "title": "TH Skipper",
@@ -2045,7 +2106,8 @@
       ],
       "live_url": "https://www.tagheuer.com/fr/en/the-new-tag-heuer-carrera-skipper/skipper.html",
       "source_url": "https://www.awwwards.com/sites/th-skipper",
-      "rank": 62
+      "rank": 62,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64ef63b5bffc8010964279.jpg"
     },
     {
       "title": "2022 Creator Wrapped",
@@ -2075,7 +2137,8 @@
       ],
       "live_url": "https://wrapped22.bybuttermax.net/",
       "source_url": "https://www.awwwards.com/sites/2022-creator-wrapped",
-      "rank": 63
+      "rank": 63,
+      "thumbnail_url": "https://artists-dot-wrapped-2022.appspot.com/assets/meta/social-artists.png"
     },
     {
       "title": "Snapchat Agency Adventure",
@@ -2109,7 +2172,8 @@
       ],
       "live_url": "https://snapagencyadventure.com/",
       "source_url": "https://www.awwwards.com/sites/snapchat-agency-adventure",
-      "rank": 64
+      "rank": 64,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/10/652964e66055b805484354.jpg"
     },
     {
       "title": "GSAP",
@@ -2146,7 +2210,8 @@
       ],
       "live_url": "http://www.gsap.com",
       "source_url": "https://www.awwwards.com/sites/gsap",
-      "rank": 65
+      "rank": 65,
+      "thumbnail_url": "https://gsap.com/GSAP-share-image.png"
     },
     {
       "title": "Search Through Time",
@@ -2174,7 +2239,8 @@
       ],
       "live_url": "https://www.google.com/search/howsearchworks/our-history/",
       "source_url": "https://www.awwwards.com/sites/search-through-time-1",
-      "rank": 66
+      "rank": 66,
+      "thumbnail_url": "https://lh3.googleusercontent.com/dnpoiu9aopdadx61b_R8SlKyCHQIBNSTlYKOqUdZ1J8RPl3dGu1i57tmb7KzVEgpjdD_wc-CFirNtxU3wDiS9b1ZNAYxqq4tyojt5X4Q"
     },
     {
       "title": "Form Studio",
@@ -2204,7 +2270,8 @@
       ],
       "live_url": "https://formstudio.site/",
       "source_url": "https://www.awwwards.com/sites/form-studio",
-      "rank": 67
+      "rank": 67,
+      "thumbnail_url": "https://framerusercontent.com/images/SG1KqSjNtVIMYXVp6uEXX9LE.jpg"
     },
     {
       "title": "Engaged",
@@ -2240,7 +2307,8 @@
       ],
       "live_url": "https://engaged.be/",
       "source_url": "https://www.awwwards.com/sites/engaged",
-      "rank": 68
+      "rank": 68,
+      "thumbnail_url": "https://engaged.be/images/seo/og-image.jpg"
     },
     {
       "title": "Quantum",
@@ -2276,7 +2344,8 @@
       ],
       "live_url": "https://quantumstretch.com",
       "source_url": "https://www.awwwards.com/sites/quantum",
-      "rank": 69
+      "rank": 69,
+      "thumbnail_url": "https://quantumstretch.com/wp-content/uploads/2023/09/quantum.png"
     },
     {
       "title": "Polaroid I-2",
@@ -2312,10 +2381,11 @@
       ],
       "live_url": "https://i2-camera.polaroid.com/",
       "source_url": "https://www.awwwards.com/sites/polaroid-i-2",
-      "rank": 70
+      "rank": 70,
+      "thumbnail_url": "https://i2-camera.polaroid.com/images/global/default-og.jpg"
     },
     {
-      "title": "Vucko\u2122",
+      "title": "Vucko™",
       "slug": "vuckotm",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -2346,7 +2416,8 @@
       ],
       "live_url": "https://vucko.co/",
       "source_url": "https://www.awwwards.com/sites/vuckotm",
-      "rank": 71
+      "rank": 71,
+      "thumbnail_url": "https://www.datocms-assets.com/98180/1696267467-vucko_webassets_share-image.jpg"
     },
     {
       "title": "The Sight",
@@ -2382,10 +2453,11 @@
       ],
       "live_url": "https://thesight.io/",
       "source_url": "https://www.awwwards.com/sites/the-sight",
-      "rank": 72
+      "rank": 72,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64c420b19dd7f762456058.jpg"
     },
     {
-      "title": "Alphamark\u2122",
+      "title": "Alphamark™",
       "slug": "alphamarktm",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -2418,7 +2490,8 @@
       ],
       "live_url": "https://alphamark.design",
       "source_url": "https://www.awwwards.com/sites/alphamarktm",
-      "rank": 73
+      "rank": 73,
+      "thumbnail_url": "https://alphamark.design/wp-content/uploads/2025/06/alphamark-social-sharing-2025.jpg"
     },
     {
       "title": "LVMH Openlands",
@@ -2450,7 +2523,8 @@
       ],
       "live_url": "https://openlands.lvmh.com/",
       "source_url": "https://www.awwwards.com/sites/lvmh-openlands",
-      "rank": 74
+      "rank": 74,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/09/6512ca090d150941558528.jpg"
     },
     {
       "title": "Tux Karma Foundation",
@@ -2486,7 +2560,8 @@
       ],
       "live_url": "https://tuxkarma.co/en",
       "source_url": "https://www.awwwards.com/sites/tux-karma-foundation",
-      "rank": 75
+      "rank": 75,
+      "thumbnail_url": "https://tuxkarma.co/wp-content/themes/karma/img/social.jpg"
     },
     {
       "title": "Rebellion",
@@ -2510,10 +2585,11 @@
       ],
       "live_url": "https://rblln.fr",
       "source_url": "https://www.awwwards.com/sites/rebellion",
-      "rank": 76
+      "rank": 76,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64aa962b32cc7318469253.jpg"
     },
     {
-      "title": "FABRIC\u2122",
+      "title": "FABRIC™",
       "slug": "fabrictm",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -2544,7 +2620,8 @@
       ],
       "live_url": "https://fabric.codebydennis.com/",
       "source_url": "https://www.awwwards.com/sites/fabrictm",
-      "rank": 77
+      "rank": 77,
+      "thumbnail_url": "https://fabric.codebydennis.com/media/site/b68a754a5d-1702973649/meta-image-v5-860x540-crop-q72.jpg"
     },
     {
       "title": "ENDLESS SUMMER",
@@ -2580,7 +2657,8 @@
       ],
       "live_url": "https://endless-summer.richardmille.com/",
       "source_url": "https://www.awwwards.com/sites/endless-summer",
-      "rank": 78
+      "rank": 78,
+      "thumbnail_url": "http://localhost:3000/opengraph-image.jpg?f7e999f7539ca9ab"
     },
     {
       "title": "Polymer Workshop",
@@ -2612,7 +2690,8 @@
       ],
       "live_url": "https://www.polymer.ws/",
       "source_url": "https://www.awwwards.com/sites/polymer-workshop",
-      "rank": 79
+      "rank": 79,
+      "thumbnail_url": "https://cdn.sanity.io/images/puvwr3dp/production/ae60353dd16e2de7b1ddbbac429b4af80e4e9ac4-1125x1500.jpg?rect=0,455,1125,591&amp;w=1200&amp;h=630"
     },
     {
       "title": "Depo Studio",
@@ -2648,7 +2727,8 @@
       ],
       "live_url": "https://www.depo.studio",
       "source_url": "https://www.awwwards.com/sites/depo-studio",
-      "rank": 80
+      "rank": 80,
+      "thumbnail_url": "https://cdn.prod.website-files.com/64e3817de34b2de022cfcc20/6516c16f6992cd08dacb5fd1_opengraph.jpg"
     },
     {
       "title": "Heure Bleue",
@@ -2678,7 +2758,8 @@
       ],
       "live_url": "https://heurebleue.studio",
       "source_url": "https://www.awwwards.com/sites/heure-bleue",
-      "rank": 81
+      "rank": 81,
+      "thumbnail_url": "https://cdn.sanity.io/images/t2gewulg/production/883d2f9790c63cbded25d7cd45ca609f5482e218-1500x657.png?w=1200&auto=format"
     },
     {
       "title": "Cenitz Studio",
@@ -2714,7 +2795,8 @@
       ],
       "live_url": "https://cenitz.studio",
       "source_url": "https://www.awwwards.com/sites/cenitz-studio",
-      "rank": 82
+      "rank": 82,
+      "thumbnail_url": "https://images.prismic.io/cenitzstudio/c01320c2-e59d-4bb5-b27d-782de2184504_image+de+share.jpg?auto=compress,format&rect=0,0,1600,900&w=1600&h=900"
     },
     {
       "title": "Vestiaire Collective Report 23",
@@ -2745,10 +2827,11 @@
       ],
       "live_url": "https://fashion-sustainability-report.vestiairecollective.com/2023/",
       "source_url": "https://www.awwwards.com/sites/vestiaire-collective-report-23",
-      "rank": 83
+      "rank": 83,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64d0a1829dc66587429072.jpg"
     },
     {
-      "title": "Units \u2014 Future Living",
+      "title": "Units — Future Living",
       "slug": "units-future-living",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -2779,7 +2862,8 @@
       ],
       "live_url": "https://unitshomes.webflow.io/",
       "source_url": "https://www.awwwards.com/sites/units-future-living",
-      "rank": 84
+      "rank": 84,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64bab6fe1688b115072509.jpg"
     },
     {
       "title": "Elisava",
@@ -2813,7 +2897,8 @@
       ],
       "live_url": "https://www.elisava.net/en",
       "source_url": "https://www.awwwards.com/sites/elisava",
-      "rank": 85
+      "rank": 85,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64a4544f241ac120354547.jpg"
     },
     {
       "title": "Pixelflakes",
@@ -2847,7 +2932,8 @@
       ],
       "live_url": "https://www.pixelflakes.com/",
       "source_url": "https://www.awwwards.com/sites/pixelflakes",
-      "rank": 86
+      "rank": 86,
+      "thumbnail_url": "https://pixelflakes.com/img/og.png"
     },
     {
       "title": "Chris Kalafatis - Portfolio",
@@ -2883,7 +2969,8 @@
       ],
       "live_url": "https://chriskalafatis.com/",
       "source_url": "https://www.awwwards.com/sites/chris-kalafatis-portfolio",
-      "rank": 87
+      "rank": 87,
+      "thumbnail_url": "https://images.prismic.io/chris-folio/3c947c36-cdb9-4349-943e-932a3c97504d_ChrisKalafatis-Portfolio-SOTD-Cover-3.jpg?auto=compress,format&amp;rect=148,0,1522,795&amp;w=800&amp;h=418"
     },
     {
       "title": "Mate Libre",
@@ -2918,10 +3005,11 @@
       ],
       "live_url": "https://matelibre.com",
       "source_url": "https://www.awwwards.com/sites/mate-libre",
-      "rank": 88
+      "rank": 88,
+      "thumbnail_url": "http://matelibre.com/cdn/shop/files/Meta-OG_d7ce0b32-144c-4a69-a26e-3e406229c641.png?v=1693506527"
     },
     {
-      "title": "REJOUICE\u00ae",
+      "title": "REJOUICE®",
       "slug": "rejouice-r-2",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -2954,7 +3042,8 @@
       ],
       "live_url": "https://rejouice.com/",
       "source_url": "https://www.awwwards.com/sites/rejouice-r-2",
-      "rank": 89
+      "rank": 89,
+      "thumbnail_url": "https://images.prismic.io/rejouice-2024/Z0SmXq8jQArT1SWV_og.jpg?auto=format,compress"
     },
     {
       "title": "SETA",
@@ -2988,7 +3077,8 @@
       ],
       "live_url": "https://www.setaprint.ch/en/",
       "source_url": "https://www.awwwards.com/sites/seta",
-      "rank": 90
+      "rank": 90,
+      "thumbnail_url": "https://www.setaprint.ch/OpenGraphImage-KJWV3AFW.png"
     },
     {
       "title": "OWL",
@@ -3024,7 +3114,8 @@
       ],
       "live_url": "https://owlfurnitureandobjects.com/",
       "source_url": "https://www.awwwards.com/sites/owl-1",
-      "rank": 91
+      "rank": 91,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/09/65031dc402faa720111036.jpg"
     },
     {
       "title": "BRIGHT / Digital Studio",
@@ -3058,7 +3149,8 @@
       ],
       "live_url": "https://wearebright.studio",
       "source_url": "https://www.awwwards.com/sites/bright-digital-studio",
-      "rank": 92
+      "rank": 92,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/09/650857db2bad4209684156.png"
     },
     {
       "title": "Dom Perignon",
@@ -3090,7 +3182,8 @@
       ],
       "live_url": "https://www.domperignon.com/",
       "source_url": "https://www.awwwards.com/sites/dom-perignon",
-      "rank": 93
+      "rank": 93,
+      "thumbnail_url": "https://cdn.sanity.io/images/1p5qvg3x/ww/4b1111438554155898ce2c8cb874756261c03028-1038x653.jpg?rect=0,55,1038,545&amp;w=1200&amp;h=630"
     },
     {
       "title": "Montreal",
@@ -3122,10 +3215,11 @@
       ],
       "live_url": "https://montreal.leeroy.ca/?l=en",
       "source_url": "https://www.awwwards.com/sites/montreal",
-      "rank": 94
+      "rank": 94,
+      "thumbnail_url": "https://montreal.leeroy.ca/social.jpg"
     },
     {
-      "title": "Autex Acoustics\u00ae",
+      "title": "Autex Acoustics®",
       "slug": "autex-acoustics-r",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -3159,7 +3253,8 @@
       ],
       "live_url": "https://www.autexacoustics.com/",
       "source_url": "https://www.awwwards.com/sites/autex-acoustics-r",
-      "rank": 95
+      "rank": 95,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/09/64fed7a4b07d2090867610.jpg"
     },
     {
       "title": "Studio Kiln",
@@ -3195,7 +3290,8 @@
       ],
       "live_url": "https://www.studio-kiln.com/",
       "source_url": "https://www.awwwards.com/sites/studio-kiln",
-      "rank": 96
+      "rank": 96,
+      "thumbnail_url": "https://cdn.prod.website-files.com/6450bd5a51a4509928f3d530/64a3ee17b6e5e826ffccfad6_Studio-Kiln-Opengraph.png"
     },
     {
       "title": "Evmos",
@@ -3229,7 +3325,8 @@
       ],
       "live_url": "https://evmos.studiofreight.com/",
       "source_url": "https://www.awwwards.com/sites/evmos",
-      "rank": 97
+      "rank": 97,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/09/64f89d5cee17b461367074.jpg"
     },
     {
       "title": "The Showroom LVMH",
@@ -3266,7 +3363,8 @@
       ],
       "live_url": "https://theshowroom.lvmh.com/",
       "source_url": "https://www.awwwards.com/sites/the-showroom-lvmh",
-      "rank": 98
+      "rank": 98,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/09/64f751f171e73593316798.jpg"
     },
     {
       "title": "Fitsole",
@@ -3302,7 +3400,8 @@
       ],
       "live_url": "https://fitsole.shop/",
       "source_url": "https://www.awwwards.com/sites/fitsole",
-      "rank": 99
+      "rank": 99,
+      "thumbnail_url": "http://fitsole.shop/cdn/shop/files/Copy_of_Fitsole_Logo_Red_-_Black_f3d37264-5e85-4864-ac07-45775f9e4a46.png?v=1757605351&width=2048"
     },
     {
       "title": "Moxion Power",
@@ -3336,7 +3435,8 @@
       ],
       "live_url": "https://moxion-preprod.rejouice.io/",
       "source_url": "https://www.awwwards.com/sites/moxion-power",
-      "rank": 100
+      "rank": 100,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/09/64f245222ce45939489193.png"
     },
     {
       "title": "ESPN: Inside C. Alcaraz's Game",
@@ -3372,7 +3472,8 @@
       ],
       "live_url": "https://www.espn.com/espn/feature/story/_/id/38087576/inside-carlos-alcaraz-2023-game-federer-djokovic-nadal",
       "source_url": "https://www.awwwards.com/sites/espn-inside-c-alcarazs-game",
-      "rank": 101
+      "rank": 101,
+      "thumbnail_url": "https://a.espncdn.com/photo/2023/0803/alcaraz_16x9.jpg"
     },
     {
       "title": "Vault.xyz",
@@ -3404,7 +3505,8 @@
       ],
       "live_url": "http://www.vault.xyz",
       "source_url": "https://www.awwwards.com/sites/vault-xyz",
-      "rank": 102
+      "rank": 102,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/649a9fb200afa813714308.jpg"
     },
     {
       "title": "Clingr",
@@ -3440,10 +3542,11 @@
       ],
       "live_url": "https://clingr.me/en/",
       "source_url": "https://www.awwwards.com/sites/clingr",
-      "rank": 103
+      "rank": 103,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64d359b54dfc9278764174.jpg"
     },
     {
-      "title": "Somefolk\u00ae Digital Goods",
+      "title": "Somefolk® Digital Goods",
       "slug": "somefolk-r-digital-goods",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -3474,7 +3577,8 @@
       ],
       "live_url": "https://www.somefolk.co.uk/",
       "source_url": "https://www.awwwards.com/sites/somefolk-r-digital-goods",
-      "rank": 104
+      "rank": 104,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64ef9a51c2ada378593956.jpg"
     },
     {
       "title": "Twinbru",
@@ -3508,7 +3612,8 @@
       ],
       "live_url": "https://twinbru.com/",
       "source_url": "https://www.awwwards.com/sites/twinbru",
-      "rank": 105
+      "rank": 105,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64c252fe6a449318758720.png"
     },
     {
       "title": "ChainGPT - Blockchain AI",
@@ -3544,10 +3649,11 @@
       ],
       "live_url": "https://www.chaingpt.org/",
       "source_url": "https://www.awwwards.com/sites/chaingpt-blockchain-ai",
-      "rank": 106
+      "rank": 106,
+      "thumbnail_url": "https://cdn.prod.website-files.com/64354b8ce4872ad8cd1c7b04/64d9d5f89cc52bd948b9d53b_Chain-GPT.jpg"
     },
     {
-      "title": "Justine Souli\u00e9 Portfolio",
+      "title": "Justine Soulié Portfolio",
       "slug": "justine-soulie-portfolio",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -3578,7 +3684,8 @@
       ],
       "live_url": "https://justinesoulie.fr",
       "source_url": "https://www.awwwards.com/sites/justine-soulie-portfolio",
-      "rank": 107
+      "rank": 107,
+      "thumbnail_url": "https://justinesoulie.fr/share/share-fb.jpg"
     },
     {
       "title": "Motion Sickness",
@@ -3606,7 +3713,8 @@
       ],
       "live_url": "https://motionsickness.co.nz",
       "source_url": "https://www.awwwards.com/sites/motion-sickness-2",
-      "rank": 108
+      "rank": 108,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64e535da006f2766907838.jpg"
     },
     {
       "title": "Captions.ai",
@@ -3642,7 +3750,8 @@
       ],
       "live_url": "https://www.captions.ai/",
       "source_url": "https://www.awwwards.com/sites/captions-ai",
-      "rank": 109
+      "rank": 109,
+      "thumbnail_url": "https://captions.ai/captions-og-image.png"
     },
     {
       "title": "Nortera",
@@ -3674,7 +3783,8 @@
       ],
       "live_url": "https://www.norterafoods.com/en/",
       "source_url": "https://www.awwwards.com/sites/nortera",
-      "rank": 110
+      "rank": 110,
+      "thumbnail_url": "https://www.datocms-assets.com/85733/1681222357-2022-08-03_09102545_photo_by_jimmy_hamelin-3.jpg?w=1200"
     },
     {
       "title": "Abetka",
@@ -3711,7 +3821,8 @@
       ],
       "live_url": "https://abetkaua.com/en/",
       "source_url": "https://www.awwwards.com/sites/abetka",
-      "rank": 111
+      "rank": 111,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64e6644b1b807827810925.jpg"
     },
     {
       "title": "Ascon Systems",
@@ -3743,7 +3854,8 @@
       ],
       "live_url": "https://ascon-systems.de/en/",
       "source_url": "https://www.awwwards.com/sites/ascon-systems",
-      "rank": 112
+      "rank": 112,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64d344a6dc023701006478.png"
     },
     {
       "title": "Novo Nordisk Heritage Website",
@@ -3779,7 +3891,8 @@
       ],
       "live_url": "https://ourheritage.novonordisk.com/",
       "source_url": "https://www.awwwards.com/sites/novo-nordisk-heritage-website",
-      "rank": 113
+      "rank": 113,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/04/643fbe4ce28b7113354222.jpg"
     },
     {
       "title": "Spring/Summer",
@@ -3807,7 +3920,8 @@
       ],
       "live_url": "https://springsummer.dk",
       "source_url": "https://www.awwwards.com/sites/spring-summer-2",
-      "rank": 114
+      "rank": 114,
+      "thumbnail_url": "https://live.springsummer.dk/media/uploads/_1200x630_fit_center-center_82_none/Meta.jpg?mtime=1692642799"
     },
     {
       "title": "Rietveld Projects",
@@ -3843,10 +3957,11 @@
       ],
       "live_url": "https://www.rietveldprojects.be",
       "source_url": "https://www.awwwards.com/sites/rietveld-projects",
-      "rank": 115
+      "rank": 115,
+      "thumbnail_url": "https://admin.rietveldprojects.be/wp-content/uploads/2022/10/Header_Rietveldprojects-Schroder-DC18.jpg"
     },
     {
-      "title": "B-EGG \u2014 Liquid eggs",
+      "title": "B-EGG — Liquid eggs",
       "slug": "b-egg-liquid-eggs",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -3877,7 +3992,8 @@
       ],
       "live_url": "https://www.b-egg.farm/",
       "source_url": "https://www.awwwards.com/sites/b-egg-liquid-eggs",
-      "rank": 116
+      "rank": 116,
+      "thumbnail_url": "https://uploads-ssl.webflow.com/63c51f529f1b455b17d194fb/649c1429fdfd1de2871221e6_sharing.png"
     },
     {
       "title": "Opal Camera Inc.",
@@ -3913,7 +4029,8 @@
       ],
       "live_url": "https://opalcamera.com/",
       "source_url": "https://www.awwwards.com/sites/opal-camera-inc",
-      "rank": 117
+      "rank": 117,
+      "thumbnail_url": "https://emails.opalcamera.com/og.png"
     },
     {
       "title": "Makepill",
@@ -3949,7 +4066,8 @@
       ],
       "live_url": "https://makepill.com",
       "source_url": "https://www.awwwards.com/sites/makepill",
-      "rank": 118
+      "rank": 118,
+      "thumbnail_url": "https://res.cloudinary.com/mkpill/image/upload/f_jpg,q_auto,c_fill,w_1200,h_630/meta_image_makepill_9ff3708c69"
     },
     {
       "title": "Root Food",
@@ -3981,7 +4099,8 @@
       ],
       "live_url": "https://root-food.com/",
       "source_url": "https://www.awwwards.com/sites/root-food",
-      "rank": 119
+      "rank": 119,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64d5feea49471830060089.jpg"
     },
     {
       "title": "Qiqi",
@@ -4013,7 +4132,8 @@
       ],
       "live_url": "https://qiqiglobal.com/",
       "source_url": "https://www.awwwards.com/sites/qiqi",
-      "rank": 120
+      "rank": 120,
+      "thumbnail_url": "https://cdn.sanity.io/images/fht7z898/production/3dd919697251de8beee305710ff1cb0f1f4c1168-1000x471.jpg?rect=52,0,897,471&amp;w=1200&amp;h=630"
     },
     {
       "title": "Fold7",
@@ -4049,7 +4169,8 @@
       ],
       "live_url": "https://fold7.com/",
       "source_url": "https://www.awwwards.com/sites/fold7",
-      "rank": 121
+      "rank": 121,
+      "thumbnail_url": "https://images.prismic.io/fold7/2203cc00-e255-4ef0-8ed7-67b4445cd6fb_f7_website_news_019_CARLSBERGGlobal_hero.jpg?auto=compress,format"
     },
     {
       "title": "Dominique Sire",
@@ -4083,7 +4204,8 @@
       ],
       "live_url": "https://www.dominiquesire.com/",
       "source_url": "https://www.awwwards.com/sites/dominique-sire",
-      "rank": 122
+      "rank": 122,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64d36e68a5ffd784562714.jpg"
     },
     {
       "title": "Modelec",
@@ -4113,7 +4235,8 @@
       ],
       "live_url": "https://www.modelec.com",
       "source_url": "https://www.awwwards.com/sites/modelec",
-      "rank": 123
+      "rank": 123,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/649d8f1914d82881461979.jpg"
     },
     {
       "title": "Le Fruit Studio",
@@ -4143,7 +4266,8 @@
       ],
       "live_url": "https://lefruitstudio.fr/",
       "source_url": "https://www.awwwards.com/sites/le-fruit-studio",
-      "rank": 124
+      "rank": 124,
+      "thumbnail_url": "https://images.prismic.io/le-fruit-studio/fb7bc77a-6aff-470e-8876-4bd153022bce_share.jpg?auto=compress,format&rect=0,0,1200,630&w=1200&h=630"
     },
     {
       "title": "Two Good",
@@ -4173,10 +4297,11 @@
       ],
       "live_url": "https://twogood.com.au/",
       "source_url": "https://www.awwwards.com/sites/two-good",
-      "rank": 125
+      "rank": 125,
+      "thumbnail_url": "https://cdn.sanity.io/images/w8f1ak3c/production/c361b79ee29066d538713b1304dc94babf233c96-5504x8256.jpg?rect=0,2683,5504,2890&amp;w=1200&amp;h=630"
     },
     {
-      "title": "Dezea\u00ae (v2) \u2014 Digital Elements",
+      "title": "Dezea® (v2) — Digital Elements",
       "slug": "dezea-r-v2-digital-elements",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -4209,7 +4334,8 @@
       ],
       "live_url": "https://dezea.digital/showcase",
       "source_url": "https://www.awwwards.com/sites/dezea-r-v2-digital-elements",
-      "rank": 126
+      "rank": 126,
+      "thumbnail_url": "https://dezea.digital/assets/images/Dezea-Digital-Elements.jpg"
     },
     {
       "title": "Unikorns Agency",
@@ -4245,7 +4371,8 @@
       ],
       "live_url": "https://unikorns.agency/",
       "source_url": "https://www.awwwards.com/sites/unikorns-agency",
-      "rank": 127
+      "rank": 127,
+      "thumbnail_url": "https://unikorns.agency/opengraph?title=Unikorns%20Agency%20%7C%20Creative%20Design%20and%20Development%20Agency&amp;description=Unikorns%20is%20a%20Creative%20Design%20%26%20Development%20Agency%20specializing%20in%20Branding%20and%20Website%20Design%2C%20UI%2FUX%20and%20Design%20maintenance"
     },
     {
       "title": "ONE 24",
@@ -4275,7 +4402,8 @@
       ],
       "live_url": "https://one24.webflow.io",
       "source_url": "https://www.awwwards.com/sites/one-24",
-      "rank": 128
+      "rank": 128,
+      "thumbnail_url": "https://cdn.prod.website-files.com/63d3a5c57af34837d7bbb1a0/63d3f9ba4c4c44c7c6346fb6_OpenGraph.webp"
     },
     {
       "title": "OEBB History",
@@ -4301,7 +4429,8 @@
       ],
       "live_url": "https://oebb-history.at/en",
       "source_url": "https://www.awwwards.com/sites/oebb-history",
-      "rank": 129
+      "rank": 129,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64b7fda563e72771853195.jpg"
     },
     {
       "title": "VICIO",
@@ -4327,7 +4456,8 @@
       ],
       "live_url": "https://www.ganasdevicio.com/",
       "source_url": "https://www.awwwards.com/sites/vicio",
-      "rank": 130
+      "rank": 130,
+      "thumbnail_url": "https://viciocdn.s3.eu-west-1.amazonaws.com/media-gallery/1/62ebbc1a5376ebaf27914ffb-cover.png.webp"
     },
     {
       "title": "7-Year Journey",
@@ -4363,7 +4493,8 @@
       ],
       "live_url": "https://journey.zajno.com/",
       "source_url": "https://www.awwwards.com/sites/7-year-journey",
-      "rank": 131
+      "rank": 131,
+      "thumbnail_url": "https://journey.zajno.com/og-image.jpg"
     },
     {
       "title": "The DJ & the War Crimes",
@@ -4397,7 +4528,8 @@
       ],
       "live_url": "https://investigation.rollingstone.com/dj-photo-war-crimes-bosnia/",
       "source_url": "https://www.awwwards.com/sites/the-dj-the-war-crimes",
-      "rank": 132
+      "rank": 132,
+      "thumbnail_url": "https://investigation.rollingstone.com/dj-war-crimes-og-image.jpg"
     },
     {
       "title": "Cyclops Club",
@@ -4433,7 +4565,8 @@
       ],
       "live_url": "https://cyclopsclub.com/",
       "source_url": "https://www.awwwards.com/sites/cyclops-club",
-      "rank": 133
+      "rank": 133,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/08/64c922d71738d365197874.jpg"
     },
     {
       "title": "Giopato & Coombes",
@@ -4469,7 +4602,8 @@
       ],
       "live_url": "https://giopatocoombes.com",
       "source_url": "https://www.awwwards.com/sites/giopato-coombes",
-      "rank": 134
+      "rank": 134,
+      "thumbnail_url": "https://giopatocoombes.com/share-fb.jpg"
     },
     {
       "title": "Next Gen Now",
@@ -4505,7 +4639,8 @@
       ],
       "live_url": "https://nextgennow.canopyplanet.org/",
       "source_url": "https://www.awwwards.com/sites/next-gen-now",
-      "rank": 135
+      "rank": 135,
+      "thumbnail_url": "https://www.datocms-assets.com/96273/1680544633-next-gen-now_og-img.png?w=1200"
     },
     {
       "title": "Unbench",
@@ -4541,7 +4676,8 @@
       ],
       "live_url": "https://unbench.us/",
       "source_url": "https://www.awwwards.com/sites/unbench",
-      "rank": 136
+      "rank": 136,
+      "thumbnail_url": "https://cdn.prod.website-files.com/63dc103a70f1b868bc6f020d/63dc103a70f1b8adda6f02a3_Seo-img.webp"
     },
     {
       "title": "Ever",
@@ -4571,7 +4707,8 @@
       ],
       "live_url": "https://ever-live-here.com/en/",
       "source_url": "https://www.awwwards.com/sites/ever",
-      "rank": 137
+      "rank": 137,
+      "thumbnail_url": "https://ever-live-here.com/assets/manifest/og.png"
     },
     {
       "title": "Muchacha Montpellier",
@@ -4605,7 +4742,8 @@
       ],
       "live_url": "https://muchachamontpellier.fr/",
       "source_url": "https://www.awwwards.com/sites/muchacha-montpellier",
-      "rank": 138
+      "rank": 138,
+      "thumbnail_url": "https://muchachamontpellier.fr/wp-content/themes/qh-timber/theme/dist/assets/images/opengraph.png"
     },
     {
       "title": "Colabs",
@@ -4637,7 +4775,8 @@
       ],
       "live_url": "https://colabs.com.au",
       "source_url": "https://www.awwwards.com/sites/colabs-1",
-      "rank": 139
+      "rank": 139,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64bf680226d82586991013.jpg"
     },
     {
       "title": "Lief Amsterdam",
@@ -4673,7 +4812,8 @@
       ],
       "live_url": "http://liefamsterdam.nl",
       "source_url": "https://www.awwwards.com/sites/lief-amsterdam",
-      "rank": 140
+      "rank": 140,
+      "thumbnail_url": "https://liefamsterdam.nl/wp-content/uploads/2026/03/Lief-Amsterdam_Header-1024x497.jpg"
     },
     {
       "title": "EXPO 58 - Immersive Experience",
@@ -4707,10 +4847,11 @@
       ],
       "live_url": "https://expo-58.historia.europa.eu/#/en/",
       "source_url": "https://www.awwwards.com/sites/expo-58-immersive-experience",
-      "rank": 141
+      "rank": 141,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64b514d7f2edd886596354.jpg"
     },
     {
-      "title": "Shaban Iddrisu\u2122",
+      "title": "Shaban Iddrisu™",
       "slug": "shaban-iddrisutm-1",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -4738,7 +4879,8 @@
       ],
       "live_url": "https://shabaniddrisu.com/",
       "source_url": "https://www.awwwards.com/sites/shaban-iddrisutm-1",
-      "rank": 142
+      "rank": 142,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64c093b7528e3287309828.jpg"
     },
     {
       "title": "#YOUCANBEANYTHING",
@@ -4774,7 +4916,8 @@
       ],
       "live_url": "https://youcanbeanything.love",
       "source_url": "https://www.awwwards.com/sites/youcanbeanything",
-      "rank": 143
+      "rank": 143,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64b15b89a4a20191564964.jpg"
     },
     {
       "title": "The Quest of Evolution",
@@ -4810,7 +4953,8 @@
       ],
       "live_url": "https://www.thequestofevolution.com/",
       "source_url": "https://www.awwwards.com/sites/the-quest-of-evolution",
-      "rank": 144
+      "rank": 144,
+      "thumbnail_url": "https://cdn.prod.website-files.com/6340524a90d47a1821f48d2d/63fe7f1453532bdaf054f9e1_social%20sharing.png"
     },
     {
       "title": "Neoplants",
@@ -4840,7 +4984,8 @@
       ],
       "live_url": "https://neoplants.com/",
       "source_url": "https://www.awwwards.com/sites/neoplants",
-      "rank": 145
+      "rank": 145,
+      "thumbnail_url": "https://cdn.sanity.io/images/y50klc11/production/ed3600f8b0aa1333433e95ae240f782af7f0fdb4-7448x7448.jpg?rect=0,1769,7448,3910&amp;w=1200&amp;h=630"
     },
     {
       "title": "Meta - Escape Plan",
@@ -4870,7 +5015,8 @@
       ],
       "live_url": "https://www.escapeplanvr.com",
       "source_url": "https://www.awwwards.com/sites/meta-escape-plan",
-      "rank": 146
+      "rank": 146,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64b657f8132cf193243499.png"
     },
     {
       "title": "David Lee, Artist",
@@ -4898,10 +5044,11 @@
       ],
       "live_url": "https://davidlee.studio",
       "source_url": "https://www.awwwards.com/sites/david-lee-artist",
-      "rank": 147
+      "rank": 147,
+      "thumbnail_url": "https://cdn.prod.website-files.com/647731574cd58773d9b48ed6/64c2ace69c767dc6142f6f2f_opengraph-davidlee2.webp"
     },
     {
-      "title": "Envy\u2122",
+      "title": "Envy™",
       "slug": "envytm",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -4924,7 +5071,8 @@
       ],
       "live_url": "https://www.melaenvy.it/",
       "source_url": "https://www.awwwards.com/sites/envytm",
-      "rank": 148
+      "rank": 148,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64ae87ed9b9d4515472408.jpg"
     },
     {
       "title": "Tigermilk",
@@ -4954,7 +5102,8 @@
       ],
       "live_url": "https://tigermilkrestaurants.com/",
       "source_url": "https://www.awwwards.com/sites/tigermilk",
-      "rank": 149
+      "rank": 149,
+      "thumbnail_url": "https://tigermilkrestaurants.com/wp-content/themes/qh-timber/theme/dist/assets/images/opengraph.png?v=2"
     },
     {
       "title": "The CubeHouse",
@@ -4990,7 +5139,8 @@
       ],
       "live_url": "https://the-cubehouse.com/",
       "source_url": "https://www.awwwards.com/sites/the-cubehouse",
-      "rank": 150
+      "rank": 150,
+      "thumbnail_url": "https://a.storyblok.com/f/229367/1200x630/b34c58f1ba/the-cube-house-social-fallback.jpg"
     },
     {
       "title": "Neundex",
@@ -5026,7 +5176,8 @@
       ],
       "live_url": "https://www.neundex.com/",
       "source_url": "https://www.awwwards.com/sites/neundex",
-      "rank": 151
+      "rank": 151,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64ae7425db97d367132449.png"
     },
     {
       "title": "Look 795 Blade RS",
@@ -5060,7 +5211,8 @@
       ],
       "live_url": "https://795bladers.lookcycle.com/",
       "source_url": "https://www.awwwards.com/sites/look-795-blade-rs",
-      "rank": 152
+      "rank": 152,
+      "thumbnail_url": "https://cdn.prod.website-files.com/64784b62e61e5a7a356a18a6/649153dfb88c5c4729eda603_look-cofidis-2.jpg"
     },
     {
       "title": "If An A-Bomb Falls",
@@ -5096,7 +5248,8 @@
       ],
       "live_url": "https://if-an-a-bomb-falls.com",
       "source_url": "https://www.awwwards.com/sites/if-an-a-bomb-falls",
-      "rank": 153
+      "rank": 153,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64ad0ff8a4f64082539744.jpg"
     },
     {
       "title": "MAKHNO",
@@ -5135,7 +5288,8 @@
       ],
       "live_url": "https://makhnostudio.com/",
       "source_url": "https://www.awwwards.com/sites/makhno",
-      "rank": 154
+      "rank": 154,
+      "thumbnail_url": "https://makhnostudio.com/wp-content/uploads/2023/12/top-logo.jpg"
     },
     {
       "title": "Zajno Digital Studio",
@@ -5171,7 +5325,8 @@
       ],
       "live_url": "https://zajno.com/",
       "source_url": "https://www.awwwards.com/sites/zajno-digital-studio",
-      "rank": 155
+      "rank": 155,
+      "thumbnail_url": "https://images.prismic.io/zajno-website-2023/32c5af84-b1b3-4af2-adf2-e475b1070bd6_Zajno-2.webp?fm=jpg&q=100&rect=0,0,1200,630&w=1200&h=630"
     },
     {
       "title": "Goals Studio",
@@ -5199,7 +5354,8 @@
       ],
       "live_url": "https://studio.playgoals.com/",
       "source_url": "https://www.awwwards.com/sites/goals-studio",
-      "rank": 156
+      "rank": 156,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/07/64a54e3a47c95962694682.jpg"
     },
     {
       "title": "WE ARE UNKNOWN",
@@ -5227,7 +5383,8 @@
       ],
       "live_url": "https://www.weareunknown.io/",
       "source_url": "https://www.awwwards.com/sites/we-are-unknown",
-      "rank": 157
+      "rank": 157,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/648327378738a953050937.png"
     },
     {
       "title": "REDSOFA",
@@ -5263,7 +5420,8 @@
       ],
       "live_url": "https://redsofa.com/",
       "source_url": "https://www.awwwards.com/sites/redsofa",
-      "rank": 158
+      "rank": 158,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/6492ea990e0a6717642784.png"
     },
     {
       "title": "Minh Pham - Designer",
@@ -5299,7 +5457,8 @@
       ],
       "live_url": "https://minhpham.design/",
       "source_url": "https://www.awwwards.com/sites/minh-pham-designer",
-      "rank": 159
+      "rank": 159,
+      "thumbnail_url": "https://minhpham.design/assets/images/screenshot.jpg"
     },
     {
       "title": "Cosmos",
@@ -5335,10 +5494,11 @@
       ],
       "live_url": "http://www.cosmos.so",
       "source_url": "https://www.awwwards.com/sites/cosmos",
-      "rank": 160
+      "rank": 160,
+      "thumbnail_url": "https://cdn.sanity.io/images/ca81n2nu/production/1d7e41fab5f494c5d686f479a17ebab83e60d59f-1200x630.jpg"
     },
     {
-      "title": "B&O \u2014 See yourself in sound",
+      "title": "B&O — See yourself in sound",
       "slug": "b-o-see-yourself-in-sound",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -5367,7 +5527,8 @@
       ],
       "live_url": "https://senses.bang-olufsen.com",
       "source_url": "https://www.awwwards.com/sites/b-o-see-yourself-in-sound",
-      "rank": 161
+      "rank": 161,
+      "thumbnail_url": "https://senses.bang-olufsen.com/meta/og.jpg"
     },
     {
       "title": "Jetson by Mute",
@@ -5399,7 +5560,8 @@
       ],
       "live_url": "https://mute.design/jetson/",
       "source_url": "https://www.awwwards.com/sites/jetson-by-mute",
-      "rank": 162
+      "rank": 162,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/649acf08c18a2950528103.png"
     },
     {
       "title": "Studio Brusco",
@@ -5429,7 +5591,8 @@
       ],
       "live_url": "https://www.studiobrusco.com/",
       "source_url": "https://www.awwwards.com/sites/studio-brusco-1",
-      "rank": 163
+      "rank": 163,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/05/6477143c62efa948349879.jpg"
     },
     {
       "title": "Seletti X Absolut Born to Mix",
@@ -5466,7 +5629,8 @@
       ],
       "live_url": "https://absolut-nft.com/#born-to-mix3d",
       "source_url": "https://www.awwwards.com/sites/seletti-x-absolut-born-to-mix",
-      "rank": 164
+      "rank": 164,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/05/645d0e82551ef002218228.png"
     },
     {
       "title": "The Race Explorer Interparfums",
@@ -5496,7 +5660,8 @@
       ],
       "live_url": "https://therace.montblancexplorer.com",
       "source_url": "https://www.awwwards.com/sites/the-race-explorer-interparfums",
-      "rank": 165
+      "rank": 165,
+      "thumbnail_url": "https://therace.montblancexplorer.com/share/share_en-en.png?v=21e5b1ef"
     },
     {
       "title": "Filippo Ruffini - Portfolio",
@@ -5532,7 +5697,8 @@
       ],
       "live_url": "https://www.filipporuffini.com/",
       "source_url": "https://www.awwwards.com/sites/filippo-ruffini-portfolio",
-      "rank": 166
+      "rank": 166,
+      "thumbnail_url": "https://cdn.prod.website-files.com/643d4a3e40f13a5d541373e9/64838d340bc06163bad0613b_OPENGRAPH-IMAGE01.jpg"
     },
     {
       "title": "SLAPS",
@@ -5568,7 +5734,8 @@
       ],
       "live_url": "https://brandingthatslaps.com",
       "source_url": "https://www.awwwards.com/sites/slaps",
-      "rank": 167
+      "rank": 167,
+      "thumbnail_url": "https://brandingthatslaps.com/wp-content/uploads/2025/02/COVER_SLAPS-scaled-optimized.jpg"
     },
     {
       "title": "Sandclock",
@@ -5604,7 +5771,8 @@
       ],
       "live_url": "https://sandclock.madebyburo.com/",
       "source_url": "https://www.awwwards.com/sites/sandclock",
-      "rank": 168
+      "rank": 168,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/6492ce11a77a9565505499.png"
     },
     {
       "title": "Runway Financial",
@@ -5638,7 +5806,8 @@
       ],
       "live_url": "https://www.runway.com/",
       "source_url": "https://www.awwwards.com/sites/runway-financial",
-      "rank": 169
+      "rank": 169,
+      "thumbnail_url": "https://cdn.prod.website-files.com/683909604bbd11a23e6dd536/685b62d054dba5ce4ff3501c_381aff7636de8015600f575109b2eac8_runway-open-graph-image.jpg"
     },
     {
       "title": "Roboto Entertainment",
@@ -5674,7 +5843,8 @@
       ],
       "live_url": "https://www.robotoentertainment.com/",
       "source_url": "https://www.awwwards.com/sites/roboto-entertainment",
-      "rank": 170
+      "rank": 170,
+      "thumbnail_url": "https://cdn.prod.website-files.com/640333b292c9610b133ff0c5/64824b7b1219f477b420712d_Opengraph.png"
     },
     {
       "title": "Mallard & Claret",
@@ -5708,7 +5878,8 @@
       ],
       "live_url": "https://mallardandclaret.com",
       "source_url": "https://www.awwwards.com/sites/mallard-claret-2",
-      "rank": 171
+      "rank": 171,
+      "thumbnail_url": "https://epr82xactvi.exactdn.com/wp-content/uploads/2024/12/Screenshot-2024-04-17-at-18.36-3-min.jpg"
     },
     {
       "title": "G&S&",
@@ -5744,7 +5915,8 @@
       ],
       "live_url": "https://gens.nl/en",
       "source_url": "https://www.awwwards.com/sites/g-s",
-      "rank": 172
+      "rank": 172,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/6489790535379785620444.jpg"
     },
     {
       "title": "KUYA",
@@ -5778,7 +5950,8 @@
       ],
       "live_url": "https://www.hellokuya.co/",
       "source_url": "https://www.awwwards.com/sites/kuya",
-      "rank": 173
+      "rank": 173,
+      "thumbnail_url": "https://a-us.storyblok.com/f/1012990/1920x1080/7a48a92b4a/kuya_site_share_compressed.jpg"
     },
     {
       "title": "Little Red Riding Hood's Quest",
@@ -5806,7 +5979,8 @@
       ],
       "live_url": "https://ai-quest.lusion.co/",
       "source_url": "https://www.awwwards.com/sites/little-red-riding-hoods-quest",
-      "rank": 174
+      "rank": 174,
+      "thumbnail_url": "https://ai-quest.lusion.co/assets/meta/cover.jpg"
     },
     {
       "title": "BAVET",
@@ -5842,10 +6016,11 @@
       ],
       "live_url": "https://bavet.eu",
       "source_url": "https://www.awwwards.com/sites/bavet",
-      "rank": 175
+      "rank": 175,
+      "thumbnail_url": "https://bavet.eu/assets/uploads/2023/03/hero-image.jpg"
     },
     {
-      "title": "Powell\u2014Studio",
+      "title": "Powell—Studio",
       "slug": "powell-studio",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -5878,7 +6053,8 @@
       ],
       "live_url": "https://www.powell-studio.com/",
       "source_url": "https://www.awwwards.com/sites/powell-studio",
-      "rank": 176
+      "rank": 176,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/647f5d976711c566136573.jpg"
     },
     {
       "title": "Artemii Lebedev",
@@ -5914,10 +6090,11 @@
       ],
       "live_url": "https://artemiilebedev.com",
       "source_url": "https://www.awwwards.com/sites/artemii-lebedev",
-      "rank": 177
+      "rank": 177,
+      "thumbnail_url": "https://cdn.prod.website-files.com/630534398d9471ade12fc55f/664a191c153353ffe94f0563_Meta%20Cover%2C%20home.webp"
     },
     {
-      "title": "IKEA \u201cRed de Deseos\u201d",
+      "title": "IKEA “Red de Deseos”",
       "slug": "ikea-red-de-deseos",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -5948,7 +6125,8 @@
       ],
       "live_url": "https://www.family.ikea.es/demos/red-ikea-empresas-deseos/",
       "source_url": "https://www.awwwards.com/sites/ikea-red-de-deseos",
-      "rank": 178
+      "rank": 178,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/6479b252c91bb270693020.jpg"
     },
     {
       "title": "Garonzi Tailored Interiors",
@@ -5980,7 +6158,8 @@
       ],
       "live_url": "https://www.garonzi1925.com/",
       "source_url": "https://www.awwwards.com/sites/garonzi-tailored-interiors",
-      "rank": 179
+      "rank": 179,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/64917d988ecee555531802.jpg"
     },
     {
       "title": "Saint Urbain",
@@ -6010,7 +6189,8 @@
       ],
       "live_url": "https://www.sainturbain.com/",
       "source_url": "https://www.awwwards.com/sites/saint-urbain",
-      "rank": 180
+      "rank": 180,
+      "thumbnail_url": "https://www.sainturbain.com/wp-content/uploads/2023/08/VISUEL-DE-PARTAGE_ST-URBAIN.jpg"
     },
     {
       "title": "Quantum Wallet",
@@ -6040,7 +6220,8 @@
       ],
       "live_url": "https://quantumwallet.tech/",
       "source_url": "https://www.awwwards.com/sites/quantum-wallet",
-      "rank": 181
+      "rank": 181,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/6481b0bb02525152933543.jpg"
     },
     {
       "title": "Raw Materials",
@@ -6076,7 +6257,8 @@
       ],
       "live_url": "https://www.therawmaterials.com/",
       "source_url": "https://www.awwwards.com/sites/raw-materials",
-      "rank": 182
+      "rank": 182,
+      "thumbnail_url": "https://www.therawmaterials.com/share.jpg"
     },
     {
       "title": "Decimal",
@@ -6106,7 +6288,8 @@
       ],
       "live_url": "https://decimalstudios.com/",
       "source_url": "https://www.awwwards.com/sites/decimal",
-      "rank": 183
+      "rank": 183,
+      "thumbnail_url": "https://images.prismic.io/decimal-studios/e254a831-faf5-4d2f-a5bf-54677c6b1570_Decimal_logo.png?auto=compress%2Cformat&amp;w=1200"
     },
     {
       "title": "Outreach",
@@ -6142,7 +6325,8 @@
       ],
       "live_url": "https://outreach.space",
       "source_url": "https://www.awwwards.com/sites/outreach",
-      "rank": 184
+      "rank": 184,
+      "thumbnail_url": "https://www.outreach.space/assets/seo/oumuamua.jpg"
     },
     {
       "title": "Times Two",
@@ -6178,7 +6362,8 @@
       ],
       "live_url": "https://timestwo.design/",
       "source_url": "https://www.awwwards.com/sites/times-two",
-      "rank": 185
+      "rank": 185,
+      "thumbnail_url": "https://images.prismic.io/times-two/a44fa01b-751d-415b-8708-0fb21b0b062f_times-two-hero.png?auto=compress,format&amp;rect=101,0,1299,680&amp;w=1200&amp;h=628"
     },
     {
       "title": "Patta X Tommy",
@@ -6217,7 +6402,8 @@
       ],
       "live_url": "https://pattaxtommy.com/",
       "source_url": "https://www.awwwards.com/sites/patta-x-tommy-1",
-      "rank": 186
+      "rank": 186,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/04/642ec48c22ce3804018192.jpg"
     },
     {
       "title": "Qude",
@@ -6243,7 +6429,8 @@
       ],
       "live_url": "https://qude.audio",
       "source_url": "https://www.awwwards.com/sites/qude",
-      "rank": 187
+      "rank": 187,
+      "thumbnail_url": "https://qude.audio/OG-@2x.png"
     },
     {
       "title": "Sandy Shore",
@@ -6279,7 +6466,8 @@
       ],
       "live_url": "https://sandyshore.ca",
       "source_url": "https://www.awwwards.com/sites/sandy-shore",
-      "rank": 188
+      "rank": 188,
+      "thumbnail_url": "https://images.prismic.io/sandyshore/52437564-f93d-4652-87a8-8a10479a292b_sandyshore-og.jpg?auto=compress,format&rect=0,0,1200,630&w=1200&h=630"
     },
     {
       "title": "Making Memories",
@@ -6315,7 +6503,8 @@
       ],
       "live_url": "https://lafabriqueasouvenirs.ca/en/",
       "source_url": "https://www.awwwards.com/sites/making-memories",
-      "rank": 189
+      "rank": 189,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/06/6478f96847254722167373.jpg"
     },
     {
       "title": "Decriminalize Poverty",
@@ -6351,7 +6540,8 @@
       ],
       "live_url": "https://decriminalizepoverty.org/",
       "source_url": "https://www.awwwards.com/sites/decriminalize-poverty",
-      "rank": 190
+      "rank": 190,
+      "thumbnail_url": "https://decriminalizepoverty.org/static/img/freehearts/socialcard.jpg"
     },
     {
       "title": "Pantheone Audio",
@@ -6381,7 +6571,8 @@
       ],
       "live_url": "https://www.pantheoneaudio.com",
       "source_url": "https://www.awwwards.com/sites/pantheone-audio",
-      "rank": 191
+      "rank": 191,
+      "thumbnail_url": "http://www.pantheoneaudio.com/cdn/shop/files/Pantheone_Logo.png?v=1691657594"
     },
     {
       "title": "Dior Mother's Day 2023",
@@ -6417,10 +6608,11 @@
       ],
       "live_url": "https://diormotherday23.vercel.app/",
       "source_url": "https://www.awwwards.com/sites/dior-mothers-day-2023",
-      "rank": 192
+      "rank": 192,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/05/647776466749a595473813.jpg"
     },
     {
-      "title": "Vikki B Folio\u00a9",
+      "title": "Vikki B Folio©",
       "slug": "vikki-b-folio-c",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -6445,10 +6637,11 @@
       ],
       "live_url": "https://www.vikkibre.com",
       "source_url": "https://www.awwwards.com/sites/vikki-b-folio-c",
-      "rank": 193
+      "rank": 193,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/04/643318b799379260884939.png"
     },
     {
-      "title": "PandaPay\u00ae",
+      "title": "PandaPay®",
       "slug": "pandapay-r",
       "award_source": "Awwwards",
       "award_name": "Site of the Day",
@@ -6479,7 +6672,8 @@
       ],
       "live_url": "https://pandapay.ca",
       "source_url": "https://www.awwwards.com/sites/pandapay-r",
-      "rank": 194
+      "rank": 194,
+      "thumbnail_url": "https://pandapay.ca/app/uploads/2023/05/Frame-1513-1.png"
     },
     {
       "title": "The Drop Store for the UN",
@@ -6515,7 +6709,8 @@
       ],
       "live_url": "https://thedropstore.org",
       "source_url": "https://www.awwwards.com/sites/the-drop-store-for-the-un",
-      "rank": 195
+      "rank": 195,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/03/64214875224ed622179398.jpg"
     },
     {
       "title": "Meebits 1.2",
@@ -6547,7 +6742,8 @@
       ],
       "live_url": "https://turnon.meebits.app",
       "source_url": "https://www.awwwards.com/sites/meebits-1-2",
-      "rank": 196
+      "rank": 196,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/05/646cd729e5464155474114.jpg"
     },
     {
       "title": "Radio Null Rewind 2022",
@@ -6573,7 +6769,8 @@
       ],
       "live_url": "https://2022.madebynull.com/",
       "source_url": "https://www.awwwards.com/sites/radio-null-rewind-2022",
-      "rank": 197
+      "rank": 197,
+      "thumbnail_url": "https://res.cloudinary.com/dmwfd0zhh/image/upload/v1677174030/Null%20Year%20in%20Review%202022/Globals/Null_OG_image_dqyzmj.jpg"
     },
     {
       "title": "Reframed",
@@ -6609,7 +6806,8 @@
       ],
       "live_url": "https://www.reframed.online/",
       "source_url": "https://www.awwwards.com/sites/reframed",
-      "rank": 198
+      "rank": 198,
+      "thumbnail_url": "https://res.cloudinary.com/bornfight-studio/image/upload/v1682403053/reframed/share-image_rbtbcf.jpg"
     },
     {
       "title": "Alireza",
@@ -6641,7 +6839,8 @@
       ],
       "live_url": "https://alireza.com/",
       "source_url": "https://www.awwwards.com/sites/alireza",
-      "rank": 199
+      "rank": 199,
+      "thumbnail_url": "https://alireza.com/wp-content/uploads/2023/05/1200x600_2.png"
     },
     {
       "title": "The Search for Work Happiness",
@@ -6677,7 +6876,8 @@
       ],
       "live_url": "https://www.findworkhappiness.com",
       "source_url": "https://www.awwwards.com/sites/the-search-for-work-happiness",
-      "rank": 200
+      "rank": 200,
+      "thumbnail_url": "https://assets.awwwards.com/awards/submissions/2023/05/646761c52b307820870022.jpg"
     }
   ]
 }
