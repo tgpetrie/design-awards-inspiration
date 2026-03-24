@@ -221,18 +221,19 @@ def collect_entries(target_year: int, limit: int, max_pages: int) -> list[dict]:
 
 
 def main() -> int:
-    default_output = (
-        Path(__file__).resolve().parent.parent
-        / "references"
-        / "awwwards-sotd-2025.json"
-    )
-
     parser = argparse.ArgumentParser()
     parser.add_argument("--year", type=int, default=2025)
     parser.add_argument("--limit", type=int, default=50)
     parser.add_argument("--max-pages", type=int, default=20)
-    parser.add_argument("--output", type=Path, default=default_output)
+    parser.add_argument("--output", type=Path)
     args = parser.parse_args()
+
+    if args.output is None:
+        args.output = (
+            Path(__file__).resolve().parent.parent
+            / "references"
+            / f"awwwards-sotd-{args.year}.json"
+        )
 
     entries = collect_entries(args.year, args.limit, args.max_pages)
     if len(entries) < args.limit:

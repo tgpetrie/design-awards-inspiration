@@ -11,6 +11,8 @@ import re
 import sys
 from pathlib import Path
 
+from dataset_catalog import load_awwwards_catalog
+
 QUERY_ALIASES = {
     "app-ui": {"mobile", "apps", "ui", "design"},
     "agency": {"design", "agencies"},
@@ -55,11 +57,6 @@ def tokenized_values(values: list[str]) -> set[str]:
         combined.update(tokens(value))
         combined.add(normalize(value))
     return combined
-
-
-def load_dataset(path: Path) -> dict:
-    return json.loads(path.read_text())
-
 
 def list_values(entries: list[dict], key: str) -> list[str]:
     values = sorted({value for entry in entries for value in entry.get(key, [])})
@@ -150,15 +147,9 @@ def print_values(label: str, values: list[str]) -> None:
 
 
 def main() -> int:
-    default_dataset = (
-        Path(__file__).resolve().parent.parent
-        / "references"
-        / "awwwards-sotd-2025.json"
-    )
-
     parser = argparse.ArgumentParser()
     parser.add_argument("query", nargs="*")
-    parser.add_argument("--dataset", type=Path, default=default_dataset)
+    parser.add_argument("--dataset", type=Path)
     parser.add_argument("--category", action="append")
     parser.add_argument("--style", action="append")
     parser.add_argument("--tech", action="append")
@@ -170,7 +161,7 @@ def main() -> int:
     parser.add_argument("--list-tech", action="store_true")
     args = parser.parse_args()
 
-    data = load_dataset(args.dataset)
+    data = load_awwwards_catalog(args.dataset)
     entries = data["entries"]
 
     if args.list_categories:

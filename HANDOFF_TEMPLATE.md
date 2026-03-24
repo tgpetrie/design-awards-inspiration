@@ -23,28 +23,28 @@ Fill this out before ending any work session. Both Claude and Codex read this to
 
 ## Last completed handoff (example — update each session)
 
-**Session: 2026-03-24 — Dataset rename cleanup**
+**Session: 2026-03-24 — Awwwards 2024 expansion**
 
 ### What changed
-- Renamed the canonical dataset file from `references/awwwards-sotd-2025-top-50.json` to `references/awwwards-sotd-2025.json`.
-- Updated all in-repo code references in the build script, CLI search script, thumbnail fetcher, local UI server, and skill docs.
-- Verified the renamed dataset loads as 200 entries and that the UI API still serves search results.
-- Updated `CLAUDE.md` and `NEXT_STEPS.md` so the handoff state matches the new filename.
+- Added `references/awwwards-sotd-2024.json` from the Awwwards scraper and verified the output shape matches the existing dataset format.
+- Confirmed the 2024 scraper produced 167 entries rather than the requested 200, and noted that the file still lacks thumbnail enrichment.
+- Updated the CLI and local UI runtime to auto-discover and combine all `references/awwwards-sotd-*.json` files.
+- Verified combined search and UI API loading against the merged 2024+2025 catalog.
 
 ### Currently in progress
-- Nothing. Rename cleanup and verification are complete.
+- Nothing. The 2024 expansion and runtime merge are complete.
 
 ### What should happen next
-1. Expand Awwwards to additional years before introducing FWA or another source.
-2. Decide which Awwwards years to add next and keep the output naming aligned with the year-based convention.
-3. Push to `origin/master` only after this rename cleanup commit is reviewed.
+1. Expand Awwwards to 2023 before introducing FWA or another source.
+2. Keep the year-based file naming convention and runtime auto-discovery path unchanged.
+3. Push to `origin/master` only after this multi-year catalog commit is reviewed.
 4. Start product work once dataset direction is confirmed.
 
 ### What files matter
 - `NEXT_STEPS.md`, `HANDOFF_TEMPLATE.md`, `CLAUDE.md` — all updated this session.
-- `references/awwwards-sotd-2025.json` — 200-entry canonical dataset.
-- `scripts/build_awwwards_top50.py`, `scripts/find_design_refs.py`, `scripts/fetch_thumbnails.py`, `scripts/design_refs_ui.py` — all updated to the new dataset filename.
+- `references/awwwards-sotd-2025.json` and `references/awwwards-sotd-2024.json` — current Awwwards year datasets, combined at runtime into 367 entries.
+- `scripts/dataset_catalog.py`, `scripts/build_awwwards_top50.py`, `scripts/find_design_refs.py`, `scripts/design_refs_ui.py` — updated for year-based discovery and merged loading.
 - `web/` — full static UI, no changes needed right now.
 
 ### Anchor commit
-- `4ca8548`
+- `209367b`

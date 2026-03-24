@@ -1,6 +1,6 @@
 # Source Index
 
-Use these official sources when the bundled 50-site catalog is too narrow or when you need fresher references.
+Use these official sources when the bundled multi-year Awwwards catalog is too narrow or when you need fresher references.
 
 All links below were checked on March 20, 2026.
 

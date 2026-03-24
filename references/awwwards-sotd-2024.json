@@ -1,0 +1,5700 @@
+{
+  "dataset": "Awwwards Site of the Day 2024 Top 167",
+  "generated_on": "2026-03-24",
+  "target_year": 2024,
+  "source_archive": "https://www.awwwards.com/websites/sites_of_the_day/",
+  "methodology": "Collected entries from the official Awwwards Site of the Day archive in reverse chronological order until the requested number of entries for the target year was reached. Categories, style tags, and tech tags are normalized from Awwwards tag metadata.",
+  "entries": [
+    {
+      "title": "VANTAGE INC.",
+      "slug": "vantage-inc",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-30",
+      "categories": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Technology"
+      ],
+      "style_tags": [
+        "Animation",
+        "Sound-Audio",
+        "3D",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Technology",
+        "Animation",
+        "Sound-Audio",
+        "3D",
+        "UI design"
+      ],
+      "live_url": "https://vantage.ava-case.com",
+      "source_url": "https://www.awwwards.com/sites/vantage-inc",
+      "rank": 1
+    },
+    {
+      "title": "Shopify Plus",
+      "slug": "shopify-plus",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-29",
+      "categories": [
+        "Business & Corporate",
+        "E-Commerce",
+        "Technology"
+      ],
+      "style_tags": [
+        "Clean",
+        "Parallax",
+        "Scrolling",
+        "Single page",
+        "3D",
+        "Header Design"
+      ],
+      "tech_tags": [
+        "Shopify"
+      ],
+      "tags": [
+        "Business & Corporate",
+        "E-Commerce",
+        "Technology",
+        "Clean",
+        "Parallax",
+        "Scrolling",
+        "Single page",
+        "3D",
+        "Header Design",
+        "Shopify"
+      ],
+      "live_url": "https://shopify.sunnysideup.work/",
+      "source_url": "https://www.awwwards.com/sites/shopify-plus",
+      "rank": 2
+    },
+    {
+      "title": "Spot Studio",
+      "slug": "spot-studio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-28",
+      "categories": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Technology"
+      ],
+      "style_tags": [
+        "Flat Design",
+        "Portfolio",
+        "Typography",
+        "3D",
+        "Footer Design"
+      ],
+      "tech_tags": [
+        "Contentful"
+      ],
+      "tags": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Technology",
+        "Flat Design",
+        "Portfolio",
+        "Typography",
+        "3D",
+        "Footer Design",
+        "Contentful"
+      ],
+      "live_url": "https://spotstudio.es/",
+      "source_url": "https://www.awwwards.com/sites/spot-studio",
+      "rank": 3
+    },
+    {
+      "title": "Travel Next Level",
+      "slug": "travel-next-level",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-27",
+      "categories": [
+        "Magazine / Newspaper / Blog",
+        "Other",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Clean",
+        "Fullscreen",
+        "Minimal",
+        "Photographic",
+        "Typography",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Magazine / Newspaper / Blog",
+        "Other",
+        "Clean",
+        "Fullscreen",
+        "Minimal",
+        "Photographic",
+        "Typography",
+        "Experimental",
+        "3D"
+      ],
+      "live_url": "https://travelnextlvl.de/en",
+      "source_url": "https://www.awwwards.com/sites/travel-next-level",
+      "rank": 4
+    },
+    {
+      "title": "'kin",
+      "slug": "kin-2",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-26",
+      "categories": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Minimal",
+        "Typography",
+        "Illustration",
+        "Transitions",
+        "UI design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Web & Interactive",
+        "Minimal",
+        "Typography",
+        "Illustration",
+        "Transitions",
+        "UI design",
+        "Microinteractions"
+      ],
+      "live_url": "https://by-kin.com/",
+      "source_url": "https://www.awwwards.com/sites/kin-2",
+      "rank": 5
+    },
+    {
+      "title": "Gentlerain.ai",
+      "slug": "gentlerain-ai",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-25",
+      "categories": [
+        "Business & Corporate",
+        "Culture & Education",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Parallax",
+        "Scrolling",
+        "Interaction Design",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Culture & Education",
+        "Web & Interactive",
+        "Animation",
+        "Colorful",
+        "Parallax",
+        "Scrolling",
+        "Interaction Design",
+        "UI design"
+      ],
+      "live_url": "https://www.gentlerain.ai/",
+      "source_url": "https://www.awwwards.com/sites/gentlerain-ai",
+      "rank": 6
+    },
+    {
+      "title": "DG Beauty - My Lip Stylo",
+      "slug": "dg-beauty-my-lip-stylo",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-24",
+      "categories": [
+        "Fashion",
+        "Games & Entertainment",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Sound-Audio",
+        "Storytelling",
+        "3D",
+        "Interaction Design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Fashion",
+        "Games & Entertainment",
+        "Colorful",
+        "Sound-Audio",
+        "Storytelling",
+        "3D",
+        "Interaction Design",
+        "Microinteractions",
+        "Luxury"
+      ],
+      "live_url": "https://lipstylo.dolcegabbana.com/en/master/dg/online",
+      "source_url": "https://www.awwwards.com/sites/dg-beauty-my-lip-stylo",
+      "rank": 7
+    },
+    {
+      "title": "Chapter: Bride by Milla Nova",
+      "slug": "chapter-bride-by-milla-nova",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-23",
+      "categories": [
+        "Fashion",
+        "Film & TV",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Infinite Scroll",
+        "Retro",
+        "Transitions",
+        "Gallery",
+        "Storytelling",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Fashion",
+        "Film & TV",
+        "Infinite Scroll",
+        "Retro",
+        "Transitions",
+        "Gallery",
+        "Storytelling",
+        "3D",
+        "Luxury"
+      ],
+      "live_url": "https://chapter.millanova.com",
+      "source_url": "https://www.awwwards.com/sites/chapter-bride-by-milla-nova",
+      "rank": 8
+    },
+    {
+      "title": "Sundae Creative",
+      "slug": "sundae-creative",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-22",
+      "categories": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Promotional"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Clean",
+        "Responsive Design",
+        "Transitions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Promotional",
+        "Big Background Images",
+        "Clean",
+        "Responsive Design",
+        "Transitions"
+      ],
+      "live_url": "https://sundaecreative.com/en/home",
+      "source_url": "https://www.awwwards.com/sites/sundae-creative",
+      "rank": 9
+    },
+    {
+      "title": "Max & Tiber",
+      "slug": "max-tiber",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-21",
+      "categories": [
+        "E-Commerce",
+        "Fashion",
+        "Promotional"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Parallax",
+        "Responsive Design",
+        "Typography"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "E-Commerce",
+        "Fashion",
+        "Promotional",
+        "Animation",
+        "Colorful",
+        "Parallax",
+        "Responsive Design",
+        "Typography"
+      ],
+      "live_url": "https://maxandtiber.com/",
+      "source_url": "https://www.awwwards.com/sites/max-tiber",
+      "rank": 10
+    },
+    {
+      "title": "Koffiracha",
+      "slug": "koffiracha",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-20",
+      "categories": [
+        "E-Commerce",
+        "Food & Drink",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Unusual Navigation",
+        "Transitions",
+        "Menu - Vertical",
+        "3D",
+        "Interaction Design"
+      ],
+      "tech_tags": [
+        "Shopify"
+      ],
+      "tags": [
+        "E-Commerce",
+        "Food & Drink",
+        "Web & Interactive",
+        "Animation",
+        "Unusual Navigation",
+        "Transitions",
+        "Menu - Vertical",
+        "3D",
+        "Interaction Design",
+        "Shopify"
+      ],
+      "live_url": "https://www.koffiracha.com",
+      "source_url": "https://www.awwwards.com/sites/koffiracha",
+      "rank": 11
+    },
+    {
+      "title": "Spencer Gabor",
+      "slug": "spencer-gabor",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-19",
+      "categories": [
+        "Art & Illustration",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Typography",
+        "Gestures / Interaction",
+        "UI design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Web & Interactive",
+        "Animation",
+        "Colorful",
+        "Typography",
+        "Experimental",
+        "Gestures / Interaction",
+        "UI design",
+        "Microinteractions"
+      ],
+      "live_url": "https://spencergabor.work",
+      "source_url": "https://www.awwwards.com/sites/spencer-gabor",
+      "rank": 12
+    },
+    {
+      "title": "Rhythm Influence",
+      "slug": "rhythm-influence",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-18",
+      "categories": [
+        "Culture & Education",
+        "Film & TV",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Graphic design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Culture & Education",
+        "Film & TV",
+        "Animation",
+        "Clean",
+        "Graphic design",
+        "Luxury"
+      ],
+      "live_url": "https://www.rhythminfluence.com",
+      "source_url": "https://www.awwwards.com/sites/rhythm-influence",
+      "rank": 13
+    },
+    {
+      "title": "Inside Kristallnacht",
+      "slug": "inside-kristallnacht",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-17",
+      "categories": [
+        "Culture & Education",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Data Visualization",
+        "3D",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Culture & Education",
+        "Web & Interactive",
+        "Animation",
+        "Data Visualization",
+        "Experimental",
+        "3D",
+        "Interaction Design"
+      ],
+      "live_url": "https://insidekristallnacht.org",
+      "source_url": "https://www.awwwards.com/sites/inside-kristallnacht",
+      "rank": 14
+    },
+    {
+      "title": "Onto",
+      "slug": "onto",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-16",
+      "categories": [
+        "Design Agencies"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Minimal",
+        "Typography",
+        "Transitions",
+        "Responsive"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Animation",
+        "Clean",
+        "Minimal",
+        "Typography",
+        "Transitions",
+        "Responsive"
+      ],
+      "live_url": "https://studio-onto.com/",
+      "source_url": "https://www.awwwards.com/sites/onto",
+      "rank": 15
+    },
+    {
+      "title": "AI Milestones",
+      "slug": "ai-milestones",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-15",
+      "categories": [
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Horizontal Layout",
+        "Transitions",
+        "Data Visualization"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Web & Interactive",
+        "Animation",
+        "Horizontal Layout",
+        "Transitions",
+        "Data Visualization"
+      ],
+      "live_url": "https://ai.google/ai-milestones?section=intro",
+      "source_url": "https://www.awwwards.com/sites/ai-milestones",
+      "rank": 16
+    },
+    {
+      "title": "Banzai izakaya experience",
+      "slug": "banzai-izakaya-experience",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-14",
+      "categories": [
+        "Food & Drink",
+        "Promotional",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Unusual Navigation",
+        "Illustration",
+        "360",
+        "Sound-Audio",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Food & Drink",
+        "Promotional",
+        "Web & Interactive",
+        "Colorful",
+        "Unusual Navigation",
+        "Illustration",
+        "360",
+        "Sound-Audio",
+        "3D"
+      ],
+      "live_url": "https://www.nudolsbanzai.it/",
+      "source_url": "https://www.awwwards.com/sites/banzai-izakaya-experience",
+      "rank": 17
+    },
+    {
+      "title": "Keikku Next-Gen Stethoscope",
+      "slug": "keikku-next-gen-stethoscope",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-13",
+      "categories": [
+        "Promotional",
+        "Technology",
+        "Startups"
+      ],
+      "style_tags": [
+        "Animation",
+        "Parallax",
+        "Scrolling",
+        "Single page",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Promotional",
+        "Technology",
+        "Animation",
+        "Parallax",
+        "Scrolling",
+        "Single page",
+        "Microinteractions",
+        "Startups"
+      ],
+      "live_url": "https://keikku.madebyburo.com/",
+      "source_url": "https://www.awwwards.com/sites/keikku-next-gen-stethoscope",
+      "rank": 18
+    },
+    {
+      "title": "AW Portfolio",
+      "slug": "aw-portfolio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-12",
+      "categories": [
+        "Technology",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Minimal",
+        "Portfolio",
+        "Retro",
+        "Scrolling",
+        "Single page",
+        "Typography"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Technology",
+        "Web & Interactive",
+        "Minimal",
+        "Portfolio",
+        "Retro",
+        "Scrolling",
+        "Single page",
+        "Typography",
+        "Experimental"
+      ],
+      "live_url": "https://wodniack.dev/",
+      "source_url": "https://www.awwwards.com/sites/aw-portfolio",
+      "rank": 19
+    },
+    {
+      "title": "Monolith",
+      "slug": "monolith",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-11",
+      "categories": [
+        "Architecture",
+        "E-Commerce",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Clean",
+        "Graphic design",
+        "Minimal",
+        "Typography",
+        "Gallery",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "E-Commerce",
+        "Clean",
+        "Graphic design",
+        "Minimal",
+        "Typography",
+        "Gallery",
+        "Microinteractions",
+        "Luxury"
+      ],
+      "live_url": "https://monolith.nyc/",
+      "source_url": "https://www.awwwards.com/sites/monolith",
+      "rank": 20
+    },
+    {
+      "title": "Thomas Monavon \u2014 Portfolio 24'",
+      "slug": "thomas-monavon-portfolio-24",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-10",
+      "categories": [
+        "Other",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Clean",
+        "Infinite Scroll",
+        "Portfolio",
+        "Photo & Video",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Other",
+        "Web & Interactive",
+        "Clean",
+        "Infinite Scroll",
+        "Portfolio",
+        "Photo & Video",
+        "UI design"
+      ],
+      "live_url": "https://www.thomasmonavon.com/",
+      "source_url": "https://www.awwwards.com/sites/thomas-monavon-portfolio-24",
+      "rank": 21
+    },
+    {
+      "title": "MSI AI PC",
+      "slug": "msi-ai-pc",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-09",
+      "categories": [
+        "Games & Entertainment",
+        "Promotional",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Unusual Navigation",
+        "Transitions",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Games & Entertainment",
+        "Promotional",
+        "Web & Interactive",
+        "Animation",
+        "Colorful",
+        "Unusual Navigation",
+        "Transitions",
+        "3D"
+      ],
+      "live_url": "https://my-gaming-persona.msi.com/",
+      "source_url": "https://www.awwwards.com/sites/msi-ai-pc",
+      "rank": 22
+    },
+    {
+      "title": "Radiance team",
+      "slug": "radiance-team",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-08",
+      "categories": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Startups"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Fullscreen",
+        "Graphic design",
+        "3D",
+        "UI design",
+        "next.js"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Colorful",
+        "Fullscreen",
+        "Graphic design",
+        "3D",
+        "UI design",
+        "Startups",
+        "next.js"
+      ],
+      "live_url": "https://radiance.family",
+      "source_url": "https://www.awwwards.com/sites/radiance-team",
+      "rank": 23
+    },
+    {
+      "title": "Base Habitation",
+      "slug": "base-habitation",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-07",
+      "categories": [
+        "Architecture",
+        "Startups"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Gallery",
+        "Photo & Video"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "Big Background Images",
+        "Gallery",
+        "Photo & Video",
+        "Startups"
+      ],
+      "live_url": "https://basehabitation.com",
+      "source_url": "https://www.awwwards.com/sites/base-habitation",
+      "rank": 24
+    },
+    {
+      "title": "LEEROY",
+      "slug": "leeroy-agency",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-06",
+      "categories": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Portfolio",
+        "Filters and Effects",
+        "Interaction Design",
+        "UI design"
+      ],
+      "tech_tags": [
+        "Craft CMS"
+      ],
+      "tags": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Web & Interactive",
+        "Animation",
+        "Portfolio",
+        "Craft CMS",
+        "Filters and Effects",
+        "Interaction Design",
+        "UI design"
+      ],
+      "live_url": "https://leeroy.ca/",
+      "source_url": "https://www.awwwards.com/sites/leeroy-agency",
+      "rank": 25
+    },
+    {
+      "title": "Clear Street",
+      "slug": "clear-street",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-05",
+      "categories": [
+        "Business & Corporate",
+        "Promotional",
+        "Technology"
+      ],
+      "style_tags": [
+        "Animation",
+        "Icons",
+        "Scrolling",
+        "3D",
+        "Header Design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Promotional",
+        "Technology",
+        "Animation",
+        "Icons",
+        "Scrolling",
+        "3D",
+        "Header Design",
+        "Microinteractions"
+      ],
+      "live_url": "https://www.clearstreet.io/",
+      "source_url": "https://www.awwwards.com/sites/clear-street",
+      "rank": 26
+    },
+    {
+      "title": "Mew",
+      "slug": "mew",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-04",
+      "categories": [
+        "Art & Illustration",
+        "Technology"
+      ],
+      "style_tags": [
+        "Animation",
+        "Big Background Images",
+        "Typography",
+        "Illustration"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Technology",
+        "Animation",
+        "Big Background Images",
+        "Typography",
+        "Illustration"
+      ],
+      "live_url": "https://mew.xyz/",
+      "source_url": "https://www.awwwards.com/sites/mew",
+      "rank": 27
+    },
+    {
+      "title": "ATMOS\u00ae Lamp by AYOCIN",
+      "slug": "atmos-r-lamp-by-ayocin",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-03",
+      "categories": [
+        "Business & Corporate",
+        "Promotional",
+        "Technology"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Single page",
+        "Typography",
+        "Microinteractions"
+      ],
+      "tech_tags": [
+        "Contentful"
+      ],
+      "tags": [
+        "Business & Corporate",
+        "Promotional",
+        "Technology",
+        "Animation",
+        "Clean",
+        "Single page",
+        "Typography",
+        "Microinteractions",
+        "Contentful"
+      ],
+      "live_url": "https://ayocin.com/",
+      "source_url": "https://www.awwwards.com/sites/atmos-r-lamp-by-ayocin",
+      "rank": 28
+    },
+    {
+      "title": "DoThings",
+      "slug": "dothings",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-02",
+      "categories": [
+        "Design Agencies",
+        "Fashion",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Clean",
+        "Portfolio",
+        "Typography",
+        "Interaction Design",
+        "About Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Fashion",
+        "Clean",
+        "Portfolio",
+        "Typography",
+        "Interaction Design",
+        "About Page",
+        "Luxury"
+      ],
+      "live_url": "https://dothingsnyc.com/",
+      "source_url": "https://www.awwwards.com/sites/dothings",
+      "rank": 29
+    },
+    {
+      "title": "Bruut",
+      "slug": "bruut",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-12-01",
+      "categories": [
+        "Film & TV"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Portfolio",
+        "Video",
+        "Transitions",
+        "Photo & Video"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Film & TV",
+        "Animation",
+        "Colorful",
+        "Portfolio",
+        "Video",
+        "Transitions",
+        "Photo & Video"
+      ],
+      "live_url": "https://bruut.media/",
+      "source_url": "https://www.awwwards.com/sites/bruut",
+      "rank": 30
+    },
+    {
+      "title": "ChainGPT Labs",
+      "slug": "chaingpt-labs",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-30",
+      "categories": [
+        "Business & Corporate",
+        "Technology",
+        "Startups"
+      ],
+      "style_tags": [
+        "Animation",
+        "Minimal",
+        "Typography",
+        "Video",
+        "Transitions",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Technology",
+        "Animation",
+        "Minimal",
+        "Typography",
+        "Video",
+        "Transitions",
+        "3D",
+        "Startups"
+      ],
+      "live_url": "https://labs.chaingpt.org/",
+      "source_url": "https://www.awwwards.com/sites/chaingpt-labs",
+      "rank": 31
+    },
+    {
+      "title": "B\u00e9langer Salach Architecture",
+      "slug": "belanger-salach-architecture",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-29",
+      "categories": [
+        "Architecture",
+        "Web & Interactive",
+        "Photography"
+      ],
+      "style_tags": [
+        "Clean",
+        "Horizontal Layout",
+        "Infinite Scroll",
+        "Scrolling",
+        "Transitions",
+        "Gallery"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "Web & Interactive",
+        "Clean",
+        "Horizontal Layout",
+        "Infinite Scroll",
+        "Scrolling",
+        "Photography",
+        "Transitions",
+        "Gallery"
+      ],
+      "live_url": "https://60.belangersalach.ca",
+      "source_url": "https://www.awwwards.com/sites/belanger-salach-architecture",
+      "rank": 32
+    },
+    {
+      "title": "Thibaud Fellay \u2014 Portfolio 24'",
+      "slug": "thibaud-fellay-portfolio-24",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-28",
+      "categories": [
+        "Film & TV",
+        "Web & Interactive",
+        "Photography"
+      ],
+      "style_tags": [
+        "Animation",
+        "Big Background Images",
+        "Portfolio",
+        "Gallery",
+        "Filters and Effects",
+        "Photo & Video"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Film & TV",
+        "Web & Interactive",
+        "Animation",
+        "Big Background Images",
+        "Portfolio",
+        "Photography",
+        "Gallery",
+        "Filters and Effects",
+        "Photo & Video"
+      ],
+      "live_url": "https://thibaud.film/",
+      "source_url": "https://www.awwwards.com/sites/thibaud-fellay-portfolio-24",
+      "rank": 33
+    },
+    {
+      "title": "Noomo Beat",
+      "slug": "noomo-beat",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-27",
+      "categories": [
+        "Fashion",
+        "Music & Sound",
+        "Promotional"
+      ],
+      "style_tags": [
+        "Animation",
+        "Sound-Audio",
+        "Storytelling",
+        "3D",
+        "Interaction Design",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Fashion",
+        "Music & Sound",
+        "Promotional",
+        "Animation",
+        "Sound-Audio",
+        "Storytelling",
+        "3D",
+        "Interaction Design",
+        "UI design"
+      ],
+      "live_url": "https://beat.noomoagency.com",
+      "source_url": "https://www.awwwards.com/sites/noomo-beat",
+      "rank": 34
+    },
+    {
+      "title": "Isabel Moranta",
+      "slug": "isabel-moranta-portfolio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-26",
+      "categories": [
+        "Promotional",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Clean",
+        "Graphic design",
+        "Minimal",
+        "Portfolio",
+        "Filters and Effects",
+        "About Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Promotional",
+        "Web & Interactive",
+        "Clean",
+        "Graphic design",
+        "Minimal",
+        "Portfolio",
+        "Experimental",
+        "Filters and Effects",
+        "About Page"
+      ],
+      "live_url": "https://www.isabelmoranta.com/",
+      "source_url": "https://www.awwwards.com/sites/isabel-moranta-portfolio",
+      "rank": 35
+    },
+    {
+      "title": "Lifeworld by Olafur Eliasson",
+      "slug": "lifeworld-by-olafur-eliasson",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-25",
+      "categories": [
+        "Institutions",
+        "Technology",
+        "Social responsibility"
+      ],
+      "style_tags": [
+        "Clean",
+        "Scrolling",
+        "Single page",
+        "Typography",
+        "Storytelling",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Institutions",
+        "Technology",
+        "Clean",
+        "Scrolling",
+        "Single page",
+        "Typography",
+        "Storytelling",
+        "Microinteractions",
+        "Social responsibility"
+      ],
+      "live_url": "https://lifeworld.wetransfer.com",
+      "source_url": "https://www.awwwards.com/sites/lifeworld-by-olafur-eliasson",
+      "rank": 36
+    },
+    {
+      "title": "Social Impact Capital",
+      "slug": "social-impact-capital",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-24",
+      "categories": [
+        "Business & Corporate",
+        "Startups"
+      ],
+      "style_tags": [
+        "Clean",
+        "Flat Design",
+        "Retro",
+        "Typography",
+        "Illustration",
+        "Contact Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Clean",
+        "Flat Design",
+        "Retro",
+        "Typography",
+        "Illustration",
+        "Contact Page",
+        "Startups"
+      ],
+      "live_url": "https://social-impact-capital.com/",
+      "source_url": "https://www.awwwards.com/sites/social-impact-capital",
+      "rank": 37
+    },
+    {
+      "title": "Abba The Museum - Webshop",
+      "slug": "abba-the-museum-webshop",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-23",
+      "categories": [
+        "E-Commerce",
+        "Fashion",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Clean",
+        "Parallax",
+        "Typography",
+        "Content architecture",
+        "UI design"
+      ],
+      "tech_tags": [
+        "Shopify"
+      ],
+      "tags": [
+        "E-Commerce",
+        "Fashion",
+        "Web & Interactive",
+        "Clean",
+        "Parallax",
+        "Typography",
+        "Content architecture",
+        "UI design",
+        "Shopify"
+      ],
+      "live_url": "https://shop.abbathemuseum.com/",
+      "source_url": "https://www.awwwards.com/sites/abba-the-museum-webshop",
+      "rank": 38
+    },
+    {
+      "title": "Perspectives",
+      "slug": "perspectives",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-22",
+      "categories": [
+        "Art & Illustration",
+        "Promotional",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Interaction Design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Promotional",
+        "Animation",
+        "Clean",
+        "Experimental",
+        "Interaction Design",
+        "Microinteractions"
+      ],
+      "live_url": "https://perspectives.mappmtl.com/",
+      "source_url": "https://www.awwwards.com/sites/perspectives",
+      "rank": 39
+    },
+    {
+      "title": "HEAVN One",
+      "slug": "heavn-one",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-21",
+      "categories": [
+        "E-Commerce",
+        "Technology",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Parallax",
+        "Scrolling",
+        "Single page",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "E-Commerce",
+        "Technology",
+        "Animation",
+        "Clean",
+        "Parallax",
+        "Scrolling",
+        "Single page",
+        "3D",
+        "Luxury"
+      ],
+      "live_url": "https://heavn-one.webflow.io/",
+      "source_url": "https://www.awwwards.com/sites/heavn-one",
+      "rank": 40
+    },
+    {
+      "title": "HF-11",
+      "slug": "hf-11",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-20",
+      "categories": [
+        "Luxury"
+      ],
+      "style_tags": [
+        "Fullscreen",
+        "Photographic",
+        "Typography",
+        "Gallery",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Fullscreen",
+        "Photographic",
+        "Typography",
+        "Gallery",
+        "UI design",
+        "Luxury"
+      ],
+      "live_url": "https://www.oilstainlab.com/",
+      "source_url": "https://www.awwwards.com/sites/hf-11",
+      "rank": 41
+    },
+    {
+      "title": "Aker",
+      "slug": "aker",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-19",
+      "categories": [
+        "Architecture",
+        "Business & Corporate",
+        "Real Estate"
+      ],
+      "style_tags": [
+        "Clean",
+        "Minimal",
+        "Unusual Navigation",
+        "Video",
+        "Transitions"
+      ],
+      "tech_tags": [
+        "Contentful"
+      ],
+      "tags": [
+        "Architecture",
+        "Business & Corporate",
+        "Clean",
+        "Minimal",
+        "Unusual Navigation",
+        "Video",
+        "Transitions",
+        "Real Estate",
+        "Contentful"
+      ],
+      "live_url": "https://www.akercompanies.com/",
+      "source_url": "https://www.awwwards.com/sites/aker",
+      "rank": 42
+    },
+    {
+      "title": "Davide Baratta 24",
+      "slug": "davide-baratta-24",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-18",
+      "categories": [
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Graphic design",
+        "Portfolio",
+        "Typography",
+        "Transitions",
+        "About Page",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Graphic design",
+        "Portfolio",
+        "Typography",
+        "Transitions",
+        "About Page",
+        "404 pages"
+      ],
+      "live_url": "https://www.davidebaratta.com/",
+      "source_url": "https://www.awwwards.com/sites/davide-baratta-24",
+      "rank": 43
+    },
+    {
+      "title": "AI in Banking UX Design",
+      "slug": "ai-in-banking-ux-design",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-17",
+      "categories": [
+        "Business & Corporate",
+        "Promotional",
+        "Technology"
+      ],
+      "style_tags": [
+        "Animation",
+        "Responsive",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Promotional",
+        "Technology",
+        "Animation",
+        "Responsive",
+        "Microinteractions"
+      ],
+      "live_url": "https://ai-in-banking-ux-design.videinfra.com/",
+      "source_url": "https://www.awwwards.com/sites/ai-in-banking-ux-design",
+      "rank": 44
+    },
+    {
+      "title": "Alec Tear",
+      "slug": "alec-tear",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-16",
+      "categories": [
+        "Art & Illustration",
+        "Design Agencies"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Colorful",
+        "Graphic design",
+        "Minimal",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Animation",
+        "Clean",
+        "Colorful",
+        "Graphic design",
+        "Minimal",
+        "Microinteractions"
+      ],
+      "live_url": "https://alectear.com",
+      "source_url": "https://www.awwwards.com/sites/alec-tear",
+      "rank": 45
+    },
+    {
+      "title": "TELETECH",
+      "slug": "teletech",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-15",
+      "categories": [
+        "Events",
+        "Music & Sound",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Transitions",
+        "3D",
+        "Filters and Effects",
+        "Microinteractions"
+      ],
+      "tech_tags": [
+        "WooCommerce"
+      ],
+      "tags": [
+        "Events",
+        "Music & Sound",
+        "Web & Interactive",
+        "Animation",
+        "Transitions",
+        "3D",
+        "Filters and Effects",
+        "Microinteractions",
+        "WooCommerce"
+      ],
+      "live_url": "https://teletech.events",
+      "source_url": "https://www.awwwards.com/sites/teletech",
+      "rank": 46
+    },
+    {
+      "title": "Amaterasu",
+      "slug": "amaterasu",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-14",
+      "categories": [
+        "Technology",
+        "Startups",
+        "Social responsibility"
+      ],
+      "style_tags": [
+        "Scrolling",
+        "Transitions",
+        "Sound-Audio",
+        "Storytelling",
+        "3D",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Technology",
+        "Scrolling",
+        "Transitions",
+        "Sound-Audio",
+        "Storytelling",
+        "3D",
+        "Microinteractions",
+        "Startups",
+        "Social responsibility"
+      ],
+      "live_url": "https://amaterasu.ai/",
+      "source_url": "https://www.awwwards.com/sites/amaterasu",
+      "rank": 47
+    },
+    {
+      "title": "Tambien",
+      "slug": "tambien-1",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-13",
+      "categories": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Video",
+        "3D",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Animation",
+        "Video",
+        "Experimental",
+        "3D",
+        "Interaction Design"
+      ],
+      "live_url": "https://www.tambien.studio",
+      "source_url": "https://www.awwwards.com/sites/tambien-1",
+      "rank": 48
+    },
+    {
+      "title": "Otherlife",
+      "slug": "otherlife",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-12",
+      "categories": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Infinite Scroll",
+        "Transitions",
+        "3D",
+        "next.js"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive",
+        "Animation",
+        "Clean",
+        "Infinite Scroll",
+        "Transitions",
+        "3D",
+        "next.js"
+      ],
+      "live_url": "https://www.otherlife.xyz/",
+      "source_url": "https://www.awwwards.com/sites/otherlife",
+      "rank": 49
+    },
+    {
+      "title": "Vazzi",
+      "slug": "vazzi",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-11",
+      "categories": [
+        "E-Commerce",
+        "Promotional"
+      ],
+      "style_tags": [
+        "Animation",
+        "Big Background Images",
+        "Colorful",
+        "Navigation Menu",
+        "Storytelling",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "E-Commerce",
+        "Promotional",
+        "Animation",
+        "Big Background Images",
+        "Colorful",
+        "Navigation Menu",
+        "Storytelling",
+        "3D"
+      ],
+      "live_url": "https://vazzi.fun/",
+      "source_url": "https://www.awwwards.com/sites/vazzi",
+      "rank": 50
+    },
+    {
+      "title": "Saisei  Architecture",
+      "slug": "saisei-architecture",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-10",
+      "categories": [
+        "Architecture"
+      ],
+      "style_tags": [
+        "Animation",
+        "Parallax",
+        "Typography",
+        "Transitions",
+        "Content architecture",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "Animation",
+        "Parallax",
+        "Typography",
+        "Transitions",
+        "Content architecture",
+        "UI design"
+      ],
+      "live_url": "https://saisei-sbj.webflow.io/",
+      "source_url": "https://www.awwwards.com/sites/saisei-architecture",
+      "rank": 51
+    },
+    {
+      "title": "House of Dreamers",
+      "slug": "house-of-dreamers",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-09",
+      "categories": [
+        "Games & Entertainment",
+        "Promotional",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Parallax",
+        "Illustration",
+        "Transitions",
+        "Filters and Effects"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Games & Entertainment",
+        "Promotional",
+        "Web & Interactive",
+        "Animation",
+        "Colorful",
+        "Parallax",
+        "Illustration",
+        "Transitions",
+        "Filters and Effects"
+      ],
+      "live_url": "https://www.houseofdreamers.fr",
+      "source_url": "https://www.awwwards.com/sites/house-of-dreamers",
+      "rank": 52
+    },
+    {
+      "title": "X-BIONIC TerraSkin X00/C",
+      "slug": "x-bionic-terraskin-x00-c",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-08",
+      "categories": [
+        "E-Commerce",
+        "Fashion",
+        "Sports"
+      ],
+      "style_tags": [
+        "Scrolling",
+        "Single page",
+        "Storytelling",
+        "Photo & Video",
+        "UI design",
+        "next.js"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "E-Commerce",
+        "Fashion",
+        "Sports",
+        "Scrolling",
+        "Single page",
+        "Storytelling",
+        "Photo & Video",
+        "UI design",
+        "next.js"
+      ],
+      "live_url": "https://terraskin.x-bionic.com/",
+      "source_url": "https://www.awwwards.com/sites/x-bionic-terraskin-x00-c",
+      "rank": 53
+    },
+    {
+      "title": "Love and Money / work",
+      "slug": "love-and-money-work",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-07",
+      "categories": [
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Clean",
+        "Colorful",
+        "Graphic design",
+        "Portfolio"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Clean",
+        "Colorful",
+        "Graphic design",
+        "Portfolio"
+      ],
+      "live_url": "https://loveandmoney.agency/work",
+      "source_url": "https://www.awwwards.com/sites/love-and-money-work",
+      "rank": 54
+    },
+    {
+      "title": "RSPCA Animal Futures",
+      "slug": "rspca-animal-futures",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-06",
+      "categories": [
+        "Culture & Education",
+        "Games & Entertainment",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Illustration",
+        "Storytelling",
+        "3D",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Culture & Education",
+        "Games & Entertainment",
+        "Web & Interactive",
+        "Animation",
+        "Colorful",
+        "Illustration",
+        "Storytelling",
+        "3D",
+        "UI design"
+      ],
+      "live_url": "https://bit.ly/AnimalFutures",
+      "source_url": "https://www.awwwards.com/sites/rspca-animal-futures",
+      "rank": 55
+    },
+    {
+      "title": "Hatom",
+      "slug": "hatom",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-04",
+      "categories": [
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Scrolling",
+        "Storytelling",
+        "3D",
+        "Gestures / Interaction"
+      ],
+      "tech_tags": [
+        "WebGL"
+      ],
+      "tags": [
+        "Web & Interactive",
+        "Scrolling",
+        "WebGL",
+        "Experimental",
+        "Storytelling",
+        "3D",
+        "Gestures / Interaction"
+      ],
+      "live_url": "https://www.hatom.com/",
+      "source_url": "https://www.awwwards.com/sites/hatom",
+      "rank": 56
+    },
+    {
+      "title": "Duten",
+      "slug": "duten",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-03",
+      "categories": [
+        "Architecture"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Minimal",
+        "Vector",
+        "Transitions",
+        "Photo & Video"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "Animation",
+        "Clean",
+        "Minimal",
+        "Vector",
+        "Transitions",
+        "Photo & Video"
+      ],
+      "live_url": "https://www.duten.com/",
+      "source_url": "https://www.awwwards.com/sites/duten",
+      "rank": 57
+    },
+    {
+      "title": "Gelato La Boca",
+      "slug": "gelato-la-boca",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-02",
+      "categories": [
+        "Food & Drink",
+        "Hotel / Restaurant"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Unusual Navigation",
+        "Illustration",
+        "Transitions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Food & Drink",
+        "Hotel / Restaurant",
+        "Animation",
+        "Colorful",
+        "Unusual Navigation",
+        "Illustration",
+        "Transitions"
+      ],
+      "live_url": "https://gelatolaboca.com/",
+      "source_url": "https://www.awwwards.com/sites/gelato-la-boca",
+      "rank": 58
+    },
+    {
+      "title": "Oakame",
+      "slug": "oakame",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-11-01",
+      "categories": [
+        "Architecture",
+        "E-Commerce",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Animation",
+        "Typography",
+        "Interaction Design",
+        "Microinteractions",
+        "Footer Design",
+        "404 pages"
+      ],
+      "tech_tags": [
+        "WooCommerce"
+      ],
+      "tags": [
+        "Architecture",
+        "E-Commerce",
+        "Animation",
+        "Typography",
+        "Interaction Design",
+        "Microinteractions",
+        "Footer Design",
+        "404 pages",
+        "Luxury",
+        "WooCommerce"
+      ],
+      "live_url": "https://www.oakame.com/en/",
+      "source_url": "https://www.awwwards.com/sites/oakame",
+      "rank": 59
+    },
+    {
+      "title": "Mon top Netflix",
+      "slug": "mon-top-netflix",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-31",
+      "categories": [
+        "Film & TV",
+        "Games & Entertainment",
+        "Technology"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Flat Design",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Film & TV",
+        "Games & Entertainment",
+        "Technology",
+        "Animation",
+        "Colorful",
+        "Flat Design",
+        "Interaction Design"
+      ],
+      "live_url": "https://montopnetflix.fr",
+      "source_url": "https://www.awwwards.com/sites/mon-top-netflix",
+      "rank": 60
+    },
+    {
+      "title": "Gr\u00e9gory Lall\u00e9 \u2014 '24",
+      "slug": "gregory-lalle-24",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-30",
+      "categories": [
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Minimal",
+        "Portfolio",
+        "Transitions",
+        "About Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Web & Interactive",
+        "Animation",
+        "Minimal",
+        "Portfolio",
+        "Transitions",
+        "About Page"
+      ],
+      "live_url": "https://gregorylalle.com",
+      "source_url": "https://www.awwwards.com/sites/gregory-lalle-24",
+      "rank": 61
+    },
+    {
+      "title": "D&L",
+      "slug": "d-l",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-29",
+      "categories": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Microinteractions",
+        "Footer Design",
+        "Project Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Web & Interactive",
+        "Animation",
+        "Colorful",
+        "Microinteractions",
+        "Footer Design",
+        "Project Page"
+      ],
+      "live_url": "https://dorstenlesser.com/",
+      "source_url": "https://www.awwwards.com/sites/d-l",
+      "rank": 62
+    },
+    {
+      "title": "P448",
+      "slug": "p448-1",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-28",
+      "categories": [
+        "E-Commerce",
+        "Fashion",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Fullscreen",
+        "Unusual Navigation",
+        "Menu - Vertical",
+        "UI design",
+        "Header Design"
+      ],
+      "tech_tags": [
+        "Shopify"
+      ],
+      "tags": [
+        "E-Commerce",
+        "Fashion",
+        "Big Background Images",
+        "Fullscreen",
+        "Unusual Navigation",
+        "Menu - Vertical",
+        "UI design",
+        "Header Design",
+        "Luxury",
+        "Shopify"
+      ],
+      "live_url": "https://p448.com/",
+      "source_url": "https://www.awwwards.com/sites/p448-1",
+      "rank": 63
+    },
+    {
+      "title": "Odyssey Controller",
+      "slug": "odyssey-controller",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-27",
+      "categories": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Minimal",
+        "Portfolio",
+        "Responsive Design",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Web & Interactive",
+        "Animation",
+        "Clean",
+        "Minimal",
+        "Portfolio",
+        "Responsive Design",
+        "UI design"
+      ],
+      "live_url": "https://www.odyssey.shaga.xyz/",
+      "source_url": "https://www.awwwards.com/sites/odyssey-controller",
+      "rank": 64
+    },
+    {
+      "title": "Sonder",
+      "slug": "sonder",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-26",
+      "categories": [
+        "Business & Corporate",
+        "Other"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Flat Design",
+        "Illustration",
+        "Data Visualization",
+        "Photo & Video",
+        "Footer Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Other",
+        "Colorful",
+        "Flat Design",
+        "Illustration",
+        "Data Visualization",
+        "Photo & Video",
+        "Footer Design"
+      ],
+      "live_url": "https://www.sonder-mr.com/",
+      "source_url": "https://www.awwwards.com/sites/sonder",
+      "rank": 65
+    },
+    {
+      "title": "Cosmos Studio",
+      "slug": "cosmos-studio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-25",
+      "categories": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Scrolling",
+        "Typography",
+        "3D",
+        "Interaction Design",
+        "Footer Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Web & Interactive",
+        "Animation",
+        "Scrolling",
+        "Typography",
+        "3D",
+        "Interaction Design",
+        "Footer Design"
+      ],
+      "live_url": "https://cosmos.studio/",
+      "source_url": "https://www.awwwards.com/sites/cosmos-studio",
+      "rank": 66
+    },
+    {
+      "title": "COCOTA",
+      "slug": "cocota",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-23",
+      "categories": [
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Portfolio",
+        "Forms and Input",
+        "UI design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Animation",
+        "Clean",
+        "Portfolio",
+        "Forms and Input",
+        "UI design",
+        "Microinteractions"
+      ],
+      "live_url": "https://cocotastudio.com/",
+      "source_url": "https://www.awwwards.com/sites/cocota",
+      "rank": 67
+    },
+    {
+      "title": "funkhaus Studio",
+      "slug": "funkhaus-studio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-22",
+      "categories": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Clean",
+        "Infinite Scroll",
+        "Portfolio",
+        "Transitions",
+        "3D",
+        "Filters and Effects"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive",
+        "Clean",
+        "Infinite Scroll",
+        "Portfolio",
+        "Transitions",
+        "3D",
+        "Filters and Effects"
+      ],
+      "live_url": "https://funkhaus.io",
+      "source_url": "https://www.awwwards.com/sites/funkhaus-studio",
+      "rank": 68
+    },
+    {
+      "title": "David Kushner",
+      "slug": "david-kushner",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-21",
+      "categories": [
+        "Music & Sound",
+        "Promotional"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Clean",
+        "Graphic design",
+        "Typography",
+        "Transitions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Music & Sound",
+        "Promotional",
+        "Big Background Images",
+        "Clean",
+        "Graphic design",
+        "Typography",
+        "Transitions"
+      ],
+      "live_url": "https://www.davidkushnermusic.com/",
+      "source_url": "https://www.awwwards.com/sites/david-kushner",
+      "rank": 69
+    },
+    {
+      "title": "G. Colombel \u2014 Portfolio 2024",
+      "slug": "g-colombel-portfolio-2024",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-20",
+      "categories": [
+        "Promotional",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Big Background Images",
+        "Infinite Scroll",
+        "Portfolio",
+        "About Page",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Promotional",
+        "Web & Interactive",
+        "Animation",
+        "Big Background Images",
+        "Infinite Scroll",
+        "Portfolio",
+        "Experimental",
+        "About Page",
+        "Microinteractions"
+      ],
+      "live_url": "https://guillaumecolombel.fr",
+      "source_url": "https://www.awwwards.com/sites/g-colombel-portfolio-2024",
+      "rank": 70
+    },
+    {
+      "title": "Broed",
+      "slug": "broed",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-19",
+      "categories": [
+        "Art & Illustration",
+        "Events",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Scrolling",
+        "Transitions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Events",
+        "Web & Interactive",
+        "Animation",
+        "Scrolling",
+        "Transitions"
+      ],
+      "live_url": "https://broedutrecht.nl/",
+      "source_url": "https://www.awwwards.com/sites/broed",
+      "rank": 71
+    },
+    {
+      "title": "Language Inclusion",
+      "slug": "language-inclusion",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-18",
+      "categories": [
+        "Mobile & Apps",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Photographic",
+        "Sound-Audio",
+        "Storytelling",
+        "Interaction Design",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Mobile & Apps",
+        "Web & Interactive",
+        "Animation",
+        "Photographic",
+        "Sound-Audio",
+        "Storytelling",
+        "Interaction Design",
+        "UI design"
+      ],
+      "live_url": "https://sites.research.google/languages/",
+      "source_url": "https://www.awwwards.com/sites/language-inclusion",
+      "rank": 72
+    },
+    {
+      "title": "Viva La Labia",
+      "slug": "viva-la-labia",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-17",
+      "categories": [
+        "Fashion",
+        "Web & Interactive",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Animation",
+        "Graphic design",
+        "Single page",
+        "Transitions",
+        "Sound-Audio",
+        "Storytelling"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Fashion",
+        "Web & Interactive",
+        "Animation",
+        "Graphic design",
+        "Single page",
+        "Transitions",
+        "Sound-Audio",
+        "Storytelling",
+        "Luxury"
+      ],
+      "live_url": "http://vivalalabia.com",
+      "source_url": "https://www.awwwards.com/sites/viva-la-labia",
+      "rank": 73
+    },
+    {
+      "title": "Orken",
+      "slug": "orken",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-16",
+      "categories": [
+        "Art & Illustration",
+        "Film & TV",
+        "Games & Entertainment"
+      ],
+      "style_tags": [
+        "Animation",
+        "Parallax",
+        "Single page",
+        "Illustration",
+        "Storytelling",
+        "Footer Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Film & TV",
+        "Games & Entertainment",
+        "Animation",
+        "Parallax",
+        "Single page",
+        "Illustration",
+        "Storytelling",
+        "Footer Design"
+      ],
+      "live_url": "https://orkenworld.com",
+      "source_url": "https://www.awwwards.com/sites/orken",
+      "rank": 74
+    },
+    {
+      "title": "Nod Coding Bootcamp",
+      "slug": "nod-coding-bootcamp",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-15",
+      "categories": [
+        "Culture & Education",
+        "Technology",
+        "Startups"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Graphic design",
+        "Illustration",
+        "Transitions",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Culture & Education",
+        "Technology",
+        "Animation",
+        "Colorful",
+        "Graphic design",
+        "Illustration",
+        "Transitions",
+        "Microinteractions",
+        "Startups"
+      ],
+      "live_url": "https://nodcoding.com",
+      "source_url": "https://www.awwwards.com/sites/nod-coding-bootcamp",
+      "rank": 75
+    },
+    {
+      "title": "H\u00e9lo\u00efse Thibodeau Architecte",
+      "slug": "heloise-thibodeau-architecte-1",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-14",
+      "categories": [
+        "Architecture"
+      ],
+      "style_tags": [
+        "Clean",
+        "Minimal",
+        "Portfolio",
+        "Gallery",
+        "Microinteractions",
+        "Project Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "Clean",
+        "Minimal",
+        "Portfolio",
+        "Gallery",
+        "Microinteractions",
+        "Project Page"
+      ],
+      "live_url": "https://htarchitecte.com/",
+      "source_url": "https://www.awwwards.com/sites/heloise-thibodeau-architecte-1",
+      "rank": 76
+    },
+    {
+      "title": "Harry Atkins",
+      "slug": "harry-atkins-portfolio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-13",
+      "categories": [
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Clean",
+        "Minimal",
+        "Portfolio",
+        "Typography"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Clean",
+        "Minimal",
+        "Portfolio",
+        "Typography"
+      ],
+      "live_url": "https://harryjatkins.com",
+      "source_url": "https://www.awwwards.com/sites/harry-atkins-portfolio",
+      "rank": 77
+    },
+    {
+      "title": "Reown",
+      "slug": "reown",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-12",
+      "categories": [
+        "Business & Corporate",
+        "Other"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Flat Design",
+        "Icons",
+        "Unusual Navigation",
+        "Responsive"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Other",
+        "Animation",
+        "Colorful",
+        "Flat Design",
+        "Icons",
+        "Unusual Navigation",
+        "Responsive"
+      ],
+      "live_url": "https://www.reown.com",
+      "source_url": "https://www.awwwards.com/sites/reown",
+      "rank": 78
+    },
+    {
+      "title": "Umault",
+      "slug": "umault",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-11",
+      "categories": [
+        "Design Agencies",
+        "Film & TV",
+        "Promotional"
+      ],
+      "style_tags": [
+        "Animation",
+        "Parallax",
+        "Portfolio",
+        "Retro",
+        "Video",
+        "Transitions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Film & TV",
+        "Promotional",
+        "Animation",
+        "Parallax",
+        "Portfolio",
+        "Retro",
+        "Video",
+        "Transitions"
+      ],
+      "live_url": "https://umault.com/",
+      "source_url": "https://www.awwwards.com/sites/umault",
+      "rank": 79
+    },
+    {
+      "title": "Hartmann Capital",
+      "slug": "hartmann-capital",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-10",
+      "categories": [
+        "Business & Corporate",
+        "Technology"
+      ],
+      "style_tags": [
+        "Scrolling",
+        "3D",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Technology",
+        "Scrolling",
+        "3D",
+        "Microinteractions"
+      ],
+      "live_url": "https://www.hartmanncapital.com/",
+      "source_url": "https://www.awwwards.com/sites/hartmann-capital",
+      "rank": 80
+    },
+    {
+      "title": "Stripe Dot Dev",
+      "slug": "stripe-dot-dev",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-09",
+      "categories": [
+        "Art & Illustration",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Graphic design",
+        "Typography",
+        "Interaction Design",
+        "Footer Design",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Technology",
+        "Web & Interactive",
+        "Animation",
+        "Graphic design",
+        "Typography",
+        "Interaction Design",
+        "Footer Design",
+        "404 pages"
+      ],
+      "live_url": "https://stripe.dev/",
+      "source_url": "https://www.awwwards.com/sites/stripe-dot-dev",
+      "rank": 81
+    },
+    {
+      "title": "Pesquera Diez (P10)",
+      "slug": "pesquera-diez-p10",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-08",
+      "categories": [
+        "Architecture",
+        "Business & Corporate"
+      ],
+      "style_tags": [
+        "Minimal",
+        "Photographic",
+        "Portfolio",
+        "Scrolling",
+        "Typography",
+        "Transitions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "Business & Corporate",
+        "Minimal",
+        "Photographic",
+        "Portfolio",
+        "Scrolling",
+        "Typography",
+        "Transitions"
+      ],
+      "live_url": "https://p10.mubien.com/",
+      "source_url": "https://www.awwwards.com/sites/pesquera-diez-p10",
+      "rank": 82
+    },
+    {
+      "title": "Playground",
+      "slug": "playground-digital-agency",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-07",
+      "categories": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Graphic design",
+        "Minimal",
+        "Portfolio",
+        "Gestures / Interaction",
+        "Interaction Design",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive",
+        "Graphic design",
+        "Minimal",
+        "Portfolio",
+        "Gestures / Interaction",
+        "Interaction Design",
+        "UI design"
+      ],
+      "live_url": "https://www.playground.it",
+      "source_url": "https://www.awwwards.com/sites/playground-digital-agency",
+      "rank": 83
+    },
+    {
+      "title": "QuatreCentQuatre",
+      "slug": "quatrecentquatre",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-06",
+      "categories": [
+        "Design Agencies",
+        "Other",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Illustration",
+        "Transitions",
+        "Interaction Design",
+        "UI design",
+        "Header Design",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Other",
+        "Web & Interactive",
+        "Illustration",
+        "Transitions",
+        "Interaction Design",
+        "UI design",
+        "Header Design",
+        "404 pages"
+      ],
+      "live_url": "https://quatrecentquatre.com/",
+      "source_url": "https://www.awwwards.com/sites/quatrecentquatre",
+      "rank": 84
+    },
+    {
+      "title": "Treasures of Japan",
+      "slug": "treasures-of-japan",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-05",
+      "categories": [
+        "Fashion",
+        "Games & Entertainment",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Minimal",
+        "Responsive",
+        "3D",
+        "Gestures / Interaction",
+        "Filters and Effects"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Fashion",
+        "Games & Entertainment",
+        "Web & Interactive",
+        "Colorful",
+        "Minimal",
+        "Responsive",
+        "3D",
+        "Gestures / Interaction",
+        "Filters and Effects"
+      ],
+      "live_url": "https://treasuresofjapan.weekendmaxmara.com/en",
+      "source_url": "https://www.awwwards.com/sites/treasures-of-japan",
+      "rank": 85
+    },
+    {
+      "title": "Monolith Studio",
+      "slug": "monolith-studio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-04",
+      "categories": [
+        "Art & Illustration",
+        "Other",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Fullscreen",
+        "Minimal",
+        "Typography",
+        "3D",
+        "Interaction Design",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Other",
+        "Fullscreen",
+        "Minimal",
+        "Typography",
+        "Experimental",
+        "3D",
+        "Interaction Design",
+        "UI design"
+      ],
+      "live_url": "https://monolithstudio.com",
+      "source_url": "https://www.awwwards.com/sites/monolith-studio",
+      "rank": 86
+    },
+    {
+      "title": "Studio-PIC",
+      "slug": "studio-pic",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-03",
+      "categories": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Transitions",
+        "3D",
+        "Interaction Design",
+        "Microinteractions",
+        "Project Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Design Agencies",
+        "Web & Interactive",
+        "Animation",
+        "Transitions",
+        "3D",
+        "Interaction Design",
+        "Microinteractions",
+        "Project Page"
+      ],
+      "live_url": "https://studio-pic.com/",
+      "source_url": "https://www.awwwards.com/sites/studio-pic",
+      "rank": 87
+    },
+    {
+      "title": "Amici",
+      "slug": "amici",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-02",
+      "categories": [
+        "Food & Drink",
+        "Hotel / Restaurant"
+      ],
+      "style_tags": [
+        "Animation",
+        "Transitions",
+        "Gestures / Interaction",
+        "Interaction Design",
+        "Footer Design",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Food & Drink",
+        "Hotel / Restaurant",
+        "Animation",
+        "Transitions",
+        "Gestures / Interaction",
+        "Interaction Design",
+        "Footer Design",
+        "404 pages"
+      ],
+      "live_url": "https://amici-restaurant.com/",
+      "source_url": "https://www.awwwards.com/sites/amici",
+      "rank": 88
+    },
+    {
+      "title": "Mathieu Crepel",
+      "slug": "mathieu-crepel",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-10-01",
+      "categories": [
+        "Film & TV",
+        "Sports"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Video",
+        "Menu - Horizontal",
+        "Storytelling",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Film & TV",
+        "Sports",
+        "Big Background Images",
+        "Video",
+        "Menu - Horizontal",
+        "Storytelling",
+        "UI design"
+      ],
+      "live_url": "https://www.mathieu-crepel.com",
+      "source_url": "https://www.awwwards.com/sites/mathieu-crepel",
+      "rank": 89
+    },
+    {
+      "title": "Walbi",
+      "slug": "walbi",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-30",
+      "categories": [
+        "Mobile & Apps",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Fullscreen",
+        "Graphic design",
+        "Icons",
+        "Transitions",
+        "Filters and Effects"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Mobile & Apps",
+        "Technology",
+        "Web & Interactive",
+        "Animation",
+        "Fullscreen",
+        "Graphic design",
+        "Icons",
+        "Transitions",
+        "Filters and Effects"
+      ],
+      "live_url": "https://www.walbi.com/",
+      "source_url": "https://www.awwwards.com/sites/walbi",
+      "rank": 90
+    },
+    {
+      "title": "Emotion Agency | Promo",
+      "slug": "emotion-agency-promo",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-29",
+      "categories": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Portfolio",
+        "Scrolling",
+        "Transitions",
+        "Sound-Audio",
+        "Storytelling",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive",
+        "Portfolio",
+        "Scrolling",
+        "Transitions",
+        "Sound-Audio",
+        "Storytelling",
+        "3D"
+      ],
+      "live_url": "https://promo.emotion-agency.com/",
+      "source_url": "https://www.awwwards.com/sites/emotion-agency-promo",
+      "rank": 91
+    },
+    {
+      "title": "Federico Pian / Portfolio 2024",
+      "slug": "federico-pian-portfolio-2024",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-28",
+      "categories": [
+        "Promotional",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Portfolio",
+        "Transitions",
+        "About Page",
+        "Project Page",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Promotional",
+        "Web & Interactive",
+        "Colorful",
+        "Portfolio",
+        "Transitions",
+        "About Page",
+        "Project Page",
+        "404 pages"
+      ],
+      "live_url": "https://www.federicopian.com/",
+      "source_url": "https://www.awwwards.com/sites/federico-pian-portfolio-2024",
+      "rank": 92
+    },
+    {
+      "title": "We Go Again",
+      "slug": "we-go-again",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-27",
+      "categories": [
+        "Film & TV",
+        "Sports",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Infinite Scroll",
+        "Portfolio",
+        "Video",
+        "Transitions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Film & TV",
+        "Sports",
+        "Web & Interactive",
+        "Animation",
+        "Clean",
+        "Infinite Scroll",
+        "Portfolio",
+        "Video",
+        "Transitions"
+      ],
+      "live_url": "https://we-go-again.com/",
+      "source_url": "https://www.awwwards.com/sites/we-go-again",
+      "rank": 93
+    },
+    {
+      "title": "Following Wildfire",
+      "slug": "following-wildfire",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-26",
+      "categories": [
+        "Web & Interactive",
+        "Experimental",
+        "Social responsibility"
+      ],
+      "style_tags": [
+        "Animation",
+        "Filters and Effects",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Web & Interactive",
+        "Animation",
+        "Experimental",
+        "Filters and Effects",
+        "UI design",
+        "Social responsibility"
+      ],
+      "live_url": "https://followingwildfire.com",
+      "source_url": "https://www.awwwards.com/sites/following-wildfire",
+      "rank": 94
+    },
+    {
+      "title": "terradactyl",
+      "slug": "terradactyl",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-25",
+      "categories": [
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Clean",
+        "Colorful",
+        "Horizontal Layout",
+        "Scrolling",
+        "Typography",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Web & Interactive",
+        "Clean",
+        "Colorful",
+        "Horizontal Layout",
+        "Scrolling",
+        "Typography",
+        "404 pages"
+      ],
+      "live_url": "https://terradactyl.xyz",
+      "source_url": "https://www.awwwards.com/sites/terradactyl",
+      "rank": 95
+    },
+    {
+      "title": "CURB",
+      "slug": "curb",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-24",
+      "categories": [
+        "Film & TV",
+        "Music & Sound",
+        "Photography"
+      ],
+      "style_tags": [
+        "Clean",
+        "Portfolio",
+        "Transitions",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Film & TV",
+        "Music & Sound",
+        "Clean",
+        "Portfolio",
+        "Photography",
+        "Transitions",
+        "Interaction Design"
+      ],
+      "live_url": "https://www.curbcph.tv/",
+      "source_url": "https://www.awwwards.com/sites/curb",
+      "rank": 96
+    },
+    {
+      "title": "WEBISOFT\u00ae",
+      "slug": "webisoft-r",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-23",
+      "categories": [
+        "Business & Corporate",
+        "Mobile & Apps",
+        "Technology"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Portfolio",
+        "Scrolling",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Mobile & Apps",
+        "Technology",
+        "Animation",
+        "Clean",
+        "Portfolio",
+        "Scrolling",
+        "Interaction Design"
+      ],
+      "live_url": "https://webisoft.com",
+      "source_url": "https://www.awwwards.com/sites/webisoft-r",
+      "rank": 97
+    },
+    {
+      "title": "Sound Ethics",
+      "slug": "sound-ethics",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-22",
+      "categories": [
+        "Music & Sound",
+        "Startups",
+        "Social responsibility"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Parallax",
+        "Typography",
+        "Transitions",
+        "Storytelling"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Music & Sound",
+        "Colorful",
+        "Parallax",
+        "Typography",
+        "Transitions",
+        "Storytelling",
+        "Startups",
+        "Social responsibility"
+      ],
+      "live_url": "https://www.soundethics.org/",
+      "source_url": "https://www.awwwards.com/sites/sound-ethics",
+      "rank": 98
+    },
+    {
+      "title": "Petra Garmon",
+      "slug": "petra-garmon",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-21",
+      "categories": [
+        "Culture & Education",
+        "Film & TV",
+        "Music & Sound"
+      ],
+      "style_tags": [
+        "Animation",
+        "Scrolling",
+        "Video",
+        "Photo & Video",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Culture & Education",
+        "Film & TV",
+        "Music & Sound",
+        "Animation",
+        "Scrolling",
+        "Video",
+        "Photo & Video",
+        "404 pages"
+      ],
+      "live_url": "https://petragarmon.com",
+      "source_url": "https://www.awwwards.com/sites/petra-garmon",
+      "rank": 99
+    },
+    {
+      "title": "Populous",
+      "slug": "populous",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-20",
+      "categories": [
+        "Architecture",
+        "Business & Corporate",
+        "Design Agencies"
+      ],
+      "style_tags": [
+        "Animation",
+        "Big Background Images",
+        "Minimal",
+        "Parallax",
+        "Portfolio"
+      ],
+      "tech_tags": [
+        "Contentful"
+      ],
+      "tags": [
+        "Architecture",
+        "Business & Corporate",
+        "Design Agencies",
+        "Animation",
+        "Big Background Images",
+        "Minimal",
+        "Parallax",
+        "Portfolio",
+        "Contentful"
+      ],
+      "live_url": "https://populous.com",
+      "source_url": "https://www.awwwards.com/sites/populous",
+      "rank": 100
+    },
+    {
+      "title": "SALT AND PEPPER",
+      "slug": "salt-and-pepper",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-19",
+      "categories": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Portfolio",
+        "Gallery",
+        "3D",
+        "Forms and Input",
+        "Filters and Effects"
+      ],
+      "tech_tags": [
+        "Motion"
+      ],
+      "tags": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive",
+        "Portfolio",
+        "Gallery",
+        "3D",
+        "Forms and Input",
+        "Filters and Effects",
+        "Motion"
+      ],
+      "live_url": "https://snp.agency",
+      "source_url": "https://www.awwwards.com/sites/salt-and-pepper",
+      "rank": 101
+    },
+    {
+      "title": "UNANSWERED",
+      "slug": "unanswered-site",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-18",
+      "categories": [
+        "Social responsibility"
+      ],
+      "style_tags": [
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Interaction Design",
+        "Social responsibility"
+      ],
+      "live_url": "https://letterstoevan.com/",
+      "source_url": "https://www.awwwards.com/sites/unanswered-site",
+      "rank": 102
+    },
+    {
+      "title": "Serious Business",
+      "slug": "serious-business-2",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-17",
+      "categories": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Startups"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Transitions",
+        "Menu - Horizontal",
+        "3D",
+        "Header Design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Design Agencies",
+        "Colorful",
+        "Transitions",
+        "Menu - Horizontal",
+        "3D",
+        "Header Design",
+        "Microinteractions",
+        "Startups"
+      ],
+      "live_url": "https://serious.business/",
+      "source_url": "https://www.awwwards.com/sites/serious-business-2",
+      "rank": 103
+    },
+    {
+      "title": "Next.js Conf",
+      "slug": "next-js-conf-1",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-16",
+      "categories": [
+        "Events"
+      ],
+      "style_tags": [
+        "Animation",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Events",
+        "Animation",
+        "3D"
+      ],
+      "live_url": "https://nextjs.org/conf",
+      "source_url": "https://www.awwwards.com/sites/next-js-conf-1",
+      "rank": 104
+    },
+    {
+      "title": "Le Flair Studios",
+      "slug": "le-flair-studios",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-15",
+      "categories": [
+        "E-Commerce",
+        "Fashion",
+        "Other"
+      ],
+      "style_tags": [
+        "Clean",
+        "Fullscreen",
+        "Minimal",
+        "Photographic",
+        "Typography"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "E-Commerce",
+        "Fashion",
+        "Other",
+        "Clean",
+        "Fullscreen",
+        "Minimal",
+        "Photographic",
+        "Typography"
+      ],
+      "live_url": "https://www.leflairstudios.com",
+      "source_url": "https://www.awwwards.com/sites/le-flair-studios",
+      "rank": 105
+    },
+    {
+      "title": "PILOT.REPUBLICK",
+      "slug": "pilot-republick",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-14",
+      "categories": [
+        "Business & Corporate",
+        "Web & Interactive",
+        "Startups"
+      ],
+      "style_tags": [
+        "Flat Design",
+        "Horizontal Layout",
+        "Minimal",
+        "Responsive Design",
+        "Forms and Input",
+        "Content architecture"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Web & Interactive",
+        "Flat Design",
+        "Horizontal Layout",
+        "Minimal",
+        "Responsive Design",
+        "Forms and Input",
+        "Content architecture",
+        "Startups"
+      ],
+      "live_url": "https://pilot-republick.webflow.io/",
+      "source_url": "https://www.awwwards.com/sites/pilot-republick",
+      "rank": 106
+    },
+    {
+      "title": "OTSea",
+      "slug": "otsea",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-13",
+      "categories": [
+        "Art & Illustration",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Unusual Navigation",
+        "Transitions",
+        "Storytelling",
+        "3D",
+        "next.js"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Technology",
+        "Web & Interactive",
+        "Animation",
+        "Unusual Navigation",
+        "Transitions",
+        "Storytelling",
+        "3D",
+        "next.js"
+      ],
+      "live_url": "https://www.otsea.io",
+      "source_url": "https://www.awwwards.com/sites/otsea",
+      "rank": 107
+    },
+    {
+      "title": "SIMPLE COMPLEX",
+      "slug": "simple-complex",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-11",
+      "categories": [
+        "E-Commerce",
+        "Food & Drink"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Minimal",
+        "Parallax",
+        "Photographic",
+        "Typography",
+        "UI design"
+      ],
+      "tech_tags": [
+        "Shopify"
+      ],
+      "tags": [
+        "E-Commerce",
+        "Food & Drink",
+        "Colorful",
+        "Minimal",
+        "Parallax",
+        "Photographic",
+        "Typography",
+        "UI design",
+        "Shopify"
+      ],
+      "live_url": "https://simplecomplex.com",
+      "source_url": "https://www.awwwards.com/sites/simple-complex",
+      "rank": 108
+    },
+    {
+      "title": "Halo Dental",
+      "slug": "halo-dental",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-10",
+      "categories": [
+        "E-Commerce",
+        "Technology",
+        "Startups"
+      ],
+      "style_tags": [
+        "Animation",
+        "Icons",
+        "Storytelling",
+        "UI design",
+        "Microinteractions",
+        "Footer Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "E-Commerce",
+        "Technology",
+        "Animation",
+        "Icons",
+        "Storytelling",
+        "UI design",
+        "Microinteractions",
+        "Footer Design",
+        "Startups"
+      ],
+      "live_url": "https://halodental.com/",
+      "source_url": "https://www.awwwards.com/sites/halo-dental",
+      "rank": 109
+    },
+    {
+      "title": "The Blimp",
+      "slug": "the-blimp-2",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-09",
+      "categories": [
+        "Magazine / Newspaper / Blog",
+        "Music & Sound",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Minimal",
+        "Responsive Design",
+        "Gestures / Interaction",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Magazine / Newspaper / Blog",
+        "Music & Sound",
+        "Web & Interactive",
+        "Minimal",
+        "Responsive Design",
+        "Gestures / Interaction",
+        "Microinteractions"
+      ],
+      "live_url": "https://www.blimp.gr/",
+      "source_url": "https://www.awwwards.com/sites/the-blimp-2",
+      "rank": 110
+    },
+    {
+      "title": "Retronova",
+      "slug": "retronova",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-08",
+      "categories": [
+        "Art & Illustration",
+        "Fashion",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Horizontal Layout",
+        "Transitions",
+        "Gallery",
+        "Sound-Audio",
+        "Storytelling",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Fashion",
+        "Web & Interactive",
+        "Horizontal Layout",
+        "Transitions",
+        "Gallery",
+        "Sound-Audio",
+        "Storytelling",
+        "404 pages"
+      ],
+      "live_url": "https://www.retronovaworld.com/",
+      "source_url": "https://www.awwwards.com/sites/retronova",
+      "rank": 111
+    },
+    {
+      "title": "zolviz.xyz",
+      "slug": "zolviz-xyz",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-07",
+      "categories": [
+        "Architecture",
+        "Business & Corporate",
+        "Promotional"
+      ],
+      "style_tags": [
+        "Horizontal Layout",
+        "Infinite Scroll",
+        "Minimal",
+        "Gallery",
+        "3D",
+        "next.js"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "Business & Corporate",
+        "Promotional",
+        "Horizontal Layout",
+        "Infinite Scroll",
+        "Minimal",
+        "Gallery",
+        "3D",
+        "next.js"
+      ],
+      "live_url": "https://zolviz.xyz",
+      "source_url": "https://www.awwwards.com/sites/zolviz-xyz",
+      "rank": 112
+    },
+    {
+      "title": "Porter Robinson SMILE! :D",
+      "slug": "porter-robinson-smile-d",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-06",
+      "categories": [
+        "Games & Entertainment",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Responsive",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Games & Entertainment",
+        "Web & Interactive",
+        "Colorful",
+        "Experimental",
+        "Responsive",
+        "3D"
+      ],
+      "live_url": "https://porterrobinson.com/",
+      "source_url": "https://www.awwwards.com/sites/porter-robinson-smile-d",
+      "rank": 113
+    },
+    {
+      "title": "Dogelon Mars",
+      "slug": "dogelon-mars",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-05",
+      "categories": [
+        "Art & Illustration",
+        "Technology",
+        "Social responsibility"
+      ],
+      "style_tags": [
+        "Animation",
+        "Illustration",
+        "Storytelling",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Technology",
+        "Animation",
+        "Illustration",
+        "Storytelling",
+        "Microinteractions",
+        "Social responsibility"
+      ],
+      "live_url": "https://dogelonmars.com/",
+      "source_url": "https://www.awwwards.com/sites/dogelon-mars",
+      "rank": 114
+    },
+    {
+      "title": "Intrepid",
+      "slug": "intrepid-site",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-04",
+      "categories": [
+        "Business & Corporate",
+        "Technology",
+        "Startups"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Responsive Design",
+        "3D",
+        "Copy design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Technology",
+        "Animation",
+        "Colorful",
+        "Responsive Design",
+        "3D",
+        "Copy design",
+        "Startups"
+      ],
+      "live_url": "http://intrepidautomation.com",
+      "source_url": "https://www.awwwards.com/sites/intrepid-site",
+      "rank": 115
+    },
+    {
+      "title": "The Maison of All Victories",
+      "slug": "the-maison-of-all-victories",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-03",
+      "categories": [
+        "Sports",
+        "Luxury"
+      ],
+      "style_tags": [
+        "Animation",
+        "3D",
+        "UI design"
+      ],
+      "tech_tags": [
+        "Contentful"
+      ],
+      "tags": [
+        "Sports",
+        "Animation",
+        "3D",
+        "UI design",
+        "Contentful",
+        "Luxury"
+      ],
+      "live_url": "https://the-maison-of-all-victories.cosmicshelter.com/",
+      "source_url": "https://www.awwwards.com/sites/the-maison-of-all-victories",
+      "rank": 116
+    },
+    {
+      "title": "Mooders",
+      "slug": "mooders",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-02",
+      "categories": [
+        "Design Agencies",
+        "Music & Sound",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Navigation Menu",
+        "Portfolio",
+        "Unusual Navigation",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Music & Sound",
+        "Animation",
+        "Navigation Menu",
+        "Portfolio",
+        "Unusual Navigation",
+        "Experimental",
+        "Interaction Design"
+      ],
+      "live_url": "https://mooders.net/en/",
+      "source_url": "https://www.awwwards.com/sites/mooders",
+      "rank": 117
+    },
+    {
+      "title": "Cristina Go\u0301mez",
+      "slug": "cristina-gomez",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-09-01",
+      "categories": [
+        "Promotional",
+        "Web & Interactive",
+        "Photography"
+      ],
+      "style_tags": [
+        "Clean",
+        "Infinite Scroll",
+        "Minimal",
+        "Gallery",
+        "Footer Design",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Promotional",
+        "Web & Interactive",
+        "Clean",
+        "Infinite Scroll",
+        "Minimal",
+        "Photography",
+        "Gallery",
+        "Footer Design",
+        "404 pages"
+      ],
+      "live_url": "https://cristinagomezruiz.com/",
+      "source_url": "https://www.awwwards.com/sites/cristina-gomez",
+      "rank": 118
+    },
+    {
+      "title": "Botanic Expo",
+      "slug": "botanic-expo",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-31",
+      "categories": [
+        "Technology",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Scrolling",
+        "Web Fonts",
+        "Transitions",
+        "Sound-Audio",
+        "3D",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Technology",
+        "Web & Interactive",
+        "Scrolling",
+        "Web Fonts",
+        "Transitions",
+        "Experimental",
+        "Sound-Audio",
+        "3D",
+        "404 pages"
+      ],
+      "live_url": "https://www.botanicexpo.com",
+      "source_url": "https://www.awwwards.com/sites/botanic-expo",
+      "rank": 119
+    },
+    {
+      "title": "ranlus studio",
+      "slug": "ranlus-studio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-30",
+      "categories": [
+        "Design Agencies",
+        "Film & TV",
+        "Photography"
+      ],
+      "style_tags": [
+        "Animation",
+        "Portfolio",
+        "Transitions",
+        "Interaction Design",
+        "Photo & Video"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Film & TV",
+        "Animation",
+        "Portfolio",
+        "Photography",
+        "Transitions",
+        "Interaction Design",
+        "Photo & Video"
+      ],
+      "live_url": "https://ranlus.fr/",
+      "source_url": "https://www.awwwards.com/sites/ranlus-studio",
+      "rank": 120
+    },
+    {
+      "title": "Accordion",
+      "slug": "accordion",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-29",
+      "categories": [
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Graphic design",
+        "Portfolio",
+        "Photo & Video",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Web & Interactive",
+        "Animation",
+        "Clean",
+        "Graphic design",
+        "Portfolio",
+        "Photo & Video",
+        "UI design"
+      ],
+      "live_url": "https://www.accordion.net.au/",
+      "source_url": "https://www.awwwards.com/sites/accordion",
+      "rank": 121
+    },
+    {
+      "title": "Ctrl",
+      "slug": "ctrl",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-27",
+      "categories": [
+        "Mobile & Apps",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Flat Design",
+        "Graphic design",
+        "Typography",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Mobile & Apps",
+        "Technology",
+        "Web & Interactive",
+        "Animation",
+        "Clean",
+        "Flat Design",
+        "Graphic design",
+        "Typography",
+        "Microinteractions"
+      ],
+      "live_url": "https://ctrl.xyz/",
+      "source_url": "https://www.awwwards.com/sites/ctrl",
+      "rank": 122
+    },
+    {
+      "title": "Contra Project Calculator",
+      "slug": "contra-project-calculator",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-26",
+      "categories": [
+        "Technology",
+        "Web & Interactive",
+        "Startups"
+      ],
+      "style_tags": [
+        "Animation",
+        "Unusual Navigation",
+        "Data Visualization",
+        "Sound-Audio",
+        "3D",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Technology",
+        "Web & Interactive",
+        "Animation",
+        "Unusual Navigation",
+        "Data Visualization",
+        "Sound-Audio",
+        "3D",
+        "Microinteractions",
+        "Startups"
+      ],
+      "live_url": "https://contra.com/project-rate-hiring-calculator/",
+      "source_url": "https://www.awwwards.com/sites/contra-project-calculator",
+      "rank": 123
+    },
+    {
+      "title": "Fitonist",
+      "slug": "fitonist",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-25",
+      "categories": [
+        "Mobile & Apps",
+        "Sports",
+        "Startups"
+      ],
+      "style_tags": [
+        "Animation",
+        "Scrolling",
+        "Interaction Design",
+        "UI design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Mobile & Apps",
+        "Sports",
+        "Animation",
+        "Scrolling",
+        "Interaction Design",
+        "UI design",
+        "Microinteractions",
+        "Startups"
+      ],
+      "live_url": "https://fitonist-app.webflow.io/",
+      "source_url": "https://www.awwwards.com/sites/fitonist",
+      "rank": 124
+    },
+    {
+      "title": "Omega Clearspace",
+      "slug": "omega-clearspace",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-24",
+      "categories": [
+        "Promotional",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Scrolling",
+        "Gestures / Interaction",
+        "About Page",
+        "Contact Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Promotional",
+        "Web & Interactive",
+        "Animation",
+        "Scrolling",
+        "Experimental",
+        "Gestures / Interaction",
+        "About Page",
+        "Contact Page"
+      ],
+      "live_url": "https://www.omegawatches.com/en-en/planet-omega/space/remove-debris/clearspace",
+      "source_url": "https://www.awwwards.com/sites/omega-clearspace",
+      "rank": 125
+    },
+    {
+      "title": "Opositive Films",
+      "slug": "opositive-films",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-23",
+      "categories": [
+        "Fashion",
+        "Film & TV",
+        "Music & Sound"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Clean",
+        "Video",
+        "Transitions",
+        "Menu - Vertical"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Fashion",
+        "Film & TV",
+        "Music & Sound",
+        "Big Background Images",
+        "Clean",
+        "Video",
+        "Transitions",
+        "Menu - Vertical"
+      ],
+      "live_url": "https://opos.buzzworthystudio.com/",
+      "source_url": "https://www.awwwards.com/sites/opositive-films",
+      "rank": 126
+    },
+    {
+      "title": "Jordan Gilroy",
+      "slug": "jordan-gilroy-porfolio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-22",
+      "categories": [
+        "Design Agencies",
+        "Promotional",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Scrolling",
+        "Menu - Vertical",
+        "Storytelling",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Promotional",
+        "Web & Interactive",
+        "Animation",
+        "Clean",
+        "Scrolling",
+        "Menu - Vertical",
+        "Storytelling",
+        "Interaction Design"
+      ],
+      "live_url": "https://www.jordangilroy.com",
+      "source_url": "https://www.awwwards.com/sites/jordan-gilroy-porfolio",
+      "rank": 127
+    },
+    {
+      "title": "Your Majesty",
+      "slug": "your-majesty",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-21",
+      "categories": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Clean",
+        "Typography",
+        "Video",
+        "Transitions",
+        "UI design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive",
+        "Clean",
+        "Typography",
+        "Video",
+        "Transitions",
+        "UI design",
+        "Microinteractions"
+      ],
+      "live_url": "https://yourmajesty.co/",
+      "source_url": "https://www.awwwards.com/sites/your-majesty",
+      "rank": 128
+    },
+    {
+      "title": "makemeplay",
+      "slug": "makemeplay",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-20",
+      "categories": [
+        "Games & Entertainment",
+        "Promotional"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Games & Entertainment",
+        "Promotional",
+        "Animation",
+        "Clean",
+        "Microinteractions"
+      ],
+      "live_url": "https://play.makemepulse.com",
+      "source_url": "https://www.awwwards.com/sites/makemeplay",
+      "rank": 129
+    },
+    {
+      "title": "Better Off\u00ae",
+      "slug": "better-off-r",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-19",
+      "categories": [
+        "Culture & Education",
+        "Design Agencies"
+      ],
+      "style_tags": [
+        "Animation",
+        "Big Background Images",
+        "Clean",
+        "Interaction Design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Culture & Education",
+        "Design Agencies",
+        "Animation",
+        "Big Background Images",
+        "Clean",
+        "Interaction Design",
+        "Microinteractions"
+      ],
+      "live_url": "https://betteroff.studio/",
+      "source_url": "https://www.awwwards.com/sites/better-off-r",
+      "rank": 130
+    },
+    {
+      "title": "Art of Documentary",
+      "slug": "art-of-documentary",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-18",
+      "categories": [
+        "Business & Corporate",
+        "Film & TV",
+        "Other"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Transitions",
+        "Gestures / Interaction",
+        "Photo & Video",
+        "UI design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Film & TV",
+        "Other",
+        "Big Background Images",
+        "Transitions",
+        "Gestures / Interaction",
+        "Photo & Video",
+        "UI design",
+        "Microinteractions"
+      ],
+      "live_url": "https://theartofdocumentary.com/",
+      "source_url": "https://www.awwwards.com/sites/art-of-documentary",
+      "rank": 131
+    },
+    {
+      "title": "Stewart & Partners",
+      "slug": "stewart-partners",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-17",
+      "categories": [
+        "Architecture",
+        "Business & Corporate",
+        "Real Estate"
+      ],
+      "style_tags": [
+        "Clean",
+        "Flat Design",
+        "Minimal",
+        "Portfolio",
+        "Typography"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "Business & Corporate",
+        "Clean",
+        "Flat Design",
+        "Minimal",
+        "Portfolio",
+        "Typography",
+        "Real Estate"
+      ],
+      "live_url": "https://www.stewartpartners.studio/",
+      "source_url": "https://www.awwwards.com/sites/stewart-partners",
+      "rank": 132
+    },
+    {
+      "title": "Digital Mosaik",
+      "slug": "digital-mosaik",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-16",
+      "categories": [
+        "Culture & Education",
+        "Games & Entertainment",
+        "Technology"
+      ],
+      "style_tags": [
+        "Animation",
+        "3D",
+        "Gestures / Interaction",
+        "Filters and Effects",
+        "Interaction Design",
+        "next.js"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Culture & Education",
+        "Games & Entertainment",
+        "Technology",
+        "Animation",
+        "3D",
+        "Gestures / Interaction",
+        "Filters and Effects",
+        "Interaction Design",
+        "next.js"
+      ],
+      "live_url": "https://www.digitalmosaik.com/",
+      "source_url": "https://www.awwwards.com/sites/digital-mosaik",
+      "rank": 133
+    },
+    {
+      "title": "Stevia Please Portfolio",
+      "slug": "stevia-please-portfolio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-15",
+      "categories": [
+        "Art & Illustration",
+        "Promotional",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Colorful",
+        "Infinite Scroll",
+        "Unusual Navigation",
+        "Menu - Horizontal",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Promotional",
+        "Web & Interactive",
+        "Animation",
+        "Colorful",
+        "Infinite Scroll",
+        "Unusual Navigation",
+        "Menu - Horizontal",
+        "3D"
+      ],
+      "live_url": "https://www.steviaplease.me/",
+      "source_url": "https://www.awwwards.com/sites/stevia-please-portfolio",
+      "rank": 134
+    },
+    {
+      "title": "Breaking",
+      "slug": "breaking",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-14",
+      "categories": [
+        "Technology",
+        "Startups",
+        "Social responsibility"
+      ],
+      "style_tags": [
+        "Animation",
+        "Graphic design",
+        "Responsive Design",
+        "Typography",
+        "Data Visualization",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Technology",
+        "Animation",
+        "Graphic design",
+        "Responsive Design",
+        "Typography",
+        "Data Visualization",
+        "Microinteractions",
+        "Startups",
+        "Social responsibility"
+      ],
+      "live_url": "https://www.breaking.com/",
+      "source_url": "https://www.awwwards.com/sites/breaking",
+      "rank": 135
+    },
+    {
+      "title": "Superpower",
+      "slug": "superpower",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-13",
+      "categories": [
+        "Other",
+        "Technology",
+        "Startups"
+      ],
+      "style_tags": [
+        "Animation",
+        "Scrolling",
+        "Transitions",
+        "3D",
+        "Microinteractions",
+        "next.js"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Other",
+        "Technology",
+        "Animation",
+        "Scrolling",
+        "Transitions",
+        "3D",
+        "Microinteractions",
+        "Startups",
+        "next.js"
+      ],
+      "live_url": "https://superpower.com/",
+      "source_url": "https://www.awwwards.com/sites/superpower",
+      "rank": 136
+    },
+    {
+      "title": "ZETR",
+      "slug": "zetr",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-12",
+      "categories": [
+        "Architecture",
+        "E-Commerce",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Big Background Images",
+        "Clean",
+        "UI design",
+        "Header Design",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "E-Commerce",
+        "Web & Interactive",
+        "Animation",
+        "Big Background Images",
+        "Clean",
+        "UI design",
+        "Header Design",
+        "404 pages"
+      ],
+      "live_url": "https://www.zetr.com.au/",
+      "source_url": "https://www.awwwards.com/sites/zetr",
+      "rank": 137
+    },
+    {
+      "title": "Lowe's Innovation Labs",
+      "slug": "lowes-innovation-labs",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-11",
+      "categories": [
+        "Business & Corporate",
+        "Technology",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Navigation Menu",
+        "Interaction Design",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Technology",
+        "Animation",
+        "Clean",
+        "Navigation Menu",
+        "Experimental",
+        "Interaction Design",
+        "UI design"
+      ],
+      "live_url": "https://www.lowesinnovationlabs.com/",
+      "source_url": "https://www.awwwards.com/sites/lowes-innovation-labs",
+      "rank": 138
+    },
+    {
+      "title": "POHODA BY OUTLOUD",
+      "slug": "pohoda-by-outloud",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-10",
+      "categories": [
+        "Design Agencies",
+        "Music & Sound"
+      ],
+      "style_tags": [
+        "Animation",
+        "App Style",
+        "Interaction Design",
+        "Microinteractions",
+        "Project Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Music & Sound",
+        "Animation",
+        "App Style",
+        "Interaction Design",
+        "Microinteractions",
+        "Project Page"
+      ],
+      "live_url": "https://work.outloud.co/pohoda",
+      "source_url": "https://www.awwwards.com/sites/pohoda-by-outloud",
+      "rank": 139
+    },
+    {
+      "title": "Uprising\u2122",
+      "slug": "uprisingtm",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-09",
+      "categories": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Portfolio",
+        "Transitions",
+        "3D",
+        "About Page",
+        "Footer Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Animation",
+        "Portfolio",
+        "Transitions",
+        "Experimental",
+        "3D",
+        "About Page",
+        "Footer Design"
+      ],
+      "live_url": "https://www.weareuprising.com/",
+      "source_url": "https://www.awwwards.com/sites/uprisingtm",
+      "rank": 140
+    },
+    {
+      "title": "Dictionary of Free Speech",
+      "slug": "dictionary-of-free-speech",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-08",
+      "categories": [
+        "Culture & Education",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Unusual Navigation",
+        "3D",
+        "Filters and Effects",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Culture & Education",
+        "Unusual Navigation",
+        "Experimental",
+        "3D",
+        "Filters and Effects",
+        "Interaction Design"
+      ],
+      "live_url": "https://freespeech.gubrica.com/",
+      "source_url": "https://www.awwwards.com/sites/dictionary-of-free-speech",
+      "rank": 141
+    },
+    {
+      "title": "Sugar",
+      "slug": "sugar",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-07",
+      "categories": [
+        "Games & Entertainment",
+        "Mobile & Apps",
+        "Startups"
+      ],
+      "style_tags": [
+        "App Style",
+        "Transitions",
+        "Storytelling",
+        "Gestures / Interaction"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Games & Entertainment",
+        "Mobile & Apps",
+        "App Style",
+        "Transitions",
+        "Storytelling",
+        "Gestures / Interaction",
+        "Startups"
+      ],
+      "live_url": "https://sugar-app.webflow.io/",
+      "source_url": "https://www.awwwards.com/sites/sugar",
+      "rank": 142
+    },
+    {
+      "title": "Non-Linear Studio",
+      "slug": "non-linear-studio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-06",
+      "categories": [
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Portfolio",
+        "Typography",
+        "Video",
+        "3D",
+        "Forms and Input"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Animation",
+        "Portfolio",
+        "Typography",
+        "Video",
+        "3D",
+        "Forms and Input"
+      ],
+      "live_url": "https://non-linear.studio",
+      "source_url": "https://www.awwwards.com/sites/non-linear-studio",
+      "rank": 143
+    },
+    {
+      "title": "Den Cool",
+      "slug": "den-cool",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-05",
+      "categories": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Clean",
+        "Portfolio",
+        "3D"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive",
+        "Clean",
+        "Portfolio",
+        "3D"
+      ],
+      "live_url": "https://den.cool/",
+      "source_url": "https://www.awwwards.com/sites/den-cool",
+      "rank": 144
+    },
+    {
+      "title": "Be The Buzz",
+      "slug": "be-the-buzz",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-04",
+      "categories": [
+        "Business & Corporate",
+        "Promotional",
+        "Technology"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Clean",
+        "Fullscreen",
+        "Navigation Menu",
+        "Typography",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Promotional",
+        "Technology",
+        "Big Background Images",
+        "Clean",
+        "Fullscreen",
+        "Navigation Menu",
+        "Typography",
+        "UI design"
+      ],
+      "live_url": "https://www.bethebuzz.co/",
+      "source_url": "https://www.awwwards.com/sites/be-the-buzz",
+      "rank": 145
+    },
+    {
+      "title": "UFL GAME",
+      "slug": "ufl-game",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-03",
+      "categories": [
+        "Events",
+        "Games & Entertainment",
+        "Sports"
+      ],
+      "style_tags": [
+        "Animation",
+        "Single page",
+        "Sound-Audio",
+        "3D",
+        "Filters and Effects",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Events",
+        "Games & Entertainment",
+        "Sports",
+        "Animation",
+        "Single page",
+        "Sound-Audio",
+        "3D",
+        "Filters and Effects",
+        "Microinteractions"
+      ],
+      "live_url": "https://www.uflgame.com",
+      "source_url": "https://www.awwwards.com/sites/ufl-game",
+      "rank": 146
+    },
+    {
+      "title": "erthos\u00ae",
+      "slug": "erthos-r",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-02",
+      "categories": [
+        "Business & Corporate",
+        "Technology",
+        "Startups"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Minimal",
+        "Typography",
+        "Data Visualization",
+        "Responsive",
+        "Photo & Video"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Technology",
+        "Big Background Images",
+        "Minimal",
+        "Typography",
+        "Data Visualization",
+        "Responsive",
+        "Photo & Video",
+        "Startups"
+      ],
+      "live_url": "https://planeterthos.com/",
+      "source_url": "https://www.awwwards.com/sites/erthos-r",
+      "rank": 147
+    },
+    {
+      "title": "Paffi",
+      "slug": "paffi",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-08-01",
+      "categories": [
+        "Design Agencies"
+      ],
+      "style_tags": [
+        "Colorful",
+        "Unusual Navigation",
+        "About Page",
+        "Project Page"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Colorful",
+        "Unusual Navigation",
+        "About Page",
+        "Project Page"
+      ],
+      "live_url": "https://www.paffi.it/",
+      "source_url": "https://www.awwwards.com/sites/paffi",
+      "rank": 148
+    },
+    {
+      "title": "Girard Perregaux - Casquette",
+      "slug": "girard-perregaux-casquette",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-31",
+      "categories": [
+        "Promotional",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Retro",
+        "Scrolling",
+        "3D",
+        "Gestures / Interaction",
+        "UI design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Promotional",
+        "Web & Interactive",
+        "Animation",
+        "Retro",
+        "Scrolling",
+        "Experimental",
+        "3D",
+        "Gestures / Interaction",
+        "UI design"
+      ],
+      "live_url": "https://www.girard-perregaux.com/casquette-collection/",
+      "source_url": "https://www.awwwards.com/sites/girard-perregaux-casquette",
+      "rank": 149
+    },
+    {
+      "title": "Dracarys",
+      "slug": "dracarys",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-30",
+      "categories": [
+        "Technology",
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Fullscreen",
+        "Storytelling",
+        "3D",
+        "Filters and Effects"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Technology",
+        "Web & Interactive",
+        "Animation",
+        "Fullscreen",
+        "Experimental",
+        "Storytelling",
+        "3D",
+        "Filters and Effects"
+      ],
+      "live_url": "https://dracarys.robertborghesi.is/",
+      "source_url": "https://www.awwwards.com/sites/dracarys",
+      "rank": 150
+    },
+    {
+      "title": "Jo Ben'Etuk - Portfolio `24",
+      "slug": "jo-benetuk-portfolio-24",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-29",
+      "categories": [
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Infinite Scroll",
+        "Parallax",
+        "Transitions",
+        "Gallery"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Web & Interactive",
+        "Animation",
+        "Infinite Scroll",
+        "Parallax",
+        "Transitions",
+        "Gallery"
+      ],
+      "live_url": "https://jobenetuk.dev/",
+      "source_url": "https://www.awwwards.com/sites/jo-benetuk-portfolio-24",
+      "rank": 151
+    },
+    {
+      "title": "Doze",
+      "slug": "doze",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-28",
+      "categories": [
+        "Art & Illustration",
+        "Film & TV",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Transitions",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Film & TV",
+        "Web & Interactive",
+        "Animation",
+        "Transitions",
+        "Interaction Design"
+      ],
+      "live_url": "https://doze.studio",
+      "source_url": "https://www.awwwards.com/sites/doze",
+      "rank": 152
+    },
+    {
+      "title": "DEF",
+      "slug": "def",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-27",
+      "categories": [
+        "Architecture"
+      ],
+      "style_tags": [
+        "Clean",
+        "Scrolling",
+        "Transitions",
+        "Interaction Design",
+        "About Page",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Architecture",
+        "Clean",
+        "Scrolling",
+        "Transitions",
+        "Interaction Design",
+        "About Page",
+        "Microinteractions"
+      ],
+      "live_url": "https://www.defprojetos.com/",
+      "source_url": "https://www.awwwards.com/sites/def",
+      "rank": 153
+    },
+    {
+      "title": "HEVA HEALTH",
+      "slug": "heva-health",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-26",
+      "categories": [
+        "Business & Corporate",
+        "Startups"
+      ],
+      "style_tags": [
+        "Animation",
+        "Photographic",
+        "Transitions",
+        "Header Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Animation",
+        "Photographic",
+        "Transitions",
+        "Header Design",
+        "Startups"
+      ],
+      "live_url": "https://www.hevahealth.com/",
+      "source_url": "https://www.awwwards.com/sites/heva-health",
+      "rank": 154
+    },
+    {
+      "title": "Cumulus",
+      "slug": "cumulus",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-25",
+      "categories": [
+        "E-Commerce",
+        "Food & Drink",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Fullscreen",
+        "Scrolling",
+        "3D"
+      ],
+      "tech_tags": [
+        "Shopify"
+      ],
+      "tags": [
+        "E-Commerce",
+        "Food & Drink",
+        "Web & Interactive",
+        "Fullscreen",
+        "Scrolling",
+        "3D",
+        "Shopify"
+      ],
+      "live_url": "https://view-source-cumulus.myshopify.com/",
+      "source_url": "https://www.awwwards.com/sites/cumulus",
+      "rank": 155
+    },
+    {
+      "title": "UND NY",
+      "slug": "und-ny",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-24",
+      "categories": [
+        "E-Commerce",
+        "Food & Drink"
+      ],
+      "style_tags": [
+        "Animation",
+        "Graphic design",
+        "Scrolling",
+        "UI design",
+        "next.js"
+      ],
+      "tech_tags": [
+        "Contentful"
+      ],
+      "tags": [
+        "E-Commerce",
+        "Food & Drink",
+        "Animation",
+        "Graphic design",
+        "Scrolling",
+        "UI design",
+        "Contentful",
+        "next.js"
+      ],
+      "live_url": "https://und-ny.com",
+      "source_url": "https://www.awwwards.com/sites/und-ny",
+      "rank": 156
+    },
+    {
+      "title": "Francobolli Monti Lessini",
+      "slug": "francobolli-monti-lessini",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-22",
+      "categories": [
+        "Art & Illustration",
+        "Culture & Education",
+        "Promotional"
+      ],
+      "style_tags": [
+        "Big Background Images",
+        "Colorful",
+        "Flat Design",
+        "Illustration",
+        "Gallery"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Art & Illustration",
+        "Culture & Education",
+        "Promotional",
+        "Big Background Images",
+        "Colorful",
+        "Flat Design",
+        "Illustration",
+        "Gallery"
+      ],
+      "live_url": "https://www.francobollimontilessini.com/",
+      "source_url": "https://www.awwwards.com/sites/francobolli-monti-lessini",
+      "rank": 157
+    },
+    {
+      "title": "Space Trash Signs",
+      "slug": "space-trash-signs",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-21",
+      "categories": [
+        "Web & Interactive",
+        "Experimental"
+      ],
+      "style_tags": [
+        "Animation",
+        "Transitions",
+        "Data Visualization",
+        "3D",
+        "Gestures / Interaction"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Web & Interactive",
+        "Animation",
+        "Transitions",
+        "Data Visualization",
+        "Experimental",
+        "3D",
+        "Gestures / Interaction"
+      ],
+      "live_url": "https://spacetrashsigns.org",
+      "source_url": "https://www.awwwards.com/sites/space-trash-signs",
+      "rank": 158
+    },
+    {
+      "title": "NaughtyDuk\u00a9",
+      "slug": "naughtyduk-c-2",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-20",
+      "categories": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Minimal",
+        "3D",
+        "Filters and Effects",
+        "Interaction Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Technology",
+        "Web & Interactive",
+        "Animation",
+        "Minimal",
+        "3D",
+        "Filters and Effects",
+        "Interaction Design"
+      ],
+      "live_url": "https://naughtyduk.com",
+      "source_url": "https://www.awwwards.com/sites/naughtyduk-c-2",
+      "rank": 159
+    },
+    {
+      "title": "Studio Size",
+      "slug": "studio-size-1",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-19",
+      "categories": [
+        "Design Agencies",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Clean",
+        "Typography",
+        "Video",
+        "Photo & Video",
+        "UI design",
+        "Footer Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Web & Interactive",
+        "Clean",
+        "Typography",
+        "Video",
+        "Photo & Video",
+        "UI design",
+        "Footer Design"
+      ],
+      "live_url": "https://studio-size.com/",
+      "source_url": "https://www.awwwards.com/sites/studio-size-1",
+      "rank": 160
+    },
+    {
+      "title": "Ashfall Studio",
+      "slug": "ashfall-studio",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-18",
+      "categories": [
+        "Business & Corporate",
+        "Promotional",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Portfolio",
+        "Transitions",
+        "Storytelling",
+        "3D",
+        "Interaction Design",
+        "Header Design"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Promotional",
+        "Web & Interactive",
+        "Portfolio",
+        "Transitions",
+        "Storytelling",
+        "3D",
+        "Interaction Design",
+        "Header Design"
+      ],
+      "live_url": "https://ashfall.studio/",
+      "source_url": "https://www.awwwards.com/sites/ashfall-studio",
+      "rank": 161
+    },
+    {
+      "title": "Telefonica 100",
+      "slug": "telefonica-100",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-17",
+      "categories": [
+        "Business & Corporate",
+        "Technology",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Navigation Menu",
+        "Scrolling",
+        "Unusual Navigation",
+        "Transitions",
+        "Data Visualization"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Technology",
+        "Web & Interactive",
+        "Navigation Menu",
+        "Scrolling",
+        "Unusual Navigation",
+        "Transitions",
+        "Data Visualization"
+      ],
+      "live_url": "https://www.telefonica100.com/en",
+      "source_url": "https://www.awwwards.com/sites/telefonica-100",
+      "rank": 162
+    },
+    {
+      "title": "Sonar Music",
+      "slug": "sonar-music",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-16",
+      "categories": [
+        "Design Agencies",
+        "Film & TV",
+        "Music & Sound"
+      ],
+      "style_tags": [
+        "Portfolio",
+        "Transitions",
+        "UI design",
+        "Microinteractions",
+        "Footer Design",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Film & TV",
+        "Music & Sound",
+        "Portfolio",
+        "Transitions",
+        "UI design",
+        "Microinteractions",
+        "Footer Design",
+        "404 pages"
+      ],
+      "live_url": "https://www.sonarmusic.com.au/",
+      "source_url": "https://www.awwwards.com/sites/sonar-music",
+      "rank": 163
+    },
+    {
+      "title": "Kanak Naturals",
+      "slug": "kanak-naturals",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-15",
+      "categories": [
+        "Business & Corporate",
+        "Web & Interactive",
+        "Social responsibility"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Scrolling",
+        "3D",
+        "Interaction Design",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Web & Interactive",
+        "Animation",
+        "Clean",
+        "Scrolling",
+        "3D",
+        "Interaction Design",
+        "Microinteractions",
+        "Social responsibility"
+      ],
+      "live_url": "https://www.kanaknaturals.com/",
+      "source_url": "https://www.awwwards.com/sites/kanak-naturals",
+      "rank": 164
+    },
+    {
+      "title": "Uncommon website",
+      "slug": "uncommon-website",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-14",
+      "categories": [
+        "Design Agencies",
+        "Promotional",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Fullscreen",
+        "Portfolio",
+        "Microinteractions",
+        "Footer Design",
+        "Project Page",
+        "next.js"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Design Agencies",
+        "Promotional",
+        "Web & Interactive",
+        "Fullscreen",
+        "Portfolio",
+        "Microinteractions",
+        "Footer Design",
+        "Project Page",
+        "next.js"
+      ],
+      "live_url": "https://uncommonstudio.com.au/",
+      "source_url": "https://www.awwwards.com/sites/uncommon-website",
+      "rank": 165
+    },
+    {
+      "title": "Zaptec",
+      "slug": "zaptec",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-13",
+      "categories": [
+        "Business & Corporate"
+      ],
+      "style_tags": [
+        "Animation",
+        "Clean",
+        "Parallax",
+        "Video",
+        "3D",
+        "Microinteractions"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "Business & Corporate",
+        "Animation",
+        "Clean",
+        "Parallax",
+        "Video",
+        "3D",
+        "Microinteractions"
+      ],
+      "live_url": "https://www.zaptec.com/",
+      "source_url": "https://www.awwwards.com/sites/zaptec",
+      "rank": 166
+    },
+    {
+      "title": "Fountain of Youth",
+      "slug": "fountain-of-youth",
+      "award_source": "Awwwards",
+      "award_name": "Site of the Day",
+      "award_year": 2024,
+      "award_date": "2024-07-12",
+      "categories": [
+        "E-Commerce",
+        "Food & Drink",
+        "Web & Interactive"
+      ],
+      "style_tags": [
+        "Animation",
+        "Vector",
+        "Illustration",
+        "Sound-Audio",
+        "404 pages"
+      ],
+      "tech_tags": [],
+      "tags": [
+        "E-Commerce",
+        "Food & Drink",
+        "Web & Interactive",
+        "Animation",
+        "Vector",
+        "Illustration",
+        "Sound-Audio",
+        "404 pages"
+      ],
+      "live_url": "https://www.fountainofyouth.gold/",
+      "source_url": "https://www.awwwards.com/sites/fountain-of-youth",
+      "rank": 167
+    }
+  ]
+}

@@ -7,7 +7,7 @@ description: Curated award-winning web design reference lookup for inspiration w
 
 ## Overview
 
-Use the local catalog first. This skill bundles a searchable seed set of 50 Awwwards `Site of the Day` winners from 2025 with normalized categories, style tags, tech tags, award dates, and live/source URLs.
+Use the local catalog first. This skill bundles a searchable multi-year Awwwards `Site of the Day` catalog with normalized categories, style tags, tech tags, award dates, and live/source URLs.
 
 The skill also ships with a local browser UI. Run `python3 scripts/design_refs_ui.py` or `design_refs_ui` to open the catalog as a filterable web app.
 
@@ -40,7 +40,7 @@ python3 scripts/design_refs_ui.py
    - When useful, propose a page structure or component list derived from the references.
 
 4. Expand beyond the local catalog only when needed:
-   - If the user wants more than the bundled 50 references.
+   - If the user wants more than the bundled local Awwwards catalog.
    - If the user wants fresher material.
    - If the local dataset does not cover the requested niche.
    - When expanding, start with [references/source-index.md](references/source-index.md).
@@ -50,7 +50,7 @@ python3 scripts/design_refs_ui.py
 Use this section as the mental map for where references should come from.
 
 - `Awwwards seed set`
-  The bundled local catalog is based on 50 Awwwards `Site of the Day` winners from 2025. Use this first because it is fast, searchable, and already normalized for category, style, and tech.
+  The bundled local catalog currently combines `references/awwwards-sotd-2025.json` (200 entries) and `references/awwwards-sotd-2024.json` (167 entries). Use this first because it is fast, searchable, and already normalized for category, style, and tech.
 - `CSSDA expansion`
   Use CSS Design Awards when the user wants more award-winning references beyond the local set, especially when you want short written descriptions, studio names, and category labels.
 - `SiteInspire browse source`
@@ -60,7 +60,7 @@ Use this section as the mental map for where references should come from.
 
 ## Catalog Shape
 
-The bundled dataset lives at [references/awwwards-sotd-2025.json](references/awwwards-sotd-2025.json).
+The bundled datasets live in year-based files such as [references/awwwards-sotd-2025.json](references/awwwards-sotd-2025.json) and [references/awwwards-sotd-2024.json](references/awwwards-sotd-2024.json). The CLI and local UI combine all matching `references/awwwards-sotd-*.json` files at runtime.
 
 Each entry contains:
 
@@ -93,7 +93,8 @@ Rebuild the seed set with the bundled scraper:
 
 ```bash
 python3 scripts/build_awwwards_top50.py
-python3 scripts/build_awwwards_top50.py --year 2025 --limit 50 --output references/awwwards-sotd-2025.json
+python3 scripts/build_awwwards_top50.py --year 2025 --limit 200 --output references/awwwards-sotd-2025.json
+python3 scripts/build_awwwards_top50.py --year 2024 --limit 200 --output references/awwwards-sotd-2024.json
 ```
 
 The scraper uses the official Awwwards archive and stops once it has collected the requested number of entries for the target year.

@@ -21,9 +21,10 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
+from dataset_catalog import load_awwwards_catalog
+
 ROOT = Path(__file__).resolve().parent.parent
 WEB_DIR = ROOT / "web"
-DATASET_PATH = ROOT / "references" / "awwwards-sotd-2025.json"
 SEARCH_SCRIPT = ROOT / "scripts" / "find_design_refs.py"
 
 FOCUS_PRESETS = {
@@ -189,7 +190,7 @@ def get_ref(slug: str) -> dict | None:
 
 
 def load_dataset() -> dict:
-    return json.loads(DATASET_PATH.read_text(encoding="utf-8"))
+    return load_awwwards_catalog()
 
 
 VISION_PROMPT = """You are a design analyst. Look at this screenshot or design reference image and describe it using the vocabulary below.
@@ -285,6 +286,7 @@ def get_options() -> dict:
     entries = data["entries"]
     return {
         "dataset": data["dataset"],
+        "datasets": data.get("datasets", []),
         "focus": [
             {"key": key, "label": value["label"], "description": value["description"]}
             for key, value in FOCUS_PRESETS.items()
