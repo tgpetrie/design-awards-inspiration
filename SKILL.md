@@ -60,7 +60,7 @@ Use this section as the mental map for where references should come from.
 
 ## Catalog Shape
 
-The bundled dataset lives at [references/awwwards-sotd-2025-top-50.json](references/awwwards-sotd-2025-top-50.json).
+The bundled dataset lives at [references/awwwards-sotd-2025.json](references/awwwards-sotd-2025.json).
 
 Each entry contains:
 
@@ -93,7 +93,7 @@ Rebuild the seed set with the bundled scraper:
 
 ```bash
 python3 scripts/build_awwwards_top50.py
-python3 scripts/build_awwwards_top50.py --year 2025 --limit 50 --output references/awwwards-sotd-2025-top-50.json
+python3 scripts/build_awwwards_top50.py --year 2025 --limit 50 --output references/awwwards-sotd-2025.json
 ```
 
 The scraper uses the official Awwwards archive and stops once it has collected the requested number of entries for the target year.

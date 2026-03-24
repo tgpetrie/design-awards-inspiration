@@ -153,7 +153,7 @@ def main() -> int:
     default_dataset = (
         Path(__file__).resolve().parent.parent
         / "references"
-        / "awwwards-sotd-2025-top-50.json"
+        / "awwwards-sotd-2025.json"
     )
 
     parser = argparse.ArgumentParser()

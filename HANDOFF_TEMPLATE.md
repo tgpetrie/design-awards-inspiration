@@ -23,28 +23,28 @@ Fill this out before ending any work session. Both Claude and Codex read this to
 
 ## Last completed handoff (example — update each session)
 
-**Session: 2026-03-24 — Sync cleanup pass**
+**Session: 2026-03-24 — Dataset rename cleanup**
 
 ### What changed
-- Rewrote `NEXT_STEPS.md` to reflect real repo state: 200-entry dataset, full UI in place, nothing in progress.
-- Filled `HANDOFF_TEMPLATE.md` with a real reusable structure and a completed example.
-- Updated `CLAUDE.md` to note the 200-entry dataset, pin the verified commit, and remove stale "recent work" phrasing.
-- Confirmed `WORKFLOW.md` is accurate; no edits needed.
+- Renamed the canonical dataset file from `references/awwwards-sotd-2025-top-50.json` to `references/awwwards-sotd-2025.json`.
+- Updated all in-repo code references in the build script, CLI search script, thumbnail fetcher, local UI server, and skill docs.
+- Verified the renamed dataset loads as 200 entries and that the UI API still serves search results.
+- Updated `CLAUDE.md` and `NEXT_STEPS.md` so the handoff state matches the new filename.
 
 ### Currently in progress
-- Nothing. Repo is clean.
+- Nothing. Rename cleanup and verification are complete.
 
 ### What should happen next
-1. Decide which dataset to expand next: FWA FotD (`scripts/build_fwa_fotd.py` exists but has never been run) or more Awwwards years.
-2. Consider renaming `references/awwwards-sotd-2025-top-50.json` → `awwwards-sotd-2025.json` to drop the misleading `-top-50` suffix (it holds 200 entries).
-3. Push to `origin/master` when ready — currently 1 commit ahead.
+1. Expand Awwwards to additional years before introducing FWA or another source.
+2. Decide which Awwwards years to add next and keep the output naming aligned with the year-based convention.
+3. Push to `origin/master` only after this rename cleanup commit is reviewed.
 4. Start product work once dataset direction is confirmed.
 
 ### What files matter
 - `NEXT_STEPS.md`, `HANDOFF_TEMPLATE.md`, `CLAUDE.md` — all updated this session.
-- `references/awwwards-sotd-2025-top-50.json` — 200-entry dataset, filename is a misnomer.
-- `scripts/build_fwa_fotd.py` — FWA scraper, exists but never been run.
+- `references/awwwards-sotd-2025.json` — 200-entry canonical dataset.
+- `scripts/build_awwwards_top50.py`, `scripts/find_design_refs.py`, `scripts/fetch_thumbnails.py`, `scripts/design_refs_ui.py` — all updated to the new dataset filename.
 - `web/` — full static UI, no changes needed right now.
 
 ### Anchor commit
-- `a9f0fb849c764e687d6f30499fba11014136f0f8`
+- `4ca8548`

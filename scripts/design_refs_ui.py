@@ -23,7 +23,7 @@ from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 WEB_DIR = ROOT / "web"
-DATASET_PATH = ROOT / "references" / "awwwards-sotd-2025-top-50.json"
+DATASET_PATH = ROOT / "references" / "awwwards-sotd-2025.json"
 SEARCH_SCRIPT = ROOT / "scripts" / "find_design_refs.py"
 
 FOCUS_PRESETS = {

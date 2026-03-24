@@ -24,7 +24,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DATASET_PATH = ROOT / "references" / "awwwards-sotd-2025-top-50.json"
+DATASET_PATH = ROOT / "references" / "awwwards-sotd-2025.json"
 REQUEST_DELAY = 0.5
 
 _BROWSER_HEADERS = {
