@@ -2614,8 +2614,7 @@ body {
 }
 
 .results-shell .dataset-pill,
-#detail-view .dataset-pill,
-.feed-dataset-pill {
+#detail-view .dataset-pill {
   border-color: var(--archive-chip-border);
   background: rgba(255, 255, 255, 0.5);
   color: var(--archive-violet-deep);
@@ -2623,8 +2622,6 @@ body {
 
 .results-back,
 .detail-back-button,
-.feed-advanced-link,
-.discover-action-btn,
 .card-action-btn,
 .results-shell .button,
 #detail-view .button {
@@ -2642,10 +2639,8 @@ body {
 
 .results-back,
 .detail-back-button,
-.feed-advanced-link,
 .results-shell .button.ghost,
 #detail-view .button.ghost,
-.discover-action-btn.ghost,
 .card-action-source {
   border: 1px solid var(--archive-border);
   background: rgba(255, 255, 255, 0.44);
@@ -2654,10 +2649,8 @@ body {
 
 .results-back:hover,
 .detail-back-button:hover,
-.feed-advanced-link:hover,
 .results-shell .button.ghost:hover,
 #detail-view .button.ghost:hover,
-.discover-action-btn.ghost:hover,
 .card-action-source:hover {
   background: rgba(255, 255, 255, 0.68);
   color: var(--archive-text);
@@ -2665,7 +2658,6 @@ body {
 
 .results-shell .button.secondary,
 #detail-view .button.secondary,
-.discover-action-btn.primary,
 .card-action-live {
   border: 1px solid var(--archive-chip-border);
   background: var(--archive-chip-bg);
@@ -2674,7 +2666,6 @@ body {
 
 .results-shell .button.secondary:hover,
 #detail-view .button.secondary:hover,
-.discover-action-btn.primary:hover,
 .card-action-live:hover {
   background: var(--archive-chip-bg-strong);
   color: var(--archive-violet-deep);
@@ -2682,8 +2673,7 @@ body {
 
 .results-shell .button.primary,
 #detail-view .button.primary,
-.results-search-btn,
-.feed-search-btn {
+.results-search-btn {
   border: 1px solid var(--archive-warm-border);
   background: var(--archive-warm-bg);
   color: var(--archive-warm-deep);
@@ -2692,8 +2682,7 @@ body {
 
 .results-shell .button.primary:hover,
 #detail-view .button.primary:hover,
-.results-search-btn:hover,
-.feed-search-btn:hover {
+.results-search-btn:hover {
   background: rgba(185, 103, 53, 0.18);
   color: var(--archive-warm-deep);
 }
@@ -2719,75 +2708,6 @@ body {
   border-color: var(--archive-warm-border);
   background: var(--archive-warm-bg);
   color: var(--archive-warm-deep);
-}
-
-.feed-topbar {
-  padding: 20px 24px 0;
-}
-
-.feed-search-dock {
-  bottom: 132px;
-  max-width: 720px;
-}
-
-.feed-search-form {
-  padding: 16px;
-  border: 1px solid rgba(193, 171, 246, 0.32);
-  border-radius: var(--archive-shell-radius);
-  background:
-    linear-gradient(180deg, rgba(251, 246, 255, 0.78), rgba(237, 224, 255, 0.66));
-  box-shadow: var(--archive-shadow);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-}
-
-.feed-search-bar {
-  border: 1px solid rgba(197, 178, 245, 0.28);
-  background: rgba(18, 14, 28, 0.78);
-}
-
-.feed-search-bar:focus-within {
-  border-color: rgba(212, 190, 255, 0.48);
-  background: rgba(22, 17, 36, 0.84);
-}
-
-.feed-search-bar input {
-  color: rgba(247, 241, 255, 0.92);
-}
-
-.feed-search-bar input::placeholder {
-  color: rgba(222, 204, 255, 0.72);
-  font-style: normal;
-}
-
-.feed-search-btn {
-  margin: 5px;
-}
-
-.feed-search-footer {
-  margin-top: 12px;
-}
-
-.feed-advanced-link {
-  border-color: rgba(208, 189, 255, 0.18);
-  background: rgba(29, 22, 43, 0.68);
-  color: rgba(241, 235, 255, 0.82);
-}
-
-.feed-down-arrow {
-  border-color: rgba(232, 176, 144, 0.4);
-  background: rgba(251, 246, 255, 0.16);
-  color: rgba(255, 233, 217, 0.92);
-  text-shadow: none;
-}
-
-.feed-down-arrow:hover {
-  background: rgba(255, 255, 255, 0.22);
-  transform: translateY(2px);
-}
-
-.discover-action-btn {
-  padding: 0 14px;
 }
 
 .archive-search-shell {
@@ -3338,12 +3258,6 @@ body {
     align-items: flex-start;
   }
 
-  .feed-search-dock {
-    bottom: 132px;
-    padding: 0 14px;
-  }
-
-  .feed-search-form,
   .archive-search-shell,
   .assistant-readout,
   .detail-feature,
@@ -3373,14 +3287,12 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .results-search-bar input,
-  .feed-search-bar input {
+  .results-search-bar input {
     min-height: 52px;
     font-size: 0.92rem;
   }
 
-  .results-search-btn,
-  .feed-search-btn {
+  .results-search-btn {
     padding: 0 20px;
   }
 

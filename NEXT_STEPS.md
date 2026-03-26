@@ -11,15 +11,14 @@
 
 # Last Completed
 
-- Unified the web UI around a single archive shell: dark atmospheric background, pale-lilac surface panels, shared pill/button language, and consistent spacing across feed, results, detail, and related states.
-- Replaced the Advanced Search popup with an inline expanding panel under the main search area.
-- Reworked no-results/suggestion handling so failed queries render a real empty state with active-filter pills and recovery actions.
-- Added year-filter support back through the full stack: options API, search API, CLI search, and the inline web UI.
-- Verified the local app across feed, results, inline advanced search, no-results state, detail, and surprise navigation.
+- Fixed the UI regression introduced by the broad unification pass: feed/home now uses the original modern cinematic composition again instead of the later floating slab treatment.
+- Kept the newer improvements that were still valid: inline advanced search, no-results state cards, active-filter pills, and the archive-system detail layout.
+- Regression root cause was selector spillover in `web/styles.css` where feed selectors were grouped into the archive-shell override block near the end of the file.
+- Selectively removed feed/discover overrides from the archive layer and re-verified feed, results, detail, surprise, and empty states locally.
 
 # In Progress
 
-- Nothing actively in flight. The current branch is stable after the UI unification pass.
+- Nothing actively in flight. The branch is stable after the selective feed/home restoration pass.
 
 # Next Priorities
 
@@ -36,5 +35,5 @@
 
 # Session Anchor
 
-- Entered this UI unification pass from `26ed2e7`.
+- Entered the regression-fix pass from `00b587a`.
 - Use `git log --oneline -1` for the current tip before starting the next session.
