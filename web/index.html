@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Raleway+Dots&display=swap" />
-    <link rel="stylesheet" href="styles.css?v=4" />
+    <link rel="stylesheet" href="styles.css?v=5" />
   </head>
   <body>
 
@@ -115,6 +115,7 @@
         <!-- Status + advanced -->
         <div class="action-row" style="margin-top:16px">
           <button class="button secondary" type="button" id="toggle-advanced" aria-expanded="false" aria-controls="advanced-panel">Advanced Search</button>
+          <button class="button ghost" type="button" id="surprise-btn">Surprise me</button>
           <button class="button ghost" type="button" id="copy-markdown">Copy Markdown</button>
           <p class="status-text" id="status-text" aria-live="polite"></p>
         </div>
@@ -126,6 +127,14 @@
             <p>Pick one broad lane, or leave it on All.</p>
           </div>
           <div id="focus-filters" class="chip-cloud focus-cloud"></div>
+        </div>
+
+        <!-- Year filter -->
+        <div class="year-stack">
+          <div class="focus-copy">
+            <span class="subtle-label">Year</span>
+          </div>
+          <div id="year-filters" class="chip-cloud year-cloud"></div>
         </div>
 
 
@@ -270,6 +279,6 @@
     </div>
 
     <script src="catalog-data.js?v=1"></script>
-    <script src="app.js?v=8" defer></script>
+    <script src="app.js?v=9" defer></script>
   </body>
 </html>

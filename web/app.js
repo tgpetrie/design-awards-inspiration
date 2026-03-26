@@ -2,6 +2,7 @@
 
 const state = {
   focus: "all",
+  year: null,
   category: new Set(),
   style: new Set(),
   tech: new Set(),
@@ -28,6 +29,35 @@ const QUERY_ALIASES = {
   "portfolio": ["portfolio"],
   "playful": ["colorful", "illustration", "animation", "graphic"],
   "saas": ["technology", "startups", "clean", "ui", "design"],
+  // Extended design vocabulary
+  "3d": ["immersive", "webgl", "3d"],
+  "b2b": ["technology", "saas", "corporate"],
+  "brand": ["portfolio", "agency", "design"],
+  "canvas": ["experimental", "webgl", "animation"],
+  "corporate": ["technology", "business", "clean"],
+  "creative-coding": ["experimental", "webgl", "canvas"],
+  "dark-mode": ["dark", "cinematic", "minimal"],
+  "event": ["promotional", "landing-page", "storytelling"],
+  "fashion": ["luxury", "editorial", "photography"],
+  "food": ["luxury", "e-commerce", "editorial"],
+  "glassmorphism": ["minimal", "clean", "ui-design"],
+  "gradient": ["colorful", "bold"],
+  "health": ["clean", "minimal", "technology"],
+  "hero": ["landing-page", "storytelling", "scrolling"],
+  "magazine": ["editorial", "typography", "graphic"],
+  "music": ["motion", "animation", "storytelling"],
+  "nft": ["experimental", "art", "illustration"],
+  "product-design": ["app-ui", "saas", "clean"],
+  "restaurant": ["luxury", "editorial", "photography"],
+  "scroll-driven": ["scrolling", "animation", "parallax"],
+  "serif": ["editorial", "typography", "luxury"],
+  "startup": ["saas", "fintech", "technology"],
+  "studio": ["portfolio", "agency", "design"],
+  "tech": ["technology", "startups", "clean"],
+  "travel": ["editorial", "photography", "storytelling"],
+  "type-led": ["typography", "editorial", "graphic"],
+  "video": ["storytelling", "motion", "animation"],
+  "webgl": ["immersive", "3d", "experimental"],
 };
 
 const FOCUS_PRESETS = {
@@ -121,20 +151,54 @@ const QUERY_HINTS = {
   "app": ["app-ui"],
   "apps": ["app-ui"],
   "architecture": ["architecture"],
+  "animation": ["motion"],
+  "b2b": ["b2b"],
+  "brand": ["brand"],
   "brutalist": ["brutalist"],
+  "canvas": ["canvas"],
   "checkout": ["checkout"],
+  "corporate": ["corporate"],
+  "creative coding": ["creative-coding"],
+  "dark": ["dark-mode"],
+  "dark mode": ["dark-mode"],
+  "dark theme": ["dark-mode"],
   "dashboard": ["dashboard"],
   "editorial": ["editorial"],
+  "event": ["event"],
+  "fashion": ["fashion"],
   "fintech": ["fintech"],
+  "food": ["food"],
+  "glass": ["glassmorphism"],
+  "glassmorphism": ["glassmorphism"],
+  "gradient": ["gradient"],
+  "health": ["health"],
   "immersive": ["immersive"],
   "landing page": ["landing-page"],
   "luxury": ["luxury"],
+  "magazine": ["magazine"],
+  "medical": ["health"],
   "mobile": ["app-ui"],
   "motion": ["motion"],
+  "music": ["music"],
+  "nft": ["nft"],
   "onboarding": ["onboarding"],
   "portfolio": ["portfolio"],
-  "premium": ["premium"],
+  "premium": ["luxury"],
+  "product": ["product-design"],
+  "restaurant": ["restaurant"],
   "saas": ["saas"],
+  "scroll": ["scroll-driven"],
+  "scrolling": ["scroll-driven"],
+  "serif": ["serif"],
+  "startup": ["startup"],
+  "studio": ["studio"],
+  "tech": ["tech"],
+  "travel": ["travel"],
+  "type": ["type-led"],
+  "typography": ["type-led"],
+  "video": ["video"],
+  "webgl": ["webgl"],
+  "3d": ["3d"],
 };
 
 const DESIGN_CATEGORIES = new Set([
@@ -721,7 +785,9 @@ function renderDetail(ref) {
   const title = node("h1", "detail-title");
   title.textContent = ref.title;
   const metaLine = node("p", "detail-meta-line");
-  metaLine.textContent = `${ref.award_name || "Award"} · ${formatDate(ref.award_date)}`;
+  const rankPart = ref.source_rank ? ` · #${ref.source_rank}` : "";
+  const yearPart = ref.award_year ? ` · ${ref.award_year}` : "";
+  metaLine.textContent = `${ref.award_name || "Award"} · ${formatDate(ref.award_date)}${yearPart}${rankPart}`;
   titleBlock.append(eyebrow, title, metaLine);
   root.appendChild(titleBlock);
 
@@ -778,6 +844,13 @@ function renderDetail(ref) {
     ref.related.forEach((rel) => {
       const card = node("a", "related-card");
       card.href = `#/ref/${encodeURIComponent(rel.slug)}`;
+      if (rel.thumbnail_url) {
+        const thumb = node("img", "related-card-thumb");
+        thumb.src = rel.thumbnail_url;
+        thumb.alt = rel.title;
+        thumb.addEventListener("load", () => thumb.classList.add("loaded"), { once: true });
+        card.appendChild(thumb);
+      }
       const relTitle = node("h3", "related-title");
       relTitle.textContent = rel.title;
       const relDate = node("p", "related-date");
@@ -961,6 +1034,8 @@ function buildSearchRequest(params) {
   const techs = splitValues(params.tech || []);
   const limit = clampLimit(firstValue(params, "limit", "8"));
   const hintTerms = extractHintTerms(query);
+  const yearRaw = firstValue(params, "year");
+  const year = yearRaw ? parseInt(yearRaw, 10) : null;
 
   const categories = uniqueValues([...focus.categories, ...manualCategories]);
   const expandedQueryParts = uniqueValues([query, ...focus.query_terms, ...hintTerms]);
@@ -974,6 +1049,7 @@ function buildSearchRequest(params) {
     category: categories,
     style: styles,
     tech: techs,
+    year,
     limit,
   };
   const assistant = {
@@ -985,7 +1061,8 @@ function buildSearchRequest(params) {
   return { filters, assistant };
 }
 
-function entryMatchesFilters(entry, categories, styles, techs) {
+function entryMatchesFilters(entry, categories, styles, techs, year = null) {
+  if (year !== null && entry.award_year !== year) return false;
   const entryCategories = new Set((entry.categories || []).map((value) => normalizePhrase(value)));
   const entryStyles = new Set((entry.style_tags || []).map((value) => normalizePhrase(value)));
   const entryTech = new Set((entry.tech_tags || []).map((value) => normalizePhrase(value)));
@@ -1071,6 +1148,7 @@ function getStaticCatalog() {
 function buildStaticOptions() {
   const catalog = getStaticCatalog();
   const entries = catalog.entries || [];
+  const years = [...new Set(entries.map((e) => e.award_year).filter(Boolean))].sort((a, b) => b - a);
   return {
     dataset: catalog.dataset,
     datasets: catalog.datasets || [],
@@ -1082,6 +1160,7 @@ function buildStaticOptions() {
     categories: listValues(entries, "categories"),
     styles: listValues(entries, "style_tags"),
     tech: listValues(entries, "tech_tags"),
+    years,
   };
 }
 
@@ -1128,6 +1207,7 @@ function runStaticSearch(params) {
     request.filters.category,
     request.filters.style,
     request.filters.tech,
+    request.filters.year,
   ));
 
   let scored = [];
@@ -1277,6 +1357,30 @@ function syncFocusButtons() {
   });
 }
 
+function renderYearFilters(years) {
+  const root = document.getElementById("year-filters");
+  if (!root) return;
+  root.replaceChildren();
+  years.forEach((year) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "chip year-chip";
+    btn.dataset.year = String(year);
+    btn.textContent = String(year);
+    btn.addEventListener("click", () => {
+      state.year = state.year === year ? null : year;
+      syncYearButtons();
+    });
+    root.appendChild(btn);
+  });
+}
+
+function syncYearButtons() {
+  document.querySelectorAll(".year-chip").forEach((btn) => {
+    btn.classList.toggle("active", Number(btn.dataset.year) === state.year);
+  });
+}
+
 function renderFilterGroup(kind, values) {
   const root = els.filterRoots[kind];
   root.replaceChildren();
@@ -1314,6 +1418,7 @@ function serializeState() {
 
   if (query) params.set("q", query);
   if (state.focus !== "all") params.set("focus", state.focus);
+  if (state.year !== null) params.set("year", String(state.year));
   if (similarTo) params.set("similar_to", similarTo);
   params.set("limit", limit);
 
@@ -1577,6 +1682,7 @@ async function loadOptions() {
   els.datasetName.textContent = payload.dataset;
   if (els.resultsDatasetPill) els.resultsDatasetPill.textContent = payload.dataset;
   renderFocusFilters(payload.focus);
+  if (payload.years) renderYearFilters(payload.years);
   renderFilterGroup("category", payload.categories);
   renderFilterGroup("style", payload.styles);
   renderFilterGroup("tech", payload.tech);
@@ -1589,6 +1695,16 @@ async function copyMarkdown() {
   });
   await navigator.clipboard.writeText(markdown);
   setStatus("Markdown copied to clipboard.");
+}
+
+// ─── Surprise me ──────────────────────────────────────────────────────────────
+
+function surpriseMe() {
+  if (!STATIC_CATALOG) return;
+  const entries = (getStaticCatalog().entries || []).filter((e) => e.thumbnail_url && e.slug);
+  if (!entries.length) return;
+  const entry = entries[Math.floor(Math.random() * entries.length)];
+  window.location.hash = `#/ref/${encodeURIComponent(entry.slug)}`;
 }
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
@@ -1643,13 +1759,19 @@ async function boot() {
     if (els.similarTo) els.similarTo.value = "";
     if (els.limit) els.limit.value = "8";
     state.focus = "all";
+    state.year = null;
     ["category", "style", "tech"].forEach((kind) => state[kind].clear());
     syncFocusButtons();
+    syncYearButtons();
     syncFilterButtons();
     setAdvancedOpen(false);
     try { await runSearch(); }
     catch (error) { setStatus(error.message, true); }
   });
+
+  // Surprise me
+  const surpriseBtn = document.getElementById("surprise-btn");
+  if (surpriseBtn) surpriseBtn.addEventListener("click", surpriseMe);
 
   // Copy markdown
   els.copyMarkdown.addEventListener("click", async () => {

@@ -2202,3 +2202,31 @@ body {
   background: rgba(251, 146, 60, 0.2);
   border-color: rgba(251, 146, 60, 0.5);
 }
+
+/* ─── Year filter ─────────────────────────────────────────────────────────── */
+
+.year-stack {
+  margin-top: 14px;
+}
+
+.year-cloud {
+  margin-top: 10px;
+}
+
+/* ─── Related card thumbnail ─────────────────────────────────────────────── */
+
+.related-card-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: var(--line);
+}
+
+.related-card-thumb.loaded {
+  opacity: 1;
+}
