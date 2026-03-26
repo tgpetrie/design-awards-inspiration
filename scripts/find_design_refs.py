@@ -84,11 +84,13 @@ def similarity_score(base: dict, candidate: dict) -> float:
     return score
 
 
-def matches_filters(entry: dict, categories: list[str], styles: list[str], techs: list[str]) -> bool:
+def matches_filters(entry: dict, categories: list[str], styles: list[str], techs: list[str], year: int | None = None) -> bool:
     entry_categories = {normalize(value) for value in entry.get("categories", [])}
     entry_styles = {normalize(value) for value in entry.get("style_tags", [])}
     entry_tech = {normalize(value) for value in entry.get("tech_tags", [])}
 
+    if year is not None and entry.get("award_year") != year:
+        return False
     if any(normalize(value) not in entry_categories for value in categories):
         return False
     if any(normalize(value) not in entry_styles for value in styles):
@@ -153,6 +155,7 @@ def main() -> int:
     parser.add_argument("--category", action="append")
     parser.add_argument("--style", action="append")
     parser.add_argument("--tech", action="append")
+    parser.add_argument("--year", type=int)
     parser.add_argument("--similar-to")
     parser.add_argument("--limit", type=int, default=8)
     parser.add_argument("--json", action="store_true")
@@ -180,7 +183,7 @@ def main() -> int:
     filtered = [
         entry
         for entry in entries
-        if matches_filters(entry, categories, styles, techs)
+        if matches_filters(entry, categories, styles, techs, args.year)
     ]
 
     if args.similar_to:

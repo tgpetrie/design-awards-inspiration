@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Raleway+Dots&display=swap" />
-    <link rel="stylesheet" href="styles.css?v=8" />
+    <link rel="stylesheet" href="styles.css?v=11" />
   </head>
   <body>
 
@@ -65,63 +65,116 @@
     <div id="results-view" class="results-shell" hidden>
 
       <div class="results-topbar">
-        <button class="results-back" id="results-back">← Back</button>
+        <div class="results-topbar-inner archive-frame">
+          <button class="results-back" id="results-back">← Back</button>
+          <div class="dataset-pill results-dataset-pill" id="results-dataset-pill">Loading…</div>
+        </div>
       </div>
 
-      <div class="app-shell">
+      <div class="app-shell archive-layout">
         <!-- Editorial heading -->
-        <div class="results-editorial">
-          <h1 class="results-headline">Describe what<br>you are trying to find.</h1>
-          <p class="results-tagline">Start with plain language. Add one broad lens if you want. Everything more detailed lives in Advanced Search.</p>
-        </div>
-
-        <!-- Main search bar for results view -->
-        <form id="search-form" class="results-search-form">
-          <div class="results-search-bar">
-            <label class="sr-only" for="query">Search</label>
-            <input
-              id="query"
-              name="query"
-              type="text"
-              placeholder="e.g. premium fintech onboarding for a startup"
-              autocomplete="off"
-            />
-            <button class="image-search-btn" type="button" id="image-search-btn" title="Search by image — paste or upload a screenshot">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            </button>
-            <input type="file" id="image-file-input" accept="image/*" class="sr-only" />
-            <button class="results-search-btn" type="submit">Search</button>
+        <section class="archive-frame archive-search-shell">
+          <div class="results-editorial">
+            <p class="eyebrow">Design archive</p>
+            <h1 class="results-headline">Describe what<br>you are trying to find.</h1>
+            <p class="results-tagline">Start with plain language. Use the inline controls only when you need to tighten the archive.</p>
           </div>
-          <!-- Image search drop zone (shown when an image is staged) -->
-          <div class="image-drop-zone" id="image-drop-zone" hidden>
-            <div class="image-preview-wrap">
-              <img id="image-preview" src="" alt="Staged image" />
-              <button class="image-clear-btn" id="image-clear-btn" type="button" aria-label="Remove image">✕</button>
+
+          <!-- Main search bar for results view -->
+          <form id="search-form" class="results-search-form">
+            <div class="results-search-bar">
+              <label class="sr-only" for="query">Search</label>
+              <input
+                id="query"
+                name="query"
+                type="text"
+                placeholder="e.g. premium fintech onboarding for a startup"
+                autocomplete="off"
+              />
+              <button class="image-search-btn" type="button" id="image-search-btn" title="Search by image — paste or upload a screenshot">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              </button>
+              <input type="file" id="image-file-input" accept="image/*" class="sr-only" />
+              <button class="results-search-btn" type="submit">Search</button>
             </div>
-            <p class="image-drop-label">Image staged — hit <strong>Search</strong> to find similar designs, or drop a different one here.</p>
+            <!-- Image search drop zone (shown when an image is staged) -->
+            <div class="image-drop-zone" id="image-drop-zone" hidden>
+              <div class="image-preview-wrap">
+                <img id="image-preview" src="" alt="Staged image" />
+                <button class="image-clear-btn" id="image-clear-btn" type="button" aria-label="Remove image">✕</button>
+              </div>
+              <p class="image-drop-label">Image staged — hit <strong>Search</strong> to find similar designs, or drop a different one here.</p>
+            </div>
+          </form>
+
+          <!-- Status + advanced -->
+          <div class="action-row archive-action-row">
+            <div class="action-row-buttons">
+              <button class="button secondary" type="button" id="toggle-advanced" aria-expanded="false" aria-controls="advanced-panel">Advanced Search</button>
+              <button class="button ghost" type="button" id="surprise-btn">Surprise me</button>
+              <button class="button ghost" type="button" id="copy-markdown">Copy Markdown</button>
+            </div>
+            <p class="status-text" id="status-text" aria-live="polite" hidden></p>
           </div>
 
-        </form>
+          <section id="advanced-panel" class="advanced-panel panel" hidden>
+            <div class="advanced-panel-topbar">
+              <div>
+                <p class="eyebrow">Advanced Search</p>
+                <h2>Dial the archive in.</h2>
+              </div>
+              <div class="advanced-panel-actions">
+                <button class="button secondary" type="button" id="reset-filters">Reset</button>
+              </div>
+            </div>
+            <p class="advanced-copy">Keep the main query broad, then use these controls only when you need a tighter slice.</p>
+            <div class="advanced-form-grid">
+              <label class="field">
+                <span>Similar to</span>
+                <input id="similar-to" name="similar-to" type="text" placeholder="Obys' Design Books" autocomplete="off" />
+              </label>
+              <label class="field field-small">
+                <span>Limit</span>
+                <input id="limit" name="limit" type="number" min="1" max="48" value="24" inputmode="numeric" />
+              </label>
+            </div>
+            <div class="advanced-groups">
+              <details class="filter-group filter-group-years" open>
+                <summary>Years</summary>
+                <div id="year-filters" class="chip-cloud year-cloud"></div>
+              </details>
+              <details class="filter-group" open>
+                <summary>Categories</summary>
+                <div id="category-filters" class="chip-cloud"></div>
+              </details>
+              <details class="filter-group" open>
+                <summary>Style</summary>
+                <div id="style-filters" class="chip-cloud"></div>
+              </details>
+              <details class="filter-group" open>
+                <summary>Tech</summary>
+                <div id="tech-filters" class="chip-cloud"></div>
+              </details>
+            </div>
+            <div class="advanced-panel-footer">
+              <button class="button primary advanced-apply-btn" type="button" id="advanced-apply">Apply Search</button>
+            </div>
+          </section>
 
-        <!-- Status + advanced -->
-        <div class="action-row" style="margin-top:16px">
-          <button class="button secondary" type="button" id="toggle-advanced" aria-expanded="false" aria-controls="advanced-panel">Advanced Search</button>
-          <button class="button ghost" type="button" id="surprise-btn">Surprise me</button>
-          <button class="button ghost" type="button" id="copy-markdown">Copy Markdown</button>
-          <p class="status-text" id="status-text" aria-live="polite"></p>
-        </div>
-
-        <!-- Focus -->
-        <div class="focus-stack" style="margin-top:20px">
-          <div class="focus-copy">
-            <span class="subtle-label">Optional Focus</span>
-            <p>Pick one broad lane, or leave it on All.</p>
+          <!-- Focus -->
+          <div class="focus-stack archive-section-block">
+            <div class="focus-copy">
+              <span class="subtle-label">Optional Focus</span>
+              <p>Pick one broad lane, or leave it on All.</p>
+            </div>
+            <div id="focus-filters" class="chip-cloud focus-cloud"></div>
           </div>
-          <div id="focus-filters" class="chip-cloud focus-cloud"></div>
-        </div>
+
+          <section id="active-filters" class="active-filter-strip" hidden></section>
+        </section>
 
         <!-- Readout -->
-        <section id="assistant-readout" class="assistant-readout panel" hidden>
+        <section id="assistant-readout" class="assistant-readout panel archive-frame" hidden>
           <div class="readout-copy-block">
             <p class="eyebrow">Search Readout</p>
             <h2 id="summary-title">Top references</h2>
@@ -140,11 +193,9 @@
         </section>
 
         <!-- Results heading — hidden when a real search is active (readout section replaces it) -->
-        <section class="results-head">
-          <div class="results-heading-row">
-            <h2 id="results-title">Browse all</h2>
-            <p class="results-note">Open the live site or the Awwwards page directly from each card.</p>
-          </div>
+        <section class="results-head archive-section-head">
+          <p class="eyebrow">Archive results</p>
+          <h2 id="results-title">Browse all</h2>
         </section>
 
         <section id="results" class="results-grid"></section>
@@ -209,58 +260,13 @@
           <div class="tag-row tech"></div>
         </div>
         <div class="card-actions">
-          <a class="button primary" data-live-link target="_blank" rel="noreferrer">Open Live Site</a>
-          <a class="button secondary" data-source-link target="_blank" rel="noreferrer">Open Source Page</a>
+          <a class="card-action-btn card-action-live" data-live-link target="_blank" rel="noreferrer" title="Open live site" aria-label="Open live site">Live ↗</a>
+          <a class="card-action-btn card-action-source" data-source-link target="_blank" rel="noreferrer" title="Open Awwwards page" aria-label="Open Awwwards page">Source ↗</a>
         </div>
       </article>
     </template>
 
-    <!-- ── Advanced Search Modal ──────────────────────────────────────────── -->
-    <div id="advanced-modal" class="advanced-modal" role="dialog" aria-modal="true" aria-label="Advanced Search" hidden>
-      <div class="advanced-modal-backdrop" id="advanced-modal-backdrop"></div>
-      <div class="advanced-modal-card" id="advanced-panel">
-        <div class="advanced-modal-topbar">
-          <div>
-            <p class="eyebrow">Advanced Search</p>
-            <h2>Dial the search in.</h2>
-          </div>
-          <div class="advanced-modal-actions">
-            <button class="button secondary" type="button" id="reset-filters">Reset</button>
-            <button class="advanced-modal-close" type="button" id="advanced-modal-close" aria-label="Close">✕</button>
-          </div>
-        </div>
-        <p class="advanced-copy">Use this when the natural-language pass is too broad.</p>
-        <div class="advanced-form-grid">
-          <label class="field">
-            <span>Similar to</span>
-            <input id="similar-to" name="similar-to" type="text" placeholder="Obys' Design Books" autocomplete="off" />
-          </label>
-          <label class="field field-small">
-            <span>Limit</span>
-            <input id="limit" name="limit" type="number" min="1" max="48" value="24" inputmode="numeric" />
-          </label>
-        </div>
-        <div class="advanced-groups">
-          <details class="filter-group" open>
-            <summary>Categories</summary>
-            <div id="category-filters" class="chip-cloud"></div>
-          </details>
-          <details class="filter-group" open>
-            <summary>Style</summary>
-            <div id="style-filters" class="chip-cloud"></div>
-          </details>
-          <details class="filter-group" open>
-            <summary>Tech</summary>
-            <div id="tech-filters" class="chip-cloud"></div>
-          </details>
-        </div>
-        <div class="advanced-modal-footer">
-          <button class="button primary advanced-apply-btn" type="button" id="advanced-apply">Apply &amp; Search</button>
-        </div>
-      </div>
-    </div>
-
     <script src="catalog-data.js?v=1"></script>
-    <script src="app.js?v=17" defer></script>
+    <script src="app.js?v=19" defer></script>
   </body>
 </html>

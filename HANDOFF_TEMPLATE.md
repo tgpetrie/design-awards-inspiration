@@ -4,34 +4,30 @@
 
 ## What changed
 
-- **Search vocabulary massively expanded** (~250 terms in `QUERY_ALIASES`): colors (purple, gold, neon), moods (moody, ethereal, rebellious), slang (bling, fire, dope, janky, swanky), materials (chrome, matte, glossy), design movements (bauhaus, memphis, y2k, swiss, glassmorphism), and visual adjectives (sharp, crisp, airy, dense, punchy…).
-- **Spell correction + "did you mean"**: `editDistance()` + `spellSuggest()` — when a query returns no matches, checks tokens against known alias keys and shows a clickable suggestion inline (e.g. "blinngy" → did you mean "blingy"?).
-- **Default result limit raised**: 8 → 24 (max 48). Searches now return a full page of results by default.
-- **Year filter removed** from results page — user found it irrelevant for inspiration browsing.
-- **Quick-search chips removed** — they were visually identical to Optional Focus and confused users. Vocabulary expansion makes them redundant; just type.
-- **Results page layout tightened**: search bar → action buttons → Optional Focus → results. No duplicate filter rows.
-- **Vercel deployed**: commit `61103fb` is live in production.
+- **UI unification pass landed across the web app**: feed search shell, results, detail, related cards, empty states, and action pills now share the same dark-background + pale-lilac surface language.
+- **Advanced Search is now inline** under the main search area instead of a popup modal. The panel uses the same shell/pill system as the rest of the app and now includes a working year filter.
+- **Detail view was rebuilt into the shared archive system**: top nav row, split feature panel, metadata pills, consistent action buttons, and related cards all match the results surface language.
+- **Search feedback is more explicit**: no-results states now render as a proper archive card with clear next actions instead of leaving stale results on screen.
+- **Search pipeline gained year support end-to-end**: `scripts/find_design_refs.py`, `scripts/design_refs_ui.py`, and the web client all honor `year`.
 
 ## Currently in progress
 
-- Nothing — repo is clean at `61103fb`.
+- Nothing active. The current session is a UI/system cleanup pass from `26ed2e7`.
 
 ## What should happen next
 
-1. **More vocabulary**: the alias approach is manual and will always have gaps. Consider whether a smarter fallback (e.g. fuzzy substring match on entry titles/descriptions) would reduce whack-a-mole. Alternatively, add a richer `description` field to each dataset entry to give the text search more surface area.
-2. **Detail view dark mode**: the detail view (`#detail-view`) still has a light background — inconsistent with the dark results shell.
-3. **Action buttons on result cards**: "Open Live Site" + "Open Source Page" are chunky — could be icon buttons or smaller to let the image breathe.
-4. **Advanced Search modal dark adaptation**: opens with light-ish background against the dark shell.
-5. **"Browse all" heading**: the static text "Open the live site or the Awwwards page directly from each card." is stale copy — consider removing or updating.
-6. **Push to origin/master** if not already done after the Vercel deploy.
+1. **Tighten Advanced Search density**: the inline panel is correct structurally, but categories/styles/tech are still large chip walls. The next pass should collapse those into more compact selectors or searchable pickers.
+2. **Decide how to handle remote thumbnails**: the browser still hits third-party image failures/CORS issues for some entries. The UI degrades safely, but a local image proxy/cache would remove the noise.
+3. **Clean push strategy**: review the local unpushed history and decide when to publish `master`.
 
 ## What files matter
 
-- `web/app.js` — all search logic, `QUERY_ALIASES`, `editDistance`, `spellSuggest`, `handleSearchError`, chip state, rendering.
-- `web/styles.css` — dark shell, card grid, `.suggest-btn` styles.
-- `web/index.html` — structure; year filter and prompt chips were removed here.
-- `web/catalog-data.js` — preloaded static catalog (567 entries, 3 years).
+- `web/index.html` — results shell structure, inline advanced panel markup, and shared view framing.
+- `web/app.js` — routing, detail rendering, active filter pills, no-results rendering, and inline advanced panel behavior.
+- `web/styles.css` — shared archive shell/surface/chip/button rules and the cross-view UI unification layer.
+- `scripts/find_design_refs.py` — CLI year-filter support.
+- `scripts/design_refs_ui.py` — API/options year-filter support.
 
 ## Anchor commit
 
-- `61103fb` — Search UX overhaul: vocabulary, spell correction, cleaner results page.
+- `26ed2e7` — Session handoff before the UI unification pass. Use `git log --oneline -1` for the current tip.

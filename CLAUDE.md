@@ -7,6 +7,8 @@
 - Pipeline tools: `scripts/validate_dataset.py` validates all local Awwwards year files, and `scripts/build_dataset_catalog.py` writes `references/catalog.json` as the machine-readable corpus summary.
 - Post-write maintenance: `scripts/build_awwwards_top50.py` and `scripts/fetch_thumbnails.py` now validate written datasets, rebuild `references/catalog.json`, and regenerate `web/catalog-data.js` automatically after successful writes.
 - Runtime note: CLI, local UI, and the static web bundle still load all matching `references/awwwards-sotd-*.json` files through the shared loader.
-- Focus areas: keep the dataset validated, keep `references/catalog.json` current, and avoid breaking the preview UI.
-- Session anchor entering this automation pass: `bd364f9`. Confirm the current tip from git instead of relying on this note alone.
+- UI note: the web app now uses an inline advanced-search panel, a shared archive shell across results/detail/feed, active-filter pills, and explicit empty-state handling.
+- Search note: year filtering is wired through `scripts/find_design_refs.py`, `scripts/design_refs_ui.py`, and the web client.
+- Focus areas: keep the dataset validated, keep `references/catalog.json` current, and avoid regressing the unified preview UI.
+- Session anchor entering this UI pass: `26ed2e7`. Confirm the current tip from git instead of relying on this note alone.
 - Reminder: update `NEXT_STEPS.md` and `HANDOFF_TEMPLATE.md` before handing back to Codex.

@@ -474,10 +474,9 @@ const els = {
   resetFilters: document.getElementById("reset-filters"),
   copyMarkdown: document.getElementById("copy-markdown"),
   toggleAdvanced: document.getElementById("toggle-advanced"),
-  advancedModal: document.getElementById("advanced-modal"),
-  advancedModalBackdrop: document.getElementById("advanced-modal-backdrop"),
-  advancedModalClose: document.getElementById("advanced-modal-close"),
+  advancedPanel: document.getElementById("advanced-panel"),
   advancedApply: document.getElementById("advanced-apply"),
+  activeFilters: document.getElementById("active-filters"),
   focusRoot: document.getElementById("focus-filters"),
   filterRoots: {
     category: document.getElementById("category-filters"),
@@ -530,6 +529,10 @@ function showResults() {
   if (!els.results.children.length && !autoSearchPending) {
     loadDefaultBrowse();
   }
+  if (pendingAdvancedOpen) {
+    setAdvancedOpen(true);
+    pendingAdvancedOpen = false;
+  }
 }
 
 async function showDetail(slug) {
@@ -557,6 +560,7 @@ window.addEventListener("hashchange", route);
 let feedEntries = [];
 let feedLoaded = false;
 let autoSearchPending = false; // guard against re-entrant auto-browse search
+let pendingAdvancedOpen = false;
 
 function makeFeedTag(label) {
   const span = document.createElement("span");
@@ -944,6 +948,7 @@ function bindFeed() {
   if (advLink) {
     advLink.addEventListener("click", (e) => {
       e.preventDefault();
+      pendingAdvancedOpen = true;
       showResults();
       window.location.hash = "#/results";
     });
@@ -978,12 +983,20 @@ function makeDetailInitial(title) {
 function renderDetail(ref) {
   const root = els.detailView;
   root.replaceChildren();
+  const shell = node("div", "detail-shell-inner");
+  root.appendChild(shell);
 
-  const back = node("button", "button secondary back-button");
+  const nav = node("div", "archive-frame detail-nav-row");
+  const back = node("button", "button ghost back-button detail-back-button");
   back.textContent = "← Back";
   back.addEventListener("click", () => history.back());
-  root.appendChild(back);
+  const sourcePill = node("span", "dataset-pill detail-dataset-pill");
+  sourcePill.textContent = ref.award_source || "Design Awards";
+  nav.append(back, sourcePill);
+  shell.appendChild(nav);
 
+  const feature = node("section", "archive-frame detail-feature");
+  const mediaColumn = node("div", "detail-media-column");
   const hero = node("div", ref.thumbnail_url ? "detail-hero" : "detail-hero detail-hero-placeholder");
   if (ref.thumbnail_url) {
     const img = node("img", "detail-hero-img");
@@ -998,8 +1011,9 @@ function renderDetail(ref) {
   } else {
     hero.appendChild(makeDetailInitial(ref.title));
   }
-  root.appendChild(hero);
+  mediaColumn.appendChild(hero);
 
+  const contentColumn = node("div", "detail-feature-copy");
   const titleBlock = node("div", "detail-title-block");
   const eyebrow = node("p", "eyebrow");
   eyebrow.textContent = ref.award_source || "Design Awards";
@@ -1010,7 +1024,13 @@ function renderDetail(ref) {
   const yearPart = ref.award_year ? ` · ${ref.award_year}` : "";
   metaLine.textContent = `${ref.award_name || "Award"} · ${formatDate(ref.award_date)}${yearPart}${rankPart}`;
   titleBlock.append(eyebrow, title, metaLine);
-  root.appendChild(titleBlock);
+  contentColumn.appendChild(titleBlock);
+
+  const metaPills = node("div", "detail-meta-pills");
+  if (ref.award_name) metaPills.appendChild(makeTag(ref.award_name));
+  if (ref.award_year) metaPills.appendChild(makeTag(String(ref.award_year)));
+  if (ref.source_rank) metaPills.appendChild(makeTag(`Rank #${ref.source_rank}`, "accent"));
+  if (metaPills.childElementCount) contentColumn.appendChild(metaPills);
 
   const links = node("div", "detail-links");
   const liveLink = node("a", "button primary");
@@ -1024,7 +1044,16 @@ function renderDetail(ref) {
   sourceLink.rel = "noreferrer";
   sourceLink.textContent = "Open Awwwards Page";
   links.append(liveLink, sourceLink);
-  root.appendChild(links);
+  contentColumn.appendChild(links);
+
+  if (ref.short_description) {
+    const desc = node("p", "detail-description");
+    desc.textContent = ref.short_description;
+    contentColumn.appendChild(desc);
+  }
+
+  feature.append(mediaColumn, contentColumn);
+  shell.appendChild(feature);
 
   const tagSets = [
     ["Categories", ref.categories],
@@ -1035,7 +1064,7 @@ function renderDetail(ref) {
   ].filter(([, values]) => values && values.length);
 
   if (tagSets.length) {
-    const tagsPanel = node("div", "detail-tags-panel");
+    const tagsPanel = node("section", "archive-frame detail-tags-panel");
     tagSets.forEach(([label, values]) => {
       const group = node("div", "detail-tag-group");
       const heading = node("p", "meta-label");
@@ -1045,17 +1074,11 @@ function renderDetail(ref) {
       group.append(heading, row);
       tagsPanel.appendChild(group);
     });
-    root.appendChild(tagsPanel);
-  }
-
-  if (ref.short_description) {
-    const desc = node("p", "detail-description");
-    desc.textContent = ref.short_description;
-    root.appendChild(desc);
+    shell.appendChild(tagsPanel);
   }
 
   if (ref.related && ref.related.length) {
-    const relSection = node("div", "detail-related");
+    const relSection = node("section", "archive-frame detail-related");
     const relEyebrow = node("p", "eyebrow");
     relEyebrow.textContent = "Related references";
     const relHeading = node("h2", "detail-related-heading");
@@ -1082,51 +1105,250 @@ function renderDetail(ref) {
       relGrid.appendChild(card);
     });
     relSection.appendChild(relGrid);
-    root.appendChild(relSection);
+    shell.appendChild(relSection);
   }
 }
 
 // ─── Utilities ────────────────────────────────────────────────────────────────
 
 function setStatus(message, isError = false) {
-  els.statusText.textContent = message;
+  els.statusText.replaceChildren();
+  els.statusText.hidden = !message;
+  els.statusText.classList.toggle("has-content", Boolean(message));
   els.statusText.dataset.error = String(isError);
+  if (message) els.statusText.textContent = message;
+}
+
+function focusLabelFor(key) {
+  return focusOptions.find((option) => option.key === key)?.label || FOCUS_PRESETS[key]?.label || "All";
+}
+
+function currentUiFilters() {
+  return {
+    query: els.query.value.trim(),
+    similar_to: els.similarTo ? els.similarTo.value.trim() : "",
+    focus: state.focus,
+    focus_label: focusLabelFor(state.focus),
+    year: state.year,
+    category: [...state.category],
+    style: [...state.style],
+    tech: [...state.tech],
+  };
+}
+
+function hasActiveUiFilters() {
+  const filters = currentUiFilters();
+  return Boolean(
+    filters.query ||
+    filters.similar_to ||
+    filters.focus !== "all" ||
+    filters.year !== null ||
+    filters.category.length ||
+    filters.style.length ||
+    filters.tech.length
+  );
+}
+
+function resetUiFilters({ clearQuery = true } = {}) {
+  if (clearQuery) els.query.value = "";
+  if (els.similarTo) els.similarTo.value = "";
+  if (els.limit) els.limit.value = "24";
+  state.focus = "all";
+  state.year = null;
+  ["category", "style", "tech"].forEach((kind) => state[kind].clear());
+  syncFocusButtons();
+  syncYearButtons();
+  syncFilterButtons();
+  renderActiveFilters();
+}
+
+function renderActiveFilters() {
+  const filters = currentUiFilters();
+  els.activeFilters.replaceChildren();
+
+  const entries = [];
+  if (filters.query) {
+    entries.push({
+      label: `Query: ${filters.query}`,
+      remove: () => { els.query.value = ""; },
+    });
+  }
+  if (filters.focus !== "all") {
+    entries.push({
+      label: `Focus: ${filters.focus_label}`,
+      remove: () => { state.focus = "all"; syncFocusButtons(); },
+    });
+  }
+  if (filters.similar_to) {
+    entries.push({
+      label: `Similar to: ${filters.similar_to}`,
+      remove: () => { if (els.similarTo) els.similarTo.value = ""; },
+    });
+  }
+  if (filters.year !== null) {
+    entries.push({
+      label: `Year: ${filters.year}`,
+      remove: () => { state.year = null; syncYearButtons(); },
+    });
+  }
+  filters.category.forEach((value) => entries.push({
+    label: `Category: ${value}`,
+    remove: () => { state.category.delete(value); syncFilterButtons(); },
+  }));
+  filters.style.forEach((value) => entries.push({
+    label: `Style: ${value}`,
+    remove: () => { state.style.delete(value); syncFilterButtons(); },
+  }));
+  filters.tech.forEach((value) => entries.push({
+    label: `Tech: ${value}`,
+    remove: () => { state.tech.delete(value); syncFilterButtons(); },
+  }));
+
+  if (!entries.length) {
+    els.activeFilters.hidden = true;
+    return;
+  }
+
+  const label = node("p", "subtle-label active-filter-label");
+  label.textContent = "Active filters";
+  const cloud = node("div", "chip-cloud active-filter-cloud");
+
+  entries.forEach((entry) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "chip active-filter-pill";
+    button.textContent = `${entry.label} ×`;
+    button.addEventListener("click", async () => {
+      entry.remove();
+      renderActiveFilters();
+      try { await runSearch(); }
+      catch (searchError) { handleSearchError(searchError); }
+    });
+    cloud.appendChild(button);
+  });
+
+  els.activeFilters.append(label, cloud);
+  els.activeFilters.hidden = false;
+}
+
+function renderStateCard({ eyebrowText, title, copy, actions = [] }) {
+  els.readoutPanel.hidden = true;
+  els.results.replaceChildren();
+
+  const empty = document.createElement("article");
+  empty.className = "panel empty-state archive-frame";
+  if (eyebrowText) {
+    const eyebrow = document.createElement("p");
+    eyebrow.className = "eyebrow";
+    eyebrow.textContent = eyebrowText;
+    empty.appendChild(eyebrow);
+  }
+  const heading = document.createElement("h3");
+  heading.textContent = title;
+  const copyNode = document.createElement("p");
+  copyNode.textContent = copy;
+  empty.append(heading, copyNode);
+
+  if (actions.length) {
+    const actionRow = document.createElement("div");
+    actionRow.className = "empty-state-actions";
+    actions.forEach((action) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `button ${action.variant || "ghost"}`;
+      button.textContent = action.label;
+      button.addEventListener("click", action.onClick);
+      actionRow.appendChild(button);
+    });
+    empty.appendChild(actionRow);
+  }
+
+  els.results.appendChild(empty);
 }
 
 function handleSearchError(error) {
-  if (error.message !== "no matches") { setStatus(error.message, true); return; }
+  els.resultsHead.hidden = false;
+
+  if (error.message !== "no matches") {
+    els.resultsTitle.textContent = "Search unavailable";
+    setStatus(error.message, true);
+    renderStateCard({
+      eyebrowText: "Search error",
+      title: "The archive could not answer that search.",
+      copy: error.message,
+      actions: hasActiveUiFilters()
+        ? [{
+            label: "Clear filters",
+            variant: "ghost",
+            onClick: async () => {
+              resetUiFilters();
+              try { await runSearch(); }
+              catch (searchError) { setStatus(searchError.message, true); }
+            },
+          }]
+        : [],
+    });
+    renderActiveFilters();
+    return;
+  }
+
   const query = els.query.value.trim();
   const suggestions = query ? spellSuggest(query) : [];
-  if (!suggestions.length) { setStatus("no matches", true); return; }
-  const corrected = query.split(/\s+/).map((word) => {
-    const match = suggestions.find((s) => s.original === word.toLowerCase());
-    return match ? match.suggestion : word;
-  }).join(" ");
-  els.statusText.dataset.error = "true";
-  els.statusText.textContent = "";
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.className = "suggest-btn";
-  const strong = document.createElement("strong");
-  strong.textContent = corrected;
-  btn.append(document.createTextNode('did you mean "'), strong, document.createTextNode('"?'));
-  btn.addEventListener("click", async () => {
-    els.query.value = corrected;
-    try { await runSearch(); } catch (e) { setStatus(e.message, true); }
-  }, { once: true });
-  els.statusText.append(document.createTextNode("no matches — "), btn);
+  const corrected = query
+    ? query.split(/\s+/).map((word) => {
+        const match = suggestions.find((item) => item.original === word.toLowerCase());
+        return match ? match.suggestion : word;
+      }).join(" ")
+    : "";
+
+  els.resultsTitle.textContent = query ? `No matches for “${query}”` : "No matches";
+  setStatus(
+    suggestions.length
+      ? "No exact matches. Try the suggested spelling or relax a filter."
+      : "No matches found. Try a broader query or remove a filter.",
+    true,
+  );
+
+  const actions = [];
+  if (suggestions.length && corrected) {
+    actions.push({
+      label: `Try “${corrected}”`,
+      variant: "secondary",
+      onClick: async () => {
+        els.query.value = corrected;
+        try { await runSearch(); }
+        catch (searchError) { handleSearchError(searchError); }
+      },
+    });
+  }
+  if (hasActiveUiFilters()) {
+    actions.push({
+      label: "Clear filters",
+      variant: "ghost",
+      onClick: async () => {
+        resetUiFilters();
+        try { await runSearch(); }
+        catch (searchError) { handleSearchError(searchError); }
+      },
+    });
+  }
+
+  renderStateCard({
+    eyebrowText: "Search result",
+    title: "Nothing in the archive matches that combination yet.",
+    copy: suggestions.length
+      ? "Try the corrected spelling, or remove one of the active filters and search again."
+      : "Broaden the wording, remove a filter, or try a related reference instead.",
+    actions,
+  });
+  renderActiveFilters();
 }
 
 function setAdvancedOpen(isOpen) {
-  els.advancedModal.hidden = !isOpen;
+  els.advancedPanel.hidden = !isOpen;
   els.toggleAdvanced.setAttribute("aria-expanded", String(isOpen));
-  if (isOpen) {
-    document.body.style.overflow = "hidden";
-    els.advancedModal.classList.add("is-open");
-  } else {
-    document.body.style.overflow = "";
-    els.advancedModal.classList.remove("is-open");
-  }
+  els.toggleAdvanced.textContent = isOpen ? "Hide Advanced Search" : "Advanced Search";
+  els.resultsView.classList.toggle("advanced-open", isOpen);
 }
 
 function makeTag(label, variant = "default") {
@@ -1156,6 +1378,7 @@ function activeLensLabel(payload) {
   const lenses = [];
   if (payload.filters.focus_label !== "All") lenses.push(payload.filters.focus_label);
   if (
+    payload.filters.year !== null ||
     payload.filters.category.length ||
     payload.filters.style.length ||
     payload.filters.tech.length ||
@@ -1166,6 +1389,7 @@ function activeLensLabel(payload) {
 
 function buildHeadline(payload) {
   if (payload.filters.query) return `Results for "${payload.filters.query}"`;
+  if (payload.filters.year !== null) return `${payload.filters.year} references`;
   if (payload.filters.focus_label !== "All") return `${payload.filters.focus_label} references`;
   return "Top references";
 }
@@ -1257,8 +1481,9 @@ function buildAssistantSummary(filters, hintTerms) {
     parts.push(`I also nudged the search toward ${readableTerms}.`);
   }
 
-  if (filters.category.length || filters.style.length || filters.tech.length) {
+  if (filters.year !== null || filters.category.length || filters.style.length || filters.tech.length) {
     const active = [];
+    if (filters.year !== null) active.push(`year: ${filters.year}`);
     if (filters.category.length) active.push(`categories: ${filters.category.join(", ")}`);
     if (filters.style.length) active.push(`styles: ${filters.style.join(", ")}`);
     if (filters.tech.length) active.push(`tech: ${filters.tech.join(", ")}`);
@@ -1618,6 +1843,7 @@ function renderYearFilters(years) {
     });
     root.appendChild(btn);
   });
+  syncYearButtons();
 }
 
 function syncYearButtons() {
@@ -1718,6 +1944,8 @@ function renderReadout(payload) {
   if (hasQuery) {
     els.summaryTitle.textContent = headline;
     els.resultsTitle.textContent = headline;
+  } else {
+    els.resultsTitle.textContent = "Browse all";
   }
   els.readoutCopy.textContent = payload.assistant.summary;
   els.resultCount.textContent = String(payload.results.length);
@@ -1728,14 +1956,11 @@ function renderResults(payload) {
   els.results.replaceChildren();
 
   if (!payload.results.length) {
-    const empty = document.createElement("article");
-    empty.className = "panel empty-state";
-    const h = document.createElement("h3");
-    h.textContent = "No matches";
-    const p = document.createElement("p");
-    p.textContent = "Try broadening the search or using Advanced Search.";
-    empty.append(h, p);
-    els.results.appendChild(empty);
+    renderStateCard({
+      eyebrowText: "Search result",
+      title: "No matches",
+      copy: "Try broadening the search or using Advanced Search.",
+    });
     return;
   }
 
@@ -1820,7 +2045,11 @@ async function loadDefaultBrowse() {
       assistant: { summary: "", focus_label: "All", hint_terms: [], effective_query: "" },
     };
     els.readoutPanel.hidden = true;
+    els.resultsHead.hidden = false;
+    els.resultsTitle.textContent = "Browse all";
     renderResults(fakePayload);
+    renderActiveFilters();
+    setStatus("");
   } catch (_) {
     // silently fail — grid stays empty, user can search manually
   } finally {
@@ -1951,6 +2180,7 @@ async function runSearch() {
 
   renderReadout(payload);
   renderResults(payload);
+  renderActiveFilters();
   setStatus(`${payload.results.length} result(s) found.`);
 }
 
@@ -2021,29 +2251,16 @@ async function boot() {
     catch (error) { handleSearchError(error); }
   });
 
-  // Advanced search modal
-  els.toggleAdvanced.addEventListener("click", () => setAdvancedOpen(true));
-  els.advancedModalClose.addEventListener("click", () => setAdvancedOpen(false));
-  els.advancedModalBackdrop.addEventListener("click", () => setAdvancedOpen(false));
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setAdvancedOpen(false); });
+  // Advanced search panel
+  els.toggleAdvanced.addEventListener("click", () => setAdvancedOpen(els.advancedPanel.hidden));
   els.advancedApply.addEventListener("click", async () => {
-    setAdvancedOpen(false);
     try { await runSearch(); }
     catch (error) { handleSearchError(error); }
   });
 
   // Reset filters
   els.resetFilters.addEventListener("click", async () => {
-    els.query.value = "";
-    if (els.similarTo) els.similarTo.value = "";
-    if (els.limit) els.limit.value = "8";
-    state.focus = "all";
-    state.year = null;
-    ["category", "style", "tech"].forEach((kind) => state[kind].clear());
-    syncFocusButtons();
-    syncYearButtons();
-    syncFilterButtons();
-    setAdvancedOpen(false);
+    resetUiFilters();
     try { await runSearch(); }
     catch (error) { setStatus(error.message, true); }
   });

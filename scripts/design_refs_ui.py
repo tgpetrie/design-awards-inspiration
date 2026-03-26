@@ -284,6 +284,7 @@ def list_values(entries: list[dict], key: str) -> list[str]:
 def get_options() -> dict:
     data = load_dataset()
     entries = data["entries"]
+    years = sorted({entry.get("award_year") for entry in entries if entry.get("award_year")}, reverse=True)
     return {
         "dataset": data["dataset"],
         "datasets": data.get("datasets", []),
@@ -294,6 +295,7 @@ def get_options() -> dict:
         "categories": list_values(entries, "categories"),
         "styles": list_values(entries, "style_tags"),
         "tech": list_values(entries, "tech_tags"),
+        "years": years,
     }
 
 
@@ -340,6 +342,14 @@ def clamp_limit(raw_value: str) -> int:
 def build_search_request(params: dict[str, list[str]]) -> dict:
     query = first_value(params, "q")
     similar_to = first_value(params, "similar_to")
+    year_raw = first_value(params, "year")
+    if year_raw:
+        try:
+            year = int(year_raw)
+        except ValueError as exc:
+            raise SearchError("year must be an integer") from exc
+    else:
+        year = None
     focus_key = first_value(params, "focus", "all") or "all"
     focus = FOCUS_PRESETS.get(focus_key, FOCUS_PRESETS["all"])
 
@@ -361,6 +371,8 @@ def build_search_request(params: dict[str, list[str]]) -> dict:
         command.extend(["--style", style])
     for tech in techs:
         command.extend(["--tech", tech])
+    if year is not None:
+        command.extend(["--year", str(year)])
     if similar_to:
         command.extend(["--similar-to", similar_to])
     if effective_query:
@@ -374,6 +386,7 @@ def build_search_request(params: dict[str, list[str]]) -> dict:
         "category": categories,
         "style": styles,
         "tech": techs,
+        "year": year,
         "limit": limit,
     }
     assistant = {
@@ -399,8 +412,10 @@ def build_assistant_summary(filters: dict, hint_terms: list[str]) -> str:
         readable_terms = ", ".join(term.replace("-", " ") for term in hint_terms)
         parts.append(f"I also nudged the search toward {readable_terms}.")
 
-    if filters["category"] or filters["style"] or filters["tech"]:
+    if filters["category"] or filters["style"] or filters["tech"] or filters["year"] is not None:
         active: list[str] = []
+        if filters["year"] is not None:
+            active.append(f'year: {filters["year"]}')
         if filters["category"]:
             active.append(f'categories: {", ".join(filters["category"])}')
         if filters["style"]:
@@ -453,6 +468,8 @@ def request_summary(filters: dict) -> str:
         summary.append(f'focus "{filters["focus_label"]}"')
     if filters["similar_to"]:
         summary.append(f'similar to "{filters["similar_to"]}"')
+    if filters["year"] is not None:
+        summary.append(f'year {filters["year"]}')
     if filters["category"]:
         summary.append(f'categories: {", ".join(filters["category"])}')
     if filters["style"]:

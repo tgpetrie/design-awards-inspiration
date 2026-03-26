@@ -11,30 +11,30 @@
 
 # Last Completed
 
-- Added an explicit validation layer for all local Awwwards year datasets.
-- Added machine-readable catalog generation at `references/catalog.json` and terminal coverage reporting by year.
-- Verified all three datasets pass validation with the current schema and have complete thumbnail coverage.
-- Wired `scripts/build_awwwards_top50.py` and `scripts/fetch_thumbnails.py` to run post-write maintenance automatically after successful dataset writes.
-- Verified the merged runtime still works through the CLI search flow, the local UI API, and the static catalog bundle generator.
+- Unified the web UI around a single archive shell: dark atmospheric background, pale-lilac surface panels, shared pill/button language, and consistent spacing across feed, results, detail, and related states.
+- Replaced the Advanced Search popup with an inline expanding panel under the main search area.
+- Reworked no-results/suggestion handling so failed queries render a real empty state with active-filter pills and recovery actions.
+- Added year-filter support back through the full stack: options API, search API, CLI search, and the inline web UI.
+- Verified the local app across feed, results, inline advanced search, no-results state, detail, and surprise navigation.
 
 # In Progress
 
-- Nothing actively in flight. Repo is stable after the pipeline-hardening pass.
+- Nothing actively in flight. The current branch is stable after the UI unification pass.
 
 # Next Priorities
 
-1. **Expand Awwwards deliberately** — add 2022 only after the automated update workflow is confirmed stable.
-2. **Targeted smoke coverage** — decide whether to add lightweight script tests for validation/catalog/static-bundle regeneration.
-3. **Push timing** — review the unpushed local history and decide when to publish `master` to `origin/master`.
-4. **Product work** — once the data workflow is settled, return to UI polish or new discovery features.
+1. **Reduce Advanced Search bulk** — replace the large category/style/tech chip walls with more compact selection controls.
+2. **Handle remote thumbnail failures** — decide whether to add a thumbnail proxy/cache layer so third-party image failures stop polluting the browser experience.
+3. **Targeted smoke coverage** — formalize lightweight tests for the data-maintenance path and the critical web search/detail views.
+4. **Push timing** — review the unpushed local history and decide when to publish `master` to `origin/master`.
 
 # Open Questions
 
-- Is 2022 still the next Awwwards year to add, or should another pipeline step happen first?
-- Should the script-level smoke checks be formalized so maintenance regressions are caught before commit?
+- Should Advanced Search move to searchable multi-select controls next, or is the current inline chip panel acceptable for now?
+- Is a local thumbnail proxy worth the complexity, or should the app continue degrading gracefully when remote images block?
 - When should the unpushed local commits go to `origin/master`?
 
 # Session Anchor
 
-- Entered this post-write automation pass from `bd364f9`.
+- Entered this UI unification pass from `26ed2e7`.
 - Use `git log --oneline -1` for the current tip before starting the next session.
