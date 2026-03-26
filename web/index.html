@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Raleway+Dots&display=swap" />
-    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
   <body>
 
@@ -101,15 +101,6 @@
             <p class="image-drop-label">Image staged — hit <strong>Search</strong> to find similar designs, or drop a different one here.</p>
           </div>
 
-          <!-- Prompt suggestion chips -->
-          <div class="results-chips">
-            <button type="button" class="results-chip" data-prompt="Dark app homepage">Dark app homepage</button>
-            <button type="button" class="results-chip" data-prompt="Scroll effects">Scroll effects</button>
-            <button type="button" class="results-chip" data-prompt="Mobile app intro">Mobile app intro</button>
-            <button type="button" class="results-chip" data-prompt="Editorial typography">Editorial typography</button>
-            <button type="button" class="results-chip" data-prompt="Luxury brand site">Luxury brand site</button>
-            <button type="button" class="results-chip" data-prompt="Bold creative studio">Bold creative studio</button>
-          </div>
         </form>
 
         <!-- Status + advanced -->
@@ -128,15 +119,6 @@
           </div>
           <div id="focus-filters" class="chip-cloud focus-cloud"></div>
         </div>
-
-        <!-- Year filter -->
-        <div class="year-stack">
-          <div class="focus-copy">
-            <span class="subtle-label">Year</span>
-          </div>
-          <div id="year-filters" class="chip-cloud year-cloud"></div>
-        </div>
-
 
         <!-- Readout -->
         <section id="assistant-readout" class="assistant-readout panel" hidden>
@@ -255,7 +237,7 @@
           </label>
           <label class="field field-small">
             <span>Limit</span>
-            <input id="limit" name="limit" type="number" min="1" max="24" value="8" inputmode="numeric" />
+            <input id="limit" name="limit" type="number" min="1" max="48" value="24" inputmode="numeric" />
           </label>
         </div>
         <div class="advanced-groups">
@@ -279,6 +261,6 @@
     </div>
 
     <script src="catalog-data.js?v=1"></script>
-    <script src="app.js?v=9" defer></script>
+    <script src="app.js?v=17" defer></script>
   </body>
 </html>

@@ -8,56 +8,271 @@ const state = {
   tech: new Set(),
 };
 
+// Prompt chips — tracked separately so they stack additively with the text query
+const activePromptChips = new Set();
+
 const STATIC_CATALOG = window.__DESIGN_REFS_CATALOG__ || null;
 const STATIC_IMAGE_SEARCH_MESSAGE = "Image search requires the local Python server.";
 let apiReachable = null;
 
 const QUERY_ALIASES = {
-  "app-ui": ["mobile", "apps", "ui", "design"],
-  "agency": ["design", "agencies"],
-  "brutalist": ["graphic", "experimental", "typography", "unusual", "layout"],
-  "checkout": ["e-commerce", "consumer", "ui", "design", "clean"],
-  "dashboard": ["technology", "startups", "ui", "design", "data", "visualization"],
-  "editorial": ["typography", "graphic", "magazine", "blog", "newspaper"],
-  "fintech": ["technology", "startups", "business", "corporate", "clean"],
-  "immersive": ["animation", "storytelling", "3d", "interaction", "scrolling", "webgl"],
-  "landing-page": ["promotional", "storytelling", "scrolling", "typography"],
-  "luxury": ["luxury"],
-  "minimalist": ["minimal", "clean"],
-  "motion": ["animation", "transitions", "microinteractions", "scrolling", "storytelling"],
-  "onboarding": ["mobile", "apps", "clean", "ui", "design", "interaction"],
-  "portfolio": ["portfolio"],
-  "playful": ["colorful", "illustration", "animation", "graphic"],
-  "saas": ["technology", "startups", "clean", "ui", "design"],
-  // Extended design vocabulary
-  "3d": ["immersive", "webgl", "3d"],
-  "b2b": ["technology", "saas", "corporate"],
-  "brand": ["portfolio", "agency", "design"],
-  "canvas": ["experimental", "webgl", "animation"],
-  "corporate": ["technology", "business", "clean"],
-  "creative-coding": ["experimental", "webgl", "canvas"],
-  "dark-mode": ["dark", "cinematic", "minimal"],
-  "event": ["promotional", "landing-page", "storytelling"],
-  "fashion": ["luxury", "editorial", "photography"],
-  "food": ["luxury", "e-commerce", "editorial"],
-  "glassmorphism": ["minimal", "clean", "ui-design"],
-  "gradient": ["colorful", "bold"],
-  "health": ["clean", "minimal", "technology"],
-  "hero": ["landing-page", "storytelling", "scrolling"],
-  "magazine": ["editorial", "typography", "graphic"],
-  "music": ["motion", "animation", "storytelling"],
-  "nft": ["experimental", "art", "illustration"],
-  "product-design": ["app-ui", "saas", "clean"],
-  "restaurant": ["luxury", "editorial", "photography"],
+  // ── Domains / product types ──────────────────────────────────────────────
+  "agency":        ["design", "agencies", "portfolio"],
+  "app":           ["mobile", "apps", "ui", "design"],
+  "app-ui":        ["mobile", "apps", "ui", "design"],
+  "b2b":           ["technology", "saas", "corporate"],
+  "brand":         ["portfolio", "agency", "design"],
+  "checkout":      ["e-commerce", "consumer", "ui", "design", "clean"],
+  "corporate":     ["technology", "business", "clean"],
+  "dashboard":     ["technology", "startups", "ui", "design", "data"],
+  "e-commerce":    ["e-commerce", "consumer", "clean"],
+  "event":         ["promotional", "storytelling", "scrolling"],
+  "fashion":       ["luxury", "editorial", "photography"],
+  "fintech":       ["technology", "startups", "business", "corporate", "clean"],
+  "food":          ["luxury", "e-commerce", "editorial", "photography"],
+  "gaming":        ["dark", "immersive", "3d", "experimental"],
+  "health":        ["clean", "minimal", "technology"],
+  "landing-page":  ["promotional", "storytelling", "scrolling", "typography"],
+  "magazine":      ["editorial", "typography", "graphic"],
+  "mobile":        ["mobile", "apps", "ui", "design"],
+  "music":         ["motion", "animation", "storytelling", "dark"],
+  "nft":           ["experimental", "art", "illustration"],
+  "onboarding":    ["mobile", "apps", "clean", "ui", "interaction"],
+  "portfolio":     ["portfolio", "agency", "design"],
+  "product":       ["technology", "clean", "ui", "design"],
+  "product-design":["app-ui", "saas", "clean"],
+  "restaurant":    ["luxury", "editorial", "photography"],
+  "saas":          ["technology", "startups", "clean", "ui", "design"],
+  "startup":       ["saas", "fintech", "technology"],
+  "studio":        ["portfolio", "agency", "design"],
+  "tech":          ["technology", "startups", "clean"],
+  "travel":        ["editorial", "photography", "storytelling"],
+  // ── Motion / interaction ─────────────────────────────────────────────────
+  "3d":            ["immersive", "webgl", "3d"],
+  "animation":     ["animation", "motion", "scrolling"],
+  "animated":      ["animation", "motion", "scrolling"],
+  "canvas":        ["experimental", "webgl", "animation"],
+  "creative-coding":["experimental", "webgl", "canvas"],
+  "hero":          ["storytelling", "scrolling", "immersive"],
+  "hover":         ["microinteractions", "interaction", "animation"],
+  "immersive":     ["animation", "storytelling", "3d", "scrolling", "webgl"],
+  "interactive":   ["interaction", "animation", "scrolling"],
+  "kinetic":       ["animation", "motion", "typography"],
+  "loading":       ["animation", "microinteractions"],
+  "microinteraction":["microinteractions", "interaction", "animation"],
+  "motion":        ["animation", "transitions", "microinteractions", "scrolling"],
+  "parallax":      ["scrolling", "animation", "parallax"],
+  "scroll":        ["scrolling", "animation", "parallax"],
   "scroll-driven": ["scrolling", "animation", "parallax"],
-  "serif": ["editorial", "typography", "luxury"],
-  "startup": ["saas", "fintech", "technology"],
-  "studio": ["portfolio", "agency", "design"],
-  "tech": ["technology", "startups", "clean"],
-  "travel": ["editorial", "photography", "storytelling"],
-  "type-led": ["typography", "editorial", "graphic"],
-  "video": ["storytelling", "motion", "animation"],
-  "webgl": ["immersive", "3d", "experimental"],
+  "scrolling":     ["scrolling", "animation", "parallax"],
+  "transition":    ["animation", "transitions", "motion"],
+  "video":         ["storytelling", "motion", "animation", "cinematic"],
+  "webgl":         ["immersive", "3d", "experimental"],
+  // ── Typography / layout ──────────────────────────────────────────────────
+  "big-type":      ["typography", "bold", "graphic"],
+  "display":       ["typography", "bold", "editorial"],
+  "editorial":     ["typography", "graphic", "editorial"],
+  "expressive":    ["typography", "experimental", "graphic"],
+  "headline":      ["typography", "editorial", "bold"],
+  "lettering":     ["typography", "graphic", "illustration"],
+  "serif":         ["editorial", "typography", "luxury"],
+  "text-heavy":    ["typography", "editorial", "graphic"],
+  "type":          ["typography", "editorial", "graphic"],
+  "type-led":      ["typography", "editorial", "graphic"],
+  "typeface":      ["typography", "editorial", "graphic"],
+  "typographic":   ["typography", "editorial", "graphic"],
+  "typography":    ["typography", "editorial", "graphic"],
+  // ── Visual quality adjectives ────────────────────────────────────────────
+  "airy":          ["minimal", "clean", "editorial"],
+  "brutal":        ["graphic", "experimental", "brutalist", "typography"],
+  "brutalist":     ["graphic", "experimental", "brutalist", "typography"],
+  "busy":          ["colorful", "graphic", "experimental"],
+  "chaotic":       ["experimental", "graphic", "brutalist"],
+  "cinematic":     ["cinematic", "dark", "storytelling", "photography"],
+  "clean":         ["minimal", "clean"],
+  "complex":       ["immersive", "3d", "experimental"],
+  "crisp":         ["minimal", "clean", "typography"],
+  "dark":          ["dark", "cinematic", "minimal"],
+  "delicate":      ["minimal", "clean", "editorial"],
+  "dense":         ["editorial", "typography", "graphic"],
+  "detailed":      ["editorial", "graphic", "illustration"],
+  "dramatic":      ["cinematic", "dark", "immersive"],
+  "dreamy":        ["minimal", "colorful", "illustration"],
+  "dynamic":       ["animation", "bold", "scrolling"],
+  "edgy":          ["experimental", "dark", "brutalist"],
+  "elegant":       ["luxury", "minimal", "editorial"],
+  "energetic":     ["bold", "colorful", "animation"],
+  "experimental":  ["experimental", "graphic", "brutalist"],
+  "flat":          ["minimal", "clean", "ui"],
+  "fluid":         ["animation", "minimal", "scrolling"],
+  "focused":       ["minimal", "clean", "typography"],
+  "frosted":       ["minimal", "clean", "ui"],
+  "futuristic":    ["technology", "experimental", "3d", "dark"],
+  "geometric":     ["graphic", "minimal", "experimental"],
+  "glassy":        ["minimal", "clean", "ui"],
+  "glossy":        ["minimal", "clean", "technology"],
+  "gritty":        ["experimental", "graphic", "brutalist"],
+  "groovy":        ["colorful", "graphic", "experimental"],
+  "heavy":         ["bold", "typography", "graphic"],
+  "immersive":     ["animation", "storytelling", "3d", "scrolling", "webgl"],
+  "layered":       ["editorial", "graphic", "experimental"],
+  "light":         ["minimal", "clean", "editorial"],
+  "loud":          ["bold", "colorful", "graphic"],
+  "lush":          ["colorful", "illustration", "photography"],
+  "luxurious":     ["luxury", "editorial", "photography"],
+  "luxury":        ["luxury"],
+  "maximalist":    ["colorful", "graphic", "editorial"],
+  "minimal":       ["minimal", "clean"],
+  "minimalist":    ["minimal", "clean"],
+  "moody":         ["dark", "cinematic", "photography"],
+  "neutral":       ["minimal", "clean", "editorial"],
+  "open":          ["minimal", "clean", "editorial"],
+  "opulent":       ["luxury", "editorial", "photography"],
+  "organic":       ["minimal", "clean", "illustration"],
+  "ornate":        ["luxury", "editorial", "graphic"],
+  "polished":      ["minimal", "clean", "technology"],
+  "premium":       ["luxury", "minimal", "clean"],
+  "quiet":         ["minimal", "clean"],
+  "raw":           ["experimental", "brutalist", "graphic"],
+  "refined":       ["minimal", "luxury", "editorial"],
+  "retro":         ["graphic", "experimental", "colorful"],
+  "rich":          ["luxury", "colorful", "photography"],
+  "rough":         ["experimental", "brutalist", "graphic"],
+  "saturated":     ["colorful", "bold", "photography"],
+  "sharp":         ["minimal", "clean", "typography", "editorial"],
+  "simple":        ["minimal", "clean"],
+  "sleek":         ["minimal", "clean", "technology"],
+  "slow":          ["cinematic", "storytelling", "minimal"],
+  "smooth":        ["minimal", "clean", "animation"],
+  "soft":          ["minimal", "clean", "colorful"],
+  "spacious":      ["minimal", "clean", "editorial"],
+  "sparse":        ["minimal", "clean"],
+  "striking":      ["bold", "colorful", "graphic"],
+  "structured":    ["editorial", "clean", "graphic"],
+  "subtle":        ["minimal", "clean", "editorial"],
+  "surreal":       ["experimental", "illustration", "3d"],
+  "tactile":       ["graphic", "illustration", "editorial"],
+  "textured":      ["graphic", "editorial", "experimental"],
+  "tight":         ["typography", "editorial", "graphic"],
+  "understated":   ["minimal", "clean", "editorial"],
+  "unique":        ["experimental", "graphic", "brutalist"],
+  "unusual":       ["experimental", "brutalist", "graphic"],
+  "vibrant":       ["colorful", "bold", "animation"],
+  "vintage":       ["editorial", "graphic", "photography"],
+  "warm":          ["colorful", "editorial", "photography"],
+  "weird":         ["experimental", "brutalist", "graphic"],
+  "wide":          ["editorial", "minimal", "photography"],
+  // ── Color / tone ─────────────────────────────────────────────────────────
+  "black":         ["dark", "minimal", "cinematic"],
+  "blue":          ["technology", "minimal", "clean", "dark"],
+  "bright":        ["colorful", "bold"],
+  "brown":         ["editorial", "photography", "luxury"],
+  "colorful":      ["colorful", "bold", "illustration"],
+  "cool":          ["minimal", "technology", "dark"],
+  "duotone":       ["minimal", "graphic", "editorial"],
+  "gold":          ["luxury", "editorial"],
+  "gradient":      ["colorful", "bold"],
+  "green":         ["minimal", "health", "clean"],
+  "high-contrast": ["bold", "dark", "graphic"],
+  "low-contrast":  ["minimal", "clean", "editorial"],
+  "monochrome":    ["minimal", "dark", "editorial"],
+  "muted":         ["minimal", "clean", "editorial"],
+  "neon":          ["experimental", "dark", "animation", "colorful"],
+  "orange":        ["bold", "colorful"],
+  "pastel":        ["colorful", "playful", "clean"],
+  "pink":          ["colorful", "playful"],
+  "purple":        ["dark", "luxury", "immersive", "experimental"],
+  "red":           ["bold", "colorful", "animation"],
+  "white":         ["minimal", "clean", "editorial"],
+  "yellow":        ["bold", "colorful", "graphic"],
+  // ── Mood / atmosphere ────────────────────────────────────────────────────
+  "aggressive":    ["bold", "dark", "experimental"],
+  "approachable":  ["clean", "colorful", "illustration"],
+  "calm":          ["minimal", "clean", "editorial"],
+  "casual":        ["colorful", "clean", "illustration"],
+  "confident":     ["bold", "typography", "graphic"],
+  "cool":          ["minimal", "dark", "technology"],
+  "dark":          ["dark", "cinematic", "minimal"],
+  "energetic":     ["bold", "colorful", "animation"],
+  "ethereal":      ["minimal", "colorful", "illustration"],
+  "exclusive":     ["luxury", "minimal", "dark"],
+  "formal":        ["editorial", "clean", "minimal"],
+  "friendly":      ["colorful", "illustration", "clean"],
+  "fun":           ["colorful", "illustration", "animation"],
+  "glamorous":     ["luxury", "photography", "dark"],
+  "human":         ["photography", "editorial", "illustration"],
+  "intimate":      ["photography", "editorial", "minimal"],
+  "joyful":        ["colorful", "illustration", "animation"],
+  "mysterious":    ["dark", "experimental", "cinematic"],
+  "nostalgic":     ["editorial", "graphic", "photography"],
+  "optimistic":    ["colorful", "clean", "illustration"],
+  "playful":       ["colorful", "illustration", "animation"],
+  "professional":  ["clean", "minimal", "technology"],
+  "provocative":   ["experimental", "brutalist", "bold"],
+  "rebellious":    ["experimental", "brutalist", "dark"],
+  "serious":       ["minimal", "dark", "editorial"],
+  "sophisticated": ["luxury", "minimal", "editorial"],
+  "tense":         ["dark", "cinematic", "experimental"],
+  "trustworthy":   ["clean", "minimal", "technology"],
+  "whimsical":     ["colorful", "illustration", "animation"],
+  // ── Design movements / styles ────────────────────────────────────────────
+  "art-deco":      ["luxury", "editorial", "graphic"],
+  "bauhaus":       ["graphic", "minimal", "typography"],
+  "claymorphism":  ["colorful", "illustration", "clean"],
+  "dark-mode":     ["dark", "cinematic", "minimal"],
+  "glassmorphism": ["minimal", "clean", "ui"],
+  "memphis":       ["colorful", "graphic", "experimental"],
+  "modernist":     ["minimal", "editorial", "graphic"],
+  "neomorphism":   ["minimal", "clean", "ui"],
+  "swiss":         ["minimal", "typography", "editorial"],
+  "y2k":           ["experimental", "colorful", "graphic"],
+  // ── Slang / casual / street vocabulary ───────────────────────────────────
+  "aesthetic":     ["minimal", "colorful", "editorial"],
+  "basic":         ["minimal", "clean"],
+  "bling":         ["luxury", "gold", "bold", "colorful"],
+  "blingy":        ["luxury", "gold", "bold", "colorful"],
+  "bussin":        ["bold", "colorful", "animation"],
+  "chill":         ["minimal", "clean", "editorial"],
+  "class":         ["luxury", "minimal", "editorial"],
+  "classy":        ["luxury", "minimal", "editorial"],
+  "cool":          ["minimal", "dark", "technology"],
+  "dope":          ["bold", "experimental", "dark"],
+  "elite":         ["luxury", "minimal"],
+  "expensive":     ["luxury", "minimal", "editorial"],
+  "extra":         ["luxury", "colorful", "bold"],
+  "fancy":         ["luxury", "editorial", "minimal"],
+  "fire":          ["bold", "animation", "colorful"],
+  "flashy":        ["luxury", "bold", "colorful", "animation"],
+  "gaudy":         ["luxury", "colorful", "bold"],
+  "highkey":       ["bold", "colorful"],
+  "hype":          ["bold", "animation", "colorful"],
+  "janky":         ["experimental", "brutalist", "graphic"],
+  "lit":           ["bold", "colorful", "animation"],
+  "lowkey":        ["minimal", "clean"],
+  "money":         ["luxury", "gold", "bold"],
+  "posh":          ["luxury", "minimal", "dark"],
+  "premium":       ["luxury", "minimal", "clean"],
+  "punchy":        ["bold", "typography", "colorful"],
+  "rich":          ["luxury", "colorful", "photography"],
+  "sick":          ["bold", "experimental", "graphic"],
+  "slick":         ["minimal", "clean", "technology"],
+  "snappy":        ["animation", "bold", "typography"],
+  "sparkly":       ["colorful", "animation", "luxury"],
+  "swanky":        ["luxury", "dark", "minimal"],
+  "tacky":         ["experimental", "colorful", "graphic"],
+  "trashy":        ["experimental", "brutalist", "graphic"],
+  "vibe":          ["minimal", "colorful", "editorial"],
+  "wavy":          ["animation", "colorful", "experimental"],
+  "weird":         ["experimental", "brutalist", "graphic"],
+  // ── Material / surface ───────────────────────────────────────────────────
+  "chrome":        ["minimal", "technology", "experimental"],
+  "glass":         ["minimal", "clean", "ui"],
+  "glittery":      ["colorful", "luxury", "animation"],
+  "glossy":        ["minimal", "clean", "technology"],
+  "matte":         ["minimal", "clean", "editorial"],
+  "metallic":      ["minimal", "technology", "dark"],
+  "shiny":         ["minimal", "clean", "luxury"],
+  "sparkle":       ["colorful", "animation", "luxury"],
 };
 
 const FOCUS_PRESETS = {
@@ -701,13 +916,19 @@ function bindFeed() {
     }
   });
 
-  // Results page prompt chips — set query and run search
+  // Results page prompt chips — toggle additively (multiple chips can combine)
   document.querySelectorAll(".results-chip[data-prompt]").forEach((btn) => {
     btn.addEventListener("click", async () => {
-      els.query.value = btn.dataset.prompt;
-      els.query.focus();
+      const term = btn.dataset.prompt;
+      if (activePromptChips.has(term)) {
+        activePromptChips.delete(term);
+        btn.classList.remove("active");
+      } else {
+        activePromptChips.add(term);
+        btn.classList.add("active");
+      }
       try { await runSearch(); }
-      catch (error) { setStatus(error.message, true); }
+      catch (error) { handleSearchError(error); }
     });
   });
 
@@ -872,6 +1093,30 @@ function setStatus(message, isError = false) {
   els.statusText.dataset.error = String(isError);
 }
 
+function handleSearchError(error) {
+  if (error.message !== "no matches") { setStatus(error.message, true); return; }
+  const query = els.query.value.trim();
+  const suggestions = query ? spellSuggest(query) : [];
+  if (!suggestions.length) { setStatus("no matches", true); return; }
+  const corrected = query.split(/\s+/).map((word) => {
+    const match = suggestions.find((s) => s.original === word.toLowerCase());
+    return match ? match.suggestion : word;
+  }).join(" ");
+  els.statusText.dataset.error = "true";
+  els.statusText.textContent = "";
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "suggest-btn";
+  const strong = document.createElement("strong");
+  strong.textContent = corrected;
+  btn.append(document.createTextNode('did you mean "'), strong, document.createTextNode('"?'));
+  btn.addEventListener("click", async () => {
+    els.query.value = corrected;
+    try { await runSearch(); } catch (e) { setStatus(e.message, true); }
+  }, { once: true });
+  els.statusText.append(document.createTextNode("no matches — "), btn);
+}
+
 function setAdvancedOpen(isOpen) {
   els.advancedModal.hidden = !isOpen;
   els.toggleAdvanced.setAttribute("aria-expanded", String(isOpen));
@@ -980,7 +1225,7 @@ function paramsObjectFromSearchParams(searchParams) {
 function clampLimit(rawValue) {
   const limit = Number.parseInt(rawValue, 10);
   if (Number.isNaN(limit)) throw new Error("limit must be an integer");
-  return Math.max(1, Math.min(limit, 24));
+  return Math.max(1, Math.min(limit, 48));
 }
 
 function extractHintTerms(query) {
@@ -1032,7 +1277,7 @@ function buildSearchRequest(params) {
   const manualCategories = splitValues(params.category || []);
   const styles = splitValues(params.style || []);
   const techs = splitValues(params.tech || []);
-  const limit = clampLimit(firstValue(params, "limit", "8"));
+  const limit = clampLimit(firstValue(params, "limit", "24"));
   const hintTerms = extractHintTerms(query);
   const yearRaw = firstValue(params, "year");
   const year = yearRaw ? parseInt(yearRaw, 10) : null;
@@ -1408,15 +1653,49 @@ function syncFilterButtons() {
   });
 }
 
+// ─── Spell correction ─────────────────────────────────────────────────────────
+
+function editDistance(a, b) {
+  if (Math.abs(a.length - b.length) > 3) return 99;
+  const dp = Array.from({ length: a.length + 1 }, (_, i) =>
+    Array.from({ length: b.length + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0))
+  );
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] = a[i - 1] === b[j - 1]
+        ? dp[i - 1][j - 1]
+        : 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+    }
+  }
+  return dp[a.length][b.length];
+}
+
+function spellSuggest(queryText) {
+  const known = Object.keys(QUERY_ALIASES);
+  const suggestions = [];
+  [...tokens(queryText)].forEach((term) => {
+    if (term.length < 3 || QUERY_ALIASES[term]) return;
+    let best = null, bestDist = Math.min(3, Math.floor(term.length / 3) + 1);
+    known.forEach((k) => {
+      const d = editDistance(term, k);
+      if (d < bestDist) { best = k; bestDist = d; }
+    });
+    if (best) suggestions.push({ original: term, suggestion: best });
+  });
+  return suggestions;
+}
+
 // ─── Search ───────────────────────────────────────────────────────────────────
 
 function serializeState() {
   const params = new URLSearchParams();
   const query = els.query.value.trim();
   const similarTo = els.similarTo ? els.similarTo.value.trim() : "";
-  const limit = els.limit ? els.limit.value.trim() || "8" : "8";
+  const limit = els.limit ? els.limit.value.trim() || "24" : "24";
 
-  if (query) params.set("q", query);
+  const chipQuery = [...activePromptChips].join(" ");
+  const combined = [query, chipQuery].filter(Boolean).join(" ");
+  if (combined) params.set("q", combined);
   if (state.focus !== "all") params.set("focus", state.focus);
   if (state.year !== null) params.set("year", String(state.year));
   if (similarTo) params.set("similar_to", similarTo);
@@ -1624,7 +1903,7 @@ async function runImageSearch() {
     await new Promise((r) => setTimeout(r, 50));
   }
 
-  const limit = els.limit ? els.limit.value.trim() || "8" : "8";
+  const limit = els.limit ? els.limit.value.trim() || "24" : "24";
   const formData = new FormData();
   formData.append("image", stagedImageFile, stagedImageFile.name);
 
@@ -1728,7 +2007,7 @@ async function boot() {
       showResults();
       window.location.hash = "#/results";
       try { await runSearch(); }
-      catch (error) { setStatus(error.message, true); }
+      catch (error) { handleSearchError(error); }
     });
   }
 
@@ -1739,7 +2018,7 @@ async function boot() {
   els.searchForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     try { await (stagedImageFile ? runImageSearch() : runSearch()); }
-    catch (error) { setStatus(error.message, true); }
+    catch (error) { handleSearchError(error); }
   });
 
   // Advanced search modal
@@ -1750,7 +2029,7 @@ async function boot() {
   els.advancedApply.addEventListener("click", async () => {
     setAdvancedOpen(false);
     try { await runSearch(); }
-    catch (error) { setStatus(error.message, true); }
+    catch (error) { handleSearchError(error); }
   });
 
   // Reset filters

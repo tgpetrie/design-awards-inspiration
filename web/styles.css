@@ -2317,6 +2317,15 @@ body {
   box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
+/* Label above prompt chips */
+.chips-label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 245, 0.35);
+  margin: 14px 0 6px;
+}
+
 /* Prompt suggestion chips — orange accent */
 .results-chips {
   display: flex;
@@ -2342,6 +2351,22 @@ body {
   background: rgba(251, 146, 60, 0.2);
   border-color: rgba(251, 146, 60, 0.5);
 }
+
+.results-chip.active {
+  background: rgba(251, 146, 60, 0.22);
+  border-color: rgba(251, 146, 60, 0.75);
+  color: #fb923c;
+}
+
+/* "Did you mean" suggestion inline button */
+.suggest-btn {
+  all: unset;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.suggest-btn:hover { opacity: 0.8; }
 
 /* ─── Year filter ─────────────────────────────────────────────────────────── */
 
