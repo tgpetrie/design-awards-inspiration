@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Raleway+Dots&display=swap" />
-    <link rel="stylesheet" href="styles.css?v=11" />
+    <link rel="stylesheet" href="styles.css?v=12" />
   </head>
   <body>
 
@@ -72,8 +72,9 @@
       </div>
 
       <div class="app-shell archive-layout">
+        <section class="archive-frame archive-page-shell">
         <!-- Editorial heading -->
-        <section class="archive-frame archive-search-shell">
+        <section class="archive-search-shell">
           <div class="results-editorial">
             <p class="eyebrow">Design archive</p>
             <h1 class="results-headline">Describe what<br>you are trying to find.</h1>
@@ -165,7 +166,6 @@
           <div class="focus-stack archive-section-block">
             <div class="focus-copy">
               <span class="subtle-label">Optional Focus</span>
-              <p>Pick one broad lane, or leave it on All.</p>
             </div>
             <div id="focus-filters" class="chip-cloud focus-cloud"></div>
           </div>
@@ -174,7 +174,7 @@
         </section>
 
         <!-- Readout -->
-        <section id="assistant-readout" class="assistant-readout panel archive-frame" hidden>
+        <section id="assistant-readout" class="assistant-readout panel" hidden>
           <div class="readout-copy-block">
             <p class="eyebrow">Search Readout</p>
             <h2 id="summary-title">Top references</h2>
@@ -192,13 +192,19 @@
           </div>
         </section>
 
-        <!-- Results heading — hidden when a real search is active (readout section replaces it) -->
-        <section class="results-head archive-section-head">
-          <p class="eyebrow">Archive results</p>
-          <h2 id="results-title">Browse all</h2>
-        </section>
+        <section class="results-collection archive-section-block">
+          <!-- Results heading — hidden when a real search is active (readout section replaces it) -->
+          <section class="results-head archive-section-head">
+            <div class="results-head-main">
+              <p class="eyebrow">Archive results</p>
+              <h2 id="results-title">Browse all</h2>
+            </div>
+            <p class="results-head-note">Curated Awwwards references across 2023-2025.</p>
+          </section>
 
-        <section id="results" class="results-grid"></section>
+          <section id="results" class="results-grid"></section>
+        </section>
+        </section>
       </div>
     </div>
 
