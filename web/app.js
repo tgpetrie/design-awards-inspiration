@@ -561,6 +561,149 @@ let feedEntries = [];
 let feedLoaded = false;
 let autoSearchPending = false; // guard against re-entrant auto-browse search
 let pendingAdvancedOpen = false;
+const feedThumbnailMetaCache = new Map();
+
+const FEED_QUALITY_GATE = {
+  rules: {
+    minWidth: 1700,
+    minHeight: 900,
+    maxCoverScale: 1.85,
+  },
+  targetSlides: 90,
+  minSlides: 20,
+  maxProbeCandidates: 260,
+  probeConcurrency: 12,
+  probeTimeoutMs: 6500,
+};
+
+function getFeedViewportSize() {
+  const trackW = els.feedTrack ? els.feedTrack.clientWidth : 0;
+  const trackH = els.feedTrack ? els.feedTrack.clientHeight : 0;
+  return {
+    width: Math.max(trackW, window.innerWidth || 0, 1),
+    height: Math.max(trackH, window.innerHeight || 0, 1),
+  };
+}
+
+function evaluateFeedThumbnailQuality(meta, viewport, rules) {
+  const width = meta.width || 0;
+  const height = meta.height || 0;
+  if (width < rules.minWidth || height < rules.minHeight) {
+    return {
+      ok: false,
+      reason: `source too small (${width}x${height})`,
+      coverScale: Infinity,
+    };
+  }
+  const coverScale = Math.max(
+    viewport.width / Math.max(width, 1),
+    viewport.height / Math.max(height, 1),
+  );
+  if (coverScale > rules.maxCoverScale) {
+    return {
+      ok: false,
+      reason: `upscale too high (${coverScale.toFixed(2)}x)`,
+      coverScale,
+    };
+  }
+  return { ok: true, reason: "ok", coverScale };
+}
+
+function probeFeedThumbnailMeta(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    let settled = false;
+    const cleanup = () => {
+      img.onload = null;
+      img.onerror = null;
+    };
+    const finish = (payload) => {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      resolve(payload);
+    };
+    const timer = window.setTimeout(() => {
+      finish({ ok: false, width: 0, height: 0, reason: "timeout" });
+    }, FEED_QUALITY_GATE.probeTimeoutMs);
+
+    img.onload = () => {
+      window.clearTimeout(timer);
+      finish({
+        ok: true,
+        width: img.naturalWidth || 0,
+        height: img.naturalHeight || 0,
+        reason: "loaded",
+      });
+    };
+    img.onerror = () => {
+      window.clearTimeout(timer);
+      finish({ ok: false, width: 0, height: 0, reason: "load-error" });
+    };
+    img.src = url;
+  });
+}
+
+async function getFeedThumbnailMeta(url) {
+  const cached = feedThumbnailMetaCache.get(url);
+  if (cached) {
+    if (typeof cached.then === "function") return cached;
+    return cached;
+  }
+  const pending = probeFeedThumbnailMeta(url).then((meta) => {
+    feedThumbnailMetaCache.set(url, meta);
+    return meta;
+  });
+  feedThumbnailMetaCache.set(url, pending);
+  return pending;
+}
+
+async function curateFeedEntriesByQuality(entries, limit) {
+  const requested = Math.min(
+    entries.length,
+    Math.max(limit || 0, FEED_QUALITY_GATE.minSlides),
+  );
+  const target = Math.min(requested, FEED_QUALITY_GATE.targetSlides);
+  const maxCandidates = Math.min(entries.length, FEED_QUALITY_GATE.maxProbeCandidates);
+  const candidates = entries.slice(0, maxCandidates);
+  const viewport = getFeedViewportSize();
+  const accepted = [];
+  let cursor = 0;
+
+  async function worker() {
+    while (true) {
+      if (accepted.length >= target) return;
+      const index = cursor;
+      cursor += 1;
+      if (index >= candidates.length) return;
+
+      const entry = candidates[index];
+      if (!entry.thumbnail_url) {
+        continue;
+      }
+      const meta = await getFeedThumbnailMeta(entry.thumbnail_url);
+      if (!meta.ok) continue;
+      const quality = evaluateFeedThumbnailQuality(meta, viewport, FEED_QUALITY_GATE.rules);
+      if (quality.ok) accepted.push({ index, entry });
+    }
+  }
+
+  const workers = Array.from({ length: FEED_QUALITY_GATE.probeConcurrency }, () => worker());
+  await Promise.all(workers);
+
+  const sorted = accepted
+    .sort((a, b) => a.index - b.index)
+    .map((item) => item.entry)
+    .slice(0, requested);
+
+  return {
+    entries: sorted,
+    screened: maxCandidates,
+    accepted: sorted.length,
+    requested,
+    gate: FEED_QUALITY_GATE.rules,
+  };
+}
 
 function makeFeedTag(label) {
   const span = document.createElement("span");
@@ -866,11 +1009,21 @@ async function loadFeed() {
     const data = await requestJson("/api/discover?limit=200", {
       fallback: () => getStaticDiscover(200),
     });
-    feedEntries = data.entries || [];
+    loading.textContent = "Screening thumbnail quality…";
+    const rawEntries = data.entries || [];
+    const curated = await curateFeedEntriesByQuality(rawEntries, rawEntries.length);
+    feedEntries = curated.entries;
+    if (!feedEntries.length) {
+      throw new Error("No slides passed the quality gate. Try again later.");
+    }
     els.feedTrack.replaceChildren();
     feedEntries.forEach((entry) => {
       els.feedTrack.appendChild(buildFeedSlide(entry));
     });
+
+    console.info(
+      `[feed-quality] screened=${curated.screened} accepted=${curated.accepted} requested=${curated.requested} gate=${curated.gate.minWidth}x${curated.gate.minHeight}@${curated.gate.maxCoverScale.toFixed(2)}x`,
+    );
 
     // Featured credit removed — swipe hint provides the navigation cue
 
