@@ -1249,7 +1249,7 @@ async function loadMotionLab() {
       els.motionLabDatasetPill.textContent = `${datasetLabel} · ${entries.length} entries`;
     }
     if (els.motionLabNote) {
-      els.motionLabNote.textContent = `Quality-gated set loaded (${entries.length} cards). Auto-scroll runs one-by-one; use your wheel to swipe and hover to slow/focus.`;
+      els.motionLabNote.textContent = `Quality-gated set loaded (${entries.length} cards). Carousel drifts continuously; use your wheel to jump one-by-one, and hover to slow with gyro focus.`;
     }
 
     startMotionLabInteraction();

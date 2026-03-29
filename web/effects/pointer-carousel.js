@@ -3,17 +3,17 @@
 
   const DEFAULT_OPTIONS = {
     damping: 0.1,
-    stageTiltX: 2.4,
-    stageTiltY: 4.2,
-    cardTiltX: 3.4,
-    cardTiltY: 5.2,
+    stageTiltX: 4.4,
+    stageTiltY: 7.4,
+    cardTiltX: 5.1,
+    cardTiltY: 8.6,
     cardLift: 10,
     cardShiftX: 14,
     inactiveScale: 0.93,
     wheelStepCooldownMs: 260,
-    autoStepMs: 2100,
-    autoStepHoverMs: 3900,
-    manualPauseMs: 3200,
+    autoSpeedPxPerSec: 118,
+    autoHoverSlowFactor: 0.09,
+    autoVelocityDamping: 0.08,
     minDesktopWidth: 920,
   };
 
@@ -59,12 +59,13 @@
       this.running = false;
       this.staticMode = false;
       this.rafId = 0;
+      this.lastTickMs = 0;
       this.wheelLockTimer = 0;
       this.wheelLocked = false;
-      this.autoStepTimer = 0;
       this.autoDirection = 1;
+      this.autoVelocity = 0;
+      this.autoScrollLeft = 0;
       this.pointerInside = false;
-      this.manualPauseUntil = 0;
 
       this.reduceMotionQuery = typeof window !== "undefined"
         ? window.matchMedia("(prefers-reduced-motion: reduce)")
@@ -99,6 +100,7 @@
       bindMediaQueryListener(this.coarsePointerQuery, this.onAccessibilityChange);
 
       this.layout();
+      this.autoScrollLeft = this.scroller.scrollLeft;
       this.syncMode();
       this.updateActive(true);
     }
@@ -117,7 +119,6 @@
       this.staticMode = nextStatic;
       if (this.staticMode) {
         this.stop();
-        this.clearAutoStep();
         this.stage.classList.add("is-static");
         this.track.style.transform = "";
         this.cards.forEach((card) => {
@@ -132,7 +133,6 @@
       this.stage.classList.remove("is-static");
       this.layout();
       this.start();
-      this.scheduleAutoStep();
     }
 
     onAccessibilityChange() {
@@ -146,6 +146,7 @@
         const center = card.offsetLeft + width / 2;
         return { width, center };
       });
+      this.autoScrollLeft = this.scroller.scrollLeft;
       this.updateActive(true);
     }
 
@@ -186,58 +187,9 @@
       if (this.onActiveChange) this.onActiveChange(this.activeIndex, this.cards.length);
     }
 
-    scrollByStep(step, opts = {}) {
+    scrollByStep(step) {
       if (!this.cards.length) return;
-      if (!opts.auto) this.bumpManualPause();
       this.scrollToIndex(this.activeIndex + step);
-    }
-
-    clearAutoStep() {
-      if (!this.autoStepTimer) return;
-      window.clearTimeout(this.autoStepTimer);
-      this.autoStepTimer = 0;
-    }
-
-    bumpManualPause() {
-      this.manualPauseUntil = Date.now() + this.options.manualPauseMs;
-      this.scheduleAutoStep(this.options.manualPauseMs);
-    }
-
-    getAutoDelay() {
-      if (Date.now() < this.manualPauseUntil) {
-        return Math.max(this.manualPauseUntil - Date.now(), 120);
-      }
-      return this.pointerInside ? this.options.autoStepHoverMs : this.options.autoStepMs;
-    }
-
-    scheduleAutoStep(delay) {
-      this.clearAutoStep();
-      if (this.staticMode || this.cards.length < 2) return;
-      const waitMs = typeof delay === "number" ? delay : this.getAutoDelay();
-      this.autoStepTimer = window.setTimeout(() => {
-        this.autoStepTimer = 0;
-        this.stepAuto();
-      }, Math.max(waitMs, 120));
-    }
-
-    stepAuto() {
-      if (this.staticMode || this.cards.length < 2) return;
-      if (Date.now() < this.manualPauseUntil) {
-        this.scheduleAutoStep();
-        return;
-      }
-
-      let nextIndex = this.activeIndex + this.autoDirection;
-      if (nextIndex >= this.cards.length) {
-        this.autoDirection = -1;
-        nextIndex = this.cards.length > 1 ? this.cards.length - 2 : 0;
-      } else if (nextIndex < 0) {
-        this.autoDirection = 1;
-        nextIndex = this.cards.length > 1 ? 1 : 0;
-      }
-
-      this.scrollByStep(nextIndex - this.activeIndex, { auto: true });
-      this.scheduleAutoStep();
     }
 
     onResize() {
@@ -245,6 +197,7 @@
     }
 
     onScroll() {
+      this.autoScrollLeft = this.scroller.scrollLeft;
       this.updateActive(false);
     }
 
@@ -256,7 +209,7 @@
       if (this.wheelLocked) return;
 
       const direction = event.deltaY > 0 ? 1 : -1;
-      this.scrollByStep(direction, { auto: false });
+      this.scrollByStep(direction);
       this.wheelLocked = true;
       window.clearTimeout(this.wheelLockTimer);
       this.wheelLockTimer = window.setTimeout(() => {
@@ -268,27 +221,22 @@
       if (!this.cards.length) return;
       if (event.key === "ArrowRight") {
         event.preventDefault();
-        this.scrollByStep(1, { auto: false });
+        this.scrollByStep(1);
       } else if (event.key === "ArrowLeft") {
         event.preventDefault();
-        this.scrollByStep(-1, { auto: false });
+        this.scrollByStep(-1);
       } else if (event.key === "Home") {
         event.preventDefault();
-        this.bumpManualPause();
         this.scrollToIndex(0);
       } else if (event.key === "End") {
         event.preventDefault();
-        this.bumpManualPause();
         this.scrollToIndex(this.cards.length - 1);
       }
     }
 
     onPointerMove(event) {
       if (this.staticMode) return;
-      if (!this.pointerInside) {
-        this.pointerInside = true;
-        this.scheduleAutoStep();
-      }
+      this.pointerInside = true;
       const rect = this.stage.getBoundingClientRect();
       const nx = ((event.clientX - rect.left) / Math.max(rect.width, 1)) * 2 - 1;
       const ny = ((event.clientY - rect.top) / Math.max(rect.height, 1)) * 2 - 1;
@@ -300,14 +248,13 @@
       this.pointerInside = false;
       this.pointerTarget.x = 0;
       this.pointerTarget.y = 0;
-      this.scheduleAutoStep();
     }
 
     start() {
       if (this.running || this.staticMode) return;
       this.running = true;
+      this.lastTickMs = 0;
       this.rafId = window.requestAnimationFrame(this.tick);
-      this.scheduleAutoStep();
     }
 
     stop() {
@@ -316,17 +263,47 @@
         window.cancelAnimationFrame(this.rafId);
         this.rafId = 0;
       }
-      this.clearAutoStep();
+      this.lastTickMs = 0;
     }
 
-    tick() {
+    tick(nowMs) {
       if (!this.running) return;
+
+      const dt = this.lastTickMs ? Math.min(nowMs - this.lastTickMs, 64) / 1000 : 0;
+      this.lastTickMs = nowMs;
 
       this.pointerCurrent.x = lerp(this.pointerCurrent.x, this.pointerTarget.x, this.options.damping);
       this.pointerCurrent.y = lerp(this.pointerCurrent.y, this.pointerTarget.y, this.options.damping);
 
       const mx = this.pointerCurrent.x;
       const my = this.pointerCurrent.y;
+
+      if (!this.staticMode && this.cards.length > 1 && dt > 0) {
+        const maxLeft = Math.max(this.scroller.scrollWidth - this.scroller.clientWidth, 0);
+        if (maxLeft > 0) {
+          let targetVelocity = this.options.autoSpeedPxPerSec * this.autoDirection;
+          if (this.pointerInside) {
+            targetVelocity *= this.options.autoHoverSlowFactor;
+          }
+
+          this.autoVelocity = lerp(this.autoVelocity, targetVelocity, this.options.autoVelocityDamping);
+          let nextLeft = this.autoScrollLeft + this.autoVelocity * dt;
+
+          if (nextLeft >= maxLeft) {
+            nextLeft = maxLeft;
+            this.autoDirection = -1;
+            this.autoVelocity = 0;
+          } else if (nextLeft <= 0) {
+            nextLeft = 0;
+            this.autoDirection = 1;
+            this.autoVelocity = 0;
+          }
+
+          this.autoScrollLeft = nextLeft;
+          this.scroller.scrollLeft = nextLeft;
+        }
+      }
+
       const center = this.getViewportCenter();
 
       const stageRotateX = -my * this.options.stageTiltX;
@@ -341,11 +318,13 @@
         const clampedDistance = clamp(distanceNorm, -2.2, 2.2);
         const focus = 1 - Math.min(Math.abs(clampedDistance), 1);
 
-        const tx = -clampedDistance * 10 + mx * this.options.cardShiftX * (0.2 + focus * 0.5);
-        const ty = Math.abs(clampedDistance) * 9 - focus * this.options.cardLift - my * 6 * (0.2 + focus * 0.6);
+        const hoverFactor = this.pointerInside ? 1 : 0.6;
+        const tx = -clampedDistance * 10 + mx * this.options.cardShiftX * hoverFactor * (0.2 + focus * 0.5);
+        const ty = Math.abs(clampedDistance) * 9 - focus * this.options.cardLift - my * 6 * hoverFactor * (0.2 + focus * 0.6);
         const rx = -my * this.options.cardTiltX * (0.4 + focus * 0.8);
         const ry = mx * this.options.cardTiltY * (0.4 + focus * 0.9) + clampedDistance * -9;
-        const scale = this.options.inactiveScale + focus * (1 - this.options.inactiveScale) - Math.abs(my) * 0.004;
+        const focusBoost = this.pointerInside ? 1.18 : 1;
+        const scale = this.options.inactiveScale + focus * (1 - this.options.inactiveScale) * focusBoost - Math.abs(my) * 0.004;
         const opacity = 0.72 + focus * 0.28;
 
         card.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0px) rotateX(${rx.toFixed(3)}deg) rotateY(${ry.toFixed(3)}deg) scale(${scale.toFixed(4)})`;
@@ -362,7 +341,6 @@
         window.clearTimeout(this.wheelLockTimer);
         this.wheelLockTimer = 0;
       }
-      this.clearAutoStep();
       if (!this.stage || !this.scroller) return;
 
       this.stage.removeEventListener("pointermove", this.onPointerMove);

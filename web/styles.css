@@ -2114,7 +2114,7 @@ body {
   display: block;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: none;
   overscroll-behavior-x: contain;
   overscroll-behavior-y: none;
   scrollbar-width: none;
