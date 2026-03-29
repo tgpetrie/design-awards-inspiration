@@ -454,7 +454,11 @@ const els = {
   motionLabView: document.getElementById("motion-lab-view"),
   motionLabBack: document.getElementById("motion-lab-back"),
   motionLabStage: document.getElementById("motion-lab-stage"),
-  motionLabCards: document.getElementById("motion-lab-cards"),
+  motionLabCarousel: document.getElementById("motion-lab-carousel"),
+  motionLabTrack: document.getElementById("motion-lab-track"),
+  motionLabPrev: document.getElementById("motion-lab-prev"),
+  motionLabNext: document.getElementById("motion-lab-next"),
+  motionLabPosition: document.getElementById("motion-lab-position"),
   motionLabDatasetPill: document.getElementById("motion-lab-dataset-pill"),
   motionLabNote: document.getElementById("motion-lab-note"),
 
@@ -1077,9 +1081,27 @@ function teardownMotionLabInteraction() {
   }
 }
 
+function setMotionLabPosition(index, total) {
+  if (!els.motionLabPosition) return;
+  const safeTotal = Math.max(total || 0, 0);
+  if (!safeTotal) {
+    els.motionLabPosition.textContent = "0 / 0";
+    return;
+  }
+  const safeIndex = Math.min(Math.max(index || 0, 0), safeTotal - 1);
+  els.motionLabPosition.textContent = `${safeIndex + 1} / ${safeTotal}`;
+}
+
+function openMotionLabCard(entry) {
+  const targetUrl = entry.live_url || entry.source_url;
+  if (!targetUrl) return;
+  window.open(targetUrl, "_blank", "noopener,noreferrer");
+}
+
 function buildMotionLabCard(entry) {
   const card = document.createElement("article");
   card.className = "motion-card";
+  card.dataset.slug = entry.slug || "";
 
   const imageWrap = document.createElement("div");
   imageWrap.className = "motion-card-image";
@@ -1098,6 +1120,11 @@ function buildMotionLabCard(entry) {
   title.textContent = entry.title || "Untitled";
   body.appendChild(title);
 
+  const subtitle = document.createElement("p");
+  subtitle.className = "motion-card-subtitle";
+  subtitle.textContent = formatDate(entry.award_date);
+  body.appendChild(subtitle);
+
   const chips = document.createElement("div");
   chips.className = "motion-card-chips";
   const labels = [
@@ -1114,13 +1141,13 @@ function buildMotionLabCard(entry) {
 
   const actions = document.createElement("div");
   actions.className = "motion-card-actions";
-  if (entry.live_url) {
+  if (entry.live_url || entry.source_url) {
     const live = document.createElement("a");
     live.className = "motion-card-action";
-    live.href = entry.live_url;
+    live.href = entry.live_url || entry.source_url;
     live.target = "_blank";
     live.rel = "noreferrer";
-    live.textContent = "Live ↗";
+    live.textContent = "Open ↗";
     actions.appendChild(live);
   }
   if (entry.slug) {
@@ -1134,32 +1161,67 @@ function buildMotionLabCard(entry) {
 
   card.appendChild(imageWrap);
   card.appendChild(body);
+
+  if (entry.live_url || entry.source_url) {
+    card.classList.add("is-clickable");
+    card.setAttribute("role", "link");
+    card.tabIndex = 0;
+    card.addEventListener("click", (event) => {
+      if (event.target.closest("a")) return;
+      openMotionLabCard(entry);
+    });
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openMotionLabCard(entry);
+      }
+    });
+  }
+
   return card;
 }
 
 function startMotionLabInteraction() {
   teardownMotionLabInteraction();
-  if (!els.motionLabStage || !els.motionLabCards) return;
-  const cards = els.motionLabCards.querySelectorAll(".motion-card");
+  if (!els.motionLabStage || !els.motionLabCarousel || !els.motionLabTrack) return;
+  const cards = els.motionLabTrack.querySelectorAll(".motion-card");
   if (!cards.length || typeof window.PointerCarouselLab !== "function") return;
-  motionLabController = new window.PointerCarouselLab(els.motionLabStage, cards);
+  motionLabController = new window.PointerCarouselLab({
+    stage: els.motionLabStage,
+    scroller: els.motionLabCarousel,
+    cards,
+    onActiveChange: setMotionLabPosition,
+  });
+  setMotionLabPosition(0, cards.length);
+
+  if (els.motionLabPrev) {
+    els.motionLabPrev.onclick = () => {
+      if (motionLabController) motionLabController.scrollByStep(-1);
+    };
+  }
+  if (els.motionLabNext) {
+    els.motionLabNext.onclick = () => {
+      if (motionLabController) motionLabController.scrollByStep(1);
+    };
+  }
 }
 
 async function loadMotionLab() {
-  if (!els.motionLabCards) return;
+  if (!els.motionLabTrack) return;
 
   if (motionLabLoaded) {
     startMotionLabInteraction();
     return;
   }
 
-  els.motionLabCards.replaceChildren(makeStatusNode("motion-lab-loading", "Building motion lab…"));
+  els.motionLabTrack.replaceChildren(makeStatusNode("motion-lab-loading", "Building motion lab…"));
+  setMotionLabPosition(0, 0);
 
   try {
     let datasetLabel = (els.datasetName && els.datasetName.textContent) || "Design refs";
     let sourceEntries = feedEntries.filter((entry) => entry.thumbnail_url);
 
-    if (sourceEntries.length < 9) {
+    if (sourceEntries.length < 18) {
       const data = await requestJson("/api/discover?limit=200", {
         fallback: () => getStaticDiscover(200),
       });
@@ -1171,29 +1233,30 @@ async function loadMotionLab() {
       throw new Error("No entries available for motion lab.");
     }
 
-    const curated = await curateFeedEntriesByQuality(sourceEntries, Math.min(sourceEntries.length, 24));
-    const entries = (curated.entries || []).slice(0, 9);
+    const curated = await curateFeedEntriesByQuality(sourceEntries, Math.min(sourceEntries.length, 64));
+    const entries = (curated.entries || []).slice(0, 20);
 
     if (!entries.length) {
       throw new Error("No entries passed the motion-lab quality gate.");
     }
 
-    els.motionLabCards.replaceChildren();
+    els.motionLabTrack.replaceChildren();
     entries.forEach((entry) => {
-      els.motionLabCards.appendChild(buildMotionLabCard(entry));
+      els.motionLabTrack.appendChild(buildMotionLabCard(entry));
     });
 
     if (els.motionLabDatasetPill) {
       els.motionLabDatasetPill.textContent = `${datasetLabel} · ${entries.length} entries`;
     }
     if (els.motionLabNote) {
-      els.motionLabNote.textContent = `Quality-gated set loaded (${entries.length} cards). Move your cursor to steer depth.`;
+      els.motionLabNote.textContent = `Quality-gated set loaded (${entries.length} cards). Auto-scroll runs one-by-one; use your wheel to swipe and hover to slow/focus.`;
     }
 
     startMotionLabInteraction();
     motionLabLoaded = true;
   } catch (error) {
-    els.motionLabCards.replaceChildren(makeStatusNode("motion-lab-error", error.message));
+    els.motionLabTrack.replaceChildren(makeStatusNode("motion-lab-error", error.message));
+    setMotionLabPosition(0, 0);
   }
 }
 

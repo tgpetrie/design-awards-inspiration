@@ -225,8 +225,15 @@
           </p>
         </header>
         <section class="motion-lab-stage-wrap">
-          <div class="motion-lab-stage" id="motion-lab-stage">
-            <div class="motion-lab-cards" id="motion-lab-cards"></div>
+          <div class="motion-lab-stage" id="motion-lab-stage" tabindex="0">
+            <div class="motion-lab-carousel" id="motion-lab-carousel">
+              <div class="motion-lab-track" id="motion-lab-track"></div>
+            </div>
+            <div class="motion-lab-nav">
+              <button class="motion-lab-nav-btn" type="button" id="motion-lab-prev">← Prev</button>
+              <span class="motion-lab-position" id="motion-lab-position">0 / 0</span>
+              <button class="motion-lab-nav-btn" type="button" id="motion-lab-next">Next →</button>
+            </div>
           </div>
         </section>
         <p class="motion-lab-note" id="motion-lab-note">
@@ -300,7 +307,7 @@
     </template>
 
     <script src="catalog-data.js?v=1"></script>
-    <script src="effects/pointer-carousel.js?v=1"></script>
-    <script src="app.js?v=22" defer></script>
+    <script src="effects/pointer-carousel.js?v=3"></script>
+    <script src="app.js?v=24" defer></script>
   </body>
 </html>
