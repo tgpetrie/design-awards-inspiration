@@ -3,15 +3,15 @@
 
   const DEFAULT_OPTIONS = {
     damping: 0.1,
-    stageTiltX: 5.1,
-    stageTiltY: 8.2,
-    cardTiltX: 5.8,
-    cardTiltY: 9.2,
-    cardLift: 12,
-    cardShiftX: 12,
-    cardArcLift: 82,
-    cardArcDepth: 248,
-    inactiveScale: 0.88,
+    stageTiltX: 5.8,
+    stageTiltY: 9.4,
+    cardTiltX: 6.3,
+    cardTiltY: 10.8,
+    cardLift: 16,
+    cardShiftX: 16,
+    cardArcLift: 142,
+    cardArcDepth: 420,
+    inactiveScale: 0.74,
     wheelStepCooldownMs: 260,
     autoSpeedPxPerSec: 118,
     autoHoverSlowFactor: 0.09,
@@ -310,7 +310,7 @@
 
       const stageRotateX = -my * this.options.stageTiltX;
       const stageRotateY = mx * this.options.stageTiltY;
-      this.track.style.transform = `translateZ(-56px) rotateX(${stageRotateX.toFixed(3)}deg) rotateY(${stageRotateY.toFixed(3)}deg)`;
+      this.track.style.transform = `translateZ(-148px) rotateX(${stageRotateX.toFixed(3)}deg) rotateY(${stageRotateY.toFixed(3)}deg)`;
 
       this.cards.forEach((card, index) => {
         const metric = this.cardMetrics[index];
@@ -320,17 +320,17 @@
         const clampedDistance = clamp(distanceNorm, -2.2, 2.2);
         const focus = 1 - Math.min(Math.abs(clampedDistance), 1);
         const distanceAbs = Math.abs(clampedDistance);
-        const arcNorm = Math.min(distanceAbs / 1.8, 1);
+        const arcNorm = Math.min(distanceAbs / 1.55, 1);
         const arcLift = Math.pow(arcNorm, 1.85) * this.options.cardArcLift;
-        const arcDepth = (1 - arcNorm) * this.options.cardArcDepth - this.options.cardArcDepth * 0.52;
+        const arcDepth = (1 - arcNorm) * this.options.cardArcDepth - this.options.cardArcDepth * 0.62;
 
         const hoverFactor = this.pointerInside ? 1 : 0.6;
-        const tx = -clampedDistance * 10 + mx * this.options.cardShiftX * hoverFactor * (0.2 + focus * 0.5);
-        const ty = arcLift - focus * this.options.cardLift - my * 7 * hoverFactor * (0.2 + focus * 0.7);
+        const tx = -clampedDistance * 20 + mx * this.options.cardShiftX * hoverFactor * (0.2 + focus * 0.55);
+        const ty = arcLift - focus * this.options.cardLift - my * 9 * hoverFactor * (0.2 + focus * 0.75);
         const tz = arcDepth;
         const rx = -my * this.options.cardTiltX * (0.4 + focus * 0.8);
-        const ry = mx * this.options.cardTiltY * (0.4 + focus * 0.9) + clampedDistance * -12;
-        const rz = clampedDistance * -1.8;
+        const ry = mx * this.options.cardTiltY * (0.4 + focus * 0.9) + clampedDistance * -24;
+        const rz = clampedDistance * -6.2;
         const focusBoost = this.pointerInside ? 1.1 : 1;
         const scale = this.options.inactiveScale + focus * (1 - this.options.inactiveScale) * focusBoost - Math.abs(my) * 0.004;
         const opacity = 0.72 + focus * 0.28;

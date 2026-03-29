@@ -2094,9 +2094,9 @@ body {
 }
 
 .motion-lab-stage {
-  --motion-card-width: clamp(250px, 46vw, 560px);
+  --motion-card-width: clamp(150px, 27vw, 320px);
   position: relative;
-  min-height: min(78vh, 860px);
+  min-height: min(82vh, 920px);
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2104,7 +2104,7 @@ body {
     radial-gradient(circle at 20% 18%, rgba(178, 121, 255, 0.2), transparent 44%),
     radial-gradient(circle at 82% 24%, rgba(255, 118, 66, 0.18), transparent 48%),
     rgba(6, 6, 10, 0.8);
-  perspective: 1600px;
+  perspective: 2800px;
   display: grid;
   grid-template-rows: 1fr auto;
 }
@@ -2125,12 +2125,12 @@ body {
 }
 
 .motion-lab-track {
-  min-height: min(70vh, 760px);
+  min-height: min(74vh, 820px);
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: clamp(34px, 4.2vw, 62px);
-  padding: 46px max(130px, calc((100% - var(--motion-card-width)) / 2 + 120px));
+  gap: clamp(52px, 5.6vw, 108px);
+  padding: 72px max(230px, calc((100% - var(--motion-card-width)) / 2 + 240px));
   transform-style: preserve-3d;
   transform-origin: center center;
   will-change: transform;
@@ -2140,7 +2140,7 @@ body {
   position: relative;
   flex: 0 0 var(--motion-card-width);
   width: var(--motion-card-width);
-  min-width: 230px;
+  min-width: 150px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
