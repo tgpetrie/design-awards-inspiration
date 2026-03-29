@@ -1885,6 +1885,9 @@ body {
 .feed-search-footer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
   margin-top: 10px;
 }
 
@@ -2029,6 +2032,206 @@ body {
   background: rgba(255, 100, 30, 0.3);
   border-color: rgba(255, 140, 60, 0.8);
   transform: translateY(2px);
+}
+
+/* ─── Motion Lab ─────────────────────────────────────────────────────────── */
+
+.motion-lab-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(141, 93, 255, 0.2), transparent 42%),
+    radial-gradient(circle at 84% 14%, rgba(255, 128, 59, 0.16), transparent 48%),
+    #0a0813;
+  color: #e8e4f5;
+}
+
+.motion-lab-shell[hidden] { display: none; }
+
+.motion-lab-topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 8, 19, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.motion-lab-dataset-pill {
+  border-color: rgba(186, 135, 255, 0.26);
+  background: rgba(137, 87, 255, 0.14);
+  color: rgba(233, 216, 255, 0.86);
+}
+
+.motion-lab-content {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 32px 24px 52px;
+}
+
+.motion-lab-header h1 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: clamp(2rem, 5.4vw, 3.9rem);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.motion-lab-lede {
+  margin: 12px 0 0;
+  max-width: 72ch;
+  color: rgba(232, 228, 245, 0.7);
+  line-height: 1.6;
+}
+
+.motion-lab-stage-wrap {
+  margin-top: 22px;
+  border: 1px solid rgba(201, 159, 255, 0.18);
+  border-radius: 28px;
+  padding: clamp(18px, 2.6vw, 28px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.35);
+}
+
+.motion-lab-stage {
+  position: relative;
+  min-height: min(74vh, 760px);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(178, 121, 255, 0.2), transparent 44%),
+    radial-gradient(circle at 82% 24%, rgba(255, 118, 66, 0.18), transparent 48%),
+    rgba(6, 6, 10, 0.8);
+  perspective: 1600px;
+}
+
+.motion-lab-cards {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+}
+
+.motion-card {
+  position: absolute;
+  width: min(33vw, 410px);
+  max-width: 410px;
+  min-width: 250px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(10, 9, 17, 0.68);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.4);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.motion-card-image {
+  aspect-ratio: 16 / 10;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.motion-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.motion-card-body {
+  padding: 12px 12px 11px;
+  display: grid;
+  gap: 10px;
+}
+
+.motion-card-title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #f4efff;
+}
+
+.motion-card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.motion-card-chip {
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(186, 136, 255, 0.38);
+  background: rgba(118, 76, 202, 0.2);
+  color: rgba(224, 201, 255, 0.88);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.motion-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.motion-card-action {
+  padding: 5px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(232, 228, 245, 0.86);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+
+.motion-card-action:hover {
+  border-color: rgba(196, 152, 255, 0.75);
+  background: rgba(137, 84, 255, 0.2);
+}
+
+.motion-lab-note {
+  margin: 14px 0 0;
+  color: rgba(232, 228, 245, 0.62);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.motion-lab-loading,
+.motion-lab-error {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 22px;
+  padding: 13px 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 9, 16, 0.85);
+  color: rgba(232, 228, 245, 0.84);
+  text-align: center;
+}
+
+.motion-lab-stage.is-static {
+  perspective: none;
+}
+
+.motion-lab-stage.is-static .motion-lab-cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  padding: 14px;
+  transform: none !important;
+}
+
+.motion-lab-stage.is-static .motion-card {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
 }
 
 /* Results shell — dark */

@@ -451,6 +451,12 @@ const els = {
 
   // Detail view
   detailView: document.getElementById("detail-view"),
+  motionLabView: document.getElementById("motion-lab-view"),
+  motionLabBack: document.getElementById("motion-lab-back"),
+  motionLabStage: document.getElementById("motion-lab-stage"),
+  motionLabCards: document.getElementById("motion-lab-cards"),
+  motionLabDatasetPill: document.getElementById("motion-lab-dataset-pill"),
+  motionLabNote: document.getElementById("motion-lab-note"),
 
   // Feed view search (bridges value to results view on submit)
   feedQuery: document.getElementById("feed-query"),
@@ -473,6 +479,7 @@ const els = {
   searchForm: document.getElementById("search-form"),
   resetFilters: document.getElementById("reset-filters"),
   copyMarkdown: document.getElementById("copy-markdown"),
+  openMotionLab: document.getElementById("open-motion-lab"),
   toggleAdvanced: document.getElementById("toggle-advanced"),
   advancedPanel: document.getElementById("advanced-panel"),
   advancedApply: document.getElementById("advanced-apply"),
@@ -500,6 +507,8 @@ function route() {
   if (hash.startsWith("#/ref/")) {
     const slug = decodeURIComponent(hash.slice(6));
     showDetail(slug);
+  } else if (hash.startsWith("#/motion-lab")) {
+    showMotionLab();
   } else if (hash.startsWith("#/results")) {
     showResults();
   } else {
@@ -511,6 +520,8 @@ function showFeed() {
   els.feedView.hidden = false;
   els.resultsView.hidden = true;
   els.detailView.hidden = true;
+  if (els.motionLabView) els.motionLabView.hidden = true;
+  teardownMotionLabInteraction();
   document.body.style.overflow = "hidden";
   document.title = "Design Refs";
   // Resume stagger reveal if feed is loaded
@@ -521,6 +532,8 @@ function showResults() {
   els.feedView.hidden = true;
   els.resultsView.hidden = false;
   els.detailView.hidden = true;
+  if (els.motionLabView) els.motionLabView.hidden = true;
+  teardownMotionLabInteraction();
   document.body.style.overflow = "";
   document.title = "Search · Design Refs";
   // Pause the stagger animation while not on feed
@@ -539,6 +552,8 @@ async function showDetail(slug) {
   els.feedView.hidden = true;
   els.resultsView.hidden = true;
   els.detailView.hidden = false;
+  if (els.motionLabView) els.motionLabView.hidden = true;
+  teardownMotionLabInteraction();
   document.body.style.overflow = "";
   els.detailView.replaceChildren(makeStatusNode("detail-loading", "Loading…"));
 
@@ -553,6 +568,21 @@ async function showDetail(slug) {
   }
 }
 
+async function showMotionLab() {
+  if (!els.motionLabView) {
+    window.location.hash = "#/";
+    return;
+  }
+  els.feedView.hidden = true;
+  els.resultsView.hidden = true;
+  els.detailView.hidden = true;
+  els.motionLabView.hidden = false;
+  document.body.style.overflow = "";
+  document.title = "Motion Lab · Design Refs";
+  if (startFloatingCopy._stop) startFloatingCopy._stop();
+  await loadMotionLab();
+}
+
 window.addEventListener("hashchange", route);
 
 // ─── Feed (landing swipe view) ────────────────────────────────────────────────
@@ -561,6 +591,8 @@ let feedEntries = [];
 let feedLoaded = false;
 let autoSearchPending = false; // guard against re-entrant auto-browse search
 let pendingAdvancedOpen = false;
+let motionLabLoaded = false;
+let motionLabController = null;
 const feedThumbnailMetaCache = new Map();
 
 const FEED_QUALITY_GATE = {
@@ -1035,6 +1067,133 @@ async function loadFeed() {
     empty.className = "discover-empty";
     empty.textContent = err.message;
     els.feedTrack.replaceChildren(empty);
+  }
+}
+
+function teardownMotionLabInteraction() {
+  if (motionLabController) {
+    motionLabController.destroy();
+    motionLabController = null;
+  }
+}
+
+function buildMotionLabCard(entry) {
+  const card = document.createElement("article");
+  card.className = "motion-card";
+
+  const imageWrap = document.createElement("div");
+  imageWrap.className = "motion-card-image";
+  const img = document.createElement("img");
+  img.className = "motion-card-thumb";
+  img.loading = "lazy";
+  img.alt = entry.title || "Design reference";
+  if (entry.thumbnail_url) img.src = entry.thumbnail_url;
+  imageWrap.appendChild(img);
+
+  const body = document.createElement("div");
+  body.className = "motion-card-body";
+
+  const title = document.createElement("h3");
+  title.className = "motion-card-title";
+  title.textContent = entry.title || "Untitled";
+  body.appendChild(title);
+
+  const chips = document.createElement("div");
+  chips.className = "motion-card-chips";
+  const labels = [
+    ...(entry.categories || []),
+    ...(entry.style_tags || []),
+  ].slice(0, 2);
+  labels.forEach((label) => {
+    const chip = document.createElement("span");
+    chip.className = "motion-card-chip";
+    chip.textContent = label;
+    chips.appendChild(chip);
+  });
+  body.appendChild(chips);
+
+  const actions = document.createElement("div");
+  actions.className = "motion-card-actions";
+  if (entry.live_url) {
+    const live = document.createElement("a");
+    live.className = "motion-card-action";
+    live.href = entry.live_url;
+    live.target = "_blank";
+    live.rel = "noreferrer";
+    live.textContent = "Live ↗";
+    actions.appendChild(live);
+  }
+  if (entry.slug) {
+    const detail = document.createElement("a");
+    detail.className = "motion-card-action";
+    detail.href = `#/ref/${encodeURIComponent(entry.slug)}`;
+    detail.textContent = "Details";
+    actions.appendChild(detail);
+  }
+  body.appendChild(actions);
+
+  card.appendChild(imageWrap);
+  card.appendChild(body);
+  return card;
+}
+
+function startMotionLabInteraction() {
+  teardownMotionLabInteraction();
+  if (!els.motionLabStage || !els.motionLabCards) return;
+  const cards = els.motionLabCards.querySelectorAll(".motion-card");
+  if (!cards.length || typeof window.PointerCarouselLab !== "function") return;
+  motionLabController = new window.PointerCarouselLab(els.motionLabStage, cards);
+}
+
+async function loadMotionLab() {
+  if (!els.motionLabCards) return;
+
+  if (motionLabLoaded) {
+    startMotionLabInteraction();
+    return;
+  }
+
+  els.motionLabCards.replaceChildren(makeStatusNode("motion-lab-loading", "Building motion lab…"));
+
+  try {
+    let datasetLabel = (els.datasetName && els.datasetName.textContent) || "Design refs";
+    let sourceEntries = feedEntries.filter((entry) => entry.thumbnail_url);
+
+    if (sourceEntries.length < 9) {
+      const data = await requestJson("/api/discover?limit=200", {
+        fallback: () => getStaticDiscover(200),
+      });
+      datasetLabel = data.dataset || datasetLabel;
+      sourceEntries = (data.entries || []).filter((entry) => entry.thumbnail_url);
+    }
+
+    if (!sourceEntries.length) {
+      throw new Error("No entries available for motion lab.");
+    }
+
+    const curated = await curateFeedEntriesByQuality(sourceEntries, Math.min(sourceEntries.length, 24));
+    const entries = (curated.entries || []).slice(0, 9);
+
+    if (!entries.length) {
+      throw new Error("No entries passed the motion-lab quality gate.");
+    }
+
+    els.motionLabCards.replaceChildren();
+    entries.forEach((entry) => {
+      els.motionLabCards.appendChild(buildMotionLabCard(entry));
+    });
+
+    if (els.motionLabDatasetPill) {
+      els.motionLabDatasetPill.textContent = `${datasetLabel} · ${entries.length} entries`;
+    }
+    if (els.motionLabNote) {
+      els.motionLabNote.textContent = `Quality-gated set loaded (${entries.length} cards). Move your cursor to steer depth.`;
+    }
+
+    startMotionLabInteraction();
+    motionLabLoaded = true;
+  } catch (error) {
+    els.motionLabCards.replaceChildren(makeStatusNode("motion-lab-error", error.message));
   }
 }
 
@@ -2421,6 +2580,18 @@ async function boot() {
   // Surprise me
   const surpriseBtn = document.getElementById("surprise-btn");
   if (surpriseBtn) surpriseBtn.addEventListener("click", surpriseMe);
+
+  // Motion lab navigation
+  if (els.openMotionLab) {
+    els.openMotionLab.addEventListener("click", () => {
+      window.location.hash = "#/motion-lab";
+    });
+  }
+  if (els.motionLabBack) {
+    els.motionLabBack.addEventListener("click", () => {
+      window.location.hash = "#/results";
+    });
+  }
 
   // Copy markdown
   els.copyMarkdown.addEventListener("click", async () => {

@@ -45,6 +45,7 @@
 
             <div class="feed-search-footer">
               <a class="feed-advanced-link" id="feed-advanced-link" href="#/results">Advanced Search ↗</a>
+              <a class="feed-advanced-link" id="feed-motion-link" href="#/motion-lab">Motion Lab ↗</a>
             </div>
           </form>
         </div>
@@ -113,6 +114,7 @@
             <div class="action-row-buttons">
               <button class="button secondary" type="button" id="toggle-advanced" aria-expanded="false" aria-controls="advanced-panel">Advanced Search</button>
               <button class="button ghost" type="button" id="surprise-btn">Surprise me</button>
+              <button class="button ghost" type="button" id="open-motion-lab">Motion lab</button>
               <button class="button ghost" type="button" id="copy-markdown">Copy Markdown</button>
             </div>
             <p class="status-text" id="status-text" aria-live="polite" hidden></p>
@@ -208,6 +210,31 @@
       </div>
     </div>
 
+    <!-- ── Motion Lab view ────────────────────────────────────────────────── -->
+    <div id="motion-lab-view" class="motion-lab-shell" hidden>
+      <div class="motion-lab-topbar">
+        <button class="results-back" id="motion-lab-back">← Back</button>
+        <div class="dataset-pill motion-lab-dataset-pill" id="motion-lab-dataset-pill">Motion Lab</div>
+      </div>
+      <div class="motion-lab-content">
+        <header class="motion-lab-header">
+          <p class="eyebrow">Motion Lab</p>
+          <h1>Pointer-driven archive carousel.</h1>
+          <p class="motion-lab-lede">
+            A standalone interaction lab for gyroscope-like card motion. Move your cursor across the stage to steer depth and angle.
+          </p>
+        </header>
+        <section class="motion-lab-stage-wrap">
+          <div class="motion-lab-stage" id="motion-lab-stage">
+            <div class="motion-lab-cards" id="motion-lab-cards"></div>
+          </div>
+        </section>
+        <p class="motion-lab-note" id="motion-lab-note">
+          Tip: open any card to compare live implementation ideas with our own interaction language.
+        </p>
+      </div>
+    </div>
+
     <!-- ── Detail view ────────────────────────────────────────────────────── -->
     <div id="detail-view" class="app-shell" hidden></div>
 
@@ -273,6 +300,7 @@
     </template>
 
     <script src="catalog-data.js?v=1"></script>
-    <script src="app.js?v=21" defer></script>
+    <script src="effects/pointer-carousel.js?v=1"></script>
+    <script src="app.js?v=22" defer></script>
   </body>
 </html>

@@ -45,6 +45,27 @@ python3 scripts/design_refs_ui.py
    - If the local dataset does not cover the requested niche.
    - When expanding, start with [references/source-index.md](references/source-index.md).
 
+## Reference Interaction Implementation
+
+When the user asks to "borrow" an interaction from a reference site, treat it as behavior extraction and reimplementation:
+
+1. Inspect the reference interaction and describe it in implementation terms:
+   - input model (`pointer`, `scroll`, `touch`, or combined)
+   - motion model (`lerp`, spring, timeline sections, velocity response)
+   - composition model (layers, depth, transforms, masks, reveal order)
+2. Rebuild an original variant in this project. Do not copy source code, assets, or brand expression.
+3. Default rollout strategy:
+   - implement first in an isolated route (for example `#/motion-lab`)
+   - validate behavior and performance
+   - merge into core views only after approval
+4. Include accessibility + fallback by default:
+   - `prefers-reduced-motion` support
+   - coarse pointer / mobile fallback
+5. Keep the work explicit:
+   - isolate reusable motion logic in dedicated modules
+   - avoid one-off inline scripts
+   - document parameters and tuning ranges in the final report
+
 ## Award-Winning References
 
 Use this section as the mental map for where references should come from.
