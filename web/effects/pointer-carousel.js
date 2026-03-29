@@ -3,15 +3,15 @@
 
   const DEFAULT_OPTIONS = {
     damping: 0.1,
-    stageTiltX: 4.4,
-    stageTiltY: 7.4,
-    cardTiltX: 5.1,
-    cardTiltY: 8.6,
+    stageTiltX: 5.1,
+    stageTiltY: 8.2,
+    cardTiltX: 5.8,
+    cardTiltY: 9.2,
     cardLift: 12,
-    cardShiftX: 14,
-    cardArcLift: 54,
-    cardArcDepth: 180,
-    inactiveScale: 0.93,
+    cardShiftX: 12,
+    cardArcLift: 82,
+    cardArcDepth: 248,
+    inactiveScale: 0.88,
     wheelStepCooldownMs: 260,
     autoSpeedPxPerSec: 118,
     autoHoverSlowFactor: 0.09,
@@ -310,7 +310,7 @@
 
       const stageRotateX = -my * this.options.stageTiltX;
       const stageRotateY = mx * this.options.stageTiltY;
-      this.track.style.transform = `translateZ(-28px) rotateX(${stageRotateX.toFixed(3)}deg) rotateY(${stageRotateY.toFixed(3)}deg)`;
+      this.track.style.transform = `translateZ(-56px) rotateX(${stageRotateX.toFixed(3)}deg) rotateY(${stageRotateY.toFixed(3)}deg)`;
 
       this.cards.forEach((card, index) => {
         const metric = this.cardMetrics[index];
@@ -331,7 +331,7 @@
         const rx = -my * this.options.cardTiltX * (0.4 + focus * 0.8);
         const ry = mx * this.options.cardTiltY * (0.4 + focus * 0.9) + clampedDistance * -12;
         const rz = clampedDistance * -1.8;
-        const focusBoost = this.pointerInside ? 1.18 : 1;
+        const focusBoost = this.pointerInside ? 1.1 : 1;
         const scale = this.options.inactiveScale + focus * (1 - this.options.inactiveScale) * focusBoost - Math.abs(my) * 0.004;
         const opacity = 0.72 + focus * 0.28;
 

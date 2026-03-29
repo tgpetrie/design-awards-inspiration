@@ -2094,9 +2094,9 @@ body {
 }
 
 .motion-lab-stage {
-  --motion-card-width: clamp(320px, 58vw, 720px);
+  --motion-card-width: clamp(250px, 46vw, 560px);
   position: relative;
-  min-height: min(74vh, 780px);
+  min-height: min(78vh, 860px);
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2125,12 +2125,12 @@ body {
 }
 
 .motion-lab-track {
-  min-height: min(62vh, 650px);
+  min-height: min(70vh, 760px);
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: clamp(24px, 3.4vw, 44px);
-  padding: 30px max(64px, calc((100% - var(--motion-card-width)) / 2 + 40px));
+  gap: clamp(34px, 4.2vw, 62px);
+  padding: 46px max(130px, calc((100% - var(--motion-card-width)) / 2 + 120px));
   transform-style: preserve-3d;
   transform-origin: center center;
   will-change: transform;
@@ -2140,7 +2140,7 @@ body {
   position: relative;
   flex: 0 0 var(--motion-card-width);
   width: var(--motion-card-width);
-  min-width: 260px;
+  min-width: 230px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
