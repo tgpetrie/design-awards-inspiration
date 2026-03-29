@@ -7,8 +7,10 @@
     stageTiltY: 7.4,
     cardTiltX: 5.1,
     cardTiltY: 8.6,
-    cardLift: 10,
+    cardLift: 12,
     cardShiftX: 14,
+    cardArcLift: 54,
+    cardArcDepth: 180,
     inactiveScale: 0.93,
     wheelStepCooldownMs: 260,
     autoSpeedPxPerSec: 118,
@@ -308,7 +310,7 @@
 
       const stageRotateX = -my * this.options.stageTiltX;
       const stageRotateY = mx * this.options.stageTiltY;
-      this.track.style.transform = `translateZ(0px) rotateX(${stageRotateX.toFixed(3)}deg) rotateY(${stageRotateY.toFixed(3)}deg)`;
+      this.track.style.transform = `translateZ(-28px) rotateX(${stageRotateX.toFixed(3)}deg) rotateY(${stageRotateY.toFixed(3)}deg)`;
 
       this.cards.forEach((card, index) => {
         const metric = this.cardMetrics[index];
@@ -317,17 +319,23 @@
         const distanceNorm = (metric.center - center) / Math.max(metric.width, 1);
         const clampedDistance = clamp(distanceNorm, -2.2, 2.2);
         const focus = 1 - Math.min(Math.abs(clampedDistance), 1);
+        const distanceAbs = Math.abs(clampedDistance);
+        const arcNorm = Math.min(distanceAbs / 1.8, 1);
+        const arcLift = Math.pow(arcNorm, 1.85) * this.options.cardArcLift;
+        const arcDepth = (1 - arcNorm) * this.options.cardArcDepth - this.options.cardArcDepth * 0.52;
 
         const hoverFactor = this.pointerInside ? 1 : 0.6;
         const tx = -clampedDistance * 10 + mx * this.options.cardShiftX * hoverFactor * (0.2 + focus * 0.5);
-        const ty = Math.abs(clampedDistance) * 9 - focus * this.options.cardLift - my * 6 * hoverFactor * (0.2 + focus * 0.6);
+        const ty = arcLift - focus * this.options.cardLift - my * 7 * hoverFactor * (0.2 + focus * 0.7);
+        const tz = arcDepth;
         const rx = -my * this.options.cardTiltX * (0.4 + focus * 0.8);
-        const ry = mx * this.options.cardTiltY * (0.4 + focus * 0.9) + clampedDistance * -9;
+        const ry = mx * this.options.cardTiltY * (0.4 + focus * 0.9) + clampedDistance * -12;
+        const rz = clampedDistance * -1.8;
         const focusBoost = this.pointerInside ? 1.18 : 1;
         const scale = this.options.inactiveScale + focus * (1 - this.options.inactiveScale) * focusBoost - Math.abs(my) * 0.004;
         const opacity = 0.72 + focus * 0.28;
 
-        card.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, 0px) rotateX(${rx.toFixed(3)}deg) rotateY(${ry.toFixed(3)}deg) scale(${scale.toFixed(4)})`;
+        card.style.transform = `translate3d(${tx.toFixed(2)}px, ${ty.toFixed(2)}px, ${tz.toFixed(2)}px) rotateX(${rx.toFixed(3)}deg) rotateY(${ry.toFixed(3)}deg) rotateZ(${rz.toFixed(3)}deg) scale(${scale.toFixed(4)})`;
         card.style.opacity = String(opacity.toFixed(4));
         card.style.zIndex = String(100 + Math.round(focus * 200) - Math.round(Math.abs(clampedDistance) * 10));
       });
