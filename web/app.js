@@ -621,6 +621,35 @@ function getFeedViewportSize() {
   };
 }
 
+function getThumbnailQuality(entry) {
+  const quality = entry && entry.thumbnail_quality;
+  return quality && typeof quality === "object" ? quality : null;
+}
+
+function hasRenderableThumbnail(entry) {
+  if (!entry || !entry.thumbnail_url) return false;
+  const quality = getThumbnailQuality(entry);
+  return !quality || quality.status !== "fail";
+}
+
+function evaluateStoredFeedQuality(entry, viewport, rules) {
+  const quality = getThumbnailQuality(entry);
+  if (!quality) return null;
+  if (quality.status && quality.status !== "pass") {
+    return {
+      ok: false,
+      reason: quality.reason || quality.status,
+      coverScale: quality.cover_scale || Infinity,
+    };
+  }
+  if (!quality.width || !quality.height) return null;
+  return evaluateFeedThumbnailQuality(
+    { width: quality.width, height: quality.height },
+    viewport,
+    rules,
+  );
+}
+
 function evaluateFeedThumbnailQuality(meta, viewport, rules) {
   const width = meta.width || 0;
   const height = meta.height || 0;
@@ -714,7 +743,12 @@ async function curateFeedEntriesByQuality(entries, limit) {
       if (index >= candidates.length) return;
 
       const entry = candidates[index];
-      if (!entry.thumbnail_url) {
+      if (!hasRenderableThumbnail(entry)) {
+        continue;
+      }
+      const storedQuality = evaluateStoredFeedQuality(entry, viewport, FEED_QUALITY_GATE.rules);
+      if (storedQuality) {
+        if (storedQuality.ok) accepted.push({ index, entry });
         continue;
       }
       const meta = await getFeedThumbnailMeta(entry.thumbnail_url);
@@ -760,7 +794,7 @@ function buildFeedSlide(entry) {
   const openBtn = fragment.querySelector(".discover-action-btn.primary");
   const detailBtn = fragment.querySelector(".discover-action-btn.ghost");
 
-  if (entry.thumbnail_url) {
+  if (hasRenderableThumbnail(entry)) {
     thumb.src = entry.thumbnail_url;
     thumb.alt = entry.title;
     thumb.addEventListener("load", () => thumb.classList.add("loaded"), { once: true });
@@ -1109,7 +1143,7 @@ function buildMotionLabCard(entry) {
   img.className = "motion-card-thumb";
   img.loading = "lazy";
   img.alt = entry.title || "Design reference";
-  if (entry.thumbnail_url) img.src = entry.thumbnail_url;
+  if (hasRenderableThumbnail(entry)) img.src = entry.thumbnail_url;
   imageWrap.appendChild(img);
 
   const body = document.createElement("div");
@@ -1219,14 +1253,14 @@ async function loadMotionLab() {
 
   try {
     let datasetLabel = (els.datasetName && els.datasetName.textContent) || "Design refs";
-    let sourceEntries = feedEntries.filter((entry) => entry.thumbnail_url);
+    let sourceEntries = feedEntries.filter((entry) => hasRenderableThumbnail(entry));
 
     if (sourceEntries.length < 18) {
       const data = await requestJson("/api/discover?limit=200", {
         fallback: () => getStaticDiscover(200),
       });
       datasetLabel = data.dataset || datasetLabel;
-      sourceEntries = (data.entries || []).filter((entry) => entry.thumbnail_url);
+      sourceEntries = (data.entries || []).filter((entry) => hasRenderableThumbnail(entry));
     }
 
     if (!sourceEntries.length) {
@@ -1372,8 +1406,8 @@ function renderDetail(ref) {
 
   const feature = node("section", "archive-frame detail-feature");
   const mediaColumn = node("div", "detail-media-column");
-  const hero = node("div", ref.thumbnail_url ? "detail-hero" : "detail-hero detail-hero-placeholder");
-  if (ref.thumbnail_url) {
+  const hero = node("div", hasRenderableThumbnail(ref) ? "detail-hero" : "detail-hero detail-hero-placeholder");
+  if (hasRenderableThumbnail(ref)) {
     const img = node("img", "detail-hero-img");
     img.src = ref.thumbnail_url;
     img.alt = ref.title;
@@ -1463,7 +1497,7 @@ function renderDetail(ref) {
     ref.related.forEach((rel) => {
       const card = node("a", "related-card");
       card.href = `#/ref/${encodeURIComponent(rel.slug)}`;
-      if (rel.thumbnail_url) {
+      if (hasRenderableThumbnail(rel)) {
         const thumb = node("img", "related-card-thumb");
         thumb.src = rel.thumbnail_url;
         thumb.alt = rel.title;
@@ -2011,7 +2045,7 @@ function buildStaticOptions() {
 
 function getStaticDiscover(limit = 100) {
   const entries = (getStaticCatalog().entries || []).filter(
-    (entry) => entry.thumbnail_url && (entry.categories || []).some((value) => DESIGN_CATEGORIES.has(value)),
+    (entry) => hasRenderableThumbnail(entry) && (entry.categories || []).some((value) => DESIGN_CATEGORIES.has(value)),
   );
   const shuffled = [...entries];
   for (let i = shuffled.length - 1; i > 0; i -= 1) {
@@ -2353,7 +2387,7 @@ function renderResults(payload) {
 
     cardInitial.textContent = result.title.charAt(0).toUpperCase();
 
-    const thumbUrl = result.thumbnail_url || "";
+    const thumbUrl = hasRenderableThumbnail(result) ? result.thumbnail_url || "" : "";
     if (thumbUrl) {
       cardThumb.src = thumbUrl;
       cardThumb.alt = result.title;
@@ -2585,7 +2619,7 @@ async function copyMarkdown() {
 
 function surpriseMe() {
   if (!STATIC_CATALOG) return;
-  const entries = (getStaticCatalog().entries || []).filter((e) => e.thumbnail_url && e.slug);
+  const entries = (getStaticCatalog().entries || []).filter((e) => hasRenderableThumbnail(e) && e.slug);
   if (!entries.length) return;
   const entry = entries[Math.floor(Math.random() * entries.length)];
   window.location.hash = `#/ref/${encodeURIComponent(entry.slug)}`;

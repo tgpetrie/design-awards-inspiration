@@ -35,6 +35,7 @@ REQUIRED_ENTRY_FIELDS = (
 ARRAY_FIELDS = ("categories", "style_tags", "tech_tags", "tags")
 URL_FIELDS = ("live_url", "source_url")
 OPTIONAL_URL_FIELDS = ("thumbnail_url",)
+OPTIONAL_STRING_FIELDS = ("thumbnail_source",)
 
 
 class DatasetValidationError(RuntimeError):
@@ -144,6 +145,48 @@ def _validate_rank(value: Any, field: str, errors: list[str]) -> int | None:
     return value
 
 
+def _validate_thumbnail_quality(value: Any, field: str, errors: list[str]) -> dict[str, Any]:
+    if value is None:
+        return {}
+    if not isinstance(value, dict):
+        errors.append(f"{field}: expected object when present, got {type(value).__name__}")
+        return {}
+
+    normalized = dict(value)
+    status = normalized.get("status")
+    if status is not None and not isinstance(status, str):
+        errors.append(f"{field}.status: expected string when present, got {type(status).__name__}")
+    reason = normalized.get("reason")
+    if reason is not None and not isinstance(reason, str):
+        errors.append(f"{field}.reason: expected string when present, got {type(reason).__name__}")
+
+    for key in ("source", "url", "content_type", "format"):
+        item = normalized.get(key)
+        if item is not None and not isinstance(item, str):
+            errors.append(f"{field}.{key}: expected string when present, got {type(item).__name__}")
+
+    for key in ("score", "width", "height", "pixels", "byte_length"):
+        item = normalized.get(key)
+        if item is not None and not isinstance(item, int):
+            errors.append(f"{field}.{key}: expected integer when present, got {type(item).__name__}")
+
+    for key in ("aspect_ratio", "cover_scale", "entropy", "edge_variance", "near_white_ratio"):
+        item = normalized.get(key)
+        if item is not None and not isinstance(item, (int, float)):
+            errors.append(f"{field}.{key}: expected number when present, got {type(item).__name__}")
+
+    for key in ("warnings", "failures", "suspicious_tokens"):
+        item = normalized.get(key)
+        if item is not None:
+            normalized[key] = _validate_array(item, f"{field}.{key}", errors)
+
+    truncated = normalized.get("truncated")
+    if truncated is not None and not isinstance(truncated, bool):
+        errors.append(f"{field}.truncated: expected boolean when present, got {type(truncated).__name__}")
+
+    return normalized
+
+
 def validate_dataset_payload(data: Any, *, path: Path) -> dict[str, Any]:
     errors: list[str] = []
     filename_year = parse_year(path)
@@ -202,6 +245,16 @@ def validate_dataset_payload(data: Any, *, path: Path) -> dict[str, Any]:
             f"{prefix}.thumbnail_url",
             errors,
         )
+        entry["thumbnail_source"] = _validate_optional_string(
+            raw_entry.get("thumbnail_source"),
+            f"{prefix}.thumbnail_source",
+            errors,
+        )
+        entry["thumbnail_quality"] = _validate_thumbnail_quality(
+            raw_entry.get("thumbnail_quality"),
+            f"{prefix}.thumbnail_quality",
+            errors,
+        )
 
         for key in URL_FIELDS:
             value = entry.get(key, "")
@@ -246,6 +299,8 @@ def normalize_entry(entry: dict[str, Any], *, year: int, filename: str) -> dict[
     normalized["dataset_year"] = year
     normalized["source_rank"] = entry.get("rank")
     normalized["thumbnail_url"] = normalized.get("thumbnail_url", "") or ""
+    normalized["thumbnail_source"] = normalized.get("thumbnail_source", "") or ""
+    normalized["thumbnail_quality"] = normalized.get("thumbnail_quality") or {}
     return normalized
 
 
@@ -254,6 +309,9 @@ def load_awwwards_dataset_record(path: Path) -> dict[str, Any]:
     year = parse_year(path)
     entries = [normalize_entry(entry, year=year, filename=path.name) for entry in payload["entries"]]
     thumbnail_count = sum(1 for entry in entries if entry.get("thumbnail_url"))
+    quality_pass_count = sum(1 for entry in entries if (entry.get("thumbnail_quality") or {}).get("status") == "pass")
+    quality_warn_count = sum(1 for entry in entries if (entry.get("thumbnail_quality") or {}).get("status") == "warn")
+    quality_fail_count = sum(1 for entry in entries if (entry.get("thumbnail_quality") or {}).get("status") == "fail")
     entry_count = len(entries)
     return {
         "path": path,
@@ -265,6 +323,9 @@ def load_awwwards_dataset_record(path: Path) -> dict[str, Any]:
         "entry_count": entry_count,
         "thumbnail_coverage_count": thumbnail_count,
         "thumbnail_coverage_percentage": _coverage_percentage(thumbnail_count, entry_count),
+        "thumbnail_quality_pass_count": quality_pass_count,
+        "thumbnail_quality_warn_count": quality_warn_count,
+        "thumbnail_quality_fail_count": quality_fail_count,
         "validation_status": "pass",
         "validation_errors": [],
         "payload": payload,
@@ -285,6 +346,9 @@ def _record_to_dataset_summary(record: dict[str, Any]) -> dict[str, Any]:
         "generated_on": record["generated_on"],
         "thumbnail_coverage_count": record["thumbnail_coverage_count"],
         "thumbnail_coverage_percentage": record["thumbnail_coverage_percentage"],
+        "thumbnail_quality_pass_count": record["thumbnail_quality_pass_count"],
+        "thumbnail_quality_warn_count": record["thumbnail_quality_warn_count"],
+        "thumbnail_quality_fail_count": record["thumbnail_quality_fail_count"],
         "validation_status": record["validation_status"],
     }
 
@@ -295,6 +359,9 @@ def build_dataset_catalog(paths: list[Path] | None = None) -> dict[str, Any]:
     years = sorted(record["year"] for record in records)
     total_entries = sum(record["entry_count"] for record in records)
     total_thumbnails = sum(record["thumbnail_coverage_count"] for record in records)
+    total_quality_pass = sum(record["thumbnail_quality_pass_count"] for record in records)
+    total_quality_warn = sum(record["thumbnail_quality_warn_count"] for record in records)
+    total_quality_fail = sum(record["thumbnail_quality_fail_count"] for record in records)
 
     return {
         "source": AWWWARDS_SOURCE,
@@ -309,6 +376,9 @@ def build_dataset_catalog(paths: list[Path] | None = None) -> dict[str, Any]:
             "entry_count": total_entries,
             "thumbnail_coverage_count": total_thumbnails,
             "thumbnail_coverage_percentage": _coverage_percentage(total_thumbnails, total_entries),
+            "thumbnail_quality_pass_count": total_quality_pass,
+            "thumbnail_quality_warn_count": total_quality_warn,
+            "thumbnail_quality_fail_count": total_quality_fail,
         },
     }
 
@@ -327,6 +397,10 @@ def render_dataset_catalog_report(catalog: dict[str, Any]) -> str:
             f"{dataset['year']}: {dataset['entry_count']} entries | "
             f"thumbnails {dataset['thumbnail_coverage_count']}/{dataset['entry_count']} "
             f"({dataset['thumbnail_coverage_percentage']:.2f}%) | "
+            f"quality pass/warn/fail "
+            f"{dataset['thumbnail_quality_pass_count']}/"
+            f"{dataset['thumbnail_quality_warn_count']}/"
+            f"{dataset['thumbnail_quality_fail_count']} | "
             f"validation {dataset['validation_status']} | "
             f"{dataset['filename']}"
         )

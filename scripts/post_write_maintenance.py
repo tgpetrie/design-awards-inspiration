@@ -48,7 +48,11 @@ def validate_written_datasets(dataset_paths: Iterable[Path]) -> list[dict]:
         print(
             f"PASS {record['filename']}: {record['entry_count']} entries, "
             f"thumbnails {record['thumbnail_coverage_count']}/{record['entry_count']} "
-            f"({record['thumbnail_coverage_percentage']:.2f}%)"
+            f"({record['thumbnail_coverage_percentage']:.2f}%), "
+            f"quality pass/warn/fail "
+            f"{record['thumbnail_quality_pass_count']}/"
+            f"{record['thumbnail_quality_warn_count']}/"
+            f"{record['thumbnail_quality_fail_count']}"
         )
 
     return records

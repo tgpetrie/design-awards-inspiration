@@ -13,8 +13,11 @@
       "entry_count": 200,
       "count": 200,
       "generated_on": "2026-03-22",
-      "thumbnail_coverage_count": 200,
-      "thumbnail_coverage_percentage": 100.0,
+      "thumbnail_coverage_count": 195,
+      "thumbnail_coverage_percentage": 97.5,
+      "thumbnail_quality_pass_count": 184,
+      "thumbnail_quality_warn_count": 11,
+      "thumbnail_quality_fail_count": 5,
       "validation_status": "pass"
     },
     {
@@ -29,6 +32,9 @@
       "generated_on": "2026-03-24",
       "thumbnail_coverage_count": 167,
       "thumbnail_coverage_percentage": 100.0,
+      "thumbnail_quality_pass_count": 0,
+      "thumbnail_quality_warn_count": 0,
+      "thumbnail_quality_fail_count": 0,
       "validation_status": "pass"
     },
     {
@@ -43,13 +49,19 @@
       "generated_on": "2026-03-24",
       "thumbnail_coverage_count": 200,
       "thumbnail_coverage_percentage": 100.0,
+      "thumbnail_quality_pass_count": 0,
+      "thumbnail_quality_warn_count": 0,
+      "thumbnail_quality_fail_count": 0,
       "validation_status": "pass"
     }
   ],
   "totals": {
     "dataset_count": 3,
     "entry_count": 567,
-    "thumbnail_coverage_count": 567,
-    "thumbnail_coverage_percentage": 100.0
+    "thumbnail_coverage_count": 562,
+    "thumbnail_coverage_percentage": 99.12,
+    "thumbnail_quality_pass_count": 184,
+    "thumbnail_quality_warn_count": 11,
+    "thumbnail_quality_fail_count": 5
   }
 }

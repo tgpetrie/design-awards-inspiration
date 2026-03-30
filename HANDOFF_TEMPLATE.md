@@ -1,32 +1,35 @@
-# Handoff — 2026-03-26
+# Handoff — 2026-03-29
 
 ---
 
 ## What changed
 
-- **Selective regression fix landed**: restored feed/home to the prior modern cinematic look by removing feed/discover selector overrides from the archive unification block in `web/styles.css`.
-- **Kept valid UI upgrades**: inline advanced search, archive-style results/detail surfaces, active-filter pills, and no-results state cards remain in place.
-- **Regression cause was identified explicitly**: selector spillover in the end-of-file archive override block (`.feed-*`, `.discover-action-btn`, `.feed-dataset-pill`) forced feed controls into the pale slab treatment.
-- **Cross-view sanity check completed**: feed, results, detail, surprise navigation, and no-results state were re-tested locally after the rollback.
+- **Thumbnail quality gate landed**: `scripts/thumbnail_quality.py` now scores candidate images using explicit heuristics and returns `pass` / `warn` / `fail` metadata.
+- **Thumbnail refresh logic is smarter**: `scripts/fetch_thumbnails.py` audits the current thumbnail first, keeps pass-grade assets in place, and only fetches alternates when the current image warns/fails.
+- **Catalog/reporting now reflects quality**: validation and catalog summaries include thumbnail quality pass/warn/fail counts.
+- **Runtime now respects the gate**: `web/app.js` uses `thumbnail_quality` metadata so fail-grade thumbnails stay out of the cinematic feed and motion-lab views.
+- **2025 was rerun**: `references/awwwards-sotd-2025.json` now carries `thumbnail_source` and `thumbnail_quality` metadata, with 184 pass, 11 warn, and 5 fail entries.
 
 ## Currently in progress
 
-- Nothing active. The current session is complete after restoring feed/home and preserving the newer results/detail improvements.
+- 2024 and 2023 have not been rerun through the new quality gate yet. Their datasets still have thumbnail URLs but no `thumbnail_quality` metadata.
 
 ## What should happen next
 
-1. **Tighten Advanced Search density**: keep the inline panel, but replace the large chip walls with compact/selectable controls.
-2. **Handle remote thumbnail errors**: decide whether to add a proxy/cache layer so CORS/404 thumbnail noise stops flooding the browser console.
-3. **Clean push strategy**: review local unpushed history and decide when to publish `master`.
+1. **Rerun `fetch_thumbnails.py` for 2024** so `references/awwwards-sotd-2024.json` gets `thumbnail_quality` metadata.
+2. **Rerun `fetch_thumbnails.py` for 2023** to finish the backfill across the full corpus.
+3. **Review the 2025 warning set** and decide whether any of the 11 warn-grade thumbnails deserve manual replacement or stricter heuristics.
 
 ## What files matter
 
-- `web/index.html` — feed shell markup and results shell framing (one pre-existing local edit remains outside this fix).
-- `web/app.js` — route/view behavior for feed/results/detail/empty states and inline advanced panel behavior.
-- `web/styles.css` — archive-shell layer plus the selective rollback that excludes feed/discover selectors from end-of-file overrides.
-- `scripts/find_design_refs.py` — CLI year-filter support.
-- `scripts/design_refs_ui.py` — API/options year-filter support.
+- `scripts/thumbnail_quality.py` — image analysis + quality scoring rules.
+- `scripts/fetch_thumbnails.py` — current-thumb audit, alternate candidate selection, dataset updates.
+- `scripts/dataset_catalog.py` — validation and catalog/reporting fields for thumbnail quality.
+- `web/app.js` — feed/motion-lab/detail/results thumbnail handling.
+- `references/awwwards-sotd-2025.json` — first dataset refreshed with `thumbnail_source` and `thumbnail_quality`.
+- `references/catalog.json` — updated quality summary.
+- `web/catalog-data.js` — rebuilt static bundle.
 
 ## Anchor commit
 
-- `00b587a` — Commit that introduced the over-broad feed regression; this handoff reflects the selective rollback work on top of it. Use `git log --oneline -1` for the current tip.
+- Entered this quality-gate pass from `0caa38d`. Use `git log --oneline -1` for the current tip.

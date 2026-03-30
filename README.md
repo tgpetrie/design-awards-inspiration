@@ -79,11 +79,12 @@ This repo is intentionally lightweight.
 
 - Python 3.10+ recommended
 - no Node.js dependency is required for the core app or data pipeline
+- `Pillow` is required for thumbnail quality analysis (`python3 -m pip install -r requirements.txt`)
 - modern browser for the local UI
 - optional: `ANTHROPIC_API_KEY` for image-to-query analysis features exposed by `scripts/design_refs_ui.py`
 - optional: Vercel account if you want to deploy the static `web/` app
 
-Most scripts use only the Python standard library.
+Most scripts use only the Python standard library; the thumbnail-quality gate additionally requires `Pillow`.
 
 ## Quick Start
 
@@ -291,6 +292,17 @@ Thumbnail strategy currently tries:
 1. `og:image` from the live site
 2. `og:image` from the source page
 3. Microlink screenshot fallback
+
+Each candidate is scored by `scripts/thumbnail_quality.py` before the dataset is updated. The quality gate records:
+
+- `thumbnail_source`
+- `thumbnail_quality.status` (`pass`, `warn`, `fail`)
+- dimensions / cover scale
+- entropy / edge variance
+- white-space ratio
+- suspicious path-token flags
+
+`fetch_thumbnails.py` now audits the existing thumbnail first and only fetches alternates when the current image warns or fails.
 
 ### Post-write maintenance is automatic
 
