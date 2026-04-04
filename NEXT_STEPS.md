@@ -11,33 +11,36 @@
 - `scripts/dataset_catalog.py` is the shared Awwwards metadata layer for discovery, validation, normalization, quality summaries, and merged runtime loading.
 - `references/catalog.json` and `web/catalog-data.js` were rebuilt after the 2025 quality pass.
 - The web app now prefers pre-vetted thumbnail metadata and keeps fail-grade thumbnails out of the cinematic feed and motion-lab carousel.
+- The app now has a shared footer and a tighter mobile feed layout via `web/app.js`, `web/index.html`, and `web/styles.css`.
+- Strategy has shifted from pure corpus expansion to a curated enrichment layer: external public case studies should be treated as design-evidence sources, not as a generic crawl target.
 
 # Last Completed
 
-- Added `scripts/thumbnail_quality.py` to analyze thumbnail candidates with explicit image heuristics: dimensions, cover scale, entropy, edge variance, near-white ratio, and suspicious path tokens.
-- Updated `scripts/fetch_thumbnails.py` so it audits the current thumbnail first, only fetches alternates when the current image warns/fails, and stores `thumbnail_source` plus `thumbnail_quality` metadata on each entry.
-- Extended validation/catalog reporting so dataset summaries now include thumbnail quality pass/warn/fail counts.
-- Updated `web/app.js` so feed and motion-lab use precomputed quality metadata, and fail-grade thumbnails no longer render in the main visual views.
-- Refreshed the 2025 dataset with the new gate and rebuilt the catalog/static bundle.
+- Added a shared project footer across feed, results, detail, and motion-lab views.
+- Tightened the feed/home mobile layout so the dataset pill, search dock, CTAs, and footer adapt better to narrow screens.
+- Shortened the feed search placeholder on small screens to prevent clipping.
+- Kept the existing thumbnail quality gate and curated Awwwards corpus intact while improving the app shell.
 
 # In Progress
 
-- The quality audit has only been rerun for 2025 so far. 2024 and 2023 still carry legacy thumbnail URLs without `thumbnail_quality` metadata.
+- No active implementation is in flight.
+- The next phase is planning and structuring a curated case-study enrichment layer before any new automation is added.
 
 # Next Priorities
 
-1. **Rerun thumbnail auditing for 2024 and 2023** — bring the older datasets onto the same quality-metadata standard as 2025.
-2. **Review the 2025 warning set** — decide whether the 11 warn-grade thumbnails need manual overrides or stricter automatic replacement.
-3. **Reduce Advanced Search bulk** — replace the large category/style/tech chip walls with more compact controls.
-4. **Targeted smoke coverage** — formalize lightweight checks for search/detail/feed after data-maintenance runs.
+1. **Create a starter source registry** — shortlist roughly 20–30 strong agency/studio case-study sources with notes on design quality and reasoning richness.
+2. **Define the raw + interpreted schema** — separate collected source records from interpreted design records so future boards/features have a stable data shape.
+3. **Create an annotation template** — capture project context, typography, layout, motion, interaction, tone, borrowable features, why-it-works notes, and plain-language summaries for the first 20 case studies.
+4. **Build the first small curated batch** — only after the registry/schema/template exist; do not jump into broad crawling.
+5. **Keep Awwwards as the backbone** — treat agency case studies as an enrichment layer, not a replacement for the existing corpus.
 
 # Open Questions
 
-- Should warn-grade thumbnails remain visible on archive/detail cards, or should the UI hide them until a pass-grade replacement exists?
-- Is a local thumbnail proxy/cache worth adding, or is the current direct-remote approach acceptable once low-quality assets are screened out?
-- After 2024/2023 are rerun, should the gate become stricter about low-entropy share cards?
+- What is the best on-disk shape for the new evidence layer: JSON files in `references/`, a small database, or both?
+- How should screenshot capture be represented for case studies: single hero image, multiple sectional captures, or deferred until after the first annotation pass?
+- What scoring scale should interpreted records use for `quality_score` and `borrowability_score` so the ratings stay comparable across sources?
 
 # Session Anchor
 
-- Entered this thumbnail-quality pass from `0caa38d`.
+- Entered the case-study planning phase from `9b3f5f2`.
 - Use `git log --oneline -1` for the current tip before starting the next session.
