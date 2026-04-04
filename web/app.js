@@ -8,6 +8,18 @@ const state = {
   tech: new Set(),
 };
 
+const PROJECT_FOOTER = Object.freeze({
+  year: "2026",
+  studio: "Guisan Design",
+  owner: "Tom Petrie",
+  label: "Design Inspiration Skill",
+});
+
+const FEED_QUERY_PLACEHOLDERS = Object.freeze({
+  desktop: "Describe the vibe, if you intend to flatter, make it matter.",
+  mobile: "Describe the vibe.",
+});
+
 // Prompt chips — tracked separately so they stack additively with the text query
 const activePromptChips = new Set();
 
@@ -437,6 +449,7 @@ const els = {
   // Feed view
   feedView: document.getElementById("feed-view"),
   feedTrack: document.getElementById("feed-track"),
+  feedFooter: document.getElementById("feed-footer"),
 
   feedCredit: document.getElementById("feed-credit"),
   feedCreditTitle: document.getElementById("feed-credit-title"),
@@ -448,6 +461,7 @@ const els = {
   resultsView: document.getElementById("results-view"),
   resultsBack: document.getElementById("results-back"),
   resultsDatasetPill: document.getElementById("results-dataset-pill"),
+  resultsFooter: document.getElementById("results-footer"),
 
   // Detail view
   detailView: document.getElementById("detail-view"),
@@ -461,6 +475,8 @@ const els = {
   motionLabPosition: document.getElementById("motion-lab-position"),
   motionLabDatasetPill: document.getElementById("motion-lab-dataset-pill"),
   motionLabNote: document.getElementById("motion-lab-note"),
+  motionLabFooter: document.getElementById("motion-lab-footer"),
+  projectFooterTemplate: document.getElementById("project-footer-template"),
 
   // Feed view search (bridges value to results view on submit)
   feedQuery: document.getElementById("feed-query"),
@@ -503,6 +519,45 @@ const els = {
   imagePreview: document.getElementById("image-preview"),
   imageClearBtn: document.getElementById("image-clear-btn"),
 };
+
+function buildProjectFooter(variantClass = "") {
+  if (!els.projectFooterTemplate) return null;
+  const fragment = els.projectFooterTemplate.content.cloneNode(true);
+  const footer = fragment.querySelector(".project-footer");
+  if (!footer) return null;
+  if (variantClass) footer.classList.add(variantClass);
+
+  const studio = footer.querySelector("[data-footer-studio]");
+  const owner = footer.querySelector("[data-footer-owner]");
+  const project = footer.querySelector("[data-footer-project]");
+
+  if (studio) studio.textContent = `© ${PROJECT_FOOTER.year} ${PROJECT_FOOTER.studio}`;
+  if (owner) owner.textContent = PROJECT_FOOTER.owner;
+  if (project) project.textContent = PROJECT_FOOTER.label;
+
+  return footer;
+}
+
+function mountProjectFooter(target, variantClass = "") {
+  if (!target || target.childElementCount) return;
+  const footer = buildProjectFooter(variantClass);
+  if (!footer) return;
+  target.appendChild(footer);
+}
+
+function mountSharedProjectFooters() {
+  mountProjectFooter(els.feedFooter, "project-footer--feed");
+  mountProjectFooter(els.resultsFooter, "project-footer--archive");
+  mountProjectFooter(els.motionLabFooter, "project-footer--archive");
+}
+
+function syncResponsiveFeedCopy() {
+  if (!els.feedQuery || typeof window.matchMedia !== "function") return;
+  const isNarrow = window.matchMedia("(max-width: 720px)").matches;
+  els.feedQuery.placeholder = isNarrow
+    ? FEED_QUERY_PLACEHOLDERS.mobile
+    : FEED_QUERY_PLACEHOLDERS.desktop;
+}
 
 // ─── Router ───────────────────────────────────────────────────────────────────
 
@@ -1516,6 +1571,9 @@ function renderDetail(ref) {
     relSection.appendChild(relGrid);
     shell.appendChild(relSection);
   }
+
+  const footer = buildProjectFooter("project-footer--archive project-footer--detail");
+  if (footer) shell.appendChild(footer);
 }
 
 // ─── Utilities ────────────────────────────────────────────────────────────────
@@ -2628,6 +2686,16 @@ function surpriseMe() {
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 
 async function boot() {
+  mountSharedProjectFooters();
+  syncResponsiveFeedCopy();
+  if (typeof window.matchMedia === "function") {
+    const feedCopyMedia = window.matchMedia("(max-width: 720px)");
+    if (typeof feedCopyMedia.addEventListener === "function") {
+      feedCopyMedia.addEventListener("change", syncResponsiveFeedCopy);
+    } else if (typeof feedCopyMedia.addListener === "function") {
+      feedCopyMedia.addListener(syncResponsiveFeedCopy);
+    }
+  }
   bindFeed();
 
   try {

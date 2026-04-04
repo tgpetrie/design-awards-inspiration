@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Raleway+Dots&display=swap" />
-    <link rel="stylesheet" href="styles.css?v=12" />
+    <link rel="stylesheet" href="styles.css?v=14" />
   </head>
   <body>
 
@@ -49,6 +49,8 @@
             </div>
           </form>
         </div>
+
+        <div class="project-footer-anchor project-footer-anchor-feed" id="feed-footer"></div>
 
       </div>
 
@@ -207,6 +209,7 @@
           <section id="results" class="results-grid"></section>
         </section>
         </section>
+        <div class="project-footer-anchor project-footer-anchor-archive" id="results-footer"></div>
       </div>
     </div>
 
@@ -239,6 +242,7 @@
         <p class="motion-lab-note" id="motion-lab-note">
           Tip: open any card to compare live implementation ideas with our own interaction language.
         </p>
+        <div class="project-footer-anchor project-footer-anchor-archive" id="motion-lab-footer"></div>
       </div>
     </div>
 
@@ -306,8 +310,22 @@
       </article>
     </template>
 
+    <template id="project-footer-template">
+      <footer class="project-footer" aria-label="Project credits">
+        <span class="project-footer-line" aria-hidden="true"></span>
+        <p class="project-footer-copy">
+          <span class="project-footer-item" data-footer-studio></span>
+          <span class="project-footer-separator" aria-hidden="true">⋆⋅☆⋅⋆</span>
+          <span class="project-footer-item" data-footer-owner></span>
+          <span class="project-footer-separator" aria-hidden="true">⋆⋅☆⋅⋆</span>
+          <span class="project-footer-item project-footer-item-project" data-footer-project></span>
+        </p>
+        <span class="project-footer-line" aria-hidden="true"></span>
+      </footer>
+    </template>
+
     <script src="catalog-data.js?v=1"></script>
     <script src="effects/pointer-carousel.js?v=9"></script>
-    <script src="app.js?v=28" defer></script>
+    <script src="app.js?v=30" defer></script>
   </body>
 </html>
